@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+# local only: login cookies, API keys, debug screenshots
+browser-profile/
+settings.json
+data/
+
+# projects / renders live outside this folder, but just in case
+*.mp4
+*.m4a

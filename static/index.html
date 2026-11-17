@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vidgen studio</title>
+<style>
+:root{--bg:#0f1115;--panel:#171a21;--panel2:#1f232c;--line:#2b303b;--text:#e6e8ee;--muted:#8b93a5;--accent:#e0a85a;--ok:#5cc98a;--bad:#e46a6a;--r:10px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,Segoe UI,sans-serif}
+button,select,input,textarea{font:inherit;color:inherit}
+button{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:#1a1205;border-color:var(--accent);font-weight:600}
+button:disabled{opacity:.5;cursor:default}
+input,select,textarea{background:#0c0e12;border:1px solid var(--line);border-radius:8px;padding:6px 8px}
+textarea{width:100%;resize:vertical}
+header{display:flex;gap:12px;align-items:center;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+header h1{font-size:16px;margin:0 12px 0 0;letter-spacing:.5px}
+header h1 span{color:var(--accent)}
+nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav button{border-radius:20px}
+nav button.on{background:var(--accent);color:#1a1205;border-color:var(--accent)}
+main{max-width:1280px;margin:0 auto;padding:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:16px}
+.card h2{font-size:15px;margin:0 0 12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.muted{color:var(--muted)}
+.drop{border:2px dashed var(--line);border-radius:var(--r);padding:22px;text-align:center;color:var(--muted);cursor:pointer}
+.drop.over{border-color:var(--accent);color:var(--text)}
+table{width:100%;border-collapse:collapse}
+td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;background:var(--panel2)}
+.tag.ok{color:var(--ok)}.tag.bad{color:var(--bad)}
+.part-h{display:flex;align-items:baseline;gap:10px;margin:24px 0 10px}
+.part-h h3{margin:0;font-size:15px}
+.scene{display:grid;grid-template-columns:320px 1fr;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px;margin-bottom:10px}
+.thumb{aspect-ratio:16/9;background:#0c0e12;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--muted);position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb{text-align:center}
+.strip{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap;align-items:center}
+.mini{width:58px;aspect-ratio:16/9;border-radius:5px;overflow:hidden;background:#0c0e12;border:2px solid var(--line);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);padding:0}
+.mini.on{border-color:var(--accent)}.mini img{width:100%;height:100%;object-fit:cover}
+.mini.add{font-size:18px;border-style:dashed}
+.thumb .bgblur,.fbox .bgblur{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(14px) brightness(.85);transform:scale(1.1)}
+.thumb .fg,.fbox .fg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.fbox{position:relative;aspect-ratio:16/9;width:100%;max-width:760px;margin:0 auto;background:#000;border-radius:8px;overflow:hidden;
+  touch-action:none;user-select:none}
+.fbox img.cov{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.fbox.drag{cursor:grab}.fbox.drag:active{cursor:grabbing}
+.fbox .hint{position:absolute;left:8px;bottom:8px;background:#000a;padding:2px 8px;border-radius:6px;font-size:12px}
+@keyframes scrollY{from{object-position:50% 0%}to{object-position:50% 100%}}
+@keyframes scrollX{from{object-position:0% 50%}to{object-position:100% 50%}}
+.lp{position:relative;aspect-ratio:16/9;width:100%;background:#000;border-radius:8px;overflow:hidden}
+.lp .ly{position:absolute;inset:0;opacity:0;will-change:transform,opacity}
+.lp .ly img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lp .ly img.fg{object-fit:contain}
+.lp .ly img.bgblur{filter:blur(14px) brightness(.8);transform:scale(1.1)}
+.lp .ly .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:8%;text-align:center;
+  background:#2a3550;color:#ddd;font-size:15px}
+.lp .blk{position:absolute;inset:0;background:#000;pointer-events:none;z-index:900}
+.lp .ttl{position:absolute;left:50%;top:80%;transform:translate(-50%,-50%);background:#0008;color:#fff;padding:.4em .9em;
+  font:600 clamp(14px,3vw,30px) Georgia,serif;border-radius:4px;opacity:0;white-space:nowrap;z-index:901}
+.lp .info{position:absolute;left:8px;top:8px;background:#000a;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;z-index:902}
+.lpbar{display:flex;gap:8px;align-items:center;margin-top:8px}.lpbar input[type=range]{flex:1}
+.badge{position:absolute;right:6px;top:6px;background:#000a;padding:0 6px;border-radius:6px;font-size:12px}.thumb.over{outline:2px dashed var(--accent);outline-offset:-4px}
+.thumb .sid{position:absolute;left:6px;top:6px;background:#000a;padding:0 6px;border-radius:6px;font-size:12px}
+.credit{font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.narr{font-size:13px;color:#c5cad6;background:#0c0e12;border-radius:8px;padding:8px;margin-bottom:8px}
+.fields label{display:block;font-size:12px;color:var(--muted);margin:6px 0 2px}
+.fields input{width:100%}
+.btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.progress{height:8px;background:var(--panel2);border-radius:4px;overflow:hidden;margin:10px 0}
+.progress div{height:100%;background:var(--accent);width:0;transition:width .3s}
+pre.log{background:#0c0e12;border-radius:8px;padding:10px;max-height:260px;overflow:auto;font-size:12px;white-space:pre-wrap;margin:0}
+.modal{position:fixed;inset:0;background:#000b;display:flex;align-items:center;justify-content:center;z-index:20;padding:16px}
+.modal>div{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);width:min(1100px,100%);max-height:92vh;display:flex;flex-direction:column}
+.modal .mh{padding:14px 16px;border-bottom:1px solid var(--line)}
+.modal .mb{padding:14px 16px;overflow:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.cand{background:var(--panel2);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer}
+.cand:hover{border-color:var(--accent)}
+.cand img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.cand div{padding:6px 8px;font-size:11px;color:var(--muted)}
+.cand.portrait img{object-fit:contain;background:#000}
+.toast{position:fixed;right:16px;bottom:16px;background:var(--panel2);border:1px solid var(--line);padding:10px 14px;border-radius:8px;z-index:30;max-width:420px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.form-grid label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+video{width:100%;border-radius:var(--r);background:#000}
+.srcs label{display:inline-flex;gap:4px;align-items:center;margin-right:12px}
+@media(max-width:760px){.scene{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>vid<span>gen</span> studio</h1>
+  <select id="projSel"></select>
+  <button onclick="newProject()">+ Project</button>
+  <nav id="nav">
+    <button data-tab="data">① Dữ liệu</button>
+    <button data-tab="scenes">② Cảnh & Ảnh</button>
+    <button data-tab="render">③ Render</button>
+    <button data-tab="settings">⚙ Nguồn ảnh</button>
+  </nav>
+</header>
+<main id="main"></main>
+<div id="modalRoot"></div>
+<audio id="player"></audio>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = t => `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`;
+let S = {project: null, state: null, tab: 'data', settings: null, job: null};
+try { S.project = localStorage.getItem('vg_project'); S.tab = localStorage.getItem('vg_tab') || 'data'; } catch {}
+
+async function api(path, opt = {}) {
+  if (opt.json !== undefined) { opt.body = JSON.stringify(opt.json); opt.headers = {'Content-Type': 'application/json'}; }
+  const r = await fetch(path, opt);
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(d.detail || r.statusText);
+  return d;
+}
+function toast(msg, ms = 3500) {
+  const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), ms);
+}
+const P = () => `/api/projects/${encodeURIComponent(S.project)}`;
+
+async function loadProjects() {
+  const list = await api('/api/projects');
+  if (!list.includes(S.project)) S.project = list[0] || null;
+  $('#projSel').innerHTML = list.map(n => `<option ${n === S.project ? 'selected' : ''}>${esc(n)}</option>`).join('');
+}
+$('#projSel').onchange = e => { S.project = e.target.value; save(); refresh(); };
+async function newProject() {
+  modal(`<div class="mh"><b>Project mới</b></div><div class="mb row">
+     <input id="npName" placeholder="ví dụ: dragon fruit" style="flex:1" onkeydown="if(event.key==='Enter')createProject(this.value)">
+     <button class="primary" onclick="createProject($('#npName').value)">Tạo</button>
+     <button onclick="closeModal()">Huỷ</button></div>`);
+  $('#npName').focus();
+}
+async function createProject(name) {
+  if (!name?.trim()) return;
+  try { const r = await api('/api/projects', {method: 'POST', json: {name}}); S.project = r.name; closeModal(); save();
+        await loadProjects(); setTab('data'); } catch (e) { toast(e.message); }
+}
+function save() { try { localStorage.setItem('vg_project', S.project || ''); localStorage.setItem('vg_tab', S.tab); } catch {} }
+
+document.querySelectorAll('#nav button').forEach(b => b.onclick = () => setTab(b.dataset.tab));
+function setTab(t) { S.tab = t; save(); document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.tab === t)); refresh(); }
+
+async function refresh() {
+  if (S.tab === 'settings') return renderSettings();
+  if (!S.project) { $('#main').innerHTML = `<div class="card">Chưa có project. Bấm <b>+ Project</b> để tạo.</div>`; return; }
+  S.state = await api(P());
+  ({data: renderData, scenes: renderScenes, render: renderRender})[S.tab]();
+}
+
+/* ---------------- ① DATA ---------------- */
+function renderData() {
+  const st = S.state;
+  const totalDur = st.parts.reduce((a, p) => a + (p.duration || 0), 0);
+  $('#main').innerHTML = `
+  <div class="card"><h2>Kịch bản (texts)</h2>
+    <div class="row" style="margin-bottom:10px">${st.texts.length ? `<span class="tag ok">✓ ${esc(st.texts[0])}</span>` : '<span class="tag bad">chưa có</span>'}
+      <span class="muted">Định dạng: các mục <code>## Part 01. Tiêu đề</code> + marker <code>[pause 0.3s|0.5s|1s]</code></span></div>
+    <div class="drop" id="dropText">Kéo thả file <b>.md</b> vào đây, hoặc bấm để chọn</div>
+    <details style="margin-top:10px"><summary class="muted">…hoặc dán nội dung kịch bản</summary>
+      <textarea id="pasteText" rows="8" placeholder="## Part 01. ..."></textarea>
+      <button style="margin-top:6px" onclick="pasteScript()">Lưu kịch bản</button></details>
+    ${st.parse_error ? `<p class="tag bad">${esc(st.parse_error)}</p>` : ''}
+  </div>
+  <div class="card"><h2>Voices</h2>
+    <div class="drop" id="dropVoice">Kéo thả nhiều file audio (<b>part 1.m4a, part 2.m4a…</b>) vào đây</div>
+    <p class="muted">${st.voices.length} file: ${st.voices.map(esc).join(', ') || '—'}</p>
+  </div>
+  <div class="card"><h2>Ghép part ↔ voice</h2>
+    ${st.parts.length ? `<table><tr><th>Part</th><th>Tiêu đề</th><th>Từ</th><th>Pause</th><th>Voice</th><th>Thời lượng</th></tr>
+    ${st.parts.map(p => `<tr><td>${p.num}</td><td>${esc(p.title)}</td><td>${p.words}</td><td>${p.pauses}</td>
+      <td>${p.voice ? `<span class="tag ok">${esc(p.voice)}</span>` : '<span class="tag bad">thiếu</span>'}</td>
+      <td>${p.duration ? fmt(p.duration) : '—'}</td></tr>`).join('')}</table>
+    <div class="row" style="margin-top:12px"><b>Tổng: ${fmt(totalDur)}</b>
+      <label class="muted">Cảnh mới tại pause ≥ <input id="splitPause" type="number" step="0.1" value="1" style="width:64px">s</label>
+      <label class="muted">Cảnh tối đa <input id="maxScene" type="number" value="16" style="width:64px">s</label>
+      <button class="primary" onclick="runPlan()">Phân cảnh →</button></div>`
+    : '<p class="muted">Nạp kịch bản để xem các part.</p>'}
+    <div id="jobBox"></div>
+  </div>`;
+  dropZone('#dropText', '.md,.txt', true, files => uploadFiles('text', files));
+  dropZone('#dropVoice', 'audio/*,.m4a', true, files => uploadFiles('voice', files));
+}
+function dropZone(sel, accept, multiple, cb) {
+  const el = $(sel), inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = accept; inp.multiple = multiple; inp.onchange = () => cb([...inp.files]);
+  el.onclick = () => inp.click();
+  el.ondragover = e => { e.preventDefault(); el.classList.add('over'); };
+  el.ondragleave = () => el.classList.remove('over');
+  el.ondrop = e => { e.preventDefault(); el.classList.remove('over'); cb([...e.dataTransfer.files]); };
+}
+async function uploadFiles(kind, files) {
+  const fd = new FormData(); fd.append('kind', kind); files.forEach(f => fd.append('files', f));
+  try { await api(`${P()}/upload`, {method: 'POST', body: fd}); toast(`Đã nạp ${files.length} file`); refresh(); } catch (e) { toast(e.message); }
+}
+async function pasteScript() {
+  await api(`${P()}/script`, {method: 'POST', json: {text: $('#pasteText').value}}); toast('Đã lưu kịch bản'); refresh();
+}
+async function runPlan() {
+  const job = await api(`${P()}/plan`, {method: 'POST', json: {split_pause: +$('#splitPause').value, max_scene: +$('#maxScene').value}});
+  watchJob(job, '#jobBox', () => setTab('scenes'));
+}
+
+/* ---------------- jobs ---------------- */
+function watchJob(job, box, onDone, onError) {
+  S.job = job.id;
+  $(box).innerHTML = `<div class="progress"><div id="pb"></div></div><pre class="log" id="lg"></pre>`;
+  let since = 0;
+  const tick = async () => {
+    const j = await api(`/api/jobs/${job.id}?since=${since}`);
+    since = j.log_count;
+    const lg = $('#lg'); if (!lg) return;
+    if (j.logs.length) { lg.textContent += j.logs.join('\n') + '\n'; lg.scrollTop = lg.scrollHeight; }
+    $('#pb').style.width = (j.progress * 100) + '%';
+    if (j.status === 'running') return setTimeout(tick, 1000);
+    S.job = null;
+    if (j.status === 'error') { toast('Lỗi: ' + j.error, 10000); onError && onError(j); return; }
+    onDone && onDone();
+  };
+  tick();
+}
+
+/* ---------------- ② SCENES ---------------- */
+async function renderScenes() {
+  const st = S.state;
+  if (!st.plan) { $('#main').innerHTML = `<div class="card">Chưa phân cảnh. Sang tab ① và bấm <b>Phân cảnh</b>.</div>`; return; }
+  if (!S.settings) S.settings = await api('/api/settings');
+  const src = S.settings.sources;
+  const all = st.plan.parts.flatMap(p => p.scenes.flatMap(s => s.shots));
+  const have = all.filter(s => s.image).length;
+  const savedOrder = (() => { try { return JSON.parse(localStorage.getItem('vg_auto') || 'null'); } catch { return null; } })()
+                     || ['wikimedia', 'openverse'];
+  $('#main').innerHTML = `
+  <div class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Hình ảnh: ${have}/${all.length} ảnh</h2>
+    <div class="progress" style="flex:1;min-width:120px;max-width:300px;margin:0"><div style="width:${have / all.length * 100}%"></div></div></div>
+    <div class="fields"><label>Style chung cho ảnh AI</label>
+      <input id="style" value="${esc(st.style)}" onchange="api('${P()}/style',{method:'PUT',json:{style:this.value}})"></div>
+    <div style="margin-top:12px" class="srcs"><span class="muted">Tự động điền ảnh còn thiếu, thử lần lượt:</span><br>
+      ${Object.entries(src).map(([k, v]) => `<label title="${v.enabled ? '' : 'cần API key (tab ⚙)'}">
+        <input type="checkbox" class="autoSrc" value="${k}" ${!v.enabled ? 'disabled' : savedOrder.includes(k) ? 'checked' : ''}>
+        ${esc(v.label)}</label>`).join('')}
+      <div class="row" style="margin-top:8px"><button class="primary" onclick="autofill(false)">⚡ Auto-fill ảnh thiếu</button>
+      <button onclick="autofill(true)">Làm lại tất cả</button></div></div>
+    <div id="jobBox"></div>
+  </div>
+  ${st.plan.parts.map(p => `
+    <div class="part-h"><h3>Part ${p.num}. ${esc(p.title)}</h3><span class="muted">${fmt(p.duration)} · ${p.scenes.length} cảnh · ${p.scenes.reduce((a, s) => a + s.shots.length, 0)} ảnh</span></div>
+    ${p.scenes.map(s => sceneCard(p, s)).join('')}`).join('')}`;
+}
+const baseId = id => id.replace(/_\d+$/, '');
+S.sel = {};  // scene id -> selected image slot (1-based)
+function curShot(s) { const j = Math.min(S.sel[s.id] || 1, s.shots.length); return s.shots[j - 1]; }
+function framedImg(sh, cls = '') {
+  const f = sh.framing || sh.auto || {};
+  if (f.fit === 'contain') return `<img class="bgblur" src="${sh.image}" loading="lazy"><img class="fg" src="${sh.image}" loading="lazy">`;
+  let pos = null;
+  if (f.fit === 'scroll') pos = f.dir === 'back' ? '50% 100%' : '50% 0%';
+  else if (f.fx != null) pos = `${f.fx * 100}% ${f.fy * 100}%`;
+  return `<img class="${cls}" src="${sh.image}" loading="lazy" style="${pos ? 'object-position:' + pos : ''}">`;
+}
+const FIT_LABEL = {contain: 'nền mờ', scroll: 'lia toàn ảnh', cover: 'đã chỉnh khung'};
+function sceneCard(p, s) {
+  const n = s.shots.length, sh = curShot(s), j = s.shots.indexOf(sh) + 1, c = sh.credit;
+  const per = (s.end - s.start) / n;
+  return `<div class="scene" id="sc_${s.id}">
+    <div><div class="thumb" title="Kéo thả ảnh / link ảnh vào đây" ondragover="event.preventDefault();this.classList.add('over')"
+        ondragleave="this.classList.remove('over')" ondrop="dropOnScene(event,'${sh.id}')">
+        ${sh.image ? framedImg(sh) : 'chưa có ảnh<br><small>kéo thả / rê chuột vào + Ctrl+V</small>'}
+        <span class="sid">${sh.id}${sh.framing ? ' · ✂ ' + (FIT_LABEL[sh.framing.fit] || '') + (sh.framing.effect ? ' · ' + sh.framing.effect : '') : ''}</span>${n > 1 ? `<span class="badge">ảnh ${j}/${n} · ${per.toFixed(1)}s</span>` : ''}</div>
+      <div class="strip">${s.shots.map((x, k) => `<button class="mini ${k + 1 === j ? 'on' : ''}" title="${x.id}"
+          onclick="selShot('${s.id}',${k + 1})">${x.image ? `<img src="${x.image}" loading="lazy">` : k + 1}</button>`).join('')}
+        <button class="mini add" title="Thêm 1 ảnh cho cảnh này (chia đều thời lượng)" onclick="addShot('${s.id}',${n})">＋</button></div>
+      ${c ? `<div class="credit" title="${esc(c.title)}">${esc(c.source)} · ${esc(c.license || '')} · ${esc(c.author || '')}</div>` : ''}</div>
+    <div class="fields">
+      <div class="row muted" style="font-size:12px">${fmt(s.start)} → ${fmt(s.end)} (${(s.end - s.start).toFixed(1)}s${n > 1 ? ` · ${n} ảnh` : ''})
+        <button style="padding:2px 8px" onclick="playSeg('${esc(p.voice)}',${s.start},${s.end})">▶ nghe</button>
+        <button style="padding:2px 8px" title="Xem ngay cảnh này với ảnh + hiệu ứng + giọng, không cần render" onclick="livePreview({scene:'${s.id}'})">⚡ Xem thử</button></div>
+      <div class="narr">${esc(s.text)}</div>
+      <label>Từ khoá tìm ảnh (kho ảnh thật)</label>
+      <input value="${esc(s.query)}" onchange="saveScene('${s.id}',{query:this.value})" id="q_${s.id}">
+      <label>Prompt mô tả (cho AI)${n > 1 ? ` — ảnh ${j}` : ''}</label>
+      <input value="${esc(j === 1 ? s.prompt : (sh.prompt || ''))}" placeholder="${j === 1 ? '' : 'trống = dùng prompt ảnh 1, AI tự đổi góc máy'}"
+        onchange="saveScene('${sh.id}',{prompt:this.value})">
+      <div class="btns">
+        <button onclick="openSearch('${sh.id}')">🔍 Tìm ảnh</button>
+        <button onclick="openGen('${sh.id}')">✨ AI tạo</button>
+        <button onclick="uploadScene('${sh.id}')">⬆ Tải ảnh lên</button>
+        ${sh.image ? `<button onclick="openFrame('${sh.id}')" title="Chọn vùng ảnh hiển thị, nền mờ, lia toàn ảnh, hiệu ứng riêng">✂ Khung hình</button>
+          <button onclick="delImg('${sh.id}')">✕ Xoá ảnh</button>` : ''}
+        ${n > 1 ? `<button onclick="removeShot('${s.id}',${j})" title="Bỏ ô ảnh này, cảnh còn ${n - 1} ảnh">− Bỏ ô ảnh ${j}</button>` : ''}
+      </div></div></div>`;
+}
+const EFFECT_OPTS = [['', 'Theo cài đặt Render'], ['zoom_in', 'Zoom vào'], ['zoom_out', 'Zoom ra'], ['pan_left', 'Lia trái'],
+  ['pan_right', 'Lia phải'], ['pan_up', 'Lia lên'], ['pan_down', 'Lia xuống'], ['zoom_in_tl', 'Zoom vào góc trên-trái'],
+  ['zoom_in_br', 'Zoom vào góc dưới-phải'], ['zoom_out_tl', 'Zoom ra từ góc'], ['zoom_in_drift', 'Zoom + trôi ngang'], ['static', 'Đứng yên']];
+let FR = null;  // framing being edited
+function openFrame(sid) {
+  const [, s] = findScene(baseId(sid)); const sh = s.shots.find(x => x.id === sid);
+  FR = {sid, image: sh.image, fit: 'cover', fx: 0.5, fy: 0.5, effect: '', dir: 'fwd', ...(sh.framing || sh.auto || {})};
+  modal(`<div class="mh row"><b>✂ Khung hình — ${sid}</b><span class="muted" style="font-size:12px">Khung dưới đây = đúng khung 16:9 của video</span></div>
+    <div class="mb">
+      <div class="fbox" id="fbox"></div>
+      <div class="srcs" style="margin:12px 0 6px">
+        <label><input type="radio" name="fit" value="cover"> Cắt khung (kéo ảnh để chọn vùng)</label>
+        <label><input type="radio" name="fit" value="contain"> Giữ nguyên ảnh + nền mờ</label>
+        <label><input type="radio" name="fit" value="scroll"> Lia toàn ảnh (ảnh dọc / panorama)</label></div>
+      <div class="row" id="coverBtns"><span class="muted">Nhanh:</span>
+        <button onclick="setPos(null,0)">⬆ Phần trên</button><button onclick="setPos(0.5,0.5)">Giữa</button>
+        <button onclick="setPos(null,1)">⬇ Phần dưới</button><button onclick="setPos(0,null)">⬅ Trái</button><button onclick="setPos(1,null)">Phải ➡</button></div>
+      <div class="row" id="scrollBtns"><span class="muted">Hướng lia:</span>
+        <select id="fDir"><option value="fwd">Trên → dưới / trái → phải</option><option value="back">Dưới → trên / phải → trái</option></select></div>
+      <div class="row" style="margin-top:8px" id="effRow"><span class="muted">Hiệu ứng riêng cho ảnh này:</span>
+        <select id="fEff">${EFFECT_OPTS.map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select></div>
+      <div class="row" style="margin-top:14px"><button class="primary" onclick="saveFrame()">Lưu khung hình</button>
+        <button onclick="resetFrame()" title="Bỏ chỉnh, dùng mặc định">Tự động</button><button onclick="closeModal()">Huỷ</button></div>
+    </div>`);
+  document.querySelectorAll('input[name=fit]').forEach(r => { r.checked = r.value === FR.fit; r.onchange = () => { FR.fit = r.value; drawFrame(); }; });
+  $('#fEff').value = FR.effect || ''; $('#fEff').onchange = e => { FR.effect = e.target.value; };
+  $('#fDir').value = FR.dir || 'fwd'; $('#fDir').onchange = e => { FR.dir = e.target.value; drawFrame(); };
+  drawFrame();
+}
+function drawFrame() {
+  const box = $('#fbox'); if (!box) return;
+  $('#coverBtns').hidden = FR.fit !== 'cover'; $('#scrollBtns').hidden = FR.fit !== 'scroll'; $('#effRow').hidden = FR.fit === 'scroll';
+  box.classList.toggle('drag', FR.fit === 'cover');
+  box.onpointerdown = null;
+  if (FR.fit === 'contain') { box.innerHTML = `<img class="bgblur" src="${FR.image}"><img class="fg" src="${FR.image}">`; return; }
+  if (FR.fit === 'scroll') {
+    box.innerHTML = `<img class="cov" id="fimg" src="${FR.image}"><span class="hint">xem trước chuyển động lia</span>`;
+    const im = $('#fimg');
+    const anim = () => { const tall = im.naturalWidth / im.naturalHeight < 16 / 9;
+      im.style.animation = `${tall ? 'scrollY' : 'scrollX'} 5s ease-in-out infinite ${FR.dir === 'back' ? 'alternate-reverse' : 'alternate'}`; };
+    if (im.complete) anim(); else im.onload = anim;
+    return;
+  }
+  box.innerHTML = `<img class="cov" id="fimg" src="${FR.image}"><span class="hint">kéo ảnh để chọn vùng hiển thị</span>`;
+  const im = $('#fimg');
+  const apply = () => { im.style.objectPosition = `${FR.fx * 100}% ${FR.fy * 100}%`; };
+  if (im.complete) apply(); else im.onload = apply;
+  box.onpointerdown = e => {
+    if (FR.fit !== 'cover' || !im.naturalWidth) return;
+    box.setPointerCapture(e.pointerId);
+    const r = box.getBoundingClientRect(), sc = Math.max(r.width / im.naturalWidth, r.height / im.naturalHeight);
+    const ovX = im.naturalWidth * sc - r.width, ovY = im.naturalHeight * sc - r.height;
+    const x0 = e.clientX, y0 = e.clientY, fx0 = FR.fx, fy0 = FR.fy;
+    box.onpointermove = ev => {
+      if (ovX > 1) FR.fx = Math.min(1, Math.max(0, fx0 - (ev.clientX - x0) / ovX));
+      if (ovY > 1) FR.fy = Math.min(1, Math.max(0, fy0 - (ev.clientY - y0) / ovY));
+      im.style.objectPosition = `${FR.fx * 100}% ${FR.fy * 100}%`;
+    };
+    box.onpointerup = () => { box.onpointermove = null; };
+  };
+}
+function setPos(fx, fy) { if (fx != null) FR.fx = fx; if (fy != null) FR.fy = fy; drawFrame(); }
+async function saveFrame() {
+  const body = {fit: FR.fit, effect: FR.effect || null};
+  if (FR.fit === 'cover') { body.fx = +FR.fx.toFixed(4); body.fy = +(FR.fy ?? 0.5).toFixed(4); }
+  if (FR.fit === 'scroll') body.dir = FR.dir;
+  try { await api(`${P()}/scene/${FR.sid}/framing`, {method: 'PUT', json: body}); closeModal(); refreshScene(FR.sid); toast('Đã lưu khung hình'); }
+  catch (e) { toast(e.message); }
+}
+async function resetFrame() {
+  await api(`${P()}/scene/${FR.sid}/framing`, {method: 'PUT', json: {}}); closeModal(); refreshScene(FR.sid); toast('Đã về khung tự động');
+}
+function findScene(id) { for (const p of S.state.plan.parts) for (const s of p.scenes) if (s.id === id) return [p, s]; return []; }
+function rerenderCard(id) { const [p, s] = findScene(id); if (s) $('#sc_' + id).outerHTML = sceneCard(p, s); }
+function selShot(id, j) { S.sel[id] = j; rerenderCard(id); }
+async function addShot(id, n) {
+  await api(`${P()}/scene/${id}/shots`, {method: 'PUT', json: {n: n + 1}}); S.sel[id] = n + 1; refreshScene(id);
+}
+async function removeShot(id, j) {
+  try { await api(`${P()}/scene/${id}/shot/${j}`, {method: 'DELETE'}); S.sel[id] = Math.max(1, j - 1); refreshScene(id); }
+  catch (e) { toast(e.message); }
+}
+let segTimer;
+function playSeg(voice, a, b) {
+  const pl = $('#player'); clearTimeout(segTimer);
+  pl.src = `/files/${encodeURIComponent(S.project)}/voices/${encodeURIComponent(voice)}`;
+  pl.onloadedmetadata = () => { pl.currentTime = a; pl.play(); segTimer = setTimeout(() => pl.pause(), (b - a) * 1000); };
+}
+async function saveScene(sid, data) { await api(`${P()}/scene/${sid}`, {method: 'PUT', json: data}); }
+async function delImg(sid) { await api(`${P()}/scene/${sid}/image`, {method: 'DELETE'}); refreshScene(sid); }
+async function refreshScene(sid) {
+  S.state = await api(P());
+  rerenderCard(baseId(sid));
+}
+function uploadScene(sid) {
+  const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*';
+  inp.onchange = async () => { const fd = new FormData(); fd.append('file', inp.files[0]);
+    await api(`${P()}/scene/${sid}/upload`, {method: 'POST', body: fd}); refreshScene(sid); };
+  inp.click();
+}
+async function autofill(overwrite) {
+  const order = [...document.querySelectorAll('.autoSrc:checked')].map(i => i.value);
+  if (!order.length) return toast('Chọn ít nhất 1 nguồn');
+  try { localStorage.setItem('vg_auto', JSON.stringify(order)); } catch {}
+  const job = await api(`${P()}/autofill`, {method: 'POST', json: {sources: order, overwrite}});
+  watchJob(job, '#jobBox', () => { toast('Auto-fill xong'); renderAfter(); });
+}
+async function renderAfter() { S.state = await api(P()); renderScenes(); }
+
+/* search modal */
+function modal(html) { $('#modalRoot').innerHTML = `<div class="modal" onclick="if(event.target===this)closeModal()"><div>${html}</div></div>`; }
+function closeModal() { $('#modalRoot').innerHTML = ''; modalSid = null; }
+function openSearch(sid) {
+  modalSid = sid;
+  const src = Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'search' && v.enabled);
+  const locked = Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'search' && !v.enabled);
+  const q = $('#q_' + baseId(sid)).value;
+  modal(`<div class="mh row"><b>${sid}</b>
+      <input id="sq" value="${esc(q)}" style="flex:1;min-width:200px" onkeydown="if(event.key==='Enter')doSearch('${sid}')">
+      <select id="ssrc"><option value="*">Tất cả nguồn (${src.length})</option>${src.map(([k, v]) => `<option value="${k}">${esc(v.label)}</option>`).join('')}
+        ${locked.map(([k, v]) => `<option disabled>${esc(v.label)} — cần key (tab ⚙)</option>`).join('')}</select>
+      <button class="primary" onclick="doSearch('${sid}')">Tìm</button><button onclick="closeModal()">Đóng</button></div>
+    <div class="mh row" style="border-top:0;padding-top:0">
+      <button onclick="openGoogle('${sid}')" title="Mở Google Images với bộ lọc Creative Commons">🌐 Google Images (CC)</button>
+      <button onclick="openGoogle('${sid}',false)" title="Không lọc license — nhớ kiểm tra bản quyền">Google (tất cả)</button>
+      <input id="pasteUrl" placeholder="…hoặc dán link ảnh (chuột phải ảnh → Sao chép địa chỉ hình ảnh)" style="flex:1;min-width:220px"
+        onkeydown="if(event.key==='Enter')useUrl('${sid}')">
+      <button class="primary" onclick="useUrl('${sid}')">Dùng link</button></div>
+    <div class="mb" ondragover="event.preventDefault()" ondrop="dropOnScene(event,'${sid}')">
+      <div class="grid" id="results"></div><p class="muted" id="smsg"></p>
+      <p class="muted" style="font-size:12px">Mẹo: kéo thả ảnh từ tab Google Images vào đây, hoặc chuột phải ảnh → <b>Sao chép hình ảnh</b> rồi bấm <b>Ctrl+V</b> ở hộp này.</p></div>`);
+  doSearch(sid);
+}
+let CANDS = [];
+async function doSearch(sid) {
+  const q = $('#sq').value, sel = $('#ssrc').value;
+  const list = sel === '*' ? Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'search' && v.enabled).map(([k]) => k) : [sel];
+  CANDS = []; $('#results').innerHTML = ''; $('#smsg').textContent = 'Đang tìm…';
+  saveScene(baseId(sid), {query: q}); const qi = $('#q_' + baseId(sid)); if (qi) qi.value = q;
+  await Promise.all(list.map(async s => {
+    try {
+      const r = await api(`/api/search?source=${s}&q=${encodeURIComponent(q)}&n=16`);
+      r.forEach(c => { const i = CANDS.push(c) - 1;
+        const portrait = c.width && c.height && c.width < c.height * 1.15;
+        $('#results').insertAdjacentHTML('beforeend', `<div class="cand ${portrait ? 'portrait' : ''}" onclick="pickCand('${sid}',${i},this)">
+          <img src="${esc(c.thumb)}" loading="lazy" referrerpolicy="no-referrer">
+          <div>${esc(c.source)} · ${c.width || '?'}×${c.height || '?'}${portrait ? ' · dọc' : ''}<br>${esc((c.title || '').slice(0, 60))}</div></div>`); });
+    } catch (e) { $('#smsg').textContent += ` ${e.message}`; }
+  }));
+  $('#smsg').textContent = CANDS.length ? 'Bấm vào ảnh để chọn cho cảnh này.' : 'Không có kết quả — thử từ khoá ngắn hơn / tiếng Anh.';
+}
+function openGoogle(sid, cc = true) {
+  const q = ($('#sq')?.value || $('#q_' + baseId(sid))?.value || '').trim();
+  window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(q)}${cc ? '&tbs=il:cl' : ''}`, '_blank');
+}
+async function pickUrl(sid, url, title = '') {
+  toast('Đang tải ảnh…');
+  try {
+    let host = ''; try { host = new URL(url).hostname; } catch {}
+    await api(`${P()}/scene/${sid}/pick`, {method: 'POST', json: {url, source: 'url', title: title || host, author: host, page: url,
+      license: 'chưa rõ — tự kiểm tra bản quyền'}});
+    closeModal(); refreshScene(sid); toast(`${sid}: đã có ảnh`);
+  } catch (e) { toast(e.message, 8000); }
+}
+function useUrl(sid) { const u = $('#pasteUrl').value.trim(); if (!/^https?:\/\//.test(u)) return toast('Link ảnh phải bắt đầu bằng http'); pickUrl(sid, u); }
+async function dropOnScene(e, sid) {
+  e.preventDefault(); e.currentTarget?.classList?.remove('over');
+  const dt = e.dataTransfer;
+  if (dt.files && dt.files.length) {
+    const fd = new FormData(); fd.append('file', dt.files[0]);
+    try { await api(`${P()}/scene/${sid}/upload`, {method: 'POST', body: fd}); closeModal(); refreshScene(sid); }
+    catch (err) { toast(err.message); }
+    return;
+  }
+  // image dragged from another tab: prefer the <img src> inside the dragged HTML, else the URL
+  const htmlSrc = (dt.getData('text/html').match(/<img[^>]+src="([^"]+)"/i) || [])[1];
+  let url = htmlSrc || dt.getData('text/uri-list') || dt.getData('text/plain');
+  url = (url || '').split(/\r?\n/)[0].trim().replace(/&amp;/g, '&');
+  // Google Images result links wrap the real image: ...imgurl=<url>&...
+  const m = url.match(/[?&]imgurl=([^&]+)/); if (m) url = decodeURIComponent(m[1]);
+  if (/^data:image\//.test(url)) {
+    const blob = await (await fetch(url)).blob(); const fd = new FormData(); fd.append('file', blob, 'drop.jpg');
+    await api(`${P()}/scene/${sid}/upload`, {method: 'POST', body: fd}); closeModal(); refreshScene(sid); return;
+  }
+  if (!/^https?:\/\//.test(url)) return toast('Không đọc được ảnh vừa thả — thử chuột phải → Sao chép địa chỉ hình ảnh rồi dán link');
+  pickUrl(sid, url);
+}
+/* Ctrl+V: paste a copied image (or an image link) into the scene whose search box is open,
+   otherwise into the scene card under the mouse. */
+let hoverSid = null, modalSid = null;
+document.addEventListener('mouseover', e => { const c = e.target.closest?.('.scene'); if (c) hoverSid = c.id.replace('sc_', ''); });
+document.addEventListener('paste', async e => {
+  let sid = ($('#modalRoot').innerHTML && modalSid) || (S.tab === 'scenes' && hoverSid);
+  if (sid && sid === hoverSid && !modalSid) { const [, s] = findScene(sid); if (s) sid = curShot(s).id; }
+  if (!sid) return;
+  const typing = e.target.matches?.('input, textarea') && e.target.id !== 'pasteUrl';
+  const items = [...(e.clipboardData?.items || [])];
+  const img = items.find(i => i.kind === 'file' && i.type.startsWith('image/'));
+  if (img) {
+    e.preventDefault();
+    const fd = new FormData(); fd.append('file', img.getAsFile(), 'pasted.png');
+    toast(`Đang dán ảnh vào ${sid}…`);
+    try { await api(`${P()}/scene/${sid}/upload`, {method: 'POST', body: fd}); closeModal(); refreshScene(sid); toast(`${sid}: đã dán ảnh`); }
+    catch (err) { toast(err.message); }
+    return;
+  }
+  if (typing) return;  // normal text paste into prompt/query fields
+  const text = (e.clipboardData?.getData('text/plain') || '').trim();
+  if (/^https?:\/\/\S+$/.test(text)) { e.preventDefault(); pickUrl(sid, text); }
+});
+
+async function pickCand(sid, i, el) {
+  el.style.opacity = .4;
+  try { await api(`${P()}/scene/${sid}/pick`, {method: 'POST', json: CANDS[i]}); closeModal(); refreshScene(sid); }
+  catch (e) { el.style.opacity = 1; toast(e.message); }
+}
+function openGen(sid) {
+  const ai = Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'ai');
+  let last = 'web_gemini'; try { last = localStorage.getItem('vg_ai') || last; } catch {}
+  const [, s] = findScene(baseId(sid));
+  const slot = s?.shots.find(x => x.id === sid);
+  const slotPrompt = sid === baseId(sid) ? s?.prompt : (slot?.prompt || s?.prompt);
+  modal(`<div class="mh"><b>✨ Tạo ảnh AI cho ${sid}</b></div><div class="mb">
+    <div class="fields"><label>Prompt (sửa được, tự lưu)</label>
+      <textarea id="gPrompt" rows="3">${esc(slotPrompt || '')}</textarea></div>
+    <div class="srcs" style="margin:10px 0">${ai.map(([k, v]) => `<label title="${v.enabled ? '' : 'cần ' + v.key}">
+      <input type="radio" name="gSrc" value="${k}" ${!v.enabled ? 'disabled' : k === last ? 'checked' : ''}> ${esc(v.label)}</label>`).join('<br>')}</div>
+    <p class="muted">Nguồn "web" dùng tài khoản đã đăng nhập trong Chrome tự động hoá (tab ⚙ → Mở trình duyệt). Mỗi ảnh ~30–90s.</p>
+    <div class="row"><button class="primary" id="gBtn" onclick="doGen('${sid}')">Tạo ảnh</button><button onclick="closeModal()">Đóng</button></div>
+    <div id="genJob"></div></div>`);
+}
+async function doGen(sid) {
+  const src = document.querySelector('input[name=gSrc]:checked')?.value;
+  if (!src) return toast('Chọn nguồn AI');
+  try { localStorage.setItem('vg_ai', src); } catch {}
+  await saveScene(sid, {prompt: $('#gPrompt').value});
+  $('#gBtn').disabled = true; $('#gBtn').textContent = 'Đang tạo…';
+  try {
+    const job = await api(`${P()}/scene/${sid}/generate`, {method: 'POST', json: {source: src}});
+    watchJob(job, '#genJob', () => { closeModal(); refreshScene(sid); toast(`${sid}: đã có ảnh`); }, () => {
+      const b = $('#gBtn'); if (b) { b.disabled = false; b.textContent = 'Thử lại'; } });
+  } catch (e) { $('#gBtn').disabled = false; toast(e.message, 8000); }
+}
+
+/* ---------------- ③ RENDER ---------------- */
+async function renderRender() {
+  const st = S.state;
+  if (!st.plan) { $('#main').innerHTML = `<div class="card">Chưa phân cảnh.</div>`; return; }
+  const all = st.plan.parts.flatMap(p => p.scenes.flatMap(s => s.shots)), missing = all.filter(s => !s.image).length;
+  const cr = await api(`${P()}/credits`);
+  $('#main').innerHTML = `
+  <div class="card"><h2>Tuỳ chọn</h2>
+    ${missing ? `<p class="tag bad">${missing} cảnh chưa có ảnh → sẽ dùng ảnh tạm (nền màu + chữ)</p>` : '<p class="tag ok">✓ Đủ ảnh</p>'}
+    <div class="form-grid" style="margin-top:10px">
+      <label>Độ phân giải<select id="o_res"><option value="1920x1080">1920×1080</option><option value="1280x720">1280×720 (nhanh)</option><option value="3840x2160">4K</option></select></label>
+      <label>Hiệu ứng chuyển cảnh<select id="o_transition">
+        <option value="random_soft">🔀 Ngẫu nhiên — nhẹ nhàng</option><option value="random_all">🔀 Ngẫu nhiên — tất cả</option>
+        ${['fade','dissolve','fadeblack','fadegrays','hblur','smoothleft','smoothright','smoothup','smoothdown','circleopen','circleclose',
+           'wipeleft','wiperight','slideleft','slideright','radial','zoomin','diagtl','horzopen','vertopen','pixelize'].map(t => `<option>${t}</option>`).join('')}</select></label>
+      <label>Hiệu ứng trong mỗi cảnh<select id="o_effects">
+        <option value="random">🔀 Ngẫu nhiên</option><option value="cycle">Luân phiên lần lượt</option>
+        ${[['zoom_in','Zoom vào'],['zoom_out','Zoom ra'],['pan_left','Lia trái'],['pan_right','Lia phải'],['pan_up','Lia lên'],['pan_down','Lia xuống'],
+           ['zoom_in_tl','Zoom vào góc trên-trái'],['zoom_in_br','Zoom vào góc dưới-phải'],['zoom_out_tl','Zoom ra từ góc'],
+           ['zoom_in_drift','Zoom + trôi ngang'],['static','Đứng yên']].map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select></label>
+      <label>Seed xáo trộn<span class="row" style="gap:4px;flex-wrap:nowrap"><input id="o_seed" type="number" value="1" style="flex:1;min-width:0">
+        <button type="button" title="Xáo trộn kiểu khác" onclick="$('#o_seed').value=Math.floor(Math.random()*9999)">🎲</button></span></label>
+      <label>Crossfade (s)<input id="o_xfade" type="number" step="0.1" value="0.8"></label>
+      <label>Zoom Ken Burns<input id="o_zoom" type="number" step="0.01" value="1.15"></label>
+      <label>Nghỉ cuối mỗi part (s)<input id="o_gap" type="number" step="0.1" value="0.5"></label>
+      <label>Chất lượng<select id="o_preset"><option value="medium">Cao (chậm)</option><option value="veryfast">Nháp (nhanh)</option></select></label>
+      <label>Tiêu đề part<select id="o_titles"><option value="0">Không</option><option value="1">Hiện 4s đầu</option></select></label>
+      <label>Chỉ render part (trống = tất cả)<input id="o_parts" placeholder="vd: 1 3"></label>
+    </div>
+    <div class="row" style="margin-top:14px"><button class="primary" onclick="doRender()">🎬 Render video</button>
+      <span class="muted" style="margin-left:12px">Xem trước:</span>
+      <select id="pv_part">${st.plan.parts.map(p => `<option value="${p.num}">Part ${p.num} — ${esc(p.title)}</option>`).join('')}</select>
+      <button onclick="livePreview({part:+$('#pv_part').value})" title="Xem ngay, không cần render">⚡ Xem tức thì</button>
+      <button onclick="preview({part:+$('#pv_part').value})" title="Render nháp 480p (vài giây) để xem đúng kiểu chuyển cảnh">🎬 Render nháp 480p</button></div>
+    <div id="jobBox"></div>
+  </div>
+  ${st.video ? `<div class="card"><h2>Video</h2><video controls src="${st.video}"></video>
+     <p class="muted">${esc(st.name)}/output/video.mp4</p></div>` : ''}
+  <div class="card" id="ytCard"></div>
+  <div class="card"><h2>Credits ảnh (dán vào mô tả YouTube)</h2><textarea rows="8" readonly>${esc(cr.text)}</textarea></div>`;
+  bindRO();
+  renderYT();
+}
+/* ---- YouTube: title, description, chapters (timestamps from the real part lengths) ---- */
+async function renderYT(yt) {
+  yt = yt || await api(`${P()}/youtube`);
+  const box = $('#ytCard'); if (!box) return;
+  const n = yt.text.length;
+  box.innerHTML = `<h2>📺 YouTube — tiêu đề, mô tả, timestamps</h2>
+    <label>Tiêu đề <span class="muted" id="ytTn">${yt.title.length}/100</span></label>
+    <div class="row" style="flex-wrap:nowrap"><input id="ytT" value="${esc(yt.title)}" maxlength="100" style="flex:1"
+      oninput="$('#ytTn').textContent=this.value.length+'/100'" onchange="saveYT({title:this.value})"><button onclick="copyText($('#ytT').value)">📋</button></div>
+    <label style="margin-top:10px;display:block">Mô tả (phần đầu, trước timestamps)</label>
+    <textarea id="ytD" rows="7" onchange="saveYT({description:this.value})">${esc(yt.description)}</textarea>
+    <label style="margin-top:10px;display:block">Timestamps ${yt.measured ? '<span class="tag ok">theo thời lượng thật của video đã render</span>'
+      : '<span class="tag bad">ước tính — render xong sẽ chính xác</span>'} <span class="muted">(sửa tên chương được)</span></label>
+    <table>${yt.chapter_list.map(c => `<tr><td style="width:70px"><code>${c.time}</code></td>
+      <td><input value="${esc(c.title)}" placeholder="${esc(c.auto)}" onchange="saveChapter(${c.num},this.value)"></td></tr>`).join('')}</table>
+    <div class="form-grid" style="margin-top:10px">
+      <label>Hashtags (cuối mô tả)<input id="ytH" value="${esc(yt.hashtags)}" onchange="saveYT({hashtags:this.value})"></label>
+      <label>Tags (ô Tags của YouTube, cách nhau dấu phẩy)<span class="row" style="flex-wrap:nowrap;gap:4px">
+        <input value="${esc(yt.tags)}" style="flex:1;min-width:0" onchange="saveYT({tags:this.value})" id="ytG">
+        <button type="button" onclick="copyText($('#ytG').value)">📋</button></span></label>
+      <label>Credits ảnh<select onchange="saveYT({include_credits:this.value==='1'})">
+        <option value="1" ${yt.include_credits ? 'selected' : ''}>Kèm trong mô tả</option>
+        <option value="0" ${yt.include_credits ? '' : 'selected'}>Không (để ở bình luận ghim)</option></select></label>
+    </div>
+    <label style="margin-top:12px;display:block">Mô tả hoàn chỉnh — dán vào YouTube
+      <span class="${n > 5000 ? 'tag bad' : 'muted'}">${n}/5000 ký tự${n > 5000 ? ' — quá giới hạn, hãy bỏ credits khỏi mô tả' : ''}</span></label>
+    <textarea id="ytX" rows="12" readonly>${esc(yt.text)}</textarea>
+    <div class="row" style="margin-top:8px"><button class="primary" onclick="copyText($('#ytX').value)">📋 Copy mô tả</button></div>`;
+}
+let YT_CH = null;
+async function saveYT(patch) {
+  try { renderYT(await api(`${P()}/youtube`, {method: 'PUT', json: patch})); toast('Đã lưu'); } catch (e) { toast(e.message); }
+}
+async function saveChapter(num, title) {
+  const yt = await api(`${P()}/youtube`);
+  const ch = {...yt.chapters}; if (title.trim()) ch[num] = title.trim(); else delete ch[num];
+  saveYT({chapters: ch});
+}
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); toast('Đã copy'); }
+  catch { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove(); toast('Đã copy'); }
+}
+const RO_IDS = ['o_res', 'o_transition', 'o_effects', 'o_seed', 'o_xfade', 'o_zoom', 'o_gap', 'o_preset', 'o_titles', 'o_parts'];
+function savedRO() { try { return JSON.parse(localStorage.getItem('vg_ropts') || '{}'); } catch { return {}; } }
+function bindRO() {  // remember render options between visits (also used by scene previews)
+  const sv = savedRO();
+  RO_IDS.forEach(id => { const el = $('#' + id); if (!el) return;
+    if (sv[id] != null) el.value = sv[id];
+    el.addEventListener('change', () => { const o = savedRO(); o[id] = el.value; try { localStorage.setItem('vg_ropts', JSON.stringify(o)); } catch {} }); });
+}
+function renderOpts() {
+  const v = id => { const el = $('#' + id); return el ? el.value : savedRO()[id]; };
+  const def = {o_res: '1920x1080', o_transition: 'random_soft', o_effects: 'random', o_seed: '1', o_xfade: '0.8', o_zoom: '1.15',
+               o_gap: '0.5', o_preset: 'medium', o_titles: '0', o_parts: ''};
+  const g = id => v(id) ?? def[id];
+  const [w, h] = g('o_res').split('x').map(Number);
+  const parts = String(g('o_parts')).trim().split(/[\s,]+/).filter(Boolean).map(Number);
+  return {width: w, height: h, transition: g('o_transition'), effects: g('o_effects'), seed: +g('o_seed'),
+    xfade: +g('o_xfade'), zoom: +g('o_zoom'), gap: +g('o_gap'), preset: g('o_preset'), titles: g('o_titles') === '1',
+    parts: parts.length ? parts : null};
+}
+/* ---- instant preview: plays the voice and animates the same timeline the renderer uses (no rendering) ---- */
+const KB = {  // effect -> progress p -> [zoom, anchorX, anchorY]; same maths as vidgen.zoompan_expr
+  zoom_in: (p, Z, a, b) => [1 + (Z - 1) * p, a, b], zoom_out: (p, Z, a, b) => [Z - (Z - 1) * p, a, b],
+  pan_right: (p, Z, a, b) => [Z, p, b], pan_left: (p, Z, a, b) => [Z, 1 - p, b],
+  pan_up: (p, Z, a, b) => [Z, a, 1 - p], pan_down: (p, Z, a, b) => [Z, a, p],
+  zoom_in_tl: (p, Z) => [1 + (Z - 1) * p, .3, .3], zoom_in_br: (p, Z) => [1 + (Z - 1) * p, .7, .7],
+  zoom_out_tl: (p, Z) => [Z - (Z - 1) * p, .3, .3], zoom_in_drift: (p, Z, a, b) => [1 + (Z - 1) * p, .35 + .3 * p, b],
+  static: (p, Z, a, b) => [1, a, b]};
+let LP = null;
+function stopLive() { if (LP) { LP.stop = true; LP.audio.pause(); LP = null; } }
+function layerHtml(x) {
+  if (!x.image) return `<div class="ph">${esc(x.text.slice(0, 160))}</div>`;
+  const f = x.framing || {};
+  if (f.fit === 'contain') return `<img class="bgblur" src="${x.image}"><img class="fg sc" src="${x.image}">`;
+  const pos = f.fit === 'cover' ? `${(f.fx ?? .5) * 100}% ${(f.fy ?? .5) * 100}%` : '50% 0%';
+  return `<img class="sc" src="${x.image}" style="object-position:${pos}">`;
+}
+async function livePreview(what) {
+  stopLive();
+  let tl;
+  try { tl = await api(`${P()}/timeline`, {method: 'POST', json: {...renderOpts(), part: what.part || +what.scene.slice(1).split('_')[0]}}); }
+  catch (e) { toast(e.message); return; }
+  const XF = tl.xfade, sh = tl.shots, n = sh.length;
+  let from = 0, to = tl.duration;
+  if (what.scene) {
+    const mine = sh.filter(x => x.id === what.scene || x.id.startsWith(what.scene + '_'));
+    from = Math.max(0, mine[0].start - 0.5); to = Math.min(tl.duration, mine[mine.length - 1].end + XF);
+  }
+  modal(`<div class="mh row"><b>⚡ Xem tức thì — ${what.scene ? 'cảnh ' + what.scene : 'Part ' + tl.num}</b>
+      <span class="muted" style="font-size:12px">Không cần render · theo cài đặt tab ③ · chuyển cảnh hiển thị dạng mờ dần</span></div>
+    <div class="mb"><div class="lp" id="lp">
+      ${sh.map((x, i) => `<div class="ly" id="ly${i}">${layerHtml(x)}</div>`).join('')}
+      <div class="ttl" id="lpT">Part ${tl.num}. ${esc(tl.title)}</div><div class="blk" id="lpB"></div><span class="info" id="lpI"></span></div>
+      <div class="lpbar"><button id="lpP">▶</button><input type="range" id="lpR" min="${from}" max="${to}" step="0.05" value="${from}">
+        <span id="lpC" class="muted" style="font-variant-numeric:tabular-nums"></span></div>
+      <div class="row" style="margin-top:10px">
+        <button onclick="stopLive();preview(${esc(JSON.stringify(what))})" title="Render thật 480p để xem đúng kiểu chuyển cảnh">🎬 Render nháp 480p</button>
+        ${what.scene ? `<button onclick="livePreview({part:${tl.num}})">Xem cả Part ${tl.num}</button>` : ''}
+        <button onclick="stopLive();closeModal()">Đóng</button></div></div>`);
+  const audio = new Audio(tl.voice);
+  const me = LP = {audio, stop: false, playing: false};
+  const layers = sh.map((x, i) => $('#ly' + i)), ratio = {};
+  layers.forEach((ly, i) => { const im = ly.querySelector('img.sc');
+    if (im) { const set = () => { ratio[i] = im.naturalWidth / im.naturalHeight; }; im.complete ? set() : im.onload = set; } });
+  const draw = t => {
+    let cur = 0;
+    for (let i = 0; i < n; i++) {
+      const x = sh[i], d = x.end - x.start + (i < n - 1 ? XF : 0), ly = layers[i];
+      if (t < x.start || t > x.start + d) { ly.style.opacity = 0; continue; }
+      cur = i;
+      ly.style.opacity = i === 0 ? 1 : Math.min(1, (t - x.start) / XF);
+      ly.style.zIndex = i + 1;
+      const p = Math.min(1, Math.max(0, (t - x.start) / d)), f = x.framing || {};
+      if (f.fit === 'scroll') {
+        const q = f.dir === 'back' ? 1 - p : p, im = ly.querySelector('img.sc');
+        if (im) im.style.objectPosition = (ratio[i] ?? 1) < 16 / 9 ? `50% ${q * 100}%` : `${q * 100}% 50%`;
+        ly.style.transform = '';
+      } else {
+        const a = f.fit === 'cover' ? (f.fx ?? .5) : .5, b = f.fit === 'cover' ? (f.fy ?? .5) : .5;
+        const [z, ox, oy] = (KB[x.effect] || KB.static)(p, tl.zoom, a, b);
+        ly.style.transformOrigin = `${ox * 100}% ${oy * 100}%`; ly.style.transform = `scale(${z})`;
+      }
+    }
+    const dur = tl.duration;
+    $('#lpB').style.opacity = t < 0.5 ? 1 - t / 0.5 : t > dur - 0.6 ? Math.min(1, (t - (dur - 0.6)) / 0.6) : 0;
+    $('#lpT').style.opacity = tl.titles && t < 4 ? (t < .6 ? t / .6 : t < 3.4 ? 1 : (4 - t) / .6) : 0;
+    $('#lpI').textContent = `${sh[cur].id} · ${sh[cur].effect}${sh[cur].transition ? ' · chuyển: ' + sh[cur].transition : ''}`;
+    $('#lpC').textContent = `${fmt(t)} / ${fmt(to)}`;
+    $('#lpR').value = t;
+  };
+  let clock = from, last = null;  // the voice drives the clock; the part's end gap continues on a timer
+  const loop = now => {
+    if (me.stop || !$('#lp')) { audio.pause(); return; }
+    if (me.playing) {
+      if (!audio.paused && !audio.ended) clock = audio.currentTime;
+      else if (last != null) clock += (now - last) / 1000;
+      if (clock >= to) { me.playing = false; audio.pause(); clock = to; $('#lpP').textContent = '▶'; }
+    }
+    last = now;
+    draw(clock);
+    requestAnimationFrame(loop);
+  };
+  const play = () => {
+    if (clock >= to - 0.05) clock = from;
+    me.playing = true; $('#lpP').textContent = '⏸';
+    if (!audio.duration || clock < audio.duration) { audio.currentTime = clock; audio.play().catch(() => {}); }
+  };
+  const pause = () => { me.playing = false; audio.pause(); $('#lpP').textContent = '▶'; };
+  $('#lpP').onclick = () => me.playing ? pause() : play();
+  $('#lpR').oninput = e => { clock = +e.target.value; if (audio.duration && clock < audio.duration) audio.currentTime = clock; };
+  draw(from); requestAnimationFrame(loop);
+  audio.addEventListener('loadedmetadata', () => { if (!me.stop) play(); }, {once: true});
+}
+async function preview(what) {
+  const label = what.scene ? `cảnh ${what.scene}` : `part ${what.part}`;
+  modal(`<div class="mh row"><b>🎬 Xem thử ${label}</b><span class="muted" style="font-size:12px">480p nháp — dùng cài đặt ở tab ③ Render</span></div>
+    <div class="mb"><div id="pvBox"></div></div>`);
+  try {
+    const job = await api(`${P()}/preview`, {method: 'POST', json: {...renderOpts(), ...what}});
+    watchJob(job, '#pvBox', async () => {
+      const j = await api(`/api/jobs/${job.id}`);
+      const box = $('#pvBox'); if (!box) return;
+      box.innerHTML = `<video controls autoplay src="${j.result}" style="width:100%;border-radius:8px;background:#000"></video>
+        <div class="row" style="margin-top:10px"><button onclick="preview(${esc(JSON.stringify(what))})">↻ Xem thử lại</button>
+        <button onclick="closeModal()">Đóng</button></div>`;
+    });
+  } catch (e) { toast(e.message); }
+}
+async function doRender() {
+  const job = await api(`${P()}/render`, {method: 'POST', json: renderOpts()});
+  watchJob(job, '#jobBox', () => { toast('Render xong!'); refresh(); });
+}
+
+/* ---------------- ⚙ SETTINGS ---------------- */
+async function renderSettings() {
+  S.settings = await api('/api/settings');
+  const k = S.settings.keys, help = {
+    GOOGLE_CSE_KEY: 'console.cloud.google.com → Custom Search API', GOOGLE_CSE_CX: 'programmablesearchengine.google.com → Search engine ID (bật Image search)',
+    FLICKR_API_KEY: 'flickr.com/services/apps/create — miễn phí', PEXELS_API_KEY: 'pexels.com/api — miễn phí', PIXABAY_API_KEY: 'pixabay.com/api/docs — miễn phí',
+    UNSPLASH_ACCESS_KEY: 'unsplash.com/developers — miễn phí', OPENAI_API_KEY: 'platform.openai.com — trả phí',
+    OPENAI_IMAGE_MODEL: 'mặc định gpt-image-1', GEMINI_API_KEY: 'aistudio.google.com — có free tier',
+    GEMINI_IMAGE_MODEL: 'mặc định gemini-2.5-flash-image',
+    BROWSER_CDP_PORT: '9222 (trùng Flow MCP để dùng chung)', BROWSER_PATH: 'tự dò Chrome/Edge',
+    BROWSER_USER_DATA_DIR: 'mặc định vidgen/browser-profile', BROWSER_PROFILE: 'vd: Profile 15'};
+  const bs = await api('/api/browser/status');
+  $('#main').innerHTML = `
+  <div class="card"><h2>🌐 Trình duyệt cho Gemini / ChatGPT / Grok (web)</h2>
+    <p>Trạng thái: ${bs.alive ? `<span class="tag ok">đang chạy (CDP ${bs.port})</span>` : `<span class="tag bad">chưa chạy</span>`}</p>
+    <p class="muted">Trình duyệt: <code>${esc(bs.browser)}</code><br>Profile: <code>${esc(bs.profile)}</code></p>
+    <p class="muted">Nếu trình duyệt của Flow MCP đang chạy ở cổng ${bs.port}, vidgen dùng lại luôn. Nếu không, vidgen tự mở
+      đúng trình duyệt + profile trên (đã đăng nhập Google từ trước). ChatGPT / Grok cần đăng nhập 1 lần trong cửa sổ đó.</p>
+    <button class="primary" onclick="openBrowser(this)">Mở trình duyệt + 3 trang để đăng nhập</button></div>
+  <div class="card"><h2>Nguồn ảnh</h2><table>
+    ${Object.entries(S.settings.sources).map(([id, v]) => `<tr><td>${esc(v.label)}</td><td>${v.kind === 'ai' ? 'AI tạo ảnh' : 'Tìm ảnh'}</td>
+      <td>${v.enabled ? '<span class="tag ok">sẵn sàng</span>' : `<span class="tag bad">cần ${v.key}</span>`}</td></tr>`).join('')}</table></div>
+  <div class="card"><h2>API keys</h2><p class="muted">Lưu cục bộ trong vidgen/settings.json. Wikimedia & Openverse không cần key.</p>
+    <div class="form-grid">${Object.keys(k).map(n => `<label>${n}<input data-k="${n}" value="${esc(k[n])}" placeholder="${esc(help[n] || '')}"></label>`).join('')}</div>
+    <div class="row" style="margin-top:12px"><button class="primary" onclick="saveKeys()">Lưu</button></div></div>`;
+}
+async function openBrowser(btn) {
+  btn.disabled = true; btn.textContent = 'Đang mở…';
+  try { const r = await api('/api/browser/open', {method: 'POST'}); toast(r.how === 'reused' ? 'Đã mở 3 tab trong Chrome đang chạy' : 'Đã mở Chrome — hãy đăng nhập'); }
+  catch (e) { toast(e.message, 8000); }
+  renderSettings();
+}
+async function saveKeys() {
+  const d = {}; document.querySelectorAll('[data-k]').forEach(i => d[i.dataset.k] = i.value);
+  S.settings = await api('/api/settings', {method: 'PUT', json: d}); toast('Đã lưu'); renderSettings();
+}
+
+(async () => { await loadProjects(); setTab(S.tab); })();
+</script>
+</body>
+</html>

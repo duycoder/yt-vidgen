@@ -1,0 +1,14 @@
+{
+  "BROWSER_CDP_PORT": "9222",
+  "BROWSER_PATH": "",
+  "BROWSER_USER_DATA_DIR": "",
+  "BROWSER_PROFILE": "",
+  "GOOGLE_CSE_KEY": "",
+  "GOOGLE_CSE_CX": "",
+  "FLICKR_API_KEY": "",
+  "PEXELS_API_KEY": "",
+  "PIXABAY_API_KEY": "",
+  "UNSPLASH_ACCESS_KEY": "",
+  "OPENAI_API_KEY": "",
+  "GEMINI_API_KEY": ""
+}
