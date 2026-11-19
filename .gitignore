@@ -9,3 +9,5 @@ data/
 # projects / renders live outside this folder, but just in case
 *.mp4
 *.m4a
+models/
+browser-profile-*/

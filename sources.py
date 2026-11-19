@@ -20,7 +20,38 @@ def _strip(s):
 
 
 # ----------------------------------------------------------------- free, no key
+# ----------------------------------------------------------------- size preference (video frame 1920x1080, ideal 1920x1280)
+WANT_W, WANT_H = 1920, 1280
+
+
+def fit_score(c):
+    """0..1: big enough for a 1920 frame (ideally 1920x1280) and landscape (3:2 .. 16:9)."""
+    w, h = c.get("width") or 0, c.get("height") or 0
+    if not w or not h:
+        return 0.35  # unknown size
+    size = min(w / WANT_W, 1) * min(h / WANT_H, 1)
+    r = w / h
+    shape = 1.0 if 1.3 <= r <= 1.95 else max(0.0, 1 - abs(r - 1.6) / 1.6)
+    return round(0.65 * size + 0.35 * shape, 3)
+
+
+def rank(cands):
+    """Best fitting first (stable: keeps the source's relevance order among equals)."""
+    for c in cands:
+        c["fit"] = fit_score(c)
+    return sorted(cands, key=lambda c: -round(c["fit"], 1))
+
+
 def wikimedia(query, n, keys):
+    """Big images first (Commons search filter: at least 1920x1080), topped up with any size."""
+    out = _wikimedia(f"{query} filew:>1919 fileh:>1079", n)
+    if len(out) < n:
+        seen = {c["page"] for c in out}
+        out += [c for c in _wikimedia(query, n) if c["page"] not in seen][:n - len(out)]
+    return out
+
+
+def _wikimedia(query, n):
     r = requests.get("https://commons.wikimedia.org/w/api.php", headers=UA, timeout=30, params=dict(
         action="query", generator="search", gsrsearch=f"{query} filetype:bitmap", gsrnamespace=6,
         gsrlimit=n, prop="imageinfo", iiprop="url|size|extmetadata", iiurlwidth=1920, format="json"))
@@ -161,10 +192,11 @@ def unsplash(query, n, keys):
 
 # ----------------------------------------------------------------- AI generation
 def openai_image(prompt, keys):
+    size = {"1:1": "1024x1024", "3:4": "1024x1536", "9:16": "1024x1536"}.get(keys.get("_ASPECT"), "1536x1024")
     r = requests.post("https://api.openai.com/v1/images/generations", timeout=300,
                       headers={"Authorization": f"Bearer {keys['OPENAI_API_KEY']}"},
                       json={"model": keys.get("OPENAI_IMAGE_MODEL") or "gpt-image-1",
-                            "prompt": prompt, "size": "1536x1024", "n": 1})
+                            "prompt": prompt, "size": size, "n": 1})
     r.raise_for_status()
     d = r.json()["data"][0]
     return base64.b64decode(d["b64_json"]) if d.get("b64_json") else requests.get(d["url"], timeout=120).content
@@ -174,9 +206,9 @@ def gemini_image(prompt, keys):
     model = keys.get("GEMINI_IMAGE_MODEL") or "gemini-2.5-flash-image"
     r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                       params={"key": keys["GEMINI_API_KEY"]}, timeout=300,
-                      json={"contents": [{"parts": [{"text": prompt + " Wide 16:9 landscape composition."}]}],
+                      json={"contents": [{"parts": [{"text": prompt}]}],
                             "generationConfig": {"responseModalities": ["IMAGE"],
-                                                 "imageConfig": {"aspectRatio": "16:9"}}})
+                                                 "imageConfig": {"aspectRatio": keys.get("_ASPECT") or "16:9"}}})
     r.raise_for_status()
     for part in r.json()["candidates"][0]["content"]["parts"]:
         if "inlineData" in part:
@@ -188,7 +220,8 @@ def _web(site):
     def fn(prompt, keys):
         import browser_ai
         import vidgen
-        return browser_ai.generate(site, prompt, log=vidgen.log, **browser_ai.cfg(keys))
+        return browser_ai.generate(site, prompt, log=vidgen.log, aspect=keys.get("_ASPECT") or "16:9",
+                                   **browser_ai.cfg(keys, site))
     return fn
 
 
@@ -197,7 +230,8 @@ SOURCES = {
     "openverse": dict(label="Openverse (Flickr, CC)", kind="search", fn=openverse, key=None),
     "wikipedia": dict(label="Wikipedia (ảnh bài viết)", kind="search", fn=wikipedia, key=None),
     "nasa":      dict(label="NASA Image Library", kind="search", fn=nasa, key=None),
-    "google":    dict(label="Google Images (API, chỉ ảnh CC)", kind="search", fn=google_cse, key="GOOGLE_CSE_KEY"),
+    "google":    dict(label="Google Images (API, chỉ ảnh CC)", kind="search", fn=google_cse, key="GOOGLE_CSE_KEY",
+                      extra=["GOOGLE_CSE_CX"]),
     "flickr":    dict(label="Flickr (chỉ ảnh CC)", kind="search", fn=flickr, key="FLICKR_API_KEY"),
     "pexels":    dict(label="Pexels", kind="search", fn=pexels, key="PEXELS_API_KEY"),
     "pixabay":   dict(label="Pixabay", kind="search", fn=pixabay, key="PIXABAY_API_KEY"),
@@ -210,17 +244,24 @@ SOURCES = {
 }
 KEY_NAMES = ["GOOGLE_CSE_KEY", "GOOGLE_CSE_CX", "FLICKR_API_KEY", "PEXELS_API_KEY", "PIXABAY_API_KEY", "UNSPLASH_ACCESS_KEY", "OPENAI_API_KEY", "OPENAI_IMAGE_MODEL",
              "GEMINI_API_KEY", "GEMINI_IMAGE_MODEL", "BROWSER_CDP_PORT", "BROWSER_PATH",
-             "BROWSER_USER_DATA_DIR", "BROWSER_PROFILE"]
+             "BROWSER_USER_DATA_DIR", "BROWSER_PROFILE", "YOUTUBE_API_KEY",
+             "GEMINI_TEXT_MODEL", "OPENAI_TEXT_MODEL"] + [
+             f"{s}_{k}" for s in ("GEMINI", "CHATGPT", "GROK")
+             for k in ("BROWSER_PATH", "CDP_PORT", "USER_DATA_DIR", "PROFILE")]
+
+
+def needs(v):
+    return ([v["key"]] if v["key"] else []) + v.get("extra", [])
 
 
 def available(keys):
     return {k: dict(label=v["label"], kind=v["kind"], web=v.get("web", False),
-                    enabled=not v["key"] or bool(keys.get(v["key"])), key=v["key"])
+                    enabled=all(keys.get(n) for n in needs(v)), key=v["key"], needs=needs(v))
             for k, v in SOURCES.items()}
 
 
 def search(source, query, n, keys):
-    return SOURCES[source]["fn"](query, n, keys)
+    return rank(SOURCES[source]["fn"](query, n, keys))
 
 
 def generate(source, prompt, keys):

@@ -27,6 +27,7 @@ PROFILE_DIR = HERE / "browser-profile"
 DEBUG_DIR = HERE / "data"
 LOCK = threading.Lock()  # one browser generation at a time
 
+BRAVE = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
 BROWSERS = [
     r"C:\Program Files\Google\Chrome\Application\chrome.exe",
     r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
@@ -46,7 +47,7 @@ SITES = {
         stop_re=r"^(stop|dừng)",
         response="model-response",
         download_re=r"full.?size|kích thước đầy đủ|^download|tải.*xuống",
-        prompt="Generate an image: {prompt}. Wide landscape 16:9 aspect ratio. No text, no watermark. "
+        prompt="Generate an image: {prompt}. {aspect}. No text, no watermark. "
                "Only return the image, no explanation.",
     ),
     "chatgpt": dict(
@@ -58,9 +59,10 @@ SITES = {
         send_re=r"^send|send prompt|gửi",
         stop_selector='[data-testid="stop-button"], button[aria-label*="Stop" i]',
         stop_re=r"^stop|dừng",
-        response='[data-message-author-role="assistant"], article',
+        response='[data-message-author-role="assistant"], [data-markdown-text-style="assistant-message"], article',
+        logged_out_re=r"^(log in|đăng nhập)$",
         download_re=r"download|tải xuống",
-        prompt="Create an image: {prompt}. Wide landscape 16:9 (1536x1024). No text, no watermark. "
+        prompt="Create an image: {prompt}. {aspect}. No text, no watermark. "
                "Do not ask questions, just generate the image.",
     ),
     "grok": dict(
@@ -73,7 +75,7 @@ SITES = {
         send_re=r"^(submit|send|gửi)",
         stop_re=r"^(stop|dừng)",
         response='[class*="message-bubble"], [class*="response"], main',
-        prompt="Generate an image: {prompt}. Wide landscape 16:9 aspect ratio. No text, no watermark.",
+        prompt="Generate an image: {prompt}. {aspect}. No text, no watermark.",
     ),
 }
 
@@ -93,12 +95,31 @@ def cdp_alive(port):
         return False
 
 
-def cfg(keys):
-    """Browser settings from vidgen/settings.json (same meaning as google-flow-browser-mcp's config)."""
-    return dict(port=int(keys.get("BROWSER_CDP_PORT") or 9222),
-                browser_path=keys.get("BROWSER_PATH") or None,
-                user_data_dir=keys.get("BROWSER_USER_DATA_DIR") or str(PROFILE_DIR),
-                profile=keys.get("BROWSER_PROFILE") or None)
+SITE_KEYS = ("BROWSER_PATH", "CDP_PORT", "USER_DATA_DIR", "PROFILE")
+
+
+def cfg(keys, site=None):
+    """Browser for a site: <SITE>_BROWSER_PATH / _CDP_PORT / _USER_DATA_DIR / _PROFILE (e.g. CHATGPT_CDP_PORT),
+    falling back to the shared BROWSER_* settings. Each browser needs its own CDP port and user-data dir."""
+    def get(name, shared):
+        own = keys.get(f"{site.upper()}_{name}") if site else None
+        return own or keys.get(shared)
+    own_port = site and keys.get(f"{site.upper()}_CDP_PORT")
+    return dict(port=int(get("CDP_PORT", "BROWSER_CDP_PORT") or 9222),
+                browser_path=get("BROWSER_PATH", "BROWSER_PATH") or None,
+                user_data_dir=(keys.get(f"{site.upper()}_USER_DATA_DIR") or str(HERE / f"browser-profile-{site}"))
+                if own_port else (keys.get("BROWSER_USER_DATA_DIR") or str(PROFILE_DIR)),
+                profile=(keys.get(f"{site.upper()}_PROFILE") if own_port else get("PROFILE", "BROWSER_PROFILE")) or None)
+
+
+def status(keys):
+    """Which browser each AI site uses and whether it is running."""
+    out = {}
+    for s in SITES:
+        c = cfg(keys, s)
+        out[s] = dict(port=c["port"], alive=cdp_alive(c["port"]), browser=c["browser_path"] or "auto (Chrome/Edge)",
+                      profile=c["user_data_dir"] + (f" › {c['profile']}" if c["profile"] else ""))
+    return out
 
 
 def ensure_browser(port=9222, browser_path=None, open_urls=(), user_data_dir=None, profile=None):
@@ -125,17 +146,25 @@ def ensure_browser(port=9222, browser_path=None, open_urls=(), user_data_dir=Non
                        f"profile này (kể cả Startup Boost / icon khay hệ thống) rồi thử lại.")
 
 
-def open_login_tabs(port=9222, browser_path=None, user_data_dir=None, profile=None):
-    """Open the 3 sites so the user can sign in once."""
-    urls = [s["url"] for s in SITES.values()]
-    how = ensure_browser(port, browser_path, urls, user_data_dir, profile)
-    if how == "reused":
-        from playwright.sync_api import sync_playwright
-        with sync_playwright() as p:
-            ctx = p.chromium.connect_over_cdp(f"http://127.0.0.1:{port}").contexts[0]
-            for u in urls:
-                ctx.new_page().goto(u, wait_until="domcontentloaded")
-    return how
+def open_login_tabs(keys, sites=None):
+    """Open each site in the browser it is configured to use, so the user can sign in once."""
+    from playwright.sync_api import sync_playwright
+    groups = {}
+    for s in sites or SITES:
+        c = cfg(keys, s)
+        groups.setdefault(c["port"], (c, []))[1].append(SITES[s]["url"])
+    res = {}
+    for port, (c, urls) in groups.items():
+        how = ensure_browser(port, c["browser_path"], urls, c["user_data_dir"], c["profile"])
+        if how == "reused":
+            with sync_playwright() as p:
+                ctx = p.chromium.connect_over_cdp(f"http://127.0.0.1:{port}").contexts[0]
+                for u in urls:
+                    pg = ctx.new_page()
+                    pg.goto(u, wait_until="domcontentloaded")
+                    pg.bring_to_front()
+        res[port] = how
+    return res
 
 
 # ----------------------------------------------------------------- page helpers
@@ -277,8 +306,58 @@ def _save(page, ctx, src, captured, site=None):
 
 
 # ----------------------------------------------------------------- main entry
-def generate(site_id, prompt, port=9222, browser_path=None, user_data_dir=None, profile=None, timeout=300, log=print):
-    """Return image bytes generated by the given web AI for `prompt`."""
+def _open_and_send(ctx, site_id, text):
+    """New tab on the site, type `text`, send. Returns (page, captured_image_responses, img_srcs_before)."""
+    site = SITES[site_id]
+    page = ctx.new_page()
+    captured = []
+    page.on("response", lambda r: captured.append((r.url, r))
+            if r.request.resource_type in ("image", "fetch", "xhr") and r.ok
+            and "image" in (r.headers.get("content-type") or "") else None)
+    page.goto(site["url"], wait_until="domcontentloaded", timeout=60000)
+    page.wait_for_timeout(2500)
+    if re.search(site["login_re"], page.url) or (
+            site.get("logged_out_re") and _find_button(page, site["logged_out_re"]) is not None):
+        _fail(page, f"{site_id}-login", f"{site['label']}: chưa đăng nhập. Tab ⚙ → 'Mở trình duyệt + 3 trang để đăng nhập', "
+                                        f"đăng nhập {site['label']} trong cửa sổ đó rồi thử lại.")
+    box = None
+    for sel in site["input"]:
+        loc = page.locator(sel).first
+        try:
+            loc.wait_for(state="visible", timeout=8000 if box is None else 1000)
+            box = loc
+            break
+        except Exception:  # noqa: BLE001
+            continue
+    if box is None:
+        _fail(page, f"{site_id}-input", f"{site['label']}: không thấy ô nhập (có thể chưa đăng nhập).")
+    before = _all_img_srcs(page)
+    box.click()
+    page.keyboard.insert_text(text)
+    page.wait_for_timeout(800)
+    for _ in range(20):
+        b = _find_button(page, site["send_re"], site.get("send_selector"))
+        if b and b.is_enabled() and b.get_attribute("aria-disabled") != "true":
+            b.click()
+            break
+        page.wait_for_timeout(500)
+    else:
+        page.keyboard.press("Enter")
+    return page, captured, before
+
+
+def _answer_text(page, site):
+    """Last assistant answer. If it contains a code block, return the code verbatim (keeps markdown)."""
+    return page.evaluate("""sel => { const r = [...document.querySelectorAll(sel)].pop(); if (!r) return '';
+        const codes = [...r.querySelectorAll('[data-chatgpt-copy-code]')].map(c => (c.getAttribute('data-chatgpt-copy-code') || '').trim())
+            .concat([...r.querySelectorAll('pre code, pre, code-block code')].map(c => c.innerText.trim()))
+            .filter(t => t.length > 200);
+        return codes.length ? codes.sort((a, b) => b.length - a.length)[0] : (r.innerText || '').trim(); }""",
+                         site["response"])
+
+
+def ask(site_id, prompt, port=9222, browser_path=None, user_data_dir=None, profile=None, timeout=600, log=print):
+    """Send a text prompt to a web AI (ChatGPT / Gemini / Grok) and return its text answer."""
     from playwright.sync_api import sync_playwright
     site = SITES[site_id]
     with LOCK:
@@ -287,43 +366,51 @@ def generate(site_id, prompt, port=9222, browser_path=None, user_data_dir=None, 
         with sync_playwright() as p:
             browser = p.chromium.connect_over_cdp(f"http://127.0.0.1:{port}")
             ctx = browser.contexts[0] if browser.contexts else browser.new_context()
-            page = ctx.new_page()
-            captured = []
-            page.on("response", lambda r: captured.append((r.url, r))
-                    if r.request.resource_type in ("image", "fetch", "xhr") and r.ok
-                    and "image" in (r.headers.get("content-type") or "") else None)
-            page.goto(site["url"], wait_until="domcontentloaded", timeout=60000)
-            page.wait_for_timeout(2500)
-            if re.search(site["login_re"], page.url):
-                _fail(page, f"{site_id}-login", f"{site['label']}: chưa đăng nhập. Đăng nhập trong cửa sổ Chrome rồi thử lại.")
+            page, _, _ = _open_and_send(ctx, site_id, prompt)
+            log("  prompt sent, waiting for the answer…")
+            start, last, stable_since = time.time(), "", None
+            while time.time() - start < timeout:
+                page.wait_for_timeout(2500)
+                txt = _answer_text(page, site)
+                busy = _generating(page, site)
+                if txt and not busy and txt == last:
+                    stable_since = stable_since or time.time()
+                    if time.time() - stable_since > 5:
+                        break
+                else:
+                    stable_since = None
+                if not txt and not busy and time.time() - start > 120:
+                    _fail(page, f"{site_id}-answer", f"{site['label']}: sau 2 phút vẫn chưa trả lời "
+                                                     f"(chưa đăng nhập, hết lượt, hoặc có hộp thoại chặn).")
+                if txt != last and len(txt) // 2000 != len(last) // 2000:
+                    log(f"  … {len(txt)} ký tự")
+                last = txt
+            if not last:
+                _fail(page, f"{site_id}-answer", f"{site['label']}: không có câu trả lời (hết {timeout}s).")
+            log(f"  got {len(last)} chars in {time.time() - start:.0f}s")
+            page.close()
+            return last
 
-            box = None
-            for sel in site["input"]:
-                loc = page.locator(sel).first
-                try:
-                    loc.wait_for(state="visible", timeout=8000 if box is None else 1000)
-                    box = loc
-                    break
-                except Exception:  # noqa: BLE001
-                    continue
-            if box is None:
-                _fail(page, f"{site_id}-input", f"{site['label']}: không thấy ô nhập (có thể chưa đăng nhập).")
 
-            before = _all_img_srcs(page)
-            text = site["prompt"].format(prompt=prompt)
-            box.click()
-            page.keyboard.insert_text(text)
-            page.wait_for_timeout(800)
-            sent = False
-            for _ in range(20):
-                b = _find_button(page, site["send_re"], site.get("send_selector"))
-                if b and b.is_enabled() and b.get_attribute("aria-disabled") != "true":
-                    b.click()
-                    sent = True
-                    break
-                page.wait_for_timeout(500)
-            if not sent:
-                page.keyboard.press("Enter")
+ASPECTS = {"16:9": "Wide landscape 16:9 aspect ratio", "4:3": "Landscape 4:3 aspect ratio",
+           "1:1": "Square 1:1 aspect ratio", "3:4": "Vertical portrait 3:4 aspect ratio",
+           "9:16": "Tall vertical 9:16 aspect ratio (phone screen)"}
+
+
+def generate(site_id, prompt, port=9222, browser_path=None, user_data_dir=None, profile=None, timeout=300, log=print,
+             raw=False, aspect="16:9"):
+    """Return image bytes generated by the given web AI for `prompt`.
+    raw=True sends the prompt as-is (no "16:9, no text" template), e.g. for thumbnails with a title."""
+    from playwright.sync_api import sync_playwright
+    site = SITES[site_id]
+    with LOCK:
+        how = ensure_browser(port, browser_path, (), user_data_dir, profile)
+        log(f"  browser: {how} (CDP {port}) → {site['label']}")
+        with sync_playwright() as p:
+            browser = p.chromium.connect_over_cdp(f"http://127.0.0.1:{port}")
+            ctx = browser.contexts[0] if browser.contexts else browser.new_context()
+            text = prompt if raw else site["prompt"].format(prompt=prompt, aspect=ASPECTS.get(aspect, ASPECTS["16:9"]))
+            page, captured, before = _open_and_send(ctx, site_id, text)
             log("  prompt sent, waiting for image…")
 
             start, images, stable_since, last_n, idle_since = time.time(), [], None, -1, None
@@ -350,8 +437,9 @@ def generate(site_id, prompt, port=9222, browser_path=None, user_data_dir=None, 
                 said = _last_text(page, site)
                 _fail(page, f"{site_id}-result", f"{site['label']}: không trả về ảnh"
                       + (f'. Trả lời: "{said}"' if said else f" (hết {timeout}s)") + ".")
-            # prefer the widest landscape image
-            best = sorted(images, key=lambda i: (i["w"] >= i["h"], i["w"] * i["h"]), reverse=True)[0]
+            # prefer the image closest to the requested shape, then the biggest
+            want = {"16:9": 16 / 9, "4:3": 4 / 3, "1:1": 1, "3:4": 3 / 4, "9:16": 9 / 16}.get(aspect, 16 / 9)
+            best = sorted(images, key=lambda i: (-abs(i["w"] / i["h"] - want), i["w"] * i["h"]), reverse=True)[0]
             data = _save(page, ctx, best["src"], captured, site)
             try:
                 from io import BytesIO

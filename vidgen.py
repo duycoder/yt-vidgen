@@ -444,16 +444,25 @@ def shot_filter(i, effect, fr, W, H, FPS, d, frames, zoom):
 
 
 def expand_shots(proj, scenes, dur, XF):
-    """Scenes -> shots. A scene with N images is split into N equal shots.
-    Scene cuts keep their crossfade inside the voice silence (start XF/2 before its midpoint)."""
-    counts = shot_counts(proj)
+    """Scenes -> shots. A scene with N images is split into N equal shots, or at the times in
+    prompts.json "shot_times" (fractions of the scene where each idea starts, set by 🧩 Chia ý).
+    Cuts keep their crossfade centred on the change (start XF/2 before it)."""
+    pr = load_prompts(proj)
+    counts, times = pr.get("shots", {}), pr.get("shot_times", {})
     out = []
     for k, s in enumerate(scenes):
         a = 0.0 if k == 0 else max(0.0, s["start"] - XF / 2)
-        b = max(0.0, scenes[k + 1]["start"] - XF / 2) if k + 1 < len(scenes) else dur
+        nxt = scenes[k + 1]["start"] if k + 1 < len(scenes) else dur
+        b = max(0.0, nxt - XF / 2) if k + 1 < len(scenes) else dur
         n_sh = max(1, min(8, int(counts.get(s["id"], 1))))
+        ft = times.get(s["id"])
         for j in range(n_sh):
-            out.append({"id": shot_id(s["id"], j + 1), "text": s["text"], "start": a + (b - a) * j / n_sh})
+            if j and ft and len(ft) == n_sh:
+                st = s["start"] + ft[j] * (nxt - s["start"]) - XF / 2
+                st = min(max(st, out[-1]["start"] + 1.0), b - 1.0)
+            else:
+                st = a + (b - a) * j / n_sh
+            out.append({"id": shot_id(s["id"], j + 1), "text": s["text"], "start": st})
     return out
 
 

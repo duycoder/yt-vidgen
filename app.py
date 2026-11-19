@@ -21,6 +21,7 @@ from fastapi.staticfiles import StaticFiles
 from PIL import Image
 
 import sources
+import studio
 import vidgen
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -119,9 +120,21 @@ JOBS = {}
 LOCK = threading.Lock()  # one heavy job at a time (vidgen.log is global)
 
 
-def start_job(kind, fn):
+JOB_LABEL = {"plan": "phân cảnh", "generate": "tạo ảnh AI", "autofill": "auto-fill ảnh", "preview": "render nháp",
+             "render": "render video", "ideas": "gợi ý chủ đề", "youtube": "kiểm tra YouTube", "script": "viết kịch bản",
+             "prompts": "AI nghiên cứu cảnh", "suggest": "AI gợi ý ảnh", "segment": "chia ý", "voices": "tạo giọng đọc"}
+
+
+def start_job(kind, fn, key=None):
+    """Background job. Heavy jobs run one at a time (LOCK); others wait in line and say so.
+    key: the same key already running/waiting -> return that job instead of starting a duplicate."""
+    if key:
+        for j in JOBS.values():
+            if j.get("key") == key and j["status"] == "running":
+                return j
     jid = uuid.uuid4().hex[:8]
-    job = JOBS[jid] = dict(id=jid, kind=kind, status="running", logs=[], progress=0.0, error=None)
+    job = JOBS[jid] = dict(id=jid, kind=kind, key=key, status="running", logs=[], progress=0.0, error=None,
+                           started=False, cancel=False)
 
     def emit(*a, **k):
         line = " ".join(str(x) for x in a)
@@ -132,7 +145,15 @@ def start_job(kind, fn):
             print(line.encode("ascii", "replace").decode())
 
     def runner():
+        if LOCK.locked():
+            busy = [JOB_LABEL.get(j["kind"], j["kind"]) for j in JOBS.values()
+                    if j["status"] == "running" and j.get("started")]
+            emit(f"⏳ đang chờ {', '.join(busy) or 'việc khác'} xong…")
         with LOCK:
+            if job["cancel"]:
+                job["status"], job["error"] = "error", "đã huỷ"
+                return
+            job["started"] = True
             vidgen.log = emit
             try:
                 fn(job, emit)
@@ -145,6 +166,25 @@ def start_job(kind, fn):
 
     threading.Thread(target=runner, daemon=True).start()
     return job
+
+
+@app.get("/api/status")
+def status():
+    running = [{"id": j["id"], "kind": j["kind"], "waiting": not j.get("started")}
+               for j in JOBS.values() if j["status"] == "running"]
+    return {"busy": bool(running), "running": running}
+
+
+@app.post("/api/jobs/{jid}/cancel")
+def cancel_job(jid: str):
+    """Cancel a job that is still waiting in line (a running job finishes its current step)."""
+    j = JOBS.get(jid)
+    if not j:
+        raise HTTPException(404, "no such job")
+    j["cancel"] = True
+    if not j.get("started") and j["status"] == "running":
+        j["status"], j["error"] = "error", "đã huỷ"
+    return {"ok": True, "started": j.get("started")}
 
 
 @app.get("/api/jobs/{jid}")
@@ -220,16 +260,23 @@ def project_state(name: str):
                 s["image"] = f"/files/{name}/pics/{img.name}?v={int(img.stat().st_mtime)}" if img else None
                 s["credit"] = cr.get(s["id"]) if img else None
                 s["shots"] = []
-                for slot in slots_of(pr, s["id"]):
+                slots = slots_of(pr, s["id"])
+                ft = pr.get("shot_times", {}).get(s["id"])
+                ft = ft if ft and len(ft) == len(slots) else [j / len(slots) for j in range(len(slots))]
+                for j, slot in enumerate(slots):
+                    info = (dict(
+                        text=pr.get("shot_text", {}).get(slot, ""), query=pr.get("shot_query", {}).get(slot, ""),
+                        t0=round(s["start"] + ft[j] * (s["end"] - s["start"]), 2),
+                        t1=round(s["start"] + (ft[j + 1] if j + 1 < len(ft) else 1) * (s["end"] - s["start"]), 2)))
                     im = vidgen.find_image(p / "pics", slot)
                     s["shots"].append(dict(id=slot, prompt=pr["scenes"].get(slot, "") if slot != s["id"] else s["prompt"],
                                            image=f"/files/{name}/pics/{im.name}?v={int(im.stat().st_mtime)}" if im else None,
                                            credit=cr.get(slot) if im else None,
                                            framing=pr.get("framing", {}).get(slot),
-                                           auto=vidgen.default_framing(im, 1920, 1080) if im else None))
+                                           auto=vidgen.default_framing(im, 1920, 1080) if im else None, **info))
     video = p / "output" / "video.mp4"
     return dict(name=name, texts=[t.name for t in texts], voices=[v.name for v in voices], parts=parts,
-                parse_error=parse_error, plan=plan, style=pr["style"],
+                parse_error=parse_error, plan=plan, style=pr["style"], aspect=pr.get("aspect", "16:9"),
                 video=f"/files/{name}/output/video.mp4?v={int(video.stat().st_mtime)}" if video.exists() else None)
 
 
@@ -240,7 +287,7 @@ async def upload(name: str, kind: str = Form(...), files: list[UploadFile] = Fil
     dest.mkdir(parents=True, exist_ok=True)
     if kind == "text":  # one script per project
         for old in dest.glob("*.md"):
-            old.rename(old.with_suffix(".md.bak"))
+            old.replace(old.with_suffix(".md.bak"))
     saved = []
     for f in files:
         fn = Path(f.filename).name
@@ -256,7 +303,9 @@ def paste_script(name: str, text: str = Body(..., embed=True)):
     p = proj_dir(name)
     (p / "texts").mkdir(parents=True, exist_ok=True)
     for old in (p / "texts").glob("*.md"):
-        old.rename(old.with_suffix(".md.bak"))
+        if old.name == "script.md" and old.read_text(encoding="utf-8") == text:
+            return {"ok": True, "unchanged": True}
+        old.replace(old.with_suffix(".md.bak"))  # replace(): overwrites an older .bak (rename() fails on Windows)
     (p / "texts" / "script.md").write_text(text, encoding="utf-8")
     return {"ok": True}
 
@@ -294,6 +343,7 @@ def set_shots(name: str, sid: str, n: int = Body(..., embed=True)):
     p = proj_dir(name)
     d = prompts_of(p)
     d.setdefault("shots", {})[sid] = max(1, min(8, int(n)))
+    d.setdefault("shot_times", {}).pop(sid, None)
     write_json(p / "prompts.json", d)
     return {"ok": True, "n": d["shots"][sid]}
 
@@ -344,6 +394,7 @@ def remove_shot(name: str, sid: str, k: int):
         if src in fr:
             fr[dst] = fr.pop(src)
     d["shots"][sid] = n - 1
+    d.setdefault("shot_times", {}).pop(sid, None)
     write_json(p / "prompts.json", d)
     write_json(pics / "credits.json", c)
     return {"ok": True}
@@ -371,40 +422,44 @@ def pick(name: str, sid: str, cand: dict = Body(...)):
 
 
 @app.post("/api/projects/{name}/scene/{sid}/generate")
-def generate(name: str, sid: str, source: str = Body(..., embed=True)):
+def generate(name: str, sid: str, source: str = Body(..., embed=True), aspect: str = Body(None, embed=True)):
     """AI generation can take minutes (web chats) -> background job."""
     p = proj_dir(name)
     if sources.SOURCES.get(source, {}).get("kind") != "ai":
         raise HTTPException(400, "unknown AI source")
     pr = prompts_of(p)
+    aspect = aspect or pr.get("aspect") or "16:9"
     prompt = f"{prompt_for(pr, sid)}. {pr['style']}"
     if sid != base_sid(sid) and sid not in pr["scenes"]:  # extra slot without its own prompt: vary the framing
         prompt += " Different composition and camera angle from the previous shot."
 
     def work(job, emit):
-        emit(f"{sid}: generating with {source}")
-        data = sources.generate(source, prompt, keys())
+        emit(f"{sid}: {source}, khổ {aspect}")
+        emit(f"prompt: {prompt}")
+        data = sources.generate(source, prompt, {**keys(), "_ASPECT": aspect})
         save_image(p, sid, data, {"source": source, "title": "AI generated", "license": "AI generated",
                                   "prompt": prompt})
         emit(f"{sid}: saved")
 
-    return start_job("generate", work)
+    return start_job("generate", work, key=f"gen:{name}:{sid}")
 
 
 @app.get("/api/browser/status")
 def browser_status():
     import browser_ai
-    c = browser_ai.cfg(keys())
+    k = keys()
+    c = browser_ai.cfg(k)
     return {"port": c["port"], "alive": browser_ai.cdp_alive(c["port"]),
             "browser": c["browser_path"] or "auto (Chrome/Edge)",
-            "profile": c["user_data_dir"] + (f" › {c['profile']}" if c["profile"] else "")}
+            "profile": c["user_data_dir"] + (f" › {c['profile']}" if c["profile"] else ""),
+            "sites": browser_ai.status(k), "brave": browser_ai.BRAVE if Path(browser_ai.BRAVE).exists() else None}
 
 
 @app.post("/api/browser/open")
-def browser_open():
+def browser_open(sites: list = Body(None, embed=True)):
     import browser_ai
     try:
-        how = browser_ai.open_login_tabs(**browser_ai.cfg(keys()))
+        how = browser_ai.open_login_tabs(keys(), sites)
     except Exception as e:  # noqa: BLE001
         raise HTTPException(500, str(e))
     return {"how": how}
@@ -476,7 +531,7 @@ def autofill(name: str, opts: dict = Body(...)):
             if not done:
                 emit(f"{sh['id']}: no image found for '{s['query']}' - edit the query and search manually")
 
-    return start_job("autofill", work)
+    return start_job("autofill", work, key=f"autofill:{name}")
 
 
 @app.post("/api/projects/{name}/preview")
@@ -508,7 +563,7 @@ def preview(name: str, opts: dict = Body(default={})):
         f = out / fname
         job["result"] = f"/files/{name}/output/preview/{fname}?v={int(f.stat().st_mtime)}"
 
-    return start_job("preview", work)
+    return start_job("preview", work, key=f"preview:{name}:{fname}")
 
 
 @app.post("/api/projects/{name}/timeline")
@@ -551,7 +606,7 @@ def render(name: str, opts: dict = Body(default={})):
         vidgen.cmd_render(p, args)
         write_credits(p, plan)
 
-    return start_job("render", work)
+    return start_job("render", work, key=f"render:{name}")
 
 
 def write_credits(p: Path, plan):
@@ -660,6 +715,362 @@ def get_credits(name: str):
     return {"text": f.read_text(encoding="utf-8") if f.exists() else ""}
 
 
+# ----------------------------------------------------------------- ⓪ ideas / script / voices
+AI_SITES = ("chatgpt", "gemini", "grok", "api_gemini", "api_openai")
+
+
+@app.get("/api/ideas")
+def get_ideas():
+    k = keys()
+    return {"ideas": read_json(studio.IDEAS_FILE, {}).get("ideas", []), "voices": studio.VOICES,
+            "youtube_key": bool(k.get("YOUTUBE_API_KEY")), "done": studio.done_topics(ROOT),
+            "api_keys": {s: bool(k.get(n)) for s, n in studio.API_SITES.items()}}
+
+
+@app.post("/api/ideas")
+def suggest_ideas(site: str = Body("gemini", embed=True), n: int = Body(12, embed=True)):
+    if site not in AI_SITES:
+        raise HTTPException(400, "site must be " + "/".join(AI_SITES))
+    def work(job, emit):
+        prompt = studio.IDEAS_PROMPT.format(n=n, done=", ".join(studio.done_topics(ROOT)) or "none")
+        text = studio.ask(site, prompt, keys(), log=emit)
+        ideas = studio.parse_json_block(text)
+        write_json(studio.IDEAS_FILE, {"ideas": ideas, "site": site, "at": time.strftime("%Y-%m-%d %H:%M")})
+        emit(f"{len(ideas)} gợi ý")
+
+    return start_job("ideas", work, key="ideas")
+
+
+@app.post("/api/ideas/youtube")
+def ideas_youtube(topics: list = Body(..., embed=True)):
+    key = keys().get("YOUTUBE_API_KEY")
+    if not key:
+        raise HTTPException(400, "cần YOUTUBE_API_KEY (tab ⚙)")
+    data = read_json(studio.IDEAS_FILE, {"ideas": []})
+
+    def work(job, emit):
+        for i, t in enumerate(topics[:20]):
+            emit(f"YouTube: {t}…")
+            res = studio.youtube_check(t, key)
+            for idea in data["ideas"]:
+                if idea.get("fruit") == t:
+                    idea["yt"] = res
+            job["progress"] = (i + 1) / len(topics)
+        write_json(studio.IDEAS_FILE, data)
+
+    return start_job("youtube", work, key="youtube")
+
+
+@app.post("/api/projects/{name}/script/generate")
+def gen_script(name: str, opts: dict = Body(...)):
+    site = opts.get("site", "chatgpt")
+    if site not in AI_SITES:
+        raise HTTPException(400, "site must be " + "/".join(AI_SITES))
+    p = proj_dir(name.strip())
+    topic = (opts.get("topic") or name).strip()
+    prompt = studio.SCRIPT_PROMPT.format(topic=topic, title=opts.get("title") or f"The History of {topic}",
+                                         parts=int(opts.get("parts") or 10), minutes=int(opts.get("minutes") or 9))
+    def work(job, emit):
+        for sub in ("texts", "voices", "pics"):
+            (p / sub).mkdir(parents=True, exist_ok=True)
+        text = studio.normalize_script(studio.ask(site, prompt, keys(), log=emit))
+        for old in (p / "texts").glob("*.md"):
+            old.replace(old.with_suffix(".md.bak"))
+        f = p / "texts" / "script.md"
+        f.write_text(text, encoding="utf-8")
+        parts = vidgen.parse_script(f)
+        if not parts:
+            raise RuntimeError("AI trả lời sai định dạng (không thấy '## Part'). Xem texts/script.md, sửa tay hoặc tạo lại.")
+        words = sum(sum(1 for k, _ in pt["tokens"] if k == "w") for pt in parts)
+        emit(f"✓ {len(parts)} part, {words} từ (~{words / 150:.1f} phút đọc) → texts/script.md")
+        yt = read_json(p / "youtube.json", {})
+        if opts.get("title") and not yt.get("title"):
+            write_json(p / "youtube.json", {**yt, "title": opts["title"]})
+
+    return start_job("script", work, key=f"script:{name}")
+
+
+@app.get("/api/projects/{name}/script")
+def get_script(name: str):
+    p = proj_dir(name)
+    md = next((p / "texts").glob("*.md"), None) if (p / "texts").exists() else None
+    return {"name": md.name if md else None, "text": md.read_text(encoding="utf-8") if md else ""}
+
+
+@app.post("/api/projects/{name}/prompts/generate")
+def gen_prompts(name: str, opts: dict = Body(default={})):
+    """AI researches every scene and writes a search query + context-rich image prompt(s)."""
+    p = proj_dir(name)
+    site = opts.get("site", "gemini")
+    if site not in AI_SITES:
+        raise HTTPException(400, "site must be " + "/".join(AI_SITES))
+    plan = read_json(p / "output" / "plan.json", None)
+    if not plan:
+        raise HTTPException(400, "run plan first")
+    pr = prompts_of(p)
+    only = None
+    if opts.get("mode") == "missing":  # scenes that still have an empty image slot
+        only = {s["id"] for part in plan["parts"] for s in part["scenes"]
+                if any(not vidgen.find_image(p / "pics", sl) for sl in slots_of(pr, s["id"]))}
+    yt = read_json(p / "youtube.json", {})
+    title = yt.get("title") or f"The History of {p.name}"
+    batches = studio.scene_batches(plan, pr, only)
+    if not batches:
+        raise HTTPException(400, "không có cảnh nào cần làm")
+
+    def work(job, emit):
+        bak = p / "prompts.json.bak"
+        if (p / "prompts.json").exists():
+            bak.write_text((p / "prompts.json").read_text(encoding="utf-8"), encoding="utf-8")
+        done = 0
+        for k, (lines, counts) in enumerate(batches):
+            emit(f"Nhóm {k + 1}/{len(batches)}: {len(counts)} cảnh…")
+            prompt = studio.SCENE_PROMPT.format(title=title, topic=p.name, style=pr["style"], scenes=lines,
+                                                context=opts.get("context") or yt.get("description", "")[:600] or "-")
+            rows = studio.parse_json_block(studio.ask(site, prompt, keys(), log=emit))
+            d = prompts_of(p)  # re-read: the user may edit other scenes meanwhile
+            for row in rows:
+                sid = row.get("id")
+                if sid not in counts:
+                    continue
+                if row.get("query"):
+                    d["queries"][sid] = row["query"].strip()
+                for j, txt in enumerate((row.get("prompts") or [])[:counts[sid]]):
+                    d["scenes"][vidgen.shot_id(sid, j + 1)] = txt.strip()
+                done += 1
+            write_json(p / "prompts.json", d)
+            job["progress"] = (k + 1) / len(batches)
+        emit(f"✓ {done} cảnh có từ khoá + prompt mới (bản cũ: prompts.json.bak)")
+
+    return start_job("prompts", work, key=f"prompts:{name}")
+
+
+@app.get("/api/projects/{name}/scene/{sid}/suggest")
+def get_suggest(name: str, sid: str):
+    p = proj_dir(name)
+    return read_json(p / "output" / "suggest" / f"{base_sid(sid)}.json", {"suggestions": []})
+
+
+@app.post("/api/projects/{name}/scene/{sid}/suggest")
+def suggest(name: str, sid: str, opts: dict = Body(default={})):
+    """AI suggests N pictures for one scene (title/desc in Vietnamese, search query, AI prompt) + real photo candidates."""
+    p = proj_dir(name)
+    site = opts.get("site", "gemini")
+    if site not in AI_SITES:
+        raise HTTPException(400, "site must be " + "/".join(AI_SITES))
+    plan = read_json(p / "output" / "plan.json", None)
+    if not plan:
+        raise HTTPException(400, "run plan first")
+    base = base_sid(sid)
+    try:
+        part, scene, prev, nxt = studio.scene_context(plan, base)
+    except KeyError:
+        raise HTTPException(404, "scene not found")
+    yt = read_json(p / "youtube.json", {})
+    prompt = studio.SUGGEST_PROMPT.format(title=yt.get("title") or f"The History of {p.name}", topic=p.name,
+                                          part=part["num"], part_title=part["title"], text=scene["text"],
+                                          prev=prev, next=nxt, n=max(2, min(8, int(opts.get("n") or 5))))
+    k = keys()
+    free = [s for s, v in sources.available(k).items() if v["kind"] == "search" and v["enabled"]
+            and s in ("wikimedia", "openverse", "pexels", "pixabay", "unsplash", "flickr", "google")]
+
+    def work(job, emit):
+        rows = studio.parse_json_block(studio.ask(site, prompt, k, log=emit))
+        emit(f"{len(rows)} gợi ý — đang tìm ảnh thật cho từng gợi ý…")
+        from concurrent.futures import ThreadPoolExecutor
+
+        def find(row):
+            return studio.real_candidates(row, k, free, sources)
+
+        with ThreadPoolExecutor(6) as ex:
+            for row, cands in zip(rows, ex.map(find, rows)):
+                row["cands"] = cands
+        res = {"sid": base, "site": site, "at": time.strftime("%Y-%m-%d %H:%M"), "suggestions": rows}
+        write_json(p / "output" / "suggest" / f"{base}.json", res)
+        job["result"] = res
+        emit("✓ xong")
+
+    return start_job("suggest", work, key=f"suggest:{name}:{base}")
+
+
+def free_sources(k):
+    return [s for s, v in sources.available(k).items() if v["kind"] == "search" and v["enabled"]
+            and s in ("wikimedia", "openverse", "pexels", "pixabay", "unsplash", "flickr", "google")]
+
+
+@app.get("/api/projects/{name}/scene/{sid}/segment")
+def get_segment(name: str, sid: str):
+    p = proj_dir(name)
+    return read_json(p / "output" / "segments" / f"{base_sid(sid)}.json", {"segments": []})
+
+
+@app.post("/api/projects/{name}/scene/{sid}/segment")
+def segment(name: str, sid: str, opts: dict = Body(default={})):
+    """🧩 AI splits the scene's narration into visual ideas -> one image slot per idea, timed to the narration."""
+    p = proj_dir(name)
+    site = opts.get("site", "gemini")
+    if site not in AI_SITES:
+        raise HTTPException(400, "site must be " + "/".join(AI_SITES))
+    plan = read_json(p / "output" / "plan.json", None)
+    if not plan:
+        raise HTTPException(400, "run plan first")
+    base = base_sid(sid)
+    try:
+        part, scene, prev, nxt = studio.scene_context(plan, base)
+    except KeyError:
+        raise HTTPException(404, "scene not found")
+    secs = scene["end"] - scene["start"]
+    hi = max(1, min(4, int(secs / 3.5)))
+    yt = read_json(p / "youtube.json", {})
+    prompt = studio.SEGMENT_PROMPT.format(title=yt.get("title") or f"The History of {p.name}", topic=p.name,
+                                          part=part["num"], part_title=part["title"], text=scene["text"], secs=secs,
+                                          prev=prev, next=nxt, lo=min(2, hi), hi=hi)
+    k = keys()
+
+    def work(job, emit):
+        rows = [r for r in studio.parse_json_block(studio.ask(site, prompt, k, log=emit)) if r.get("text")]
+        if not rows:
+            raise RuntimeError("AI không trả về đoạn nào")
+        rows, fr = studio.segment_times(rows, scene, p / "voices" / part["voice"])
+        emit(f"{len(rows)} ý: " + " | ".join(f"{f * secs:.1f}s" for f in fr))
+        d = prompts_of(p)
+        d.setdefault("shots", {})[base] = len(rows)
+        d.setdefault("shot_times", {})[base] = fr
+        for j, r in enumerate(rows):
+            slot = vidgen.shot_id(base, j + 1)
+            d["scenes"][slot] = r.get("prompt", "").strip()
+            d.setdefault("shot_text", {})[slot] = r.get("text", "").strip()
+            d.setdefault("shot_query", {})[slot] = (r.get("short") or r.get("query") or "").strip()
+        d["queries"][base] = (rows[0].get("short") or rows[0].get("query") or d["queries"].get(base, "")).strip()
+        write_json(p / "prompts.json", d)
+        emit("đang tìm ảnh thật cho từng ý…")
+        from concurrent.futures import ThreadPoolExecutor
+        free = free_sources(k)
+        with ThreadPoolExecutor(6) as ex:
+            for r, c in zip(rows, ex.map(lambda r: studio.real_candidates(r, k, free, sources), rows)):
+                r["cands"] = c
+        res = {"sid": base, "site": site, "at": time.strftime("%Y-%m-%d %H:%M"),
+               "segments": [{**r, "slot": vidgen.shot_id(base, j + 1), "t0": round(scene["start"] + fr[j] * secs, 2),
+                             "t1": round(scene["start"] + (fr[j + 1] if j + 1 < len(fr) else 1) * secs, 2)}
+                            for j, r in enumerate(rows)]}
+        write_json(p / "output" / "segments" / f"{base}.json", res)
+        job["result"] = res
+        emit("✓ xong")
+
+    return start_job("segment", work, key=f"segment:{name}:{base}")
+
+
+@app.post("/api/projects/{name}/scene/{sid}/generate_all")
+def generate_all(name: str, sid: str, opts: dict = Body(...)):
+    """AI-generate the picture of every image slot of a scene (only the empty ones unless all=true)."""
+    p = proj_dir(name)
+    source = opts.get("source")
+    if sources.SOURCES.get(source, {}).get("kind") != "ai":
+        raise HTTPException(400, "unknown AI source")
+    pr = prompts_of(p)
+    base = base_sid(sid)
+    aspect = opts.get("aspect") or pr.get("aspect") or "16:9"
+    slots = [s for s in slots_of(pr, base) if opts.get("all") or not vidgen.find_image(p / "pics", s)]
+    if not slots:
+        raise HTTPException(400, "mọi ô ảnh đã có ảnh")
+
+    def work(job, emit):
+        for i, slot in enumerate(slots):
+            prompt = f"{prompt_for(pr, slot)}. {pr['style']}"
+            emit(f"{slot} ({i + 1}/{len(slots)}): {source}, khổ {aspect}")
+            try:
+                data = sources.generate(source, prompt, {**keys(), "_ASPECT": aspect})
+                save_image(p, slot, data, {"source": source, "title": "AI generated", "license": "AI generated",
+                                           "prompt": prompt})
+                emit(f"{slot}: ✓")
+            except Exception as e:  # noqa: BLE001
+                emit(f"{slot}: lỗi — {e}")
+            job["progress"] = (i + 1) / len(slots)
+
+    return start_job("generate", work, key=f"gen:{name}:{sid}")
+
+
+@app.put("/api/projects/{name}/aspect")
+def put_aspect(name: str, aspect: str = Body(..., embed=True)):
+    import browser_ai
+    if aspect not in browser_ai.ASPECTS:
+        raise HTTPException(400, "aspect: " + ", ".join(browser_ai.ASPECTS))
+    p = proj_dir(name)
+    d = prompts_of(p)
+    d["aspect"] = aspect
+    write_json(p / "prompts.json", d)
+    return {"ok": True}
+
+
+@app.get("/api/projects/{name}/voice")
+def get_voice(name: str):
+    p = proj_dir(name)
+    md = next((p / "texts").glob("*.md"), None) if (p / "texts").exists() else None
+    first = ""
+    if md:
+        parts = vidgen.parse_script(md)
+        if parts:
+            ch = studio.chunks_of(parts[0])
+            first = ch[0][0] if ch else ""
+    return {"cfg": studio.voice_cfg(p), "voices": studio.VOICES, "defaults": studio.VOICE_DEFAULTS, "first": first,
+            "parts": len(vidgen.parse_script(md)) if md else 0}
+
+
+@app.put("/api/projects/{name}/voice")
+def put_voice(name: str, cfg: dict = Body(...)):
+    p = proj_dir(name)
+    try:
+        c = studio.voice_cfg(p, cfg)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    studio.save_voice_cfg(p, c)
+    return {"cfg": c}
+
+
+@app.post("/api/projects/{name}/voices/generate")
+def gen_voices(name: str, opts: dict = Body(default={})):
+    p = proj_dir(name)
+    try:
+        cfg = studio.voice_cfg(p, opts)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    studio.save_voice_cfg(p, cfg)
+    parts = [int(x) for x in (opts.get("parts") or [])] or None
+    n = len(vidgen.parse_script(next((p / "texts").glob("*.md")))) if (p / "texts").exists() else 0
+    if not n:
+        raise HTTPException(400, "chưa có kịch bản")
+
+    def work(job, emit):
+        def tracking(*a, **k):
+            emit(*a, **k)
+            if a and "(done in)" in str(a[0]):
+                job["progress"] = min(0.95, job["progress"] + 1 / (len(parts) if parts else n))
+        mix = f" + {cfg['voice2']} {cfg['mix']:.0%}" if cfg["voice2"] and cfg["mix"] > 0 else ""
+        emit(f"Giọng {cfg['voice']}{mix}, tốc độ {cfg['speed']}, pause x{cfg['pause_scale']}")
+        studio.make_voices(p, cfg, parts, log=tracking)
+        emit("Phân cảnh lại theo giọng mới…")
+        vidgen.cmd_plan(p, SimpleNamespace(**PLAN_DEFAULTS))
+        emit("✓ xong — sang tab ② để lấy ảnh")
+
+    return start_job("voices", work, key=f"voices:{name}")
+
+
+@app.post("/api/tts/sample")
+def tts_sample(body: dict = Body(...)):
+    try:
+        cfg = studio.voice_cfg(None, body.get("cfg") or {})
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    text = (body.get("text") or "Imagine a fruit sweeter than sugar.").strip()[:400]
+    import hashlib
+    key = hashlib.sha1(json.dumps([cfg, text], sort_keys=True).encode()).hexdigest()[:16]
+    f = studio.HERE / "data" / "samples" / f"{key}.wav"
+    if not f.exists():
+        f.parent.mkdir(parents=True, exist_ok=True)
+        studio.sample(cfg, text, f)
+    return FileResponse(f, media_type="audio/wav")
+
+
 @app.get("/")
 def index():
     return FileResponse(HERE / "static" / "index.html")
@@ -667,6 +1078,21 @@ def index():
 
 app.mount("/files", StaticFiles(directory=ROOT), name="files")
 
+class _QuietAccess:
+    """Hide the browser's once-a-second job polling and image/video loads from the console log."""
+    NOISE = ("/api/jobs/", '"GET /files/', '"GET /api/status')
+
+    def filter(self, record):
+        msg = record.getMessage()
+        return not (any(n in msg for n in self.NOISE) and '" 200' in msg or '" 304' in msg or '" 206' in msg)
+
+
 if __name__ == "__main__":
+    import logging
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001
+        pass
+    logging.getLogger("uvicorn.access").addFilter(_QuietAccess())
     print("vidgen GUI -> http://127.0.0.1:8765")
     uvicorn.run(app, host="127.0.0.1", port=8765)

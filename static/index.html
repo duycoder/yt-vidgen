@@ -9,6 +9,7 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,Segoe UI,sans-serif}
 button,select,input,textarea{font:inherit;color:inherit}
+a,a:visited{color:#8fc8ff;text-decoration:none}a:hover{color:#c4e2ff;text-decoration:underline}
 button{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
 button:hover{border-color:var(--accent)}
 button.primary{background:var(--accent);color:#1a1205;border-color:var(--accent);font-weight:600}
@@ -64,6 +65,34 @@ td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
   font:600 clamp(14px,3vw,30px) Georgia,serif;border-radius:4px;opacity:0;white-space:nowrap;z-index:901}
 .lp .info{position:absolute;left:8px;top:8px;background:#000a;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px;z-index:902}
 .lpbar{display:flex;gap:8px;align-items:center;margin-top:8px}.lpbar input[type=range]{flex:1}
+.idea{border:1px solid #ffffff1f;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.idea b{font-size:15px}.idea .yt{font-size:12px;background:var(--panel2);border-radius:8px;padding:6px 8px;color:var(--text);line-height:1.5}.idea .yt a{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lv{padding:0 6px;border-radius:5px;font-weight:600;font-size:11px}.lv-g{background:#5cc98a33;color:#7ee0a6}.lv-y{background:#e0a85a33;color:#f0c27e}.lv-r{background:#e46a6a33;color:#ff9b9b}.ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin-top:10px}
+.step{display:inline-block;background:#f0b13a;color:#000;border-radius:50%;width:24px;height:24px;text-align:center;line-height:24px;margin-right:6px;font-weight:700}
+.research{margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
+.sug{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.sug .th{display:flex;gap:6px;flex-wrap:wrap;width:330px;flex-shrink:0}
+.sug .th img{width:104px;height:68px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent}
+.sug .th img:hover{border-color:var(--accent)}
+.sug code{font-size:12px;background:var(--panel2);padding:1px 6px;border-radius:5px}
+@media (max-width:700px){.sug{flex-direction:column}.sug .th{width:auto}}
+.narr mark{background:#e0a85a55;color:inherit;border-radius:3px;padding:0 2px}
+.seg{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.seg .th{display:flex;gap:6px;flex-wrap:wrap;width:330px;flex-shrink:0;align-content:flex-start}
+.seg .th img{width:104px;height:68px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent}
+.seg .th img:hover{border-color:var(--accent)}.seg .cur{width:216px;height:122px;object-fit:cover;border-radius:8px}
+@media (max-width:700px){.seg{flex-direction:column}.seg .th{width:auto}}
+.sz{font-size:11px;font-weight:600;padding:0 5px;border-radius:4px;white-space:nowrap}
+.sz.g{background:#5cc98a33;color:#7ee0a6}.sz.y{background:#e0a85a33;color:#f0c27e}.sz.r{background:#e46a6a33;color:#ff9b9b}
+.thw{position:relative;display:inline-block}.thw .sz{position:absolute;left:3px;bottom:3px;background:#000b}
+#lightbox .lb{position:fixed;inset:0;background:#000d;z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px}
+#lightbox .lbin{background:var(--panel);border:1px solid var(--line);border-radius:12px;max-width:min(1400px,100%);width:100%;
+  max-height:100%;display:flex;flex-direction:column;overflow:hidden}
+#lightbox .lbview{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:#000;position:relative}
+#lightbox .lbview img{max-width:100%;max-height:72vh;object-fit:contain;display:block}
+#lightbox .lbview .f169{width:min(100%,128vh);aspect-ratio:16/9;max-height:72vh;position:relative;overflow:hidden}
+#lightbox .lbview .f169 img{width:100%;height:100%;max-height:none;object-fit:cover}
+#lightbox .lbbar{padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px}
+#lightbox .lbload{position:absolute;right:10px;top:10px;background:#000b;padding:2px 8px;border-radius:6px;font-size:12px}
 .badge{position:absolute;right:6px;top:6px;background:#000a;padding:0 6px;border-radius:6px;font-size:12px}.thumb.over{outline:2px dashed var(--accent);outline-offset:-4px}
 .thumb .sid{position:absolute;left:6px;top:6px;background:#000a;padding:0 6px;border-radius:6px;font-size:12px}
 .credit{font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -98,6 +127,7 @@ video{width:100%;border-radius:var(--r);background:#000}
   <select id="projSel"></select>
   <button onclick="newProject()">+ Project</button>
   <nav id="nav">
+    <button data-tab="idea">⓪ Ý tưởng</button>
     <button data-tab="data">① Dữ liệu</button>
     <button data-tab="scenes">② Cảnh & Ảnh</button>
     <button data-tab="render">③ Render</button>
@@ -152,10 +182,184 @@ document.querySelectorAll('#nav button').forEach(b => b.onclick = () => setTab(b
 function setTab(t) { S.tab = t; save(); document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.tab === t)); refresh(); }
 
 async function refresh() {
+  try { await refreshTab(); }
+  catch (e) {
+    $('#main').innerHTML = `<div class="card"><h2>Không tải được tab này</h2><p class="tag bad">${esc(e.message)}</p>
+      <p class="muted">Nếu lỗi là "Not Found": server đang chạy bản cũ — tắt cửa sổ start.bat, mở lại, rồi F5.</p></div>`;
+  }
+}
+async function refreshTab() {
   if (S.tab === 'settings') return renderSettings();
+  if (S.tab === 'idea') return renderIdea();
   if (!S.project) { $('#main').innerHTML = `<div class="card">Chưa có project. Bấm <b>+ Project</b> để tạo.</div>`; return; }
   S.state = await api(P());
   ({data: renderData, scenes: renderScenes, render: renderRender})[S.tab]();
+}
+
+/* ---------------- ⓪ IDEA: topic -> script -> voices ---------------- */
+async function renderIdea() {
+  const d = await api('/api/ideas');
+  S.ideas = d.ideas;
+  const sc = S.project ? await api(`${P()}/script`).catch(() => ({text: ''})) : {text: ''};
+  const ro = (() => { try { return JSON.parse(localStorage.getItem('vg_idea') || '{}'); } catch { return {}; } })();
+  const fmtN = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : n;
+  $('#main').innerHTML = `
+  <div class="card"><h2><span class="step">1</span>Chọn chủ đề</h2>
+    <p class="muted">AI gợi ý loại quả đang được chú ý và có lịch sử thú vị (bỏ qua các project đã làm: ${esc(d.done.join(', ') || '—')}).</p>
+    <div class="row">
+      <select id="iSite"><option value="gemini">Gemini web (có tìm web)</option><option value="chatgpt">ChatGPT web</option><option value="grok">Grok web</option><option value="api_gemini">Gemini API ${d.api_keys.api_gemini ? '' : '(cần key)'}</option><option value="api_openai">OpenAI API ${d.api_keys.api_openai ? '' : '(cần key)'}</option></select>
+      <button class="primary" onclick="suggestIdeas()">✨ Gợi ý chủ đề</button>
+      ${d.ideas.length ? `<button onclick="checkYT()">📈 Kiểm tra độ cạnh tranh trên YouTube${d.youtube_key ? '' : ' 🔑'}</button>` : ''}
+    </div>
+    <div id="ideaJob"></div>
+    <div class="ideas">${d.ideas.map((x, i) => `<div class="idea">
+      <b>${esc(x.fruit)}</b><span>${esc(x.title || '')}</span>
+      <span class="muted" style="font-size:13px">${esc(x.hook || '')}</span>
+      <span style="font-size:12px">🔥 ${esc(x.why_now || '')}</span>
+      ${x.yt && x.yt.verdict ? `<div class="yt">
+        <div style="font-size:13px;margin-bottom:4px">${x.yt.verdict[0]} <b style="font-size:13px">${esc(x.yt.verdict[1])}</b></div>
+        Nhu cầu <span class="lv lv-${lvc(x.yt.demand, 1)}">${x.yt.demand}</span>
+        · Cạnh tranh <span class="lv lv-${lvc(x.yt.competition, 0)}">${x.yt.competition}</span>
+        <div class="muted" style="font-size:11px;margin:2px 0 4px">${x.yt.long_count} video dài liên quan · ${x.yt.strong} video >100K view
+          · video dài top ${fmtN(x.yt.top_long_views)}${x.yt.shorts_top ? ` · Shorts top ${fmtN(x.yt.shorts_top)}` : ''}</div>
+        ${x.yt.videos.map(v => `<a href="${esc(v.url)}" target="_blank" title="${esc(v.title)} — ${esc(v.channel)} · ${v.minutes} phút · ${v.date}">▶ ${fmtN(v.views)} · ${esc(v.title)}</a>`).join('')}</div>`
+      : x.yt ? `<div class="yt muted">Số liệu cũ — bấm 📈 Kiểm tra lại</div>` : ''}
+      <div><button onclick="pickIdea(${i})">Chọn →</button></div></div>`).join('')}</div>
+  </div>
+  <div class="card"><h2><span class="step">2</span>Kịch bản</h2>
+    <div class="form-grid">
+      <label>Chủ đề (= tên project)<input id="iTopic" value="${esc(ro.topic || '')}" placeholder="ví dụ: dragon fruit"></label>
+      <label>Tiêu đề video<input id="iTitle" value="${esc(ro.title || '')}" placeholder="The History of ..."></label>
+      <label>Số part<input id="iParts" type="number" value="${ro.parts || 10}" min="3" max="20"></label>
+      <label>Độ dài (phút)<input id="iMin" type="number" value="${ro.minutes || 9}" min="2" max="30"></label>
+      <label>AI viết<select id="iSite2"><option value="gemini">Gemini web</option><option value="chatgpt">ChatGPT web (cần đăng nhập)</option><option value="grok">Grok web</option><option value="api_gemini">Gemini API ${d.api_keys.api_gemini ? '' : '(cần key)'}</option><option value="api_openai">OpenAI API ${d.api_keys.api_openai ? '' : '(cần key)'}</option></select></label>
+    </div>
+    <div class="row" style="margin-top:10px"><button class="primary" onclick="genScript()">📝 Tạo kịch bản</button>
+      <span class="muted" style="font-size:12px">Tạo project mới (nếu chưa có), AI viết đúng định dạng Part + [pause]. Mất 1–3 phút.</span></div>
+    <div id="scriptJob"></div>
+    ${S.project ? `<label style="margin-top:12px;display:block">Kịch bản của project <b>${esc(S.project)}</b> ${sc.name ? `<span class="muted">(${esc(sc.name)})</span>` : '— chưa có'}
+      <span class="muted">· đọc lại, sửa số liệu nếu cần, rồi Lưu</span></label>
+      <textarea id="iScript" rows="14" style="font-family:ui-monospace,monospace;font-size:13px">${esc(sc.text)}</textarea>
+      <div class="row" style="margin-top:6px"><button onclick="saveScriptText()">💾 Lưu kịch bản</button></div>` : ''}
+  </div>
+  <div class="card" id="voiceCard"></div>`;
+  $('#iSite2').value = ro.site || 'gemini';
+  ['iTopic', 'iTitle', 'iParts', 'iMin', 'iSite2'].forEach(id => $('#' + id).addEventListener('change', saveIdeaForm));
+  renderVoiceCard(!!sc.text);
+}
+function saveIdeaForm() {
+  const o = {topic: $('#iTopic').value, title: $('#iTitle').value, parts: +$('#iParts').value, minutes: +$('#iMin').value,
+             site: $('#iSite2').value};
+  try { localStorage.setItem('vg_idea', JSON.stringify(o)); } catch {}
+  return o;
+}
+const API_KEY_OF = {api_gemini: 'GEMINI_API_KEY', api_openai: 'OPENAI_API_KEY'};
+async function needApiKey(site, retry) {  // true = blocked, key dialog opened
+  if (!API_KEY_OF[site]) return false;
+  const d = await api('/api/ideas');
+  if (d.api_keys[site]) return false;
+  askKey(API_KEY_OF[site], site === 'api_gemini' ? 'Gemini API' : 'OpenAI API', retry);
+  return true;
+}
+// colour of a level: for demand high = good, for competition high = bad
+const lvc = (lv, highIsGood) => ({cao: highIsGood ? 'g' : 'r', 'vừa': 'y', 'thấp': highIsGood ? 'r' : 'g'})[lv] || 'y';
+async function suggestIdeas() {
+  if (await needApiKey($('#iSite').value, suggestIdeas)) return;
+  try { const job = await api('/api/ideas', {method: 'POST', json: {site: $('#iSite').value}});
+        watchJob(job, '#ideaJob', () => { toast('Đã có gợi ý'); renderIdea(); }); } catch (e) { toast(e.message); }
+}
+async function checkYT() {
+  if (!(await api('/api/ideas')).youtube_key) return askKey('YOUTUBE_API_KEY', 'kiểm tra độ cạnh tranh trên YouTube', checkYT);
+  try { const job = await api('/api/ideas/youtube', {method: 'POST', json: {topics: S.ideas.map(x => x.fruit)}});
+        watchJob(job, '#ideaJob', () => renderIdea()); } catch (e) { toast(e.message); }
+}
+function pickIdea(i) {
+  const x = S.ideas[i];
+  $('#iTopic').value = x.fruit.toLowerCase(); $('#iTitle').value = x.title || ''; saveIdeaForm();
+  $('#iTopic').scrollIntoView({behavior: 'smooth', block: 'center'}); toast('Đã chọn: ' + x.fruit);
+}
+async function genScript() {
+  const o = saveIdeaForm();
+  if (!o.topic.trim()) return toast('Nhập chủ đề');
+  if (await needApiKey(o.site, genScript)) return;
+  try {
+    const r = await api('/api/projects', {method: 'POST', json: {name: o.topic.trim()}});
+    S.project = r.name; save(); await loadProjects();
+    const job = await api(`${P()}/script/generate`, {method: 'POST', json: {...o, topic: o.topic.trim()}});
+    watchJob(job, '#scriptJob', () => { toast('Đã tạo kịch bản — đọc lại rồi tạo giọng'); renderIdea(); });
+  } catch (e) { toast(e.message); }
+}
+async function saveScriptText() {
+  try { await api(`${P()}/script`, {method: 'POST', json: {text: $('#iScript').value}}); toast('Đã lưu kịch bản'); }
+  catch (e) { toast(e.message); }
+}
+/* ---- voice settings (saved per project in voice.json) ---- */
+const VF = [  // [id, label, type, extra]
+  ['speed', 'Tốc độ đọc', 'range', {min: 0.7, max: 1.3, step: 0.05, fmt: v => v.toFixed(2) + '×'}],
+  ['sentence_pause', 'Nghỉ sau mỗi câu (s)', 'range', {min: 0, max: 1, step: 0.05, fmt: v => v.toFixed(2) + 's'}],
+  ['clause_pause', 'Nghỉ ở dấu phẩy (s)', 'range', {min: 0, max: 0.5, step: 0.05, fmt: v => v.toFixed(2) + 's'}],
+  ['pause_scale', 'Kéo dài các [pause]', 'range', {min: 0.5, max: 2, step: 0.1, fmt: v => v.toFixed(1) + '×'}],
+  ['pad_start', 'Lặng đầu mỗi part (s)', 'range', {min: 0, max: 2, step: 0.1, fmt: v => v.toFixed(1) + 's'}],
+  ['pad_end', 'Lặng cuối mỗi part (s)', 'range', {min: 0, max: 3, step: 0.1, fmt: v => v.toFixed(1) + 's'}],
+];
+async function renderVoiceCard(hasScript) {
+  const box = $('#voiceCard'); if (!box) return;
+  if (!S.project) { box.innerHTML = '<h2><span class="step">3</span>Giọng đọc</h2><p class="muted">Chọn hoặc tạo project trước.</p>'; return; }
+  const d = await api(`${P()}/voice`), c = d.cfg;
+  S.voiceDefaults = d.defaults;
+  const opts = sel => Object.entries(d.voices).map(([v, l]) => `<option value="${v}" ${v === sel ? 'selected' : ''}>${esc(l)}</option>`).join('');
+  box.innerHTML = `<h2><span class="step">3</span>Giọng đọc <span class="muted" style="font-size:13px;font-weight:400">Kokoro · chạy trên máy · miễn phí · lưu riêng cho ${esc(S.project)}</span></h2>
+    <div class="form-grid">
+      <label>Giọng chính<select id="v_voice">${opts(c.voice)}</select></label>
+      <label>Trộn thêm giọng<select id="v_voice2"><option value="">— không —</option>${opts(c.voice2)}</select></label>
+      <label>Tỉ lệ giọng trộn <span class="muted" id="v_mix_v">${Math.round(c.mix * 100)}%</span>
+        <input id="v_mix" type="range" min="0" max="0.9" step="0.05" value="${c.mix}" ${c.voice2 ? '' : 'disabled'}></label>
+      <label>Giọng / nhấn âm<select id="v_lang"><option value="auto">Tự theo giọng</option><option value="en-gb">Anh-Anh</option><option value="en-us">Anh-Mỹ</option></select></label>
+      ${VF.map(([id, l, , x]) => `<label>${l} <span class="muted" id="v_${id}_v">${x.fmt(+c[id])}</span>
+        <input id="v_${id}" type="range" min="${x.min}" max="${x.max}" step="${x.step}" value="${c[id]}"></label>`).join('')}
+      <label>Âm lượng chuẩn<select id="v_loudness"><option value="-14">−14 LUFS (chuẩn YouTube)</option><option value="-16">−16 LUFS (nhẹ hơn)</option><option value="-18">−18 LUFS</option></select></label>
+    </div>
+    <label style="display:block;margin-top:10px">Từ điển phát âm <span class="muted" style="font-size:12px">— mỗi dòng: <code>từ = cách đọc</code>, ví dụ <code>açaí = ah-sah-EE</code>, <code>Guilin = gway-lin</code></span>
+      <textarea id="v_lexicon" rows="3" style="font-family:ui-monospace,monospace;font-size:13px" placeholder="baobab = BAY-oh-bab">${esc(c.lexicon)}</textarea></label>
+    <div class="row" style="margin-top:8px;flex-wrap:nowrap">
+      <input id="v_text" style="flex:1;min-width:0" value="${esc(d.first || 'Imagine a fruit sweeter than sugar.')}" title="Câu dùng để nghe thử">
+      <button onclick="playSample()">▶ Nghe thử</button><button onclick="resetVoice()" title="Về mặc định">↺</button></div>
+    <div class="row" style="margin-top:12px">
+      <button class="primary" onclick="genVoices()" ${hasScript ? '' : 'disabled'}>🎙 Tạo giọng đọc cho ${esc(S.project)}</button>
+      <label class="row" style="gap:4px">Chỉ part <input id="v_parts" placeholder="trống = tất cả ${d.parts}" style="width:150px"></label>
+      <span class="muted" style="font-size:12px">Bản cũ cất vào voices/_old · ~30–50s mỗi phút giọng · xong tự phân cảnh</span></div>
+    <div id="voiceJob"></div>`;
+  $('#v_lang').value = c.lang; $('#v_loudness').value = String(Math.round(c.loudness));
+  VF.forEach(([id, , , x]) => $('#v_' + id).addEventListener('input', e => $(`#v_${id}_v`).textContent = x.fmt(+e.target.value)));
+  $('#v_mix').addEventListener('input', e => $('#v_mix_v').textContent = Math.round(e.target.value * 100) + '%');
+  $('#v_voice2').addEventListener('change', e => { $('#v_mix').disabled = !e.target.value; });
+  box.querySelectorAll('select,input[type=range],textarea').forEach(el => el.addEventListener('change', saveVoice));
+}
+function voiceForm() {
+  const o = {voice: $('#v_voice').value, voice2: $('#v_voice2').value, mix: +$('#v_mix').value, lang: $('#v_lang').value,
+             loudness: +$('#v_loudness').value, lexicon: $('#v_lexicon').value};
+  VF.forEach(([id]) => o[id] = +$('#v_' + id).value);
+  return o;
+}
+async function saveVoice() { try { await api(`${P()}/voice`, {method: 'PUT', json: voiceForm()}); } catch (e) { toast(e.message); } }
+async function resetVoice() {
+  await api(`${P()}/voice`, {method: 'PUT', json: S.voiceDefaults}); renderVoiceCard(true); toast('Đã về mặc định');
+}
+async function playSample() {
+  toast('Đang tạo mẫu giọng… (vài giây)');
+  if (S.sampleAudio) S.sampleAudio.pause();
+  try {
+    const r = await fetch('/api/tts/sample', {method: 'POST', headers: {'Content-Type': 'application/json'},
+                                              body: JSON.stringify({cfg: voiceForm(), text: $('#v_text').value})});
+    if (!r.ok) throw new Error((await r.json()).detail || r.statusText);
+    S.sampleAudio = new Audio(URL.createObjectURL(await r.blob())); S.sampleAudio.play();
+  } catch (e) { toast(e.message); }
+}
+async function genVoices() {
+  if ($('#iScript') && $('#iScript').value.trim()) await saveScriptText();
+  const parts = $('#v_parts').value.trim().split(/[\s,]+/).filter(Boolean).map(Number);
+  try { const job = await api(`${P()}/voices/generate`, {method: 'POST', json: {...voiceForm(), parts}});
+        watchJob(job, '#voiceJob', () => { toast('Xong giọng đọc + phân cảnh → tab ②'); }); } catch (e) { toast(e.message); }
 }
 
 /* ---------------- ① DATA ---------------- */
@@ -214,13 +418,15 @@ async function runPlan() {
 /* ---------------- jobs ---------------- */
 function watchJob(job, box, onDone, onError) {
   S.job = job.id;
-  $(box).innerHTML = `<div class="progress"><div id="pb"></div></div><pre class="log" id="lg"></pre>`;
+  $(box).innerHTML = `<div class="progress"><div id="pb"></div></div><pre class="log" id="lg">bắt đầu…\n</pre>
+    <button id="jobCancel" hidden onclick="api('/api/jobs/${job.id}/cancel',{method:'POST'}).then(()=>toast('Đã huỷ'))">✕ Huỷ (đang chờ)</button>`;
   let since = 0;
   const tick = async () => {
     const j = await api(`/api/jobs/${job.id}?since=${since}`);
     since = j.log_count;
     const lg = $('#lg'); if (!lg) return;
     if (j.logs.length) { lg.textContent += j.logs.join('\n') + '\n'; lg.scrollTop = lg.scrollHeight; }
+    const cb = $('#jobCancel'); if (cb) cb.hidden = !(j.status === 'running' && !j.started);
     $('#pb').style.width = (j.progress * 100) + '%';
     if (j.status === 'running') return setTimeout(tick, 1000);
     S.job = null;
@@ -245,10 +451,24 @@ async function renderScenes() {
     <div class="progress" style="flex:1;min-width:120px;max-width:300px;margin:0"><div style="width:${have / all.length * 100}%"></div></div></div>
     <div class="fields"><label>Style chung cho ảnh AI</label>
       <input id="style" value="${esc(st.style)}" onchange="api('${P()}/style',{method:'PUT',json:{style:this.value}})"></div>
+    <div class="research">
+      <b>🔎 AI nghiên cứu cảnh</b> <span class="muted" style="font-size:12px">— AI đọc lời từng cảnh (có tìm web), viết lại
+        <b>từ khoá tìm ảnh thật</b> + <b>prompt AI có đủ bối cảnh</b> (thời kỳ, nơi chốn, nhân vật, trang phục, ánh sáng).</span>
+      <div class="row" style="margin-top:6px">
+        <select id="rsSite"><option value="gemini">Gemini web (có tìm web)</option><option value="chatgpt">ChatGPT web</option>
+          <option value="grok">Grok web</option><option value="api_gemini">Gemini API</option><option value="api_openai">OpenAI API</option></select>
+        <select id="rsMode"><option value="all">Tất cả cảnh</option><option value="missing">Chỉ cảnh còn thiếu ảnh</option></select>
+        <button class="primary" onclick="researchScenes()">🔎 Viết lại từ khoá + prompt</button>
+        <label class="row" style="gap:4px">Khổ ảnh AI <select id="aspectSel" onchange="setAspect(this.value)">
+          ${ASPECTS.map(([v, l]) => `<option value="${v}" ${v === (st.aspect || '16:9') ? 'selected' : ''}>${l}</option>`).join('')}</select></label>
+      </div>
+      <input id="rsCtx" placeholder="Bối cảnh thêm cho AI (tuỳ chọn) — vd: nhấn mạnh người Amazon bản địa, tránh ảnh sinh tố hiện đại ở phần lịch sử" style="width:100%;margin-top:6px">
+      <div id="rsJob"></div>
+    </div>
     <div style="margin-top:12px" class="srcs"><span class="muted">Tự động điền ảnh còn thiếu, thử lần lượt:</span><br>
-      ${Object.entries(src).map(([k, v]) => `<label title="${v.enabled ? '' : 'cần API key (tab ⚙)'}">
+      ${Object.entries(src).map(([k, v]) => `<label title="${v.enabled ? '' : 'cần ' + v.needs.join(' + ')}">
         <input type="checkbox" class="autoSrc" value="${k}" ${!v.enabled ? 'disabled' : savedOrder.includes(k) ? 'checked' : ''}>
-        ${esc(v.label)}</label>`).join('')}
+        ${esc(v.label)} ${v.enabled ? '' : keyLink(v.needs, v.label, 'async()=>{S.settings=await api(\'/api/settings\');refresh()}')}</label>`).join('')}
       <div class="row" style="margin-top:8px"><button class="primary" onclick="autofill(false)">⚡ Auto-fill ảnh thiếu</button>
       <button onclick="autofill(true)">Làm lại tất cả</button></div></div>
     <div id="jobBox"></div>
@@ -256,6 +476,7 @@ async function renderScenes() {
   ${st.plan.parts.map(p => `
     <div class="part-h"><h3>Part ${p.num}. ${esc(p.title)}</h3><span class="muted">${fmt(p.duration)} · ${p.scenes.length} cảnh · ${p.scenes.reduce((a, s) => a + s.shots.length, 0)} ảnh</span></div>
     ${p.scenes.map(s => sceneCard(p, s)).join('')}`).join('')}`;
+  try { const v = localStorage.getItem('vg_rs'); if (v) $('#rsSite').value = v; } catch {}
 }
 const baseId = id => id.replace(/_\d+$/, '');
 S.sel = {};  // scene id -> selected image slot (1-based)
@@ -271,10 +492,11 @@ function framedImg(sh, cls = '') {
 const FIT_LABEL = {contain: 'nền mờ', scroll: 'lia toàn ảnh', cover: 'đã chỉnh khung'};
 function sceneCard(p, s) {
   const n = s.shots.length, sh = curShot(s), j = s.shots.indexOf(sh) + 1, c = sh.credit;
-  const per = (s.end - s.start) / n;
+  const per = sh.t1 != null ? sh.t1 - sh.t0 : (s.end - s.start) / n;
   return `<div class="scene" id="sc_${s.id}">
     <div><div class="thumb" title="Kéo thả ảnh / link ảnh vào đây" ondragover="event.preventDefault();this.classList.add('over')"
-        ondragleave="this.classList.remove('over')" ondrop="dropOnScene(event,'${sh.id}')">
+        ondragleave="this.classList.remove('over')" ondrop="dropOnScene(event,'${sh.id}')"
+        ${sh.image ? `onclick="viewImg('${sh.id}')" style="cursor:zoom-in"` : ''}>
         ${sh.image ? framedImg(sh) : 'chưa có ảnh<br><small>kéo thả / rê chuột vào + Ctrl+V</small>'}
         <span class="sid">${sh.id}${sh.framing ? ' · ✂ ' + (FIT_LABEL[sh.framing.fit] || '') + (sh.framing.effect ? ' · ' + sh.framing.effect : '') : ''}</span>${n > 1 ? `<span class="badge">ảnh ${j}/${n} · ${per.toFixed(1)}s</span>` : ''}</div>
       <div class="strip">${s.shots.map((x, k) => `<button class="mini ${k + 1 === j ? 'on' : ''}" title="${x.id}"
@@ -285,7 +507,8 @@ function sceneCard(p, s) {
       <div class="row muted" style="font-size:12px">${fmt(s.start)} → ${fmt(s.end)} (${(s.end - s.start).toFixed(1)}s${n > 1 ? ` · ${n} ảnh` : ''})
         <button style="padding:2px 8px" onclick="playSeg('${esc(p.voice)}',${s.start},${s.end})">▶ nghe</button>
         <button style="padding:2px 8px" title="Xem ngay cảnh này với ảnh + hiệu ứng + giọng, không cần render" onclick="livePreview({scene:'${s.id}'})">⚡ Xem thử</button></div>
-      <div class="narr">${esc(s.text)}</div>
+      <div class="narr">${n > 1 && sh.text ? markWords(s.text, sh.text) : esc(s.text)}</div>
+      ${n > 1 && sh.text ? `<div class="muted" style="font-size:12px">Ảnh ${j} (${fmt(sh.t0)}–${fmt(sh.t1)}) minh hoạ phần <mark>tô sáng</mark></div>` : ''}
       <label>Từ khoá tìm ảnh (kho ảnh thật)</label>
       <input value="${esc(s.query)}" onchange="saveScene('${s.id}',{query:this.value})" id="q_${s.id}">
       <label>Prompt mô tả (cho AI)${n > 1 ? ` — ảnh ${j}` : ''}</label>
@@ -293,6 +516,8 @@ function sceneCard(p, s) {
         onchange="saveScene('${sh.id}',{prompt:this.value})">
       <div class="btns">
         <button onclick="openSearch('${sh.id}')">🔍 Tìm ảnh</button>
+        <button onclick="openSegment('${sh.id}')" title="AI chia lời cảnh này thành từng ý; mỗi ý 1 ảnh, đổi ảnh đúng lúc đọc tới ý đó">🧩 Chia ý + minh hoạ</button>
+        <button onclick="openSuggest('${sh.id}')" title="AI đọc đoạn lời này (có tìm web), gợi ý vài hình kèm ảnh thật để chọn">💡 AI gợi ý ảnh</button>
         <button onclick="openGen('${sh.id}')">✨ AI tạo</button>
         <button onclick="uploadScene('${sh.id}')">⬆ Tải ảnh lên</button>
         ${sh.image ? `<button onclick="openFrame('${sh.id}')" title="Chọn vùng ảnh hiển thị, nền mờ, lia toàn ảnh, hiệu ứng riêng">✂ Khung hình</button>
@@ -416,13 +641,16 @@ function openSearch(sid) {
   modalSid = sid;
   const src = Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'search' && v.enabled);
   const locked = Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'search' && !v.enabled);
-  const q = $('#q_' + baseId(sid)).value;
+  const [, s0] = findScene(baseId(sid)), slot0 = s0?.shots.find(x => x.id === sid);
+  const q = (sid !== baseId(sid) && slot0?.query) || $('#q_' + baseId(sid)).value;
   modal(`<div class="mh row"><b>${sid}</b>
       <input id="sq" value="${esc(q)}" style="flex:1;min-width:200px" onkeydown="if(event.key==='Enter')doSearch('${sid}')">
       <select id="ssrc"><option value="*">Tất cả nguồn (${src.length})</option>${src.map(([k, v]) => `<option value="${k}">${esc(v.label)}</option>`).join('')}
-        ${locked.map(([k, v]) => `<option disabled>${esc(v.label)} — cần key (tab ⚙)</option>`).join('')}</select>
+        ${locked.map(([k, v]) => `<option disabled>${esc(v.label)} — cần key</option>`).join('')}</select>
       <button class="primary" onclick="doSearch('${sid}')">Tìm</button><button onclick="closeModal()">Đóng</button></div>
     <div class="mh row" style="border-top:0;padding-top:0">
+      ${locked.length ? `<span class="muted" style="font-size:12px">Thêm nguồn: ${locked.map(([k, v]) =>
+        `<a href="#" onclick="event.preventDefault();askKey(${esc(JSON.stringify(v.needs))},${esc(JSON.stringify(v.label))},()=>openSearch('${sid}'))">🔑 ${esc(v.label.split(' (')[0])}</a>`).join(' · ')}</span><br>` : ''}
       <button onclick="openGoogle('${sid}')" title="Mở Google Images với bộ lọc Creative Commons">🌐 Google Images (CC)</button>
       <button onclick="openGoogle('${sid}',false)" title="Không lọc license — nhớ kiểm tra bản quyền">Google (tất cả)</button>
       <input id="pasteUrl" placeholder="…hoặc dán link ảnh (chuột phải ảnh → Sao chép địa chỉ hình ảnh)" style="flex:1;min-width:220px"
@@ -434,6 +662,53 @@ function openSearch(sid) {
   doSearch(sid);
 }
 let CANDS = [];
+/* size label: green = big enough for the video (≥1920×1280-ish, landscape), yellow = usable, red = small */
+function sizeTag(c) {
+  if (!c.width || !c.height) return '<span class="sz y">? px</span>';
+  const f = c.fit ?? 0, cls = f >= 0.95 ? 'g' : f >= 0.6 ? 'y' : 'r';
+  return `<span class="sz ${cls}" title="${f >= 0.95 ? 'Đủ lớn cho video 1920' : f >= 0.6 ? 'Tạm được' : 'Nhỏ / sai khổ — sẽ bị mờ hoặc cắt nhiều'}">${c.width}×${c.height}${f >= 0.95 ? ' ✓' : ''}</span>`;
+}
+/* big preview before picking; pick() is called by "✓ Chọn ảnh này" */
+function lightbox(c, pick) {
+  let lb = $('#lightbox'); if (!lb) { lb = document.createElement('div'); lb.id = 'lightbox'; document.body.appendChild(lb); }
+  S.lbPick = pick; S.lbCand = c;
+  lb.innerHTML = `<div class="lb" onclick="if(event.target===this)closeLb()"><div class="lbin">
+    <div class="lbview" id="lbView"><img id="lbImg" src="${esc(c.thumb)}" referrerpolicy="no-referrer"><span class="lbload" id="lbLoad">đang tải bản lớn…</span></div>
+    <div class="lbbar">
+      ${sizeTag(c)} <b style="flex:1;min-width:200px">${esc((c.title || '').slice(0, 120))}</b>
+      <span class="muted">${esc(c.source || '')} · ${esc(c.license || '?')}${c.author ? ' · ' + esc(String(c.author).slice(0, 60)) : ''}</span>
+      <label class="row" style="gap:4px"><input type="checkbox" id="lbFrame" onchange="lbFrame(this.checked)"> Xem trong khung video 16:9</label>
+      ${c.page ? `<a href="${esc(c.page)}" target="_blank">Trang gốc ↗</a>` : ''}
+      ${pick ? '<button class="primary" onclick="lbPick()">✓ Chọn ảnh này</button>' : ''}<button onclick="closeLb()">Đóng</button></div></div></div>`;
+  const big = new Image(); big.referrerPolicy = 'no-referrer';
+  big.onload = () => { const im = $('#lbImg'); if (!im || S.lbCand !== c) return; im.src = big.src; const l = $('#lbLoad'); if (l) l.remove();
+    if (!c.width) { const t = document.querySelector('#lightbox .sz'); if (t) t.outerHTML = sizeTag({...c, width: big.naturalWidth, height: big.naturalHeight,
+      fit: Math.min(big.naturalWidth / 1920, 1) * Math.min(big.naturalHeight / 1080, 1) >= 0.99 ? 1 : 0.6}); } };
+  big.onerror = () => { const l = $('#lbLoad'); if (l) l.textContent = 'chỉ có bản nhỏ'; };
+  big.src = c.url || c.thumb;
+}
+function lbFrame(on) {
+  const v = $('#lbView'), src = $('#lbImg').src;
+  v.innerHTML = on ? `<div class="f169"><img id="lbImg" src="${src}" referrerpolicy="no-referrer"></div>` : `<img id="lbImg" src="${src}" referrerpolicy="no-referrer">`;
+}
+function viewImg(sid) {  // preview the picture a slot already uses
+  const [, s] = findScene(baseId(sid)), sh = s.shots.find(x => x.id === sid), c = sh.credit || {};
+  lightbox({thumb: sh.image, url: sh.image, title: c.title || sid, source: c.source, license: c.license, author: c.author, page: c.page}, null);
+}
+function closeLb() { const lb = $('#lightbox'); if (lb) lb.innerHTML = ''; S.lbPick = null; }
+async function lbPick() { const f = S.lbPick; closeLb(); if (f) await f(); }
+document.addEventListener('keydown', e => {
+  if (!$('#lightbox')?.innerHTML) return;
+  if (e.key === 'Escape') { e.stopPropagation(); closeLb(); } else if (e.key === 'Enter') { e.preventDefault(); lbPick(); }
+}, true);
+function drawCands(sid) {
+  const box = $('#results'); if (!box) return;
+  const order = CANDS.map((c, i) => i).sort((a, b) => Math.round((CANDS[b].fit ?? 0.35) * 10) - Math.round((CANDS[a].fit ?? 0.35) * 10));
+  box.innerHTML = order.map(i => { const c = CANDS[i], portrait = c.width && c.height && c.width < c.height * 1.15;
+    return `<div class="cand ${portrait ? 'portrait' : ''}" onclick="lightbox(CANDS[${i}],()=>pickCand('${sid}',${i}))" title="Bấm để xem lớn">
+      <img src="${esc(c.thumb)}" loading="lazy" referrerpolicy="no-referrer">
+      <div>${sizeTag(c)} ${esc(c.source)}${portrait ? ' · dọc' : ''}<br>${esc((c.title || '').slice(0, 60))}</div></div>`; }).join('');
+}
 async function doSearch(sid) {
   const q = $('#sq').value, sel = $('#ssrc').value;
   const list = sel === '*' ? Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'search' && v.enabled).map(([k]) => k) : [sel];
@@ -442,14 +717,10 @@ async function doSearch(sid) {
   await Promise.all(list.map(async s => {
     try {
       const r = await api(`/api/search?source=${s}&q=${encodeURIComponent(q)}&n=16`);
-      r.forEach(c => { const i = CANDS.push(c) - 1;
-        const portrait = c.width && c.height && c.width < c.height * 1.15;
-        $('#results').insertAdjacentHTML('beforeend', `<div class="cand ${portrait ? 'portrait' : ''}" onclick="pickCand('${sid}',${i},this)">
-          <img src="${esc(c.thumb)}" loading="lazy" referrerpolicy="no-referrer">
-          <div>${esc(c.source)} · ${c.width || '?'}×${c.height || '?'}${portrait ? ' · dọc' : ''}<br>${esc((c.title || '').slice(0, 60))}</div></div>`); });
+      r.forEach(c => CANDS.push(c)); drawCands(sid);
     } catch (e) { $('#smsg').textContent += ` ${e.message}`; }
   }));
-  $('#smsg').textContent = CANDS.length ? 'Bấm vào ảnh để chọn cho cảnh này.' : 'Không có kết quả — thử từ khoá ngắn hơn / tiếng Anh.';
+  $('#smsg').textContent = CANDS.length ? `Ảnh lớn (≥1920×1280, ngang) xếp trước. Bấm ảnh để xem lớn rồi ✓ Chọn (Enter).` : 'Không có kết quả — thử từ khoá ngắn hơn / tiếng Anh.';
 }
 function openGoogle(sid, cc = true) {
   const q = ($('#sq')?.value || $('#q_' + baseId(sid))?.value || '').trim();
@@ -511,10 +782,159 @@ document.addEventListener('paste', async e => {
   if (/^https?:\/\/\S+$/.test(text)) { e.preventDefault(); pickUrl(sid, text); }
 });
 
-async function pickCand(sid, i, el) {
-  el.style.opacity = .4;
-  try { await api(`${P()}/scene/${sid}/pick`, {method: 'POST', json: CANDS[i]}); closeModal(); refreshScene(sid); }
-  catch (e) { el.style.opacity = 1; toast(e.message); }
+async function pickCand(sid, i) {
+  toast('Đang tải ảnh…');
+  try { await api(`${P()}/scene/${sid}/pick`, {method: 'POST', json: CANDS[i]}); closeModal(); refreshScene(sid); toast(`${sid}: đã có ảnh`); }
+  catch (e) { toast(e.message); }
+}
+/* ---- 💡 per-scene AI picture suggestions ---- */
+let SUG = null;
+async function openSuggest(sid) {
+  modalSid = sid;
+  const saved = await api(`${P()}/scene/${baseId(sid)}/suggest`);
+  let last = 'gemini'; try { last = localStorage.getItem('vg_sug') || last; } catch {}
+  const [, s] = findScene(baseId(sid));
+  modal(`<div class="mh row"><b>💡 AI gợi ý ảnh — ${sid}</b>
+      <select id="sgSite">${[['gemini', 'Gemini web (có tìm web)'], ['chatgpt', 'ChatGPT web'], ['grok', 'Grok web'], ['api_gemini', 'Gemini API'], ['api_openai', 'OpenAI API']]
+        .map(([v, l]) => `<option value="${v}" ${v === last ? 'selected' : ''}>${l}</option>`).join('')}</select>
+      <button class="primary" onclick="runSuggest('${sid}')">${saved.suggestions.length ? '↻ Gợi ý lại' : '💡 Gợi ý'}</button>
+      <button onclick="closeModal()">Đóng</button></div>
+    <div class="mb"><div class="muted" style="font-size:13px;margin-bottom:6px">“${esc(s.text)}”</div>
+      <div id="sgJob"></div><div id="sgList"></div></div>`);
+  if (saved.suggestions.length) drawSuggest(sid, saved); else runSuggest(sid);
+}
+async function runSuggest(sid) {
+  const site = $('#sgSite').value;
+  if (await needApiKey(site, () => openSuggest(sid))) return;
+  try { localStorage.setItem('vg_sug', site); } catch {}
+  $('#sgList').innerHTML = '';
+  try {
+    const job = await api(`${P()}/scene/${baseId(sid)}/suggest`, {method: 'POST', json: {site}});
+    watchJob(job, '#sgJob', async () => { const j = await api(`/api/jobs/${job.id}`); $('#sgJob').innerHTML = ''; drawSuggest(sid, j.result); });
+  } catch (e) { toast(e.message); }
+}
+function drawSuggest(sid, res) {
+  SUG = res.suggestions; const box = $('#sgList'); if (!box) return;
+  box.innerHTML = `<p class="muted" style="font-size:12px;margin:0">Bấm ảnh để chọn ngay · hoặc dùng từ khoá / prompt của gợi ý.
+      ${res.at ? `Gợi ý lúc ${esc(res.at)} (${esc(res.site)}).` : ''}</p>` +
+    SUG.map((x, i) => `<div class="sug">
+      <div class="th">${(x.cands || []).map((c, j) => `<span class="thw"><img src="${esc(c.thumb)}" loading="lazy" referrerpolicy="no-referrer"
+          title="Bấm để xem lớn · ${esc(c.source)} · ${esc((c.title || '').slice(0, 80))}" onclick="lightbox(SUG[${i}].cands[${j}],()=>pickSuggest('${sid}',${i},${j}))">${sizeTag(c)}</span>`).join('')
+        || '<span class="muted" style="font-size:12px">Không thấy ảnh thật — thử 🔍 hoặc ✨ AI tạo</span>'}</div>
+      <div style="flex:1;min-width:0"><b>${i + 1}. ${esc(x.title || '')}</b>
+        <div>${esc(x.desc || '')}</div>
+        <div class="muted" style="font-size:12px;margin-top:4px">Search: <code>${esc(x.query || '')}</code></div>
+        <details style="font-size:12px;margin-top:2px"><summary class="muted" style="cursor:pointer">Prompt AI</summary>${esc(x.prompt || '')}</details>
+        <div class="row" style="margin-top:6px">
+          <button onclick="sugSearch('${sid}',${i})">🔍 Tìm thêm</button>
+          <button onclick="sugGen('${sid}',${i})">✨ AI tạo từ gợi ý này</button>
+          <button onclick="sugUse('${sid}',${i})" title="Điền từ khoá + prompt của gợi ý vào cảnh">📋 Dùng từ khoá + prompt</button></div></div></div>`).join('');
+}
+async function pickSuggest(sid, i, j) {
+  toast('Đang tải ảnh…');
+  try { await api(`${P()}/scene/${sid}/pick`, {method: 'POST', json: SUG[i].cands[j]}); closeModal(); refreshScene(sid); toast(`${sid}: đã có ảnh`); }
+  catch (e) { toast(e.message); }
+}
+async function sugUse(sid, i, quiet) {
+  const x = SUG[i], base = baseId(sid), [, s] = findScene(base);
+  await saveScene(base, {query: x.query}); await saveScene(sid, {prompt: x.prompt});
+  if (sid === base) s.prompt = x.prompt; else { const sh = s.shots.find(y => y.id === sid); if (sh) sh.prompt = x.prompt; }
+  s.query = x.query;
+  const qi = $('#q_' + base); if (qi) qi.value = x.query;
+  if (!quiet) { closeModal(); refreshScene(sid); toast('Đã điền từ khoá + prompt'); }
+}
+async function sugSearch(sid, i) { await sugUse(sid, i, true); openSearch(sid); }
+async function sugGen(sid, i) { await sugUse(sid, i, true); openGen(sid); }
+/* ---- 🧩 split a scene into ideas, one picture per idea ---- */
+function markWords(text, part) {  // highlight `part` inside `text` (tolerant to spacing/punctuation)
+  const i = text.indexOf(part.trim());
+  if (i < 0) return esc(text);
+  return esc(text.slice(0, i)) + '<mark>' + esc(part.trim()) + '</mark>' + esc(text.slice(i + part.trim().length));
+}
+let SEG = null;
+const AI_TEXT_SITES = [['gemini', 'Gemini web (có tìm web)'], ['chatgpt', 'ChatGPT web'], ['grok', 'Grok web'], ['api_gemini', 'Gemini API'], ['api_openai', 'OpenAI API']];
+async function openSegment(sid) {
+  const base = baseId(sid); modalSid = sid;
+  const saved = await api(`${P()}/scene/${base}/segment`);
+  let last = 'gemini'; try { last = localStorage.getItem('vg_sug') || last; } catch {}
+  let lastAi = 'web_gemini'; try { lastAi = localStorage.getItem('vg_ai') || lastAi; } catch {}
+  const ai = Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'ai' && v.enabled);
+  const [, s] = findScene(base);
+  modal(`<div class="mh row"><b>🧩 Chia ý + minh hoạ — ${base}</b>
+      <select id="sgSite">${AI_TEXT_SITES.map(([v, l]) => `<option value="${v}" ${v === last ? 'selected' : ''}>${l}</option>`).join('')}</select>
+      <button class="primary" onclick="runSegment('${base}')">${saved.segments.length ? '↻ Chia lại' : '🧩 Phân tích'}</button>
+      <button onclick="closeModal()">Đóng</button></div>
+    <div class="mb"><div class="muted" style="font-size:13px">“${esc(s.text)}” <span>(${(s.end - s.start).toFixed(1)}s)</span></div>
+      <p class="muted" style="font-size:12px;margin:4px 0 8px">AI chia lời thành từng ý → mỗi ý thành 1 ô ảnh, đổi ảnh đúng lúc giọng đọc tới ý đó
+        (khớp vào chỗ ngắt hơi thật). Mỗi ý có ảnh thật để bấm chọn, hoặc AI tạo ảnh theo đúng ý.</p>
+      <div id="sgJob"></div><div id="segList"></div>
+      <div class="row" id="segAll" style="margin-top:10px" hidden>
+        <select id="segAi">${ai.map(([k, v]) => `<option value="${k}" ${k === lastAi ? 'selected' : ''}>${esc(v.label)}</option>`).join('')}</select>
+        <select id="segAsp">${ASPECTS.map(([v, l]) => `<option value="${v}" ${v === (S.state.aspect || '16:9') ? 'selected' : ''}>${l}</option>`).join('')}</select>
+        <label class="row" style="gap:4px"><input type="checkbox" id="segOver"> tạo lại cả ô đã có ảnh</label>
+        <button class="primary" onclick="genAllSegments('${base}')">✨ AI tạo ảnh cho tất cả ý</button></div>
+      <div id="segGenJob"></div></div>`);
+  if (saved.segments.length) drawSegments(base, saved); else runSegment(base);
+}
+async function runSegment(base) {
+  const site = $('#sgSite').value;
+  if (await needApiKey(site, () => openSegment(base))) return;
+  try { localStorage.setItem('vg_sug', site); } catch {}
+  $('#segList').innerHTML = ''; $('#segAll').hidden = true;
+  try {
+    const job = await api(`${P()}/scene/${base}/segment`, {method: 'POST', json: {site}});
+    watchJob(job, '#sgJob', async () => {
+      const j = await api(`/api/jobs/${job.id}`); $('#sgJob').innerHTML = '';
+      S.state = await api(P()); rerenderCard(base); drawSegments(base, j.result);
+    });
+  } catch (e) { toast(e.message); }
+}
+function drawSegments(base, res) {
+  SEG = res.segments; const box = $('#segList'); if (!box) return;
+  const [, s] = findScene(base);
+  box.innerHTML = SEG.map((x, i) => { const sh = s.shots.find(y => y.id === x.slot);
+    return `<div class="seg">
+      <div class="th">${sh?.image ? `<img class="cur" src="${sh.image}" title="ảnh hiện tại của ${x.slot}">` : ''}
+        ${(x.cands || []).map((c, j) => `<span class="thw"><img src="${esc(c.thumb)}" loading="lazy" referrerpolicy="no-referrer"
+          title="Bấm để xem lớn · ${esc(c.source)} · ${esc((c.title || '').slice(0, 80))}" onclick="lightbox(SEG[${i}].cands[${j}],()=>pickSeg('${base}',${i},${j}))">${sizeTag(c)}</span>`).join('')
+        || '<span class="muted" style="font-size:12px">Không thấy ảnh thật — dùng ✨ AI tạo</span>'}</div>
+      <div style="flex:1;min-width:0"><b>Ý ${i + 1} · ${fmt(x.t0)}–${fmt(x.t1)} · ${esc(x.title || '')}</b>
+        <div style="margin:2px 0"><mark>“${esc(x.text)}”</mark></div>
+        <div>${esc(x.desc || '')}</div>
+        <div class="muted" style="font-size:12px;margin-top:4px">Search: <code>${esc(x.query || '')}</code></div>
+        <details style="font-size:12px;margin-top:2px"><summary class="muted" style="cursor:pointer">Prompt AI</summary>${esc(x.prompt || '')}</details>
+        <div class="row" style="margin-top:6px"><span class="muted" style="font-size:12px">${x.slot}${sh?.image ? ' · đã có ảnh' : ' · chưa có ảnh'}</span>
+          <button onclick="openSearch('${x.slot}')">🔍 Tìm thêm</button>
+          <button onclick="openGen('${x.slot}')">✨ AI tạo ý này</button></div></div></div>`; }).join('');
+  $('#segAll').hidden = false;
+}
+async function pickSeg(base, i, j) {
+  toast('Đang tải ảnh…');
+  try { await api(`${P()}/scene/${SEG[i].slot}/pick`, {method: 'POST', json: SEG[i].cands[j]});
+        S.state = await api(P()); rerenderCard(base); drawSegments(base, {segments: SEG}); toast(`${SEG[i].slot}: đã có ảnh`); }
+  catch (e) { toast(e.message); }
+}
+async function genAllSegments(base) {
+  const source = $('#segAi').value;
+  try { localStorage.setItem('vg_ai', source); } catch {}
+  try {
+    const job = await api(`${P()}/scene/${base}/generate_all`, {method: 'POST', json: {source, aspect: $('#segAsp').value, all: $('#segOver').checked}});
+    watchJob(job, '#segGenJob', async () => { S.state = await api(P()); rerenderCard(base); drawSegments(base, {segments: SEG}); toast('Đã tạo ảnh cho các ý'); });
+  } catch (e) { toast(e.message); }
+}
+const ASPECTS = [['16:9', '16:9 ngang (video)'], ['4:3', '4:3 ngang'], ['1:1', '1:1 vuông'], ['3:4', '3:4 dọc'], ['9:16', '9:16 dọc (Shorts)']];
+async function setAspect(a) {
+  try { await api(`${P()}/aspect`, {method: 'PUT', json: {aspect: a}}); S.state.aspect = a; toast('Khổ ảnh AI: ' + a); }
+  catch (e) { toast(e.message); }
+}
+async function researchScenes() {
+  const site = $('#rsSite').value;
+  if (await needApiKey(site, researchScenes)) return;
+  try { localStorage.setItem('vg_rs', site); } catch {}
+  try {
+    const job = await api(`${P()}/prompts/generate`, {method: 'POST', json: {site, mode: $('#rsMode').value, context: $('#rsCtx').value}});
+    watchJob(job, '#rsJob', () => { toast('Đã viết lại từ khoá + prompt'); refresh(); });
+  } catch (e) { toast(e.message); }
 }
 function openGen(sid) {
   const ai = Object.entries(S.settings.sources).filter(([, v]) => v.kind === 'ai');
@@ -524,12 +944,23 @@ function openGen(sid) {
   const slotPrompt = sid === baseId(sid) ? s?.prompt : (slot?.prompt || s?.prompt);
   modal(`<div class="mh"><b>✨ Tạo ảnh AI cho ${sid}</b></div><div class="mb">
     <div class="fields"><label>Prompt (sửa được, tự lưu)</label>
-      <textarea id="gPrompt" rows="3">${esc(slotPrompt || '')}</textarea></div>
-    <div class="srcs" style="margin:10px 0">${ai.map(([k, v]) => `<label title="${v.enabled ? '' : 'cần ' + v.key}">
-      <input type="radio" name="gSrc" value="${k}" ${!v.enabled ? 'disabled' : k === last ? 'checked' : ''}> ${esc(v.label)}</label>`).join('<br>')}</div>
+      <textarea id="gPrompt" rows="4" oninput="genPreview()">${esc(slotPrompt || '')}</textarea></div>
+    <div class="row" style="margin-top:6px"><label class="row" style="gap:4px">Khổ ảnh
+      <select id="gAspect" onchange="genPreview()">${ASPECTS.map(([v, l]) => `<option value="${v}" ${v === (S.state.aspect || '16:9') ? 'selected' : ''}>${l}</option>`).join('')}</select></label></div>
+    <details style="margin-top:6px"><summary class="muted" style="cursor:pointer;font-size:12px">Xem nguyên văn prompt sẽ gửi (prompt + style chung + khổ ảnh)</summary>
+      <pre id="gFull" style="white-space:pre-wrap;font-size:12px;background:var(--panel2);padding:8px;border-radius:8px;margin:6px 0 0"></pre></details>
+    <div class="srcs" style="margin:10px 0">${ai.map(([k, v]) => `<label title="${v.enabled ? '' : 'cần ' + v.needs.join(' + ')}">
+      <input type="radio" name="gSrc" value="${k}" ${!v.enabled ? 'disabled' : k === last ? 'checked' : ''}> ${esc(v.label)}
+      ${v.enabled ? '' : `<a href="#" style="font-size:12px" onclick="event.preventDefault();askKey(${esc(JSON.stringify(v.needs))},${esc(JSON.stringify(v.label))},()=>openGen('${sid}'))">🔑 thêm key</a>`}</label>`).join('<br>')}</div>
     <p class="muted">Nguồn "web" dùng tài khoản đã đăng nhập trong Chrome tự động hoá (tab ⚙ → Mở trình duyệt). Mỗi ảnh ~30–90s.</p>
     <div class="row"><button class="primary" id="gBtn" onclick="doGen('${sid}')">Tạo ảnh</button><button onclick="closeModal()">Đóng</button></div>
     <div id="genJob"></div></div>`);
+  genPreview();
+}
+function genPreview() {
+  const el = $('#gFull'); if (!el) return;
+  const a = $('#gAspect').value, txt = ASPECTS.find(x => x[0] === a)[1];
+  el.textContent = `${$('#gPrompt').value.trim()}. ${S.state.style}\n\n→ khổ ${a} (${txt}), không chữ, không watermark`;
 }
 async function doGen(sid) {
   const src = document.querySelector('input[name=gSrc]:checked')?.value;
@@ -538,7 +969,7 @@ async function doGen(sid) {
   await saveScene(sid, {prompt: $('#gPrompt').value});
   $('#gBtn').disabled = true; $('#gBtn').textContent = 'Đang tạo…';
   try {
-    const job = await api(`${P()}/scene/${sid}/generate`, {method: 'POST', json: {source: src}});
+    const job = await api(`${P()}/scene/${sid}/generate`, {method: 'POST', json: {source: src, aspect: $('#gAspect').value}});
     watchJob(job, '#genJob', () => { closeModal(); refreshScene(sid); toast(`${sid}: đã có ảnh`); }, () => {
       const b = $('#gBtn'); if (b) { b.disabled = false; b.textContent = 'Thử lại'; } });
   } catch (e) { $('#gBtn').disabled = false; toast(e.message, 8000); }
@@ -765,34 +1196,84 @@ async function doRender() {
 /* ---------------- ⚙ SETTINGS ---------------- */
 async function renderSettings() {
   S.settings = await api('/api/settings');
-  const k = S.settings.keys, help = {
-    GOOGLE_CSE_KEY: 'console.cloud.google.com → Custom Search API', GOOGLE_CSE_CX: 'programmablesearchengine.google.com → Search engine ID (bật Image search)',
-    FLICKR_API_KEY: 'flickr.com/services/apps/create — miễn phí', PEXELS_API_KEY: 'pexels.com/api — miễn phí', PIXABAY_API_KEY: 'pixabay.com/api/docs — miễn phí',
-    UNSPLASH_ACCESS_KEY: 'unsplash.com/developers — miễn phí', OPENAI_API_KEY: 'platform.openai.com — trả phí',
-    OPENAI_IMAGE_MODEL: 'mặc định gpt-image-1', GEMINI_API_KEY: 'aistudio.google.com — có free tier',
-    GEMINI_IMAGE_MODEL: 'mặc định gemini-2.5-flash-image',
-    BROWSER_CDP_PORT: '9222 (trùng Flow MCP để dùng chung)', BROWSER_PATH: 'tự dò Chrome/Edge',
-    BROWSER_USER_DATA_DIR: 'mặc định vidgen/browser-profile', BROWSER_PROFILE: 'vd: Profile 15'};
+  const k = S.settings.keys, help = Object.fromEntries(Object.entries(KEY_HELP).map(([n, [t]]) => [n, t]));
   const bs = await api('/api/browser/status');
   $('#main').innerHTML = `
   <div class="card"><h2>🌐 Trình duyệt cho Gemini / ChatGPT / Grok (web)</h2>
-    <p>Trạng thái: ${bs.alive ? `<span class="tag ok">đang chạy (CDP ${bs.port})</span>` : `<span class="tag bad">chưa chạy</span>`}</p>
-    <p class="muted">Trình duyệt: <code>${esc(bs.browser)}</code><br>Profile: <code>${esc(bs.profile)}</code></p>
-    <p class="muted">Nếu trình duyệt của Flow MCP đang chạy ở cổng ${bs.port}, vidgen dùng lại luôn. Nếu không, vidgen tự mở
-      đúng trình duyệt + profile trên (đã đăng nhập Google từ trước). ChatGPT / Grok cần đăng nhập 1 lần trong cửa sổ đó.</p>
-    <button class="primary" onclick="openBrowser(this)">Mở trình duyệt + 3 trang để đăng nhập</button></div>
+    <p class="muted">Mỗi trang AI có thể chạy trên trình duyệt riêng (vd Gemini trên Edge, ChatGPT trên Brave). Trình duyệt được app
+      điều khiển phải dùng <b>profile riêng</b> (Chrome/Brave/Edge chặn điều khiển profile mặc định) → đăng nhập <b>1 lần</b> trong cửa sổ app mở.</p>
+    <table><tr><th>Trang</th><th>Trình duyệt</th><th>Cổng</th><th>Thư mục profile</th><th>Trạng thái</th><th></th></tr>
+    ${['gemini', 'chatgpt', 'grok'].map(s => { const st = bs.sites[s], U = s.toUpperCase(), own = !!k[U + '_CDP_PORT'];
+      return `<tr><td><b>${s}</b></td>
+        <td><select data-site="${s}" onchange="setSiteBrowser('${s}',this.value)">
+          <option value="" ${own ? '' : 'selected'}>Dùng chung (${esc((bs.browser || '').split(/[\\/]/).pop())})</option>
+          ${bs.brave ? `<option value="brave" ${own && /brave/i.test(k[U + '_BROWSER_PATH']) ? 'selected' : ''}>Brave (riêng)</option>` : ''}
+          <option value="chrome" ${own && /chrome/i.test(k[U + '_BROWSER_PATH']) ? 'selected' : ''}>Chrome (riêng)</option>
+          <option value="edge" ${own && /msedge/i.test(k[U + '_BROWSER_PATH']) ? 'selected' : ''}>Edge (riêng)</option></select></td>
+        <td>${st.port}</td><td class="muted" style="font-size:12px;word-break:break-all">${esc(st.profile)}</td>
+        <td>${st.alive ? '<span class="tag ok">đang chạy</span>' : '<span class="tag bad">chưa mở</span>'}</td>
+        <td><button onclick="openBrowser(this,['${s}'])">Mở để đăng nhập</button></td></tr>`; }).join('')}</table>
+    <div class="row" style="margin-top:10px"><button class="primary" onclick="openBrowser(this)">Mở cả 3 trang để đăng nhập</button></div></div>
   <div class="card"><h2>Nguồn ảnh</h2><table>
     ${Object.entries(S.settings.sources).map(([id, v]) => `<tr><td>${esc(v.label)}</td><td>${v.kind === 'ai' ? 'AI tạo ảnh' : 'Tìm ảnh'}</td>
-      <td>${v.enabled ? '<span class="tag ok">sẵn sàng</span>' : `<span class="tag bad">cần ${v.key}</span>`}</td></tr>`).join('')}</table></div>
+      <td>${v.enabled ? '<span class="tag ok">sẵn sàng</span>' : `<span class="tag bad">cần ${v.needs.join(' + ')}</span> ${keyLink(v.needs, v.label)}`}</td></tr>`).join('')}</table></div>
   <div class="card"><h2>API keys</h2><p class="muted">Lưu cục bộ trong vidgen/settings.json. Wikimedia & Openverse không cần key.</p>
-    <div class="form-grid">${Object.keys(k).map(n => `<label>${n}<input data-k="${n}" value="${esc(k[n])}" placeholder="${esc(help[n] || '')}"></label>`).join('')}</div>
+    <div class="form-grid">${Object.keys(k).filter(n => !/^(GEMINI|CHATGPT|GROK)_(BROWSER_PATH|CDP_PORT|USER_DATA_DIR|PROFILE)$/.test(n)).map(n => `<label>${n}<input data-k="${n}" value="${esc(k[n])}" placeholder="${esc(help[n] || '')}"></label>`).join('')}</div>
     <div class="row" style="margin-top:12px"><button class="primary" onclick="saveKeys()">Lưu</button></div></div>`;
 }
-async function openBrowser(btn) {
+const BROWSER_EXE = {brave: 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe',
+  chrome: 'C:/Program Files/Google/Chrome/Application/chrome.exe', edge: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'};
+async function setSiteBrowser(site, which) {
+  const U = site.toUpperCase(), ports = {gemini: 9224, chatgpt: 9223, grok: 9225};
+  const d = which ? {[U + '_BROWSER_PATH']: BROWSER_EXE[which], [U + '_CDP_PORT']: String(ports[site])}
+                  : {[U + '_BROWSER_PATH']: '', [U + '_CDP_PORT']: '', [U + '_USER_DATA_DIR']: '', [U + '_PROFILE']: ''};
+  try { S.settings = await api('/api/settings', {method: 'PUT', json: d}); toast(which ? `${site}: ${which} riêng — bấm "Mở để đăng nhập"` : `${site}: dùng trình duyệt chung`); renderSettings(); }
+  catch (e) { toast(e.message); }
+}
+async function openBrowser(btn, sites) {
   btn.disabled = true; btn.textContent = 'Đang mở…';
-  try { const r = await api('/api/browser/open', {method: 'POST'}); toast(r.how === 'reused' ? 'Đã mở 3 tab trong Chrome đang chạy' : 'Đã mở Chrome — hãy đăng nhập'); }
+  try { await api('/api/browser/open', {method: 'POST', json: {sites: sites || null}}); toast('Đã mở — đăng nhập trong cửa sổ đó (chỉ cần 1 lần)'); }
   catch (e) { toast(e.message, 8000); }
   renderSettings();
+}
+const KEY_HELP = {  // name: [what / where, link to get it, free?]
+  YOUTUBE_API_KEY: ['YouTube Data API v3 — miễn phí 10.000 đơn vị/ngày (≈ 100 lần kiểm tra chủ đề)', 'https://console.cloud.google.com/apis/library/youtube.googleapis.com'],
+  GEMINI_API_KEY: ['Google AI Studio — có gói miễn phí, dùng cho viết kịch bản / gợi ý / tạo ảnh qua API', 'https://aistudio.google.com/apikey'],
+  OPENAI_API_KEY: ['OpenAI Platform — trả phí theo lượt dùng', 'https://platform.openai.com/api-keys'],
+  GOOGLE_CSE_KEY: ['Google Custom Search API key', 'https://console.cloud.google.com/apis/library/customsearch.googleapis.com'],
+  GOOGLE_CSE_CX: ['Search engine ID (bật "Image search")', 'https://programmablesearchengine.google.com/controlpanel/all'],
+  FLICKR_API_KEY: ['Flickr — miễn phí', 'https://www.flickr.com/services/apps/create/'],
+  PEXELS_API_KEY: ['Pexels — miễn phí', 'https://www.pexels.com/api/'],
+  PIXABAY_API_KEY: ['Pixabay — miễn phí (key hiện sau khi đăng nhập)', 'https://pixabay.com/api/docs/'],
+  UNSPLASH_ACCESS_KEY: ['Unsplash — miễn phí (Access Key)', 'https://unsplash.com/oauth/applications'],
+  OPENAI_IMAGE_MODEL: ['mặc định gpt-image-1'], OPENAI_TEXT_MODEL: ['mặc định gpt-4.1-mini'],
+  GEMINI_IMAGE_MODEL: ['mặc định gemini-2.5-flash-image'], GEMINI_TEXT_MODEL: ['mặc định gemini-2.5-flash'],
+  BROWSER_CDP_PORT: ['9222 (trùng Flow MCP để dùng chung)'], BROWSER_PATH: ['tự dò Chrome/Edge'],
+  BROWSER_USER_DATA_DIR: ['mặc định vidgen/browser-profile'], BROWSER_PROFILE: ['vd: Profile 15'],
+};
+/* Ask for missing API keys right where they are needed; then(after) runs once they are saved. */
+function askKey(names, why, after) {
+  names = [].concat(names);
+  modal(`<div class="mh"><b>🔑 Cần API key</b>${why ? ` <span class="muted">— ${esc(why)}</span>` : ''}</div><div class="mb">
+    ${names.map(n => { const [t, url] = KEY_HELP[n] || ['']; return `<label style="display:block;margin-bottom:12px"><b>${n}</b>
+      <span class="muted" style="font-size:12px"> ${esc(t)}</span>
+      ${url ? `<br><span style="font-size:12px">Lấy key tại: <a href="${url}" target="_blank">${url}</a></span>` : ''}
+      <input data-ak="${n}" style="width:100%;margin-top:4px" placeholder="dán key vào đây"></label>`; }).join('')}
+    <p class="muted" style="font-size:12px">Key chỉ lưu trên máy này (vidgen/settings.json), không đẩy lên GitHub.</p>
+    <div class="row"><button class="primary" onclick="saveAskKey()">Lưu & tiếp tục</button><button onclick="closeModal()">Huỷ</button></div></div>`);
+  S.afterKey = after;
+  setTimeout(() => document.querySelector('[data-ak]')?.focus(), 50);
+}
+async function saveAskKey() {
+  const d = {}; document.querySelectorAll('[data-ak]').forEach(i => { if (i.value.trim()) d[i.dataset.ak] = i.value.trim(); });
+  if (!Object.keys(d).length) return toast('Chưa nhập key');
+  try { S.settings = await api('/api/settings', {method: 'PUT', json: d}); closeModal(); toast('Đã lưu key');
+        const f = S.afterKey; S.afterKey = null; f && f(); }
+  catch (e) { toast(e.message); }
+}
+function keyLink(names, why, after) {  // small "🔑 thêm key" link for a locked feature
+  return `<a href="#" style="font-size:12px" onclick="event.preventDefault();event.stopPropagation();askKey(${esc(JSON.stringify([].concat(names)))},
+    ${esc(JSON.stringify(why || ''))},${after || 'refresh'})">🔑 thêm key</a>`;
 }
 async function saveKeys() {
   const d = {}; document.querySelectorAll('[data-k]').forEach(i => d[i.dataset.k] = i.value);
