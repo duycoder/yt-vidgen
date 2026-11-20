@@ -35,7 +35,7 @@ RENDER_DEFAULTS = dict(width=1920, height=1080, fps=30, xfade=0.8, transition="f
                        zoom=1.15, gap=0.5,
                        titles=False, font="C:/Windows/Fonts/georgia.ttf", parts=None, preset="medium",
                        crf=20, output="video.mp4", force=False)
-PLAN_DEFAULTS = dict(split_pause=1.0, max_scene=16.0)
+PLAN_DEFAULTS = dict(split_pause=1.0, max_scene=25.0, min_scene=12.0)
 
 
 # ----------------------------------------------------------------- helpers
@@ -122,7 +122,8 @@ LOCK = threading.Lock()  # one heavy job at a time (vidgen.log is global)
 
 JOB_LABEL = {"plan": "phân cảnh", "generate": "tạo ảnh AI", "autofill": "auto-fill ảnh", "preview": "render nháp",
              "render": "render video", "ideas": "gợi ý chủ đề", "youtube": "kiểm tra YouTube", "script": "viết kịch bản",
-             "prompts": "AI nghiên cứu cảnh", "suggest": "AI gợi ý ảnh", "segment": "chia ý", "voices": "tạo giọng đọc"}
+             "prompts": "AI nghiên cứu cảnh", "suggest": "AI gợi ý ảnh", "segment": "chia ý", "voices": "tạo giọng đọc",
+             "thumbnail": "tạo thumbnail"}
 
 
 def start_job(kind, fn, key=None):
@@ -705,6 +706,104 @@ def put_youtube(name: str, body: dict = Body(...)):
     return get_youtube(name)
 
 
+THUMB_SITES = {"web_gemini": "gemini", "web_chatgpt": "chatgpt", "web_grok": "grok", "gemini": None, "openai": None}
+THUMB_PROMPT = """Create a YouTube thumbnail, 16:9 landscape (1280x720), for a history documentary channel.
+Video: "{title}" (topic: {topic}).
+Follow this exact layout:
+1. BACKGROUND (whole frame): a photorealistic close-up of {topic} - several whole pieces plus some cut open to show
+   the inside, with fresh leaves, filling the frame, rich natural colors, soft daylight, shallow depth of field.
+2. LEFT THIRD: {figure}, painted in the traditional art style of that culture and era (e.g. a Chinese ink-and-wash
+   painting for an ancient Chinese monk), shown from the waist up as a clean cut-out over the photo, facing the
+   viewer or the text. The painted figure contrasts with the photo background.
+3. RIGHT TWO-THIRDS: the title in classic elegant SERIF capitals (Trajan / Cinzel style), white letters with a thin
+   dark outline and soft dark shadow, centered in 3 stacked lines:
+   {text_rule}
+   Keep the text away from the bottom-right corner (YouTube puts the video length there).
+Spell every word exactly, no other text anywhere. No logos, no watermark, no borders.{extra}"""
+
+
+def thumbs_of(name: str):
+    d = proj_dir(name) / "output" / "thumbnails"
+    fs = sorted(d.glob("*.jpg"), key=lambda f: f.stat().st_mtime, reverse=True) if d.exists() else []
+    return [{"name": f.name, "url": f"/files/{name}/output/thumbnails/{f.name}?v={int(f.stat().st_mtime)}",
+             "kb": round(f.stat().st_size / 1024)} for f in fs]
+
+
+@app.get("/api/projects/{name}/thumbnails")
+def get_thumbnails(name: str):
+    yt = read_json(proj_dir(name) / "youtube.json", {})
+    return {"items": thumbs_of(name), "text": yt.get("thumb_text", ""), "idea": yt.get("thumb_idea", "")}
+
+
+@app.post("/api/projects/{name}/thumbnail")
+def make_thumbnail(name: str, opts: dict = Body(default={})):
+    """🖼 AI makes a YouTube thumbnail WITH the hook text drawn on it -> output/thumbnails/*.jpg (1280x720, < 2 MB)."""
+    p = proj_dir(name)
+    site = opts.get("site", "web_gemini")
+    if site not in THUMB_SITES:
+        raise HTTPException(400, "site must be " + "/".join(THUMB_SITES))
+    text, idea = (opts.get("text") or "").strip(), (opts.get("idea") or "").strip()
+    yt = read_json(p / "youtube.json", {})
+    yt.update(thumb_text=text, thumb_idea=idea)
+    write_json(p / "youtube.json", yt)
+    lines = [x.strip() for x in re.split(r"\s*[|/\n]\s*", text) if x.strip()] if text else []
+    if len(lines) == 1:  # "THE SWEET HISTORY OF MONK FRUIT" -> split at the last " of "
+        m = re.match(r"(?i)(.+?)\s+(of)\s+(.+)$", lines[0])
+        lines = [m.group(1), m.group(2).lower(), m.group(3)] if m else lines
+    if lines:
+        rule = "\n   ".join(f'line {i + 1}: "{ln}"' for i, ln in enumerate(lines))
+        rule += ("\n   The LAST line is the biggest (about twice the size); a short middle word like \"of\" is small"
+                 " italic script.")
+    else:
+        rule = (f'line 1: "THE <ONE ADJECTIVE> HISTORY" (pick an intriguing adjective for this story, e.g. SWEET, DARK,'
+                f' STRANGE, SECRET)\n   line 2: "of" in small italic script\n   line 3: "{p.name.upper()}" - the'
+                f' biggest line, about twice the size of line 1')
+    prompt = THUMB_PROMPT.format(
+        title=yt.get("title") or f"The History of {p.name}", topic=p.name, text_rule=rule,
+        figure=idea or f"the most important historical person in the story of {p.name} (pick one that fits the video)",
+        extra="")
+    n = max(1, min(4, int(opts.get("n") or 1)))
+
+    def work(job, emit):
+        from io import BytesIO
+        from PIL import Image, ImageOps
+        import browser_ai
+        out = p / "output" / "thumbnails"
+        out.mkdir(parents=True, exist_ok=True)
+        for i in range(n):
+            if job["cancel"]:
+                break
+            emit(f"thumbnail {i + 1}/{n}: {site}…")
+            try:
+                if THUMB_SITES[site]:
+                    web = THUMB_SITES[site]
+                    data = browser_ai.generate(web, prompt, log=emit, raw=True, aspect="16:9",
+                                               **browser_ai.cfg(keys(), web))
+                else:
+                    data = sources.generate(site, prompt, {**keys(), "_ASPECT": "16:9"})
+                img = ImageOps.fit(Image.open(BytesIO(data)).convert("RGB"), (1280, 720), Image.LANCZOS)
+                f = out / f"thumb_{time.strftime('%Y%m%d_%H%M%S')}_{i + 1}.jpg"
+                for q in (92, 85, 75):  # YouTube limit: 2 MB
+                    img.save(f, "JPEG", quality=q, optimize=True)
+                    if f.stat().st_size < 2_000_000:
+                        break
+                emit(f"✓ {f.name}")
+            except Exception as e:  # noqa: BLE001
+                emit(f"lỗi: {e}")
+            job["progress"] = (i + 1) / n
+        job["result"] = thumbs_of(name)
+
+    return start_job("thumbnail", work, key=f"thumb:{name}")
+
+
+@app.delete("/api/projects/{name}/thumbnails/{fname}")
+def del_thumbnail(name: str, fname: str):
+    f = proj_dir(name) / "output" / "thumbnails" / Path(fname).name
+    if f.exists():
+        f.unlink()
+    return {"items": thumbs_of(name)}
+
+
 @app.get("/api/projects/{name}/credits")
 def get_credits(name: str):
     p = proj_dir(name)
@@ -904,9 +1003,75 @@ def get_segment(name: str, sid: str):
     return read_json(p / "output" / "segments" / f"{base_sid(sid)}.json", {"segments": []})
 
 
+def segment_scene(p: Path, base: str, site: str, k: dict, emit, plan=None):
+    """AI splits one scene's narration into visual ideas -> image slots timed to the voice, with real-photo candidates.
+    Saves prompts.json + output/segments/<base>.json and returns that result."""
+    plan = plan or read_json(p / "output" / "plan.json", None)
+    part, scene, prev, nxt = studio.scene_context(plan, base)
+    secs = scene["end"] - scene["start"]
+    hi = max(1, min(3, int(secs / 8)))  # one picture per ~8s or more
+    yt = read_json(p / "youtube.json", {})
+    prompt = studio.SEGMENT_PROMPT.format(title=yt.get("title") or f"The History of {p.name}", topic=p.name,
+                                          part=part["num"], part_title=part["title"], text=scene["text"], secs=secs,
+                                          prev=prev, next=nxt, lo=min(2, hi), hi=hi)
+    rows = [r for r in studio.parse_json_block(studio.ask(site, prompt, k, log=emit)) if r.get("text")]
+    if not rows:
+        raise RuntimeError("AI không trả về đoạn nào")
+    rows, fr = studio.segment_times(rows, scene, p / "voices" / part["voice"], min_len=6.0)
+    emit(f"{base}: {len(rows)} ý: " + " | ".join(f"{f * secs:.1f}s" for f in fr))
+    d = prompts_of(p)
+    d.setdefault("shots", {})[base] = len(rows)
+    d.setdefault("shot_times", {})[base] = fr
+    for j, r in enumerate(rows):
+        slot = vidgen.shot_id(base, j + 1)
+        d["scenes"][slot] = r.get("prompt", "").strip()
+        d.setdefault("shot_text", {})[slot] = r.get("text", "").strip()
+        d.setdefault("shot_query", {})[slot] = ((r.get("queries") or [None])[0] or r.get("short") or r.get("query") or "").strip()
+    d["queries"][base] = (rows[0].get("short") or rows[0].get("query") or d["queries"].get(base, "")).strip()
+    write_json(p / "prompts.json", d)
+    emit(f"{base}: đang tìm ảnh thật cho từng ý…")
+    from concurrent.futures import ThreadPoolExecutor
+    free = free_sources(k)
+    with ThreadPoolExecutor(6) as ex:
+        for r, c in zip(rows, ex.map(lambda r: studio.real_candidates(r, k, free, sources), rows)):
+            r["cands"] = c
+    res = {"sid": base, "site": site, "at": time.strftime("%Y-%m-%d %H:%M"),
+           "segments": [{**r, "slot": vidgen.shot_id(base, j + 1), "t0": round(scene["start"] + fr[j] * secs, 2),
+                         "t1": round(scene["start"] + (fr[j + 1] if j + 1 < len(fr) else 1) * secs, 2)}
+                        for j, r in enumerate(rows)]}
+    write_json(p / "output" / "segments" / f"{base}.json", res)
+    return res
+
+
+def autopick_segments(p: Path, res: dict, used: set, emit, overwrite=False):
+    """Give every idea of a segmented scene the best real photo found for it (big landscape first, no repeats)."""
+    n = 0
+    for x in res.get("segments", []):
+        if not overwrite and vidgen.find_image(p / "pics", x["slot"]):
+            continue
+        # cands are in relevance order (the AI's first search = what happens in the picture); take the first
+        # reasonably sized one, so a big but off-topic photo of the subject does not win
+        cands = [c for c in x.get("cands") or [] if c.get("url") not in used]
+        cands.sort(key=lambda c: -(c.get("fit", 0) >= 0.5))
+        for c in cands:
+            try:
+                save_image(p, x["slot"], download(c["url"]), {kk: c.get(kk) for kk in
+                                                              ("source", "title", "author", "license", "page", "url")})
+                used.add(c["url"])
+                emit(f"{x['slot']}: ✓ [{c.get('source')}] {(c.get('title') or '')[:60]}")
+                n += 1
+                break
+            except Exception as e:  # noqa: BLE001
+                emit(f"{x['slot']}: bỏ qua 1 ảnh lỗi ({e})")
+        else:
+            emit(f"{x['slot']}: không có ảnh thật phù hợp — mở 🧩 để tìm thêm hoặc ✨ AI tạo")
+    return n
+
+
 @app.post("/api/projects/{name}/scene/{sid}/segment")
 def segment(name: str, sid: str, opts: dict = Body(default={})):
-    """🧩 AI splits the scene's narration into visual ideas -> one image slot per idea, timed to the narration."""
+    """🧩 AI splits the scene's narration into visual ideas -> one image slot per idea, timed to the narration;
+    then each empty slot gets the best real photo found (auto_pick, on by default)."""
     p = proj_dir(name)
     site = opts.get("site", "gemini")
     if site not in AI_SITES:
@@ -916,48 +1081,58 @@ def segment(name: str, sid: str, opts: dict = Body(default={})):
         raise HTTPException(400, "run plan first")
     base = base_sid(sid)
     try:
-        part, scene, prev, nxt = studio.scene_context(plan, base)
+        studio.scene_context(plan, base)
     except KeyError:
         raise HTTPException(404, "scene not found")
-    secs = scene["end"] - scene["start"]
-    hi = max(1, min(4, int(secs / 3.5)))
-    yt = read_json(p / "youtube.json", {})
-    prompt = studio.SEGMENT_PROMPT.format(title=yt.get("title") or f"The History of {p.name}", topic=p.name,
-                                          part=part["num"], part_title=part["title"], text=scene["text"], secs=secs,
-                                          prev=prev, next=nxt, lo=min(2, hi), hi=hi)
-    k = keys()
 
     def work(job, emit):
-        rows = [r for r in studio.parse_json_block(studio.ask(site, prompt, k, log=emit)) if r.get("text")]
-        if not rows:
-            raise RuntimeError("AI không trả về đoạn nào")
-        rows, fr = studio.segment_times(rows, scene, p / "voices" / part["voice"])
-        emit(f"{len(rows)} ý: " + " | ".join(f"{f * secs:.1f}s" for f in fr))
-        d = prompts_of(p)
-        d.setdefault("shots", {})[base] = len(rows)
-        d.setdefault("shot_times", {})[base] = fr
-        for j, r in enumerate(rows):
-            slot = vidgen.shot_id(base, j + 1)
-            d["scenes"][slot] = r.get("prompt", "").strip()
-            d.setdefault("shot_text", {})[slot] = r.get("text", "").strip()
-            d.setdefault("shot_query", {})[slot] = (r.get("short") or r.get("query") or "").strip()
-        d["queries"][base] = (rows[0].get("short") or rows[0].get("query") or d["queries"].get(base, "")).strip()
-        write_json(p / "prompts.json", d)
-        emit("đang tìm ảnh thật cho từng ý…")
-        from concurrent.futures import ThreadPoolExecutor
-        free = free_sources(k)
-        with ThreadPoolExecutor(6) as ex:
-            for r, c in zip(rows, ex.map(lambda r: studio.real_candidates(r, k, free, sources), rows)):
-                r["cands"] = c
-        res = {"sid": base, "site": site, "at": time.strftime("%Y-%m-%d %H:%M"),
-               "segments": [{**r, "slot": vidgen.shot_id(base, j + 1), "t0": round(scene["start"] + fr[j] * secs, 2),
-                             "t1": round(scene["start"] + (fr[j + 1] if j + 1 < len(fr) else 1) * secs, 2)}
-                            for j, r in enumerate(rows)]}
-        write_json(p / "output" / "segments" / f"{base}.json", res)
+        res = segment_scene(p, base, site, keys(), emit, plan)
+        if opts.get("auto_pick", True):
+            autopick_segments(p, res, {c.get("url") for c in credits_of(p).values()}, emit)
         job["result"] = res
         emit("✓ xong")
 
     return start_job("segment", work, key=f"segment:{name}:{base}")
+
+
+@app.post("/api/projects/{name}/segment_all")
+def segment_all(name: str, opts: dict = Body(default={})):
+    """🧩 for every scene: AI splits it into ideas (skips scenes already split unless redo=true),
+    then fills each empty idea slot with the best real photo. Long job - can be cancelled between scenes."""
+    p = proj_dir(name)
+    site = opts.get("site", "gemini")
+    if site not in AI_SITES:
+        raise HTTPException(400, "site must be " + "/".join(AI_SITES))
+    plan = read_json(p / "output" / "plan.json", None)
+    if not plan:
+        raise HTTPException(400, "run plan first")
+    redo = bool(opts.get("redo"))
+    ids = [s["id"] for pt in plan["parts"] for s in pt["scenes"]]
+
+    def work(job, emit):
+        k = keys()
+        used = {c.get("url") for c in credits_of(p).values()}
+        done = fail = picked = 0
+        for i, base in enumerate(ids):
+            if job["cancel"]:
+                emit("đã dừng theo yêu cầu")
+                break
+            job["progress"] = i / len(ids)
+            saved = p / "output" / "segments" / f"{base}.json"
+            try:
+                if saved.exists() and not redo:
+                    res = read_json(saved, {"segments": []})
+                else:
+                    emit(f"── {base} ({i + 1}/{len(ids)})")
+                    res = segment_scene(p, base, site, k, emit, plan)
+                    done += 1
+                picked += autopick_segments(p, res, used, emit)
+            except Exception as e:  # noqa: BLE001
+                fail += 1
+                emit(f"{base}: lỗi — {e}")
+        emit(f"✓ xong: chia {done} cảnh, tự chọn {picked} ảnh" + (f", {fail} cảnh lỗi (bấm chạy lại)" if fail else ""))
+
+    return start_job("segment", work, key=f"segment_all:{name}")
 
 
 @app.post("/api/projects/{name}/scene/{sid}/generate_all")

@@ -128,8 +128,9 @@ def align_markers(tokens, dur, sil):
     return markers
 
 
-def build_scenes(part, dur, markers, sil, split_pause=1.0, max_scene=16.0, min_scene=4.0, min_merge=3.5):
-    """Cut at markers with pause >= split_pause; split over-long scenes at the inner marker nearest the middle."""
+def build_scenes(part, dur, markers, sil, split_pause=1.0, max_scene=25.0, min_len=12.0, min_scene=4.0, min_merge=3.5):
+    """Cut at markers with pause >= split_pause; split over-long scenes at the inner marker nearest the middle;
+    then drop cuts so each scene lasts at least min_len seconds (as long as it stays under max_scene)."""
     cuts = [m for m in markers if m["pause"] >= split_pause and m.get("snapped", True)]
 
     def refine(a_t, b_t, a_idx, b_idx):
@@ -174,6 +175,16 @@ def build_scenes(part, dur, markers, sil, split_pause=1.0, max_scene=16.0, min_s
     # merge very short scenes into the following one
     full = [full2[0]] + [m for i, m in enumerate(full2[1:-1], 1)
                          if m["t"] - full2[i - 1]["t"] >= min_merge] + [full2[-1]]
+    # group short scenes: drop a cut while the scene before it is shorter than min_len
+    if min_len > 0:
+        kept = [full[0]]
+        for i, m in enumerate(full[1:-1], 1):
+            if m["t"] - kept[-1]["t"] < min_len and full[i + 1]["t"] - kept[-1]["t"] <= max_scene:
+                continue
+            kept.append(m)
+        if len(kept) > 1 and full[-1]["t"] - kept[-1]["t"] < min_len and full[-1]["t"] - kept[-2]["t"] <= max_scene:
+            kept.pop()  # short tail: glue onto the previous scene
+        full = kept + [full[-1]]
 
     scenes = []
     for k, (a, b) in enumerate(zip(full, full[1:]), 1):
@@ -202,7 +213,7 @@ def cmd_plan(proj: Path, args):
         dur = duration(voice)
         sil = silences(voice)
         markers = align_markers(part["tokens"], dur, sil)
-        scenes = build_scenes(part, dur, markers, sil, args.split_pause, args.max_scene)
+        scenes = build_scenes(part, dur, markers, sil, args.split_pause, args.max_scene, getattr(args, "min_scene", 12.0))
         snapped = sum(m.get("snapped", False) for m in markers)
         log(f"  Part {part['num']:02d} {dur:6.1f}s  {len(scenes)} scenes  "
               f"(markers snapped to silence: {snapped}/{len(markers)})")
@@ -600,7 +611,8 @@ def main():
     ap.add_argument("command", choices=["plan", "images", "render", "all"])
     ap.add_argument("project", type=Path)
     ap.add_argument("--split-pause", type=float, default=1.0, help="pause length that starts a new scene")
-    ap.add_argument("--max-scene", type=float, default=16.0, help="split scenes longer than this (s) at an inner pause")
+    ap.add_argument("--max-scene", type=float, default=25.0, help="split scenes longer than this (s) at an inner pause")
+    ap.add_argument("--min-scene", type=float, default=12.0, help="merge consecutive scenes until each lasts this long (s)")
     ap.add_argument("--provider", default="pollinations", choices=["pollinations", "openai", "placeholder"])
     ap.add_argument("--force", action="store_true", help="regenerate existing images")
     ap.add_argument("--width", type=int, default=1920)

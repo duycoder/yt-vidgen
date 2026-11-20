@@ -184,21 +184,24 @@ Part {part}: "{part_title}". This narration is ONE scene, about {secs:.0f} secon
 (Before it: "{prev}" / After it: "{next}")
 
 Split the narration into {lo} to {hi} consecutive segments, one per distinct visual idea, so the picture changes when
-the idea changes. Each segment needs at least 8 words (about 3 seconds). Copy the original words EXACTLY and in order,
+the idea changes. Each segment needs at least 20 words (about 8 seconds); prefer FEWER, longer segments. Copy the original words EXACTLY and in order,
 covering the whole narration with no gaps. If it is really one idea, return a single segment.
 Use web search when useful to check what the real places, people, plants and objects look like.
 For each segment give:
 - "text": the exact words of that segment
 - "title": short title in Vietnamese
 - "desc": one sentence in Vietnamese: what the picture shows
-- "query": 3-6 English keywords to find it as a REAL photo/artwork on Wikimedia Commons or stock sites
+- "queries": 2-3 SHORT English searches (2-3 words each) that a free photo archive can actually match. The FIRST one
+  shows what happens in the picture (e.g. "scientist microscope", "medieval market"), then the main subject
+  (e.g. "sea buckthorn berries"). Never pile everything into one search - nobody has a photo of all of it.
+- "query": 3-6 English keywords describing the picture
 - "short": the 2-3 most important of those keywords
 - "prompt": an English prompt for an AI image generator illustrating exactly that segment, with FULL context
   (subject, place, period/year, people and clothing, setting, lighting, camera angle), historically accurate;
   do NOT write art style, aspect ratio or "no text".
 Return ONLY one code block with a JSON array, no other text:
 ```json
-[{{"text": "...", "title": "...", "desc": "...", "query": "...", "short": "...", "prompt": "..."}}]
+[{{"text": "...", "title": "...", "desc": "...", "queries": ["...", "..."], "query": "...", "short": "...", "prompt": "..."}}]
 ```"""
 
 
@@ -233,23 +236,38 @@ def segment_times(rows, scene, voice_path, min_len=2.5):
     return keep_rows, [round(f, 4) for f in keep_fr]
 
 
-def real_candidates(row, keys, free, sources):
-    """Real photos for one picture idea: full query, then shorter ones until something is found."""
+def real_candidates(row, keys, free, sources, per=4, want=8):
+    """Real photos for one picture idea. Searches the AI's short queries in order (action first, then subject);
+    results keep that order (best fit first inside each search), so the picture of what HAPPENS comes first.
+    Long queries are only shortened as a last resort."""
     words = (row.get("query") or "").split()
-    tries = [row.get("query", ""), row.get("short", ""), " ".join(words[:3]), " ".join(words[:2])]
+    tries = [q for q in (row.get("queries") or []) if isinstance(q, str)]
+    tries += [row.get("short", ""), row.get("query", "")]
     out, seen = [], set()
-    for q in dict.fromkeys(t.strip() for t in tries if t and t.strip()):
+
+    def run(q):
+        got = []
         for src in free[:3]:
             try:
-                for c in sources.search(src, q, 4, keys)[:4]:
+                for c in sources.search(src, q, per, keys)[:per]:
                     if c.get("url") not in seen:
                         seen.add(c.get("url"))
-                        out.append(c)
+                        c["q"] = q
+                        got.append(c)
             except Exception:  # noqa: BLE001
                 pass
-        if sum(1 for c in out if c.get("fit", 0) >= 0.9) >= 4:  # enough big landscape pictures
+        return sources.rank(got)
+
+    for q in dict.fromkeys(t.strip() for t in tries if t and t.strip()):
+        out += run(q)
+        if len(out) >= want and sum(1 for c in out if c.get("fit", 0) >= 0.9) >= 3:
             break
-    return sources.rank(out)[:8]
+    if not out:  # nothing at all: shorten the long query
+        for q in dict.fromkeys(" ".join(words[:n]) for n in (3, 2) if len(words) > n):
+            out += run(q)
+            if out:
+                break
+    return out[:want]
 
 
 def scene_context(plan, sid):

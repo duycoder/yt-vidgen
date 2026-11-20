@@ -387,7 +387,8 @@ function renderData() {
       <td>${p.duration ? fmt(p.duration) : '—'}</td></tr>`).join('')}</table>
     <div class="row" style="margin-top:12px"><b>Tổng: ${fmt(totalDur)}</b>
       <label class="muted">Cảnh mới tại pause ≥ <input id="splitPause" type="number" step="0.1" value="1" style="width:64px">s</label>
-      <label class="muted">Cảnh tối đa <input id="maxScene" type="number" value="16" style="width:64px">s</label>
+      <label class="muted">Cảnh tối đa <input id="maxScene" type="number" value="25" style="width:64px">s</label>
+      <label class="muted">Cảnh tối thiểu <input id="minScene" type="number" value="12" style="width:64px">s</label>
       <button class="primary" onclick="runPlan()">Phân cảnh →</button></div>`
     : '<p class="muted">Nạp kịch bản để xem các part.</p>'}
     <div id="jobBox"></div>
@@ -411,7 +412,7 @@ async function pasteScript() {
   await api(`${P()}/script`, {method: 'POST', json: {text: $('#pasteText').value}}); toast('Đã lưu kịch bản'); refresh();
 }
 async function runPlan() {
-  const job = await api(`${P()}/plan`, {method: 'POST', json: {split_pause: +$('#splitPause').value, max_scene: +$('#maxScene').value}});
+  const job = await api(`${P()}/plan`, {method: 'POST', json: {split_pause: +$('#splitPause').value, max_scene: +$('#maxScene').value, min_scene: +$('#minScene').value}});
   watchJob(job, '#jobBox', () => setTab('scenes'));
 }
 
@@ -470,13 +471,18 @@ async function renderScenes() {
         <input type="checkbox" class="autoSrc" value="${k}" ${!v.enabled ? 'disabled' : savedOrder.includes(k) ? 'checked' : ''}>
         ${esc(v.label)} ${v.enabled ? '' : keyLink(v.needs, v.label, 'async()=>{S.settings=await api(\'/api/settings\');refresh()}')}</label>`).join('')}
       <div class="row" style="margin-top:8px"><button class="primary" onclick="autofill(false)">⚡ Auto-fill ảnh thiếu</button>
-      <button onclick="autofill(true)">Làm lại tất cả</button></div></div>
+      <button onclick="autofill(true)">Làm lại tất cả</button></div>
+      <div class="row" style="margin-top:8px"><span class="muted">🧩 Chia ý + minh hoạ cho mọi cảnh, tự chọn ảnh thật tốt nhất:</span>
+        <select id="saSite">${AI_TEXT_SITES.map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select>
+        <label class="row" style="gap:4px"><input type="checkbox" id="saRedo"> chia lại cả cảnh đã chia</label>
+        <button class="primary" onclick="segmentAll()">🧩 Auto chia ý tất cả cảnh</button></div></div>
     <div id="jobBox"></div>
   </div>
   ${st.plan.parts.map(p => `
     <div class="part-h"><h3>Part ${p.num}. ${esc(p.title)}</h3><span class="muted">${fmt(p.duration)} · ${p.scenes.length} cảnh · ${p.scenes.reduce((a, s) => a + s.shots.length, 0)} ảnh</span></div>
     ${p.scenes.map(s => sceneCard(p, s)).join('')}`).join('')}`;
   try { const v = localStorage.getItem('vg_rs'); if (v) $('#rsSite').value = v; } catch {}
+  try { const v = localStorage.getItem('vg_sug'); if (v && $('#saSite')) $('#saSite').value = v; } catch {}
 }
 const baseId = id => id.replace(/_\d+$/, '');
 S.sel = {};  // scene id -> selected image slot (1-based)
@@ -631,6 +637,15 @@ async function autofill(overwrite) {
   try { localStorage.setItem('vg_auto', JSON.stringify(order)); } catch {}
   const job = await api(`${P()}/autofill`, {method: 'POST', json: {sources: order, overwrite}});
   watchJob(job, '#jobBox', () => { toast('Auto-fill xong'); renderAfter(); });
+}
+async function segmentAll() {
+  const site = $('#saSite').value;
+  if (await needApiKey(site, () => segmentAll())) return;
+  try { localStorage.setItem('vg_sug', site); } catch {}
+  try {
+    const job = await api(`${P()}/segment_all`, {method: 'POST', json: {site, redo: $('#saRedo').checked}});
+    watchJob(job, '#jobBox', () => { toast('Đã chia ý + chọn ảnh cho các cảnh'); renderAfter(); });
+  } catch (e) { toast(e.message); }
 }
 async function renderAfter() { S.state = await api(P()); renderScenes(); }
 
@@ -823,7 +838,7 @@ function drawSuggest(sid, res) {
         || '<span class="muted" style="font-size:12px">Không thấy ảnh thật — thử 🔍 hoặc ✨ AI tạo</span>'}</div>
       <div style="flex:1;min-width:0"><b>${i + 1}. ${esc(x.title || '')}</b>
         <div>${esc(x.desc || '')}</div>
-        <div class="muted" style="font-size:12px;margin-top:4px">Search: <code>${esc(x.query || '')}</code></div>
+        <div class="muted" style="font-size:12px;margin-top:4px">Search: <code>${esc((x.queries || []).join(' · ') || x.query || '')}</code></div>
         <details style="font-size:12px;margin-top:2px"><summary class="muted" style="cursor:pointer">Prompt AI</summary>${esc(x.prompt || '')}</details>
         <div class="row" style="margin-top:6px">
           <button onclick="sugSearch('${sid}',${i})">🔍 Tìm thêm</button>
@@ -899,9 +914,9 @@ function drawSegments(base, res) {
           title="Bấm để xem lớn · ${esc(c.source)} · ${esc((c.title || '').slice(0, 80))}" onclick="lightbox(SEG[${i}].cands[${j}],()=>pickSeg('${base}',${i},${j}))">${sizeTag(c)}</span>`).join('')
         || '<span class="muted" style="font-size:12px">Không thấy ảnh thật — dùng ✨ AI tạo</span>'}</div>
       <div style="flex:1;min-width:0"><b>Ý ${i + 1} · ${fmt(x.t0)}–${fmt(x.t1)} · ${esc(x.title || '')}</b>
-        <div style="margin:2px 0"><mark>“${esc(x.text)}”</mark></div>
-        <div>${esc(x.desc || '')}</div>
-        <div class="muted" style="font-size:12px;margin-top:4px">Search: <code>${esc(x.query || '')}</code></div>
+        <div style="margin:2px 0" title="Lời đọc trong khoảng thời gian này"><span class="muted" style="font-size:12px">🎙 Lời đọc:</span> <mark>“${esc(x.text)}”</mark></div>
+        <div title="Ảnh nên thể hiện gì cho lời đọc trên"><span class="muted" style="font-size:12px">🖼 Ảnh nên có:</span> ${esc(x.desc || '')}</div>
+        <div class="muted" style="font-size:12px;margin-top:4px">Search: <code>${esc((x.queries || []).join(' · ') || x.query || '')}</code></div>
         <details style="font-size:12px;margin-top:2px"><summary class="muted" style="cursor:pointer">Prompt AI</summary>${esc(x.prompt || '')}</details>
         <div class="row" style="margin-top:6px"><span class="muted" style="font-size:12px">${x.slot}${sh?.image ? ' · đã có ảnh' : ' · chưa có ảnh'}</span>
           <button onclick="openSearch('${x.slot}')">🔍 Tìm thêm</button>
@@ -1014,9 +1029,50 @@ async function renderRender() {
   ${st.video ? `<div class="card"><h2>Video</h2><video controls src="${st.video}"></video>
      <p class="muted">${esc(st.name)}/output/video.mp4</p></div>` : ''}
   <div class="card" id="ytCard"></div>
+  <div class="card" id="thCard"></div>
   <div class="card"><h2>Credits ảnh (dán vào mô tả YouTube)</h2><textarea rows="8" readonly>${esc(cr.text)}</textarea></div>`;
   bindRO();
   renderYT();
+  renderThumbs();
+}
+/* ---- 🖼 thumbnail with text (AI image) ---- */
+const THUMB_SITES = [['web_gemini', 'Gemini web (tài khoản của bạn)'], ['web_chatgpt', 'ChatGPT web'], ['web_grok', 'Grok web'], ['gemini', 'Gemini API'], ['openai', 'OpenAI API']];
+async function renderThumbs(d) {
+  d = d || await api(`${P()}/thumbnails`);
+  const box = $('#thCard'); if (!box) return;
+  let site = 'web_gemini'; try { site = localStorage.getItem('vg_th') || site; } catch {}
+  box.innerHTML = `<h2>🖼 Thumbnail — AI tạo ảnh có chữ</h2>
+    <p class="muted" style="font-size:12px;margin:0 0 8px">Công thức: nền ảnh thật cận cảnh quả (nguyên + bổ đôi) · bên trái nhân vật lịch sử vẽ theo phong cách cổ của nền văn hoá đó · bên phải tiêu đề chữ serif trắng 3 dòng, dòng tên quả to nhất.</p>
+    <div class="form-grid">
+      <label>Chữ trên thumbnail <span class="muted">(dùng | để xuống dòng; để trống = THE … HISTORY of ${esc(S.state.name.toUpperCase())})</span>
+        <input id="thT" value="${esc(d.text)}" placeholder="vd: THE SWEET HISTORY | of | MONK FRUIT" maxlength="80"></label>
+      <label>Nhân vật lịch sử bên trái <span class="muted">(tuỳ chọn, tiếng Anh tốt hơn)</span>
+        <input id="thI" value="${esc(d.idea)}" placeholder="vd: an ancient Chinese Buddhist monk with a shaved head and robe"></label>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <select id="thS">${THUMB_SITES.map(([v, l]) => `<option value="${v}" ${v === site ? 'selected' : ''}>${l}</option>`).join('')}</select>
+      <select id="thN">${[1, 2, 3, 4].map(n => `<option value="${n}">${n} ảnh</option>`).join('')}</select>
+      <button class="primary" onclick="makeThumb()">🖼 Tạo thumbnail</button>
+      <span class="muted" style="font-size:12px">Lưu ở output/thumbnails — JPG 1280×720, &lt; 2 MB (đúng chuẩn YouTube)</span></div>
+    <div id="thJob"></div>
+    <div class="row" style="margin-top:10px;align-items:flex-start">${d.items.map(t => `
+      <div style="width:320px"><img src="${t.url}" style="width:100%;border-radius:6px;cursor:zoom-in" onclick="window.open('${t.url}','_blank')">
+        <div class="row" style="justify-content:space-between"><span class="muted" style="font-size:12px">${esc(t.name)} · ${t.kb} KB</span>
+          <button onclick="delThumb('${esc(t.name)}')" title="Xoá">🗑</button></div></div>`).join('')
+      || '<span class="muted">Chưa có thumbnail.</span>'}</div>`;
+}
+async function makeThumb() {
+  const site = $('#thS').value;
+  try { localStorage.setItem('vg_th', site); } catch {}
+  if (await needApiKey({gemini: 'api_gemini', openai: 'api_openai'}[site] || site, () => makeThumb())) return;
+  try {
+    const job = await api(`${P()}/thumbnail`, {method: 'POST', json: {site, text: $('#thT').value, idea: $('#thI').value, n: +$('#thN').value}});
+    watchJob(job, '#thJob', async () => { $('#thJob').innerHTML = ''; renderThumbs(); toast('Đã tạo thumbnail'); });
+  } catch (e) { toast(e.message); }
+}
+async function delThumb(f) {
+  try { renderThumbs({...(await api(`${P()}/thumbnails/${encodeURIComponent(f)}`, {method: 'DELETE'})), text: $('#thT').value, idea: $('#thI').value}); }
+  catch (e) { toast(e.message); }
 }
 /* ---- YouTube: title, description, chapters (timestamps from the real part lengths) ---- */
 async function renderYT(yt) {
