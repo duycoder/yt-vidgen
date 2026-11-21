@@ -211,11 +211,21 @@ async function renderIdea() {
       <button class="primary" onclick="suggestIdeas()">✨ Gợi ý chủ đề</button>
       ${d.ideas.length ? `<button onclick="checkYT()">📈 Kiểm tra độ cạnh tranh trên YouTube${d.youtube_key ? '' : ' 🔑'}</button>` : ''}
     </div>
+    <div class="row" style="margin-top:8px">
+      <input id="rFruit" placeholder="Hoặc nhập quả bạn muốn làm — vd: jackfruit" style="flex:1;min-width:200px"
+        onkeydown="if(event.key==='Enter')researchFruit()">
+      <button class="primary" onclick="researchFruit()">🔎 Nghiên cứu đối thủ</button>
+      <span class="muted" style="font-size:12px">YouTube thật (view, kênh) + AI phân tích góc kể, 3 tiêu đề (tiêu đề + hashtags ≤ 100 ký tự)</span></div>
     <div id="ideaJob"></div>
     <div class="ideas">${d.ideas.map((x, i) => `<div class="idea">
       <b>${esc(x.fruit)}</b><span>${esc(x.title || '')}</span>
       <span class="muted" style="font-size:13px">${esc(x.hook || '')}</span>
       <span style="font-size:12px">🔥 ${esc(x.why_now || '')}</span>
+      ${x.covered ? `<span style="font-size:12px">⚔ Đối thủ đã làm: ${esc(x.covered)}</span>` : ''}
+      ${x.angle ? `<span style="font-size:12px">🎯 Góc của mình: <b style="font-size:12px">${esc(x.angle)}</b></span>` : ''}
+      ${(x.titles || []).length ? `<div style="font-size:12px">${x.titles.map((t, j) => `<div style="margin:3px 0">
+        <a href="#" onclick="pickIdea(${i},${j});return false" title="Chọn tiêu đề này">✏ ${esc(t.title)} <span class="muted">${esc(t.hashtags)}</span></a>
+        <span class="${t.len > 100 ? 'tag bad' : 'muted'}" style="font-size:11px">${t.len}/100</span></div>`).join('')}</div>` : ''}
       ${x.yt && x.yt.verdict ? `<div class="yt">
         <div style="font-size:13px;margin-bottom:4px">${x.yt.verdict[0]} <b style="font-size:13px">${esc(x.yt.verdict[1])}</b></div>
         Nhu cầu <span class="lv lv-${lvc(x.yt.demand, 1)}">${x.yt.demand}</span>
@@ -249,7 +259,7 @@ async function renderIdea() {
 }
 function saveIdeaForm() {
   const o = {topic: $('#iTopic').value, title: $('#iTitle').value, parts: +$('#iParts').value, minutes: +$('#iMin').value,
-             site: $('#iSite2').value};
+             site: $('#iSite2').value, hashtags: $('#iTitle').dataset.hashtags || ''};
   try { localStorage.setItem('vg_idea', JSON.stringify(o)); } catch {}
   return o;
 }
@@ -273,9 +283,18 @@ async function checkYT() {
   try { const job = await api('/api/ideas/youtube', {method: 'POST', json: {topics: S.ideas.map(x => x.fruit)}});
         watchJob(job, '#ideaJob', () => renderIdea()); } catch (e) { toast(e.message); }
 }
-function pickIdea(i) {
-  const x = S.ideas[i];
-  $('#iTopic').value = x.fruit.toLowerCase(); $('#iTitle').value = x.title || ''; saveIdeaForm();
+async function researchFruit() {
+  const fruit = $('#rFruit').value.trim();
+  if (!fruit) return toast('Nhập tên quả');
+  const site = $('#iSite').value;
+  if (await needApiKey(site, researchFruit)) return;
+  try { const job = await api('/api/ideas/research', {method: 'POST', json: {fruit, site}});
+        watchJob(job, '#ideaJob', () => { toast('Đã nghiên cứu ' + fruit); renderIdea(); }); } catch (e) { toast(e.message); }
+}
+function pickIdea(i, j) {
+  const x = S.ideas[i], t = (x.titles || [])[j || 0];
+  $('#iTopic').value = x.fruit.toLowerCase(); $('#iTitle').value = t ? t.title : (x.title || '');
+  $('#iTitle').dataset.hashtags = t ? t.hashtags : (x.hashtags || ''); saveIdeaForm();
   $('#iTopic').scrollIntoView({behavior: 'smooth', block: 'center'}); toast('Đã chọn: ' + x.fruit);
 }
 async function genScript() {
@@ -1080,9 +1099,9 @@ async function renderYT(yt) {
   const box = $('#ytCard'); if (!box) return;
   const n = yt.text.length;
   box.innerHTML = `<h2>📺 YouTube — tiêu đề, mô tả, timestamps</h2>
-    <label>Tiêu đề <span class="muted" id="ytTn">${yt.title.length}/100</span></label>
+    <label>Tiêu đề <span id="ytTn"></span></label>
     <div class="row" style="flex-wrap:nowrap"><input id="ytT" value="${esc(yt.title)}" maxlength="100" style="flex:1"
-      oninput="$('#ytTn').textContent=this.value.length+'/100'" onchange="saveYT({title:this.value})"><button onclick="copyText($('#ytT').value)">📋</button></div>
+      oninput="ytCount()" onchange="saveYT({title:this.value})"><button onclick="copyText($('#ytT').value)">📋</button></div>
     <label style="margin-top:10px;display:block">Mô tả (phần đầu, trước timestamps)</label>
     <textarea id="ytD" rows="7" onchange="saveYT({description:this.value})">${esc(yt.description)}</textarea>
     <label style="margin-top:10px;display:block">Timestamps ${yt.measured ? '<span class="tag ok">theo thời lượng thật của video đã render</span>'
@@ -1090,7 +1109,15 @@ async function renderYT(yt) {
     <table>${yt.chapter_list.map(c => `<tr><td style="width:70px"><code>${c.time}</code></td>
       <td><input value="${esc(c.title)}" placeholder="${esc(c.auto)}" onchange="saveChapter(${c.num},this.value)"></td></tr>`).join('')}</table>
     <div class="form-grid" style="margin-top:10px">
-      <label>Hashtags (cuối mô tả)<input id="ytH" value="${esc(yt.hashtags)}" onchange="saveYT({hashtags:this.value})"></label>
+      <div style="grid-column:1/-1" class="row">
+        <label style="flex:1;min-width:180px">🏷 Từ khoá quả để AI nghiên cứu tags
+          <input id="tgK" value="${esc(yt.tag_keyword || S.state.name)}" placeholder="vd: sea buckthorn"></label>
+        <label style="flex:1;min-width:180px">Hashtag luôn thêm <span class="muted">(tuỳ chọn)</span>
+          <input id="tgM" value="${esc(yt.tag_must || '')}" placeholder="vd: #permaculture #agriculture #farming"></label>
+        <select id="tgS" style="align-self:flex-end">${AI_TEXT_SITES.map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select>
+        <button class="primary" style="align-self:flex-end" onclick="genTags()">🏷 AI tạo hashtags + tags</button></div>
+      <div id="tgJob" style="grid-column:1/-1"></div>
+      <label>Hashtags (cuối mô tả)<input id="ytH" value="${esc(yt.hashtags)}" oninput="ytCount()" onchange="saveYT({hashtags:this.value})"></label>
       <label>Tags (ô Tags của YouTube, cách nhau dấu phẩy)<span class="row" style="flex-wrap:nowrap;gap:4px">
         <input value="${esc(yt.tags)}" style="flex:1;min-width:0" onchange="saveYT({tags:this.value})" id="ytG">
         <button type="button" onclick="copyText($('#ytG').value)">📋</button></span></label>
@@ -1102,8 +1129,24 @@ async function renderYT(yt) {
       <span class="${n > 5000 ? 'tag bad' : 'muted'}">${n}/5000 ký tự${n > 5000 ? ' — quá giới hạn, hãy bỏ credits khỏi mô tả' : ''}</span></label>
     <textarea id="ytX" rows="12" readonly>${esc(yt.text)}</textarea>
     <div class="row" style="margin-top:8px"><button class="primary" onclick="copyText($('#ytX').value)">📋 Copy mô tả</button></div>`;
+  ytCount();
 }
 let YT_CH = null;
+function ytCount() {  // title + hashtags must fit in 100 characters
+  const t = ($('#ytT') || {}).value || '', h = (($('#ytH') || {}).value || '').trim(), n = (t + (h ? ' ' + h : '')).length;
+  const el = $('#ytTn'); if (!el) return;
+  el.className = n > 100 ? 'tag bad' : 'muted';
+  el.textContent = `tiêu đề + hashtags: ${n}/100${n > 100 ? ' — quá dài, bớt hashtag hoặc rút tiêu đề' : ''}`;
+}
+async function genTags() {
+  const site = $('#tgS').value;
+  if (await needApiKey(site, () => genTags())) return;
+  try { localStorage.setItem('vg_sug', site); } catch {}
+  try {
+    const job = await api(`${P()}/youtube/tags`, {method: 'POST', json: {site, keyword: $('#tgK').value, must: $('#tgM').value}});
+    watchJob(job, '#tgJob', async () => { renderYT(); toast('Đã có hashtags + tags'); });
+  } catch (e) { toast(e.message); }
+}
 async function saveYT(patch) {
   try { renderYT(await api(`${P()}/youtube`, {method: 'PUT', json: patch})); toast('Đã lưu'); } catch (e) { toast(e.message); }
 }

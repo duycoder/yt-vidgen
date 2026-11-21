@@ -123,7 +123,7 @@ LOCK = threading.Lock()  # one heavy job at a time (vidgen.log is global)
 JOB_LABEL = {"plan": "phân cảnh", "generate": "tạo ảnh AI", "autofill": "auto-fill ảnh", "preview": "render nháp",
              "render": "render video", "ideas": "gợi ý chủ đề", "youtube": "kiểm tra YouTube", "script": "viết kịch bản",
              "prompts": "AI nghiên cứu cảnh", "suggest": "AI gợi ý ảnh", "segment": "chia ý", "voices": "tạo giọng đọc",
-             "thumbnail": "tạo thumbnail"}
+             "thumbnail": "tạo thumbnail", "tags": "tạo tags"}
 
 
 def start_job(kind, fn, key=None):
@@ -689,6 +689,7 @@ def get_youtube(name: str):
     if not plan:
         raise HTTPException(400, "run plan first")
     yt = {"title": name, "description": "", "hashtags": "", "tags": "", "include_credits": True, "chapters": {},
+          "tag_keyword": "", "tag_must": "",
           **read_json(p / "youtube.json", {})}
     chapters, measured = chapters_of(p, plan, yt["chapters"])
     credits = compact_credits(p, plan)
@@ -704,6 +705,25 @@ def put_youtube(name: str, body: dict = Body(...)):
             yt[k] = body[k]
     write_json(p / "youtube.json", yt)
     return get_youtube(name)
+
+
+TAGS_PROMPT = """You are a YouTube SEO expert for a history documentary channel about fruits and plants.
+Video title: "{title}"
+Main keyword typed by the creator: "{keyword}"
+What the video covers (start of the narration): "{story}"
+
+Use web search to research "{keyword}": its other common names (other languages, Latin name), what people search for
+about it on YouTube and Google, and the topics of this story (people, places, eras, uses).
+Then write:
+- "hashtags": 3-5 hashtags. The FIRST is the fruit itself (e.g. #seabuckthorn), then #foodhistory, then the most
+  searched related topics. {must}
+- "tags": 15-25 YouTube tags, most important first: the exact keyword, "<keyword> history", other names, Latin name,
+  the story's key people/places/events, uses, then broad tags (food history, history of food, food documentary).
+  Lower-case except proper names. All tags together must stay under 480 characters.
+Return ONLY one code block with a JSON array of one object, no other text:
+```json
+[{{"hashtags": "#a #b #c", "tags": "tag one, tag two, tag three"}}]
+```"""
 
 
 THUMB_SITES = {"web_gemini": "gemini", "web_chatgpt": "chatgpt", "web_grok": "grok", "gemini": None, "openai": None}
@@ -727,6 +747,50 @@ def thumbs_of(name: str):
     fs = sorted(d.glob("*.jpg"), key=lambda f: f.stat().st_mtime, reverse=True) if d.exists() else []
     return [{"name": f.name, "url": f"/files/{name}/output/thumbnails/{f.name}?v={int(f.stat().st_mtime)}",
              "kb": round(f.stat().st_size / 1024)} for f in fs]
+
+
+@app.post("/api/projects/{name}/youtube/tags")
+def gen_tags(name: str, opts: dict = Body(default={})):
+    """🏷 AI researches the fruit keyword (with web search) -> hashtags + YouTube tags, saved to youtube.json."""
+    p = proj_dir(name)
+    site = opts.get("site", "gemini")
+    if site not in AI_SITES:
+        raise HTTPException(400, "site must be " + "/".join(AI_SITES))
+    keyword = (opts.get("keyword") or "").strip() or p.name
+    must = (opts.get("must") or "").strip()
+    yt = read_json(p / "youtube.json", {})
+    yt.update(tag_keyword=keyword, tag_must=must)
+    write_json(p / "youtube.json", yt)
+    plan = read_json(p / "output" / "plan.json", {"parts": []})
+    story = " ".join(s["text"] for pt in plan["parts"] for s in pt["scenes"])[:1500]
+    prompt = TAGS_PROMPT.format(title=yt.get("title") or name, keyword=keyword, story=story,
+                                must=f"Also include these hashtags at the end: {must}." if must else "")
+
+    def work(job, emit):
+        res = studio.parse_json_block(studio.ask(site, prompt, keys(), log=emit))
+        if isinstance(res, list):
+            res = res[0] if res else {}
+        tags = [t.strip() for t in str(res.get("tags") or "").split(",") if t.strip()]
+        while tags and len(", ".join(tags)) > 500:  # YouTube limit
+            tags.pop()
+        tags = list(dict.fromkeys(tags))
+        tags_s = ", ".join(tags)
+        hs = str(res.get("hashtags") or "").split()
+        hs = [h if h.startswith("#") else f"#{h}" for h in hs]
+        hs += [h for h in must.split() if h.lower() not in {x.lower() for x in hs}]
+        title = read_json(p / "youtube.json", {}).get("title") or name
+        _, fitted = studio.fit_title(title, " ".join(hs))
+        if len(fitted.split()) < len(hs):
+            emit(f"bớt hashtag cho vừa tiêu đề + hashtags ≤ 100 ký tự: {' '.join(hs[len(fitted.split()):])}")
+        hs = fitted.split()
+        if not tags_s:
+            raise RuntimeError("AI không trả về tags")
+        cur = read_json(p / "youtube.json", {})
+        cur.update(hashtags=" ".join(hs), tags=tags_s)
+        write_json(p / "youtube.json", cur)
+        emit(f"✓ {len(hs)} hashtags, {len(tags)} tags ({len(tags_s)}/500 ký tự)")
+
+    return start_job("tags", work, key=f"tags:{name}")
 
 
 @app.get("/api/projects/{name}/thumbnails")
@@ -860,6 +924,52 @@ def ideas_youtube(topics: list = Body(..., embed=True)):
     return start_job("youtube", work, key="youtube")
 
 
+@app.post("/api/ideas/research")
+def research_idea(opts: dict = Body(...)):
+    """🔎 A fruit typed by the user: real YouTube competitors (Data API) + AI analysis (angle, titles, hashtags).
+    Every title + hashtags stays within 100 characters. Saved at the top of the idea list."""
+    fruit = (opts.get("fruit") or "").strip()
+    if not fruit:
+        raise HTTPException(400, "nhập tên quả")
+    site = opts.get("site", "gemini")
+    if site not in AI_SITES:
+        raise HTTPException(400, "site must be " + "/".join(AI_SITES))
+    key = keys().get("YOUTUBE_API_KEY")
+
+    def work(job, emit):
+        yt = None
+        if key:
+            emit(f"YouTube: tìm video đối thủ về {fruit}…")
+            yt = studio.youtube_check(fruit, key)
+            emit(f"{yt['verdict'][0]} {yt['verdict'][1]} ({yt['long_count']} video dài liên quan)")
+        else:
+            emit("⚠ chưa có YOUTUBE_API_KEY — AI tự tìm đối thủ bằng web search")
+        comp = "\n".join(f"{v['views']:,} | {v['minutes']} | {v['date']} | {v['channel']} | {v['title']}"
+                         for v in (yt or {}).get("competitors", [])) or "(no data - search YouTube yourself)"
+        prompt = studio.RESEARCH_PROMPT.format(fruit=fruit, competitors=comp, tmax=80)
+        emit("AI phân tích đối thủ + đề xuất góc kể…")
+        res = studio.parse_json_block(studio.ask(site, prompt, keys(), log=emit))
+        r = res[0] if res else {}
+        tag = "#" + re.sub(r"[^a-z0-9]", "", studio._plain(fruit).lower())
+        hs = str(r.get("hashtags") or "").split() or [tag, "#foodhistory"]
+        titles = []
+        for t in r.get("titles") or []:
+            t2, h2 = studio.fit_title(t, " ".join(hs))
+            titles.append({"title": t2, "hashtags": h2, "len": len(f"{t2} {h2}".strip())})
+        idea = {"fruit": r.get("fruit") or fruit, "title": titles[0]["title"] if titles else "",
+                "hashtags": titles[0]["hashtags"] if titles else " ".join(hs), "titles": titles,
+                "hook": r.get("hook", ""), "why_now": r.get("why_now", ""), "covered": r.get("covered", ""),
+                "angle": r.get("angle", ""), "yt": yt, "researched": True}
+        data = read_json(studio.IDEAS_FILE, {"ideas": []})
+        low = idea["fruit"].lower()
+        data["ideas"] = [idea] + [x for x in data.get("ideas", []) if (x.get("fruit") or "").lower() not in (low, fruit.lower())]
+        write_json(studio.IDEAS_FILE, data)
+        job["result"] = idea
+        emit("✓ xong — xem thẻ đầu tiên")
+
+    return start_job("ideas", work, key=f"research:{fruit.lower()}")
+
+
 @app.post("/api/projects/{name}/script/generate")
 def gen_script(name: str, opts: dict = Body(...)):
     site = opts.get("site", "chatgpt")
@@ -884,7 +994,10 @@ def gen_script(name: str, opts: dict = Body(...)):
         emit(f"✓ {len(parts)} part, {words} từ (~{words / 150:.1f} phút đọc) → texts/script.md")
         yt = read_json(p / "youtube.json", {})
         if opts.get("title") and not yt.get("title"):
-            write_json(p / "youtube.json", {**yt, "title": opts["title"]})
+            yt["title"] = opts["title"]
+        if opts.get("hashtags") and not yt.get("hashtags"):
+            yt["hashtags"] = opts["hashtags"]
+        write_json(p / "youtube.json", yt)
 
     return start_job("script", work, key=f"script:{name}")
 

@@ -58,6 +58,39 @@ Return ONLY one code block containing a JSON array, no other text:
 [{{"fruit": "...", "title": "catchy YouTube title", "hook": "one-sentence surprising hook", "why_now": "why it is trending now"}}]
 ```"""
 
+RESEARCH_PROMPT = """I want to make an 8-10 minute YouTube history documentary about this fruit: "{fruit}",
+in the style "The history of <fruit>" for an English-speaking audience (calm British narration, illustrated).
+
+These are the competing long videos already on YouTube (views | minutes | date | channel | title):
+{competitors}
+
+Use web search to research "{fruit}": its history, legends, surprising facts, why people care about it now
+(health trends, news, social media, supermarkets), and what the competitors above already cover.
+Then answer in JSON:
+- "fruit": the fruit's common English name
+- "hook": one surprising sentence that makes people want to watch (English)
+- "why_now": why it gets attention now (Vietnamese)
+- "covered": what the competitors already cover and how (Vietnamese, 1-2 sentences)
+- "angle": the unique story angle WE should take that competitors miss (Vietnamese, 1-2 sentences)
+- "titles": 3 different catchy titles for our angle (English), each at most {tmax} characters
+- "hashtags": 2-3 hashtags, the first is the fruit itself (e.g. "#monkfruit #foodhistory")
+RULE: each title + " " + hashtags must be at most 100 characters in total.
+Return ONLY one code block with a JSON array of one object, no other text:
+```json
+[{{"fruit": "...", "hook": "...", "why_now": "...", "covered": "...", "angle": "...", "titles": ["...", "...", "..."], "hashtags": "#a #b"}}]
+```"""
+
+
+def fit_title(title, hashtags, limit=100):
+    """Keep title + ' ' + hashtags within limit: drop hashtags from the end first, then shorten the title."""
+    title, hs = (title or "").strip(), (hashtags or "").split()
+    while hs and len(f"{title} {' '.join(hs)}") > limit:
+        hs.pop()
+    if len(title) > limit:
+        title = title[:limit].rsplit(" ", 1)[0]
+    return title, " ".join(hs)
+
+
 SCRIPT_PROMPT = """Write the voice-over script for a calm, British-narrated YouTube history documentary: "{title}" (topic: {topic}).
 
 LENGTH: about {minutes} minutes in total, exactly {parts} parts, each part 120-150 words (about 55 seconds of speech).
@@ -372,7 +405,7 @@ def youtube_check(topic, key):
     else:
         verdict = ("🟢", "Có người xem nhưng chưa ai làm tốt — cơ hội tốt")
     return {"topic": topic, "demand": demand, "competition": comp, "verdict": verdict, "long_count": len(rel_long),
-            "strong": strong, "top_long_views": top, "videos": rel_long[:3],
+            "strong": strong, "top_long_views": top, "videos": rel_long[:3], "competitors": rel_long[:12],
             "shorts_top": max((v["views"] for v in vids if not v["long"] and v["relevant"]), default=0)}
 
 
