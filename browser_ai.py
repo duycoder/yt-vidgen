@@ -44,7 +44,7 @@ SITES = {
         input=['rich-textarea [contenteditable="true"]', 'div.ql-editor[contenteditable="true"]',
                'div[contenteditable="true"][role="textbox"]', "textarea"],
         send_re=r"^(send|gửi)|send message|gửi tin nhắn|gửi lời nhắc",
-        stop_re=r"^(stop|dừng)",
+        stop_re=r"^(stop|dừng|ngừng)",
         response="model-response",
         download_re=r"full.?size|kích thước đầy đủ|^download|tải.*xuống",
         prompt="Generate an image: {prompt}. {aspect}. No text, no watermark. "
@@ -58,7 +58,7 @@ SITES = {
         send_selector='[data-testid="send-button"], button[aria-label*="Send" i]',
         send_re=r"^send|send prompt|gửi",
         stop_selector='[data-testid="stop-button"], button[aria-label*="Stop" i]',
-        stop_re=r"^stop|dừng",
+        stop_re=r"^stop|dừng|ngừng",
         response='[data-message-author-role="assistant"], [data-markdown-text-style="assistant-message"], article',
         logged_out_re=r"^(log in|đăng nhập)$",
         download_re=r"download|tải xuống",
@@ -73,7 +73,7 @@ SITES = {
                'textarea[aria-label*="Grok" i]', "textarea"],
         send_selector='button[type="submit"], button[aria-label*="Submit" i]',
         send_re=r"^(submit|send|gửi)",
-        stop_re=r"^(stop|dừng)",
+        stop_re=r"^(stop|dừng|ngừng)",
         response='[class*="message-bubble"], [class*="response"], main',
         prompt="Generate an image: {prompt}. {aspect}. No text, no watermark.",
     ),
@@ -389,7 +389,8 @@ def ask(site_id, prompt, port=9222, browser_path=None, user_data_dir=None, profi
                 _fail(page, f"{site_id}-answer", f"{site['label']}: không có câu trả lời (hết {timeout}s).")
             log(f"  got {len(last)} chars in {time.time() - start:.0f}s")
             page.close()
-            return last
+            # Gemini prefixes answers with a screen-reader label ("Gemini said" / "Gemini đã nói")
+            return re.sub(r"^\s*(gemini|chatgpt|grok)\s+(said|đã nói)\s*:?\s*\n+", "", last, flags=re.I)
 
 
 ASPECTS = {"16:9": "Wide landscape 16:9 aspect ratio", "4:3": "Landscape 4:3 aspect ratio",
