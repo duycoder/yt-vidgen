@@ -1,0 +1,251 @@
+{
+  "sid": "p09_s01",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:27",
+  "segments": [
+    {
+      "text": "Today, the persimmon is a global agricultural powerhouse, though many Western shoppers still walk past it in the supermarket aisle, unsure of what to do with it.",
+      "title": "Trái hồng trên kệ siêu thị phương Tây",
+      "desc": "Một siêu thị hiện đại ở phương Tây với những quả hồng màu cam được bày bán trên kệ trái cây, trong khi người mua sắm tò mò đi ngang qua mà chưa biết cách thưởng thức.",
+      "queries": [
+        "supermarket shopping",
+        "persimmon display",
+        "grocery produce"
+      ],
+      "query": "modern supermarket persimmons shoppers",
+      "short": "supermarket persimmons",
+      "prompt": "A realistic contemporary supermarket in a Western city in 2026, featuring a neatly arranged fresh produce aisle with bright orange persimmons displayed among apples, pears and other seasonal fruits. A casually dressed Western shopper in modern everyday clothing pauses briefly in front of the unfamiliar persimmons, looking uncertain about how to select or prepare them, while other shoppers walk past in the background. Bright natural-looking supermarket lighting, authentic grocery shelving and produce displays, eye-level medium-wide documentary photography capturing the contrast between this globally important fruit and its relative unfamiliarity among Western consumers.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Shopping_Cart_Supermarket.jpg/1920px-Shopping_Cart_Supermarket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Shopping_Cart_Supermarket.jpg/500px-Shopping_Cart_Supermarket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3984,
+          "height": 2656,
+          "title": "Shopping Cart Supermarket.jpg",
+          "author": "safaritravelplus",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Shopping_Cart_Supermarket.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "supermarket shopping"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Shopping_cart_of_Prisma_shop.JPG/1920px-Shopping_cart_of_Prisma_shop.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Shopping_cart_of_Prisma_shop.JPG/500px-Shopping_cart_of_Prisma_shop.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3648,
+          "height": 2736,
+          "title": "Shopping cart of Prisma shop.JPG",
+          "author": "Dmitry G",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Shopping_cart_of_Prisma_shop.JPG",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "supermarket shopping"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Shopping_carts_Tegut_Tauberbischofsheim.jpg/1920px-Shopping_carts_Tegut_Tauberbischofsheim.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Shopping_carts_Tegut_Tauberbischofsheim.jpg/500px-Shopping_carts_Tegut_Tauberbischofsheim.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4000,
+          "height": 3000,
+          "title": "Shopping carts Tegut Tauberbischofsheim.jpg",
+          "author": "Triplec85",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Shopping_carts_Tegut_Tauberbischofsheim.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "supermarket shopping"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Shopping_carts_Tegut_Tauberbischofsheim_5.jpg/1920px-Shopping_carts_Tegut_Tauberbischofsheim_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Shopping_carts_Tegut_Tauberbischofsheim_5.jpg/500px-Shopping_carts_Tegut_Tauberbischofsheim_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4000,
+          "height": 3000,
+          "title": "Shopping carts Tegut Tauberbischofsheim 5.jpg",
+          "author": "Triplec85",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Shopping_carts_Tegut_Tauberbischofsheim_5.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "supermarket shopping"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Persimmon_fruit_display.jpg/1920px-Persimmon_fruit_display.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Persimmon_fruit_display.jpg/500px-Persimmon_fruit_display.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4000,
+          "height": 3000,
+          "title": "Persimmon fruit display.jpg",
+          "author": "TorbeyCharbel",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmon_fruit_display.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon display"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Persimmons_-_San_Francisco%2C_CA.jpg/1920px-Persimmons_-_San_Francisco%2C_CA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Persimmons_-_San_Francisco%2C_CA.jpg/500px-Persimmons_-_San_Francisco%2C_CA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4032,
+          "height": 2268,
+          "title": "Persimmons - San Francisco, CA.jpg",
+          "author": "Daderot",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmons_-_San_Francisco,_CA.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon display"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Hachiya_persimmons_-_Heart_of_the_City_Farmers%27_Market_-_San_Francisco.jpg/1920px-Hachiya_persimmons_-_Heart_of_the_City_Farmers%27_Market_-_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Hachiya_persimmons_-_Heart_of_the_City_Farmers%27_Market_-_San_Francisco.jpg/500px-Hachiya_persimmons_-_Heart_of_the_City_Farmers%27_Market_-_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3471,
+          "height": 2007,
+          "title": "Hachiya persimmons - Heart of the City Farmers' Market - San Francisco.jpg",
+          "author": "Daderot",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hachiya_persimmons_-_Heart_of_the_City_Farmers%27_Market_-_San_Francisco.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon display"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Giant_persimmons_%285104711066%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Giant_persimmons_%285104711066%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "width": 1920,
+          "height": 1080,
+          "title": "Giant persimmons (5104711066).jpg",
+          "author": "Debs (ò‿ó)♪ from Bellevue, WA, USA",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Giant_persimmons_(5104711066).jpg",
+          "source": "wikimedia",
+          "fit": 0.898,
+          "q": "persimmon display"
+        }
+      ],
+      "slot": "p09_s01",
+      "t0": 0.0,
+      "t1": 9.28
+    },
+    {
+      "text": "China remains by far the largest producer, growing more than three million tonnes every year, followed by South Korea, Japan, and Spain.",
+      "title": "Những cường quốc trồng hồng",
+      "desc": "Những vườn hồng rộng lớn tại Trung Quốc với hàng nghìn cây trĩu quả cam, thể hiện quy mô sản xuất nông nghiệp vượt trội của quốc gia này so với các nước trồng hồng lớn khác.",
+      "queries": [
+        "persimmon harvesting",
+        "Chinese persimmon orchard",
+        "persimmon farming"
+      ],
+      "query": "China persimmon orchards harvest agriculture",
+      "short": "China persimmon orchards",
+      "prompt": "A vast commercial persimmon orchard in rural China in the present day, around 2026, during the autumn harvest season. Thousands of mature persimmon trees stretch across rolling agricultural hills, their branches heavily laden with brilliant orange ripe fruit. Several Chinese agricultural workers wearing practical modern farm clothing and sun hats carefully harvest persimmons using baskets and harvesting tools. In the distant background, additional orchard terraces and rural agricultural landscapes emphasize the enormous scale of Chinese persimmon production, exceeding three million tonnes annually. Warm autumn daylight, expansive elevated camera angle, realistic documentary photography, authentic contemporary Chinese agricultural environment.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Japanese_Persimmons_drying.JPG/1920px-Japanese_Persimmons_drying.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Japanese_Persimmons_drying.JPG/500px-Japanese_Persimmons_drying.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3648,
+          "height": 2736,
+          "title": "Japanese Persimmons drying.JPG",
+          "author": "Cla68",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Japanese_Persimmons_drying.JPG",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon harvesting"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Fall_Colors_in_Quebec%2C_New_York%2C_and_New_England_%28MODIS%29.jpg/1920px-Fall_Colors_in_Quebec%2C_New_York%2C_and_New_England_%28MODIS%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Fall_Colors_in_Quebec%2C_New_York%2C_and_New_England_%28MODIS%29.jpg/500px-Fall_Colors_in_Quebec%2C_New_York%2C_and_New_England_%28MODIS%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3531,
+          "height": 2687,
+          "title": "Fall Colors in Quebec, New York, and New England (MODIS).jpg",
+          "author": "MODIS Land Rapid Response Team, NASA GSFC",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Fall_Colors_in_Quebec,_New_York,_and_New_England_(MODIS).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon harvesting"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/American_Persimmons.png/1920px-American_Persimmons.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/American_Persimmons.png/500px-American_Persimmons.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2475,
+          "height": 3300,
+          "title": "American Persimmons.png",
+          "author": "KnightWolf8",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:American_Persimmons.png",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "persimmon harvesting"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_face_of_China%2C_travels_in_East%2C_North%2C_Central_and_Western_China%3B_with_some_account_of_the_new_schools%2C_universities%2C_missions%2C_and_the_old_religious_sacred_places_of_Confucianism%2C_Buddhism%2C_and_%2814756618896%29.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_face_of_China%2C_travels_in_East%2C_North%2C_Central_and_Western_China%3B_with_some_account_of_the_new_schools%2C_universities%2C_missions%2C_and_the_old_religious_sacred_places_of_Confucianism%2C_Buddhism%2C_and_%2814756618896%29.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2026,
+          "height": 3090,
+          "title": "The face of China, travels in East, North, Central and Western China; with some account of the new schools, universities, missions, and the old religious sacred places of Confucianism, Buddhism, and (14756618896).jpg",
+          "author": "Kemp, Emily Georgiana, 1860-",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:The_face_of_China,_travels_in_East,_North,_Central_and_Western_China;_with_some_account_of_the_new_schools,_universities,_missions,_and_the_old_religious_sacred_places_of_Confucianism,_Buddhism,_and_(14756618896).jpg",
+          "source": "wikimedia",
+          "fit": 0.793,
+          "q": "persimmon harvesting"
+        },
+        {
+          "url": "https://live.staticflickr.com/4906/44045267590_a222034c03_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/7d68f8e9-e139-46c4-8258-eeb75792038e/thumb/",
+          "width": 1024,
+          "height": 724,
+          "title": "domestic tranquility, persimmon harvest was big this year",
+          "author": "pix-l",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/89012181@N00/44045267590",
+          "source": "openverse",
+          "fit": 0.546,
+          "q": "persimmon harvesting"
+        },
+        {
+          "url": "https://live.staticflickr.com/4018/4324525190_e870551e0b_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/3a68c0e7-7b73-4584-a49f-0463d322a3dd/thumb/",
+          "width": 1024,
+          "height": 686,
+          "title": "Persimmon Harvest",
+          "author": "eldan",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/53407766@N00/4324525190",
+          "source": "openverse",
+          "fit": 0.536,
+          "q": "persimmon harvesting"
+        },
+        {
+          "url": "https://live.staticflickr.com/93/274777309_0eadb5aba6.jpg",
+          "thumb": "https://api.openverse.org/v1/images/6d0877b9-ed68-44ca-919a-61f456f29f88/thumb/",
+          "width": 500,
+          "height": 357,
+          "title": "Persimmon Harvest",
+          "author": "RACINGMIX",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/23221200@N00/274777309",
+          "source": "openverse",
+          "fit": 0.397,
+          "q": "persimmon harvesting"
+        },
+        {
+          "url": "https://live.staticflickr.com/3044/2947593466_da5010b076.jpg",
+          "thumb": "https://api.openverse.org/v1/images/8a408067-196c-49e6-a93b-c9f1e0b2321a/thumb/",
+          "width": 500,
+          "height": 375,
+          "title": "Native Persimmon Harvest",
+          "author": "nodigio",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/71829982@N00/2947593466",
+          "source": "openverse",
+          "fit": 0.4,
+          "q": "persimmon harvesting"
+        }
+      ],
+      "slot": "p09_s01_2",
+      "t0": 9.28,
+      "t1": 17.92
+    }
+  ]
+}

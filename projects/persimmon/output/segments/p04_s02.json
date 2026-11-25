@@ -1,0 +1,129 @@
+{
+  "sid": "p04_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:07",
+  "segments": [
+    {
+      "text": "Traditional herbalists across China and Korea brewed dried persimmon leaves into a soothing tea, believed to support circulation and calm the stomach. Even the tree itself proved valuable.",
+      "title": "Trà lá hồng truyền thống",
+      "desc": "Các thầy thuốc dân gian Trung Quốc và Triều Tiên phơi khô lá hồng rồi đun trong ấm đất để pha trà thảo mộc trong những căn nhà thuốc truyền thống Đông Á.",
+      "queries": [
+        "herbal tea brewing",
+        "dried persimmon leaves",
+        "traditional Korean herbalist"
+      ],
+      "query": "herbalist persimmon leaves tea",
+      "short": "Persimmon leaves tea",
+      "prompt": "A historically grounded scene in a traditional herbal medicine workshop in East Asia, combining Chinese and Korean herbal practices from the late Joseon period and Qing dynasty, approximately 18th to 19th century. An experienced herbalist wearing traditional period clothing carefully places dried persimmon leaves into a small ceramic teapot and pours hot water over them. Bundles of dried persimmon leaves, medicinal herbs, wooden shelves, ceramic jars and traditional preparation tools fill the room. Gentle steam rises from the freshly brewed herbal tea, suggesting a calming medicinal drink traditionally believed to support circulation and soothe the stomach. Another herbalist examines dried leaves on a wooden table. Warm natural daylight enters through a wooden lattice window, creating a peaceful atmosphere. Medium-wide camera angle at eye level, with the dried leaves and steaming teapot clearly visible in the foreground.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Poppy%27s_tea_room_%5E_store%2C_Winterton-on-Sea_-_geograph.org.uk_-_7905791.jpg/1920px-Poppy%27s_tea_room_%5E_store%2C_Winterton-on-Sea_-_geograph.org.uk_-_7905791.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Poppy%27s_tea_room_%5E_store%2C_Winterton-on-Sea_-_geograph.org.uk_-_7905791.jpg/500px-Poppy%27s_tea_room_%5E_store%2C_Winterton-on-Sea_-_geograph.org.uk_-_7905791.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5387,
+          "height": 3591,
+          "title": "Poppy's tea room ^ store, Winterton-on-Sea - geograph.org.uk - 7905791.jpg",
+          "author": "Hugh Venables",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Poppy%27s_tea_room_%5E_store,_Winterton-on-Sea_-_geograph.org.uk_-_7905791.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "herbal tea brewing"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Dried_Thymus_praecox.jpg/1920px-Dried_Thymus_praecox.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Dried_Thymus_praecox.jpg/500px-Dried_Thymus_praecox.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3833,
+          "height": 2541,
+          "title": "Dried Thymus praecox.jpg",
+          "author": "Yel D'ohan",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Dried_Thymus_praecox.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "herbal tea brewing"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Viper%27s-buglosses_Drink.jpg/1920px-Viper%27s-buglosses_Drink.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Viper%27s-buglosses_Drink.jpg/500px-Viper%27s-buglosses_Drink.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2539,
+          "height": 2539,
+          "title": "Viper's-buglosses Drink.jpg",
+          "author": "Sina Salimi",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Viper%27s-buglosses_Drink.jpg",
+          "source": "wikimedia",
+          "fit": 0.869,
+          "q": "herbal tea brewing"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Poppies-seeds-dry.png/1920px-Poppies-seeds-dry.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Poppies-seeds-dry.png/500px-Poppies-seeds-dry.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2258,
+          "height": 1853,
+          "title": "Poppies-seeds-dry.png",
+          "author": "Avriette (talk) (Uploads)",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Poppies-seeds-dry.png",
+          "source": "wikimedia",
+          "fit": 0.917,
+          "q": "herbal tea brewing"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Crispy_Rice_Cakes_in_Chinese-style_Seafood_Stir-fry_-_Horoki_%28924521466%29.jpg/1920px-Crispy_Rice_Cakes_in_Chinese-style_Seafood_Stir-fry_-_Horoki_%28924521466%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Crispy_Rice_Cakes_in_Chinese-style_Seafood_Stir-fry_-_Horoki_%28924521466%29.jpg/500px-Crispy_Rice_Cakes_in_Chinese-style_Seafood_Stir-fry_-_Horoki_%28924521466%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2048,
+          "height": 1536,
+          "title": "Crispy Rice Cakes in Chinese-style Seafood Stir-fry - Horoki (924521466).jpg",
+          "author": "Alpha from Melbourne, Australia",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Crispy_Rice_Cakes_in_Chinese-style_Seafood_Stir-fry_-_Horoki_(924521466).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "dried persimmon leaves"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Shans_at_home._With_two_chapters_on_Shan_history_and_literature_%281910%29_%2814577654538%29.jpg/1920px-Shans_at_home._With_two_chapters_on_Shan_history_and_literature_%281910%29_%2814577654538%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Shans_at_home._With_two_chapters_on_Shan_history_and_literature_%281910%29_%2814577654538%29.jpg/500px-Shans_at_home._With_two_chapters_on_Shan_history_and_literature_%281910%29_%2814577654538%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2128,
+          "height": 1516,
+          "title": "Shans at home. With two chapters on Shan history and literature (1910) (14577654538).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Shans_at_home._With_two_chapters_on_Shan_history_and_literature_(1910)_(14577654538).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "dried persimmon leaves"
+        },
+        {
+          "url": "https://live.staticflickr.com/4011/4501388693_67a3d58e6f_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/e62b5693-31d6-4b38-a75b-e530e6f51220/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "Hoshigaki",
+          "author": "Vegan Feast Catering",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/25128194@N02/4501388693",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "dried persimmon leaves"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Drying_persimmon_leaves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Drying_persimmon_leaves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "width": 746,
+          "height": 559,
+          "title": "Drying persimmon leaves.jpg",
+          "author": "은국",
+          "license": "CC BY 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Drying_persimmon_leaves.jpg",
+          "source": "wikimedia",
+          "fit": 0.46,
+          "q": "dried persimmon leaves"
+        }
+      ],
+      "slot": "p04_s02",
+      "t0": 21.82,
+      "t1": 33.92
+    }
+  ]
+}

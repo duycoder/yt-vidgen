@@ -1,0 +1,129 @@
+{
+  "sid": "p08_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:24",
+  "segments": [
+    {
+      "text": "Workers tie the stems to long strings and hang hundreds of fruits beneath the eaves of wooden farmhouses, exposed to the crisp, dry mountain winds. Over four to six weeks, the wind slowly draws out the moisture, concentrating the sugars and neutralising the tannins.",
+      "title": "Hong Khô Dưới Gió Đông",
+      "desc": "Những người nông dân treo hàng trăm quả hồng đã bóc vỏ dưới mái hiên nhà gỗ truyền thống, để gió núi mùa đông từ từ làm khô quả và cô đặc vị ngọt tự nhiên.",
+      "queries": [
+        "persimmon drying",
+        "Japanese farmhouse",
+        "hanging persimmons"
+      ],
+      "query": "persimmon drying farmhouse winter wind",
+      "short": "persimmon drying",
+      "prompt": "A historically accurate documentary scene in rural Japan during the late 19th to early 20th century, showing traditional hoshigaki persimmon preservation. Japanese farm workers wearing simple indigo cotton work clothes and traditional rural clothing carefully tie the intact T-shaped stems of freshly peeled orange persimmons onto long natural-fiber strings. Hundreds of pale orange fruits hang in orderly rows beneath the deep wooden eaves of a traditional Japanese farmhouse with weathered timber walls and a traditional tiled or thatched roof. Crisp, dry winter mountain winds pass through the open farmhouse surroundings, gently moving the hanging fruits. The distant Japanese mountain landscape shows late autumn transitioning into winter, with bare trees and cool muted earth tones. Soft natural winter daylight illuminates the translucent orange fruits. A wide documentary camera angle captures both the workers and the impressive rows of hanging persimmons, conveying the traditional four-to-six-week drying process.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Gotgam_%28dried_persimmon%29.jpg/1920px-Gotgam_%28dried_persimmon%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Gotgam_%28dried_persimmon%29.jpg/500px-Gotgam_%28dried_persimmon%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3456,
+          "height": 2304,
+          "title": "Gotgam (dried persimmon).jpg",
+          "author": "Hyeon-Jeong Suk",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Gotgam_(dried_persimmon).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon drying"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Dried_persimmon_cakes_%2820241111%29.jpg/1920px-Dried_persimmon_cakes_%2820241111%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Dried_persimmon_cakes_%2820241111%29.jpg/500px-Dried_persimmon_cakes_%2820241111%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4000,
+          "height": 3000,
+          "title": "Dried persimmon cakes (20241111).jpg",
+          "author": "Fumikas Sagisavas",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Dried_persimmon_cakes_(20241111).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon drying"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Cut_dried_persimmon_%284201573900%29.jpg/1920px-Cut_dried_persimmon_%284201573900%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Cut_dried_persimmon_%284201573900%29.jpg/500px-Cut_dried_persimmon_%284201573900%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3344,
+          "height": 2229,
+          "title": "Cut dried persimmon (4201573900).jpg",
+          "author": "John Loo from Sunnyvale, USA",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Cut_dried_persimmon_(4201573900).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon drying"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Persimmon_drying_in_Fujinomiya%2CShizuoka%2CJapan%28%E5%90%8A%E3%82%8B%E3%81%97%E6%9F%BF%E7%99%BD%E7%B3%B8%E3%81%AE%E6%BB%9D%E4%B8%8B%E6%B5%81%29_DSCF0011.jpg",
+          "thumb": "https://api.openverse.org/v1/images/3caecd22-4449-4e86-aba9-5d8f18a3fdda/thumb/",
+          "width": 2304,
+          "height": 1728,
+          "title": "Persimmon drying in Fujinomiya,Shizuoka,Japan(吊るし柿白糸の滝下流) DSCF0011",
+          "author": "松岡明芳",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/w/index.php?curid=89004299",
+          "source": "openverse",
+          "fit": 1.0,
+          "q": "persimmon drying"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Dried_persimmon_cakes.jpg/1920px-Dried_persimmon_cakes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Dried_persimmon_cakes.jpg/500px-Dried_persimmon_cakes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3000,
+          "height": 3000,
+          "title": "Dried persimmon cakes.jpg",
+          "author": "Fumikas Sagisavas",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Dried_persimmon_cakes.jpg",
+          "source": "wikimedia",
+          "fit": 0.869,
+          "q": "persimmon drying"
+        },
+        {
+          "url": "https://live.staticflickr.com/4561/38224044016_1b5ca5fd85_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/79626b17-db43-4dbc-873b-27350645d409/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "persimmons drying in the mild sun of November 5",
+          "author": "anthroview",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/44853622@N06/38224044016",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "persimmon drying"
+        },
+        {
+          "url": "https://live.staticflickr.com/5703/23908377006_acca382893_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/7817648e-580b-431f-adfc-5a1fc268d3a8/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "so many angles on persimmons drying",
+          "author": "wombatarama",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/38817438@N00/23908377006",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "persimmon drying"
+        },
+        {
+          "url": "https://live.staticflickr.com/4011/4501388693_67a3d58e6f_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/e62b5693-31d6-4b38-a75b-e530e6f51220/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "Hoshigaki",
+          "author": "Vegan Feast Catering",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/25128194@N02/4501388693",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "persimmon drying"
+        }
+      ],
+      "slot": "p08_s02",
+      "t0": 18.59,
+      "t1": 34.65
+    }
+  ]
+}

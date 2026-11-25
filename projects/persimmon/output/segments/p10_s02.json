@@ -1,0 +1,129 @@
+{
+  "sid": "p10_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:32",
+  "segments": [
+    {
+      "text": "For over two millennia, this humble tree has offered shade, timber, medicine, and sustenance across continents and cultures. Whether hanging like lanterns against a snowy Japanese hillside or resting in a wooden bowl on a kitchen table, it carries the quiet endurance of the changing seasons.",
+      "title": "Di sản thầm lặng qua mùa thu",
+      "desc": "Khung cảnh đối chiếu cây hồng trĩu quả giữa sườn đồi Nhật Bản phủ tuyết và những quả hồng chín được đặt trong chiếc bát gỗ mộc mạc trên bàn bếp.",
+      "queries": [
+        "Japanese snowy village",
+        "persimmon tree winter",
+        "persimmon wooden bowl"
+      ],
+      "query": "Japanese persimmon winter heritage",
+      "short": "Persimmon tree, winter",
+      "prompt": "Create a historically grounded documentary photograph illustrating the enduring cultural legacy of the persimmon tree across more than two thousand years. The main setting is a traditional rural Japanese hillside village during late winter, with an old persimmon tree standing beside a wooden farmhouse, its bare branches carrying several vivid orange persimmons like lanterns against freshly fallen snow. In the foreground, a rustic wooden kitchen table inside a traditional Japanese farmhouse holds a simple wooden bowl filled with ripe orange persimmons, connecting the outdoor landscape with everyday domestic life. Include subtle details of traditional wooden architecture, weathered timber, and the surrounding Japanese countryside. No modern objects or contemporary clothing. Soft natural winter daylight, gentle shadows, muted earthy colors contrasted with brilliant orange fruit, intimate cinematic documentary composition, eye-level camera perspective with the persimmon tree and bowl both clearly visible. The atmosphere should communicate patience, seasonal change, cultural continuity, and the quiet endurance of a fruit treasured across generations.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Japanese_Snow_Village.jpg/1920px-Japanese_Snow_Village.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Japanese_Snow_Village.jpg/500px-Japanese_Snow_Village.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2048,
+          "height": 1536,
+          "title": "Japanese Snow Village.jpg",
+          "author": "Cyph3r223",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Japanese_Snow_Village.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese snowy village"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Village_in_snow%2C_Koshirakura%2C_T%C5%8Dkamachi%2C_Niigata%2C_Japan.jpg/1920px-Village_in_snow%2C_Koshirakura%2C_T%C5%8Dkamachi%2C_Niigata%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Village_in_snow%2C_Koshirakura%2C_T%C5%8Dkamachi%2C_Niigata%2C_Japan.jpg/500px-Village_in_snow%2C_Koshirakura%2C_T%C5%8Dkamachi%2C_Niigata%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5050,
+          "height": 3366,
+          "title": "Village in snow, Koshirakura, Tōkamachi, Niigata, Japan.jpg",
+          "author": "Imai",
+          "license": "CC BY-SA 2.1 jp",
+          "page": "https://commons.wikimedia.org/wiki/File:Village_in_snow,_Koshirakura,_T%C5%8Dkamachi,_Niigata,_Japan.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese snowy village"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Nagano_Matsukawa.jpg/1920px-Nagano_Matsukawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Nagano_Matsukawa.jpg/500px-Nagano_Matsukawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5472,
+          "height": 3648,
+          "title": "Nagano Matsukawa.jpg",
+          "author": "MaedaAkihiko",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Nagano_Matsukawa.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese snowy village"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Shirakawago_village_and_snowy_mountain_%2813087582315%29.jpg/1920px-Shirakawago_village_and_snowy_mountain_%2813087582315%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Shirakawago_village_and_snowy_mountain_%2813087582315%29.jpg/500px-Shirakawago_village_and_snowy_mountain_%2813087582315%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4861,
+          "height": 4000,
+          "title": "Shirakawago village and snowy mountain (13087582315).jpg",
+          "author": "Takashi Hososhima from Tokyo, Japan",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Shirakawago_village_and_snowy_mountain_(13087582315).jpg",
+          "source": "wikimedia",
+          "fit": 0.916,
+          "q": "Japanese snowy village"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/51382991853_7e6659d8ed_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/c1da44c4-ed86-4d88-9202-fbfc3d184cf1/thumb/",
+          "width": 1024,
+          "height": 654,
+          "title": "Shirakawa-go",
+          "author": "Trey Ratcliff",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/95572727@N00/51382991853",
+          "source": "openverse",
+          "fit": 0.527,
+          "q": "Japanese snowy village"
+        },
+        {
+          "url": "https://live.staticflickr.com/7842/32160137217_2a38c10231_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/afec23d3-57b0-4e71-b934-22af2c12c661/thumb/",
+          "width": 1024,
+          "height": 731,
+          "title": "Exploring North East Japan",
+          "author": "Trey Ratcliff",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/95572727@N00/32160137217",
+          "source": "openverse",
+          "fit": 0.548,
+          "q": "Japanese snowy village"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Persimmon_tree_in_winter_%28Nagano_prefecture%2C_Japan%29.jpg/1920px-Persimmon_tree_in_winter_%28Nagano_prefecture%2C_Japan%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Persimmon_tree_in_winter_%28Nagano_prefecture%2C_Japan%29.jpg/500px-Persimmon_tree_in_winter_%28Nagano_prefecture%2C_Japan%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2040,
+          "height": 2571,
+          "title": "Persimmon tree in winter (Nagano prefecture, Japan).jpg",
+          "author": "James Heilman, MD",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmon_tree_in_winter_(Nagano_prefecture,_Japan).jpg",
+          "source": "wikimedia",
+          "fit": 0.824,
+          "q": "persimmon tree winter"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_%281920%29_%2814596404819%29.jpg/1920px-The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_%281920%29_%2814596404819%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_%281920%29_%2814596404819%29.jpg/500px-The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_%281920%29_%2814596404819%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2824,
+          "height": 3840,
+          "title": "The tree book - A popular guide to a knowledge of the trees of North America and to their uses and cultivation (1920) (14596404819).jpg",
+          "author": "Rogers, Julia Ellen, b. 1866",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_(1920)_(14596404819).jpg",
+          "source": "wikimedia",
+          "fit": 0.811,
+          "q": "persimmon tree winter"
+        }
+      ],
+      "slot": "p10_s02",
+      "t0": 21.14,
+      "t1": 38.7
+    }
+  ]
+}

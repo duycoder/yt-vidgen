@@ -1,0 +1,129 @@
+{
+  "sid": "p06_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:15",
+  "segments": [
+    {
+      "text": "Once the fruit fully ripens, however, a natural chemical shift occurs. The tree produces acetaldehyde, which causes those soluble tannins to link together into large, insoluble chains.",
+      "title": "Sự chuyển hóa tannin",
+      "desc": "Quả hồng chín hoàn toàn được quan sát dưới dạng lát cắt khoa học, minh họa acetaldehyde thúc đẩy các phân tử tannin liên kết thành những chuỗi lớn không hòa tan.",
+      "queries": [
+        "persimmon ripening",
+        "persimmon cross section",
+        "molecular chemistry"
+      ],
+      "query": "ripe persimmon acetaldehyde tannin molecules polymerization",
+      "short": "Ripe persimmon, tannins",
+      "prompt": "A scientifically accurate botanical cutaway visualization of a fully ripened Japanese persimmon (Diospyros kaki) in a traditional Japanese orchard during late autumn, approximately the present day. Show the glowing deep-orange fruit sliced open, revealing its soft translucent flesh and tiny cellular structures. Within the flesh, illustrate the chemical transformation occurring during ripening: acetaldehyde molecules facilitating the bonding of numerous small soluble tannin molecules into much larger interconnected insoluble molecular chains. Clearly distinguish the smaller individual tannin molecules from the newly formed larger chains, showing the chemical process inside the fruit's cells. The fruit remains the central subject, with a softly blurred background of autumn persimmon trees bearing ripe orange fruits. Warm natural late-afternoon sunlight, realistic botanical details, scientific documentary photography, extreme macro perspective with a subtle cross-sectional view, precise natural fruit anatomy and believable molecular visualization.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_003.jpg/1920px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_003.jpg/500px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3000,
+          "height": 2000,
+          "title": "Hongsi (Ripening persimmon of korea) 20201104 003.jpg",
+          "author": "Mobius6",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hongsi_(Ripening_persimmon_of_korea)_20201104_003.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_001.jpg/1920px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_001.jpg/500px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3000,
+          "height": 2000,
+          "title": "Hongsi (Ripening persimmon of korea) 20201104 001.jpg",
+          "author": "Mobius6",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hongsi_(Ripening_persimmon_of_korea)_20201104_001.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_005.jpg/1920px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_005.jpg/500px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3000,
+          "height": 2000,
+          "title": "Hongsi (Ripening persimmon of korea) 20201104 005.jpg",
+          "author": "Mobius6",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hongsi_(Ripening_persimmon_of_korea)_20201104_005.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_004.jpg/1920px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_004.jpg/500px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2591,
+          "height": 2000,
+          "title": "Hongsi (Ripening persimmon of korea) 20201104 004.jpg",
+          "author": "Mobius6",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hongsi_(Ripening_persimmon_of_korea)_20201104_004.jpg",
+          "source": "wikimedia",
+          "fit": 0.933,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://live.staticflickr.com/8172/8055283036_55517dec01_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/4e6243f1-a6a5-403d-8ff4-dbe07c002ed9/thumb/",
+          "width": 1024,
+          "height": 745,
+          "title": "Persimmons Ripening",
+          "author": "HorsePunchKid",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/17373191@N00/8055283036",
+          "source": "openverse",
+          "fit": 0.552,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://live.staticflickr.com/7835/46402167762_189eff3e6b_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/39f4f1b5-5957-42ad-8dcb-845153fb0c14/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Rooftop persimmon ripening rack - Minoh, Osaka, Japan",
+          "author": "Geoff Whalan",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/101736587@N04/46402167762",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://live.staticflickr.com/5591/15135106990_9eb7907321_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/8cbfa563-8ff7-479e-a95a-7e4dec57ace0/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "persimmons ripening",
+          "author": "Magalie L'Abbé",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/97551727@N00/15135106990",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://live.staticflickr.com/2757/4086402720_cbc8d2a51b_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/acb4b299-30ce-4c0d-bf53-99abb9cd5858/thumb/",
+          "width": 1024,
+          "height": 678,
+          "title": "persimmons ripening in late fall",
+          "author": "johnpaulgoguen",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/38023744@N00/4086402720",
+          "source": "openverse",
+          "fit": 0.534,
+          "q": "persimmon ripening"
+        }
+      ],
+      "slot": "p06_s02",
+      "t0": 24.77,
+      "t1": 37.14
+    }
+  ]
+}

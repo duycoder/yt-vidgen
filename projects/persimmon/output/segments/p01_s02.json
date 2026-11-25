@@ -1,0 +1,251 @@
+{
+  "sid": "p01_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 14:55",
+  "segments": [
+    {
+      "text": "This is the strange paradox of the persimmon. For centuries, this autumnal fruit has puzzled travellers, delighted emperors, and baffled botanists.",
+      "title": "Nghịch lý của quả hồng",
+      "desc": "Một nhà thực vật học châu Âu thế kỷ 19 đang quan sát và nghiên cứu những quả hồng cam rực rỡ trong khu vườn thực vật mùa thu.",
+      "queries": [
+        "botanist examining",
+        "persimmon harvest",
+        "autumn persimmons"
+      ],
+      "query": "botanist persimmon autumn",
+      "short": "botanist persimmon",
+      "prompt": "A historically accurate 19th-century European botanist carefully examining freshly harvested bright orange persimmons in a botanical garden in autumn. The botanist wears a dark wool waistcoat, white linen shirt, and formal trousers, holding a ripe persimmon while studying its unusual shape. Persimmon trees with orange fruits and golden autumn leaves fill the background. A wooden botanical specimen table holds several carefully arranged fruits and handwritten scientific notebooks. Soft natural afternoon sunlight, gentle autumn atmosphere, medium-wide composition, eye-level camera angle, historically accurate European botanical research setting.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Botanist_and_students_examining_the_species_distribution_using_quadrat.jpg/1920px-Botanist_and_students_examining_the_species_distribution_using_quadrat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Botanist_and_students_examining_the_species_distribution_using_quadrat.jpg/500px-Botanist_and_students_examining_the_species_distribution_using_quadrat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3008,
+          "height": 2000,
+          "title": "Botanist and students examining the species distribution using quadrat.jpg",
+          "author": "Jaisuvyas",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Botanist_and_students_examining_the_species_distribution_using_quadrat.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "botanist examining"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Botanist_Rebekah_Reid_examine_dwarf-flowered_heartleaf_flowers_%2846890435185%29.jpg/1920px-Botanist_Rebekah_Reid_examine_dwarf-flowered_heartleaf_flowers_%2846890435185%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Botanist_Rebekah_Reid_examine_dwarf-flowered_heartleaf_flowers_%2846890435185%29.jpg/500px-Botanist_Rebekah_Reid_examine_dwarf-flowered_heartleaf_flowers_%2846890435185%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6000,
+          "height": 4000,
+          "title": "Botanist Rebekah Reid examine dwarf-flowered heartleaf flowers (46890435185).jpg",
+          "author": "USFWS/Southeast",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Botanist_Rebekah_Reid_examine_dwarf-flowered_heartleaf_flowers_(46890435185).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "botanist examining"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP876126.jpg/1920px-The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP876126.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP876126.jpg/500px-The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP876126.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2565,
+          "height": 3265,
+          "title": "The botanist- a man in a garden examining its contents MET DP876126.jpg",
+          "author": "Mariano Fortuny Marsal",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP876126.jpg",
+          "source": "wikimedia",
+          "fit": 0.822,
+          "q": "botanist examining"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP854196.jpg/1920px-The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP854196.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP854196.jpg/500px-The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP854196.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2680,
+          "height": 3490,
+          "title": "The botanist- a man in a garden examining its contents MET DP854196.jpg",
+          "author": "Mariano Fortuny Marsal",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:The_botanist-_a_man_in_a_garden_examining_its_contents_MET_DP854196.jpg",
+          "source": "wikimedia",
+          "fit": 0.818,
+          "q": "botanist examining"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Japanese_Persimmons_drying.JPG/1920px-Japanese_Persimmons_drying.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Japanese_Persimmons_drying.JPG/500px-Japanese_Persimmons_drying.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3648,
+          "height": 2736,
+          "title": "Japanese Persimmons drying.JPG",
+          "author": "Cla68",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Japanese_Persimmons_drying.JPG",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon harvest"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Fall_Colors_in_Quebec%2C_New_York%2C_and_New_England_%28MODIS%29.jpg/1920px-Fall_Colors_in_Quebec%2C_New_York%2C_and_New_England_%28MODIS%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Fall_Colors_in_Quebec%2C_New_York%2C_and_New_England_%28MODIS%29.jpg/500px-Fall_Colors_in_Quebec%2C_New_York%2C_and_New_England_%28MODIS%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3531,
+          "height": 2687,
+          "title": "Fall Colors in Quebec, New York, and New England (MODIS).jpg",
+          "author": "MODIS Land Rapid Response Team, NASA GSFC",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Fall_Colors_in_Quebec,_New_York,_and_New_England_(MODIS).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon harvest"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/American_Persimmons.png/1920px-American_Persimmons.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/American_Persimmons.png/500px-American_Persimmons.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2475,
+          "height": 3300,
+          "title": "American Persimmons.png",
+          "author": "KnightWolf8",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:American_Persimmons.png",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "persimmon harvest"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_face_of_China%2C_travels_in_East%2C_North%2C_Central_and_Western_China%3B_with_some_account_of_the_new_schools%2C_universities%2C_missions%2C_and_the_old_religious_sacred_places_of_Confucianism%2C_Buddhism%2C_and_%2814756618896%29.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_face_of_China%2C_travels_in_East%2C_North%2C_Central_and_Western_China%3B_with_some_account_of_the_new_schools%2C_universities%2C_missions%2C_and_the_old_religious_sacred_places_of_Confucianism%2C_Buddhism%2C_and_%2814756618896%29.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2026,
+          "height": 3090,
+          "title": "The face of China, travels in East, North, Central and Western China; with some account of the new schools, universities, missions, and the old religious sacred places of Confucianism, Buddhism, and (14756618896).jpg",
+          "author": "Kemp, Emily Georgiana, 1860-",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:The_face_of_China,_travels_in_East,_North,_Central_and_Western_China;_with_some_account_of_the_new_schools,_universities,_missions,_and_the_old_religious_sacred_places_of_Confucianism,_Buddhism,_and_(14756618896).jpg",
+          "source": "wikimedia",
+          "fit": 0.793,
+          "q": "persimmon harvest"
+        }
+      ],
+      "slot": "p01_s02",
+      "t0": 13.39,
+      "t1": 22.75
+    },
+    {
+      "text": "In its unripe state, it is nearly inedible, armed with a chemical defence that makes the human tongue revolt. Yet given a little time, or a touch of winter frost, that same harsh fruit transforms into something resembling spiced apricot jam.",
+      "title": "Từ chát đắng đến ngọt ngào",
+      "desc": "Những quả hồng xanh còn cứng và quả hồng chín mềm mọng được đặt cạnh nhau, thể hiện sự biến đổi kỳ diệu sau thời gian và giá lạnh mùa đông.",
+      "queries": [
+        "persimmon ripening",
+        "unripe persimmons",
+        "ripe persimmon"
+      ],
+      "query": "unripe ripe persimmon",
+      "short": "unripe ripe persimmon",
+      "prompt": "A detailed botanical food study showing the dramatic transformation of persimmons from unripe to fully ripe. On a rustic wooden table in a traditional East Asian farmhouse during late autumn transitioning into winter, several firm pale-orange unripe persimmons with green calyxes sit beside deeply orange, extremely soft, translucent ripe persimmons, one naturally split open to reveal its glossy jam-like flesh. A few fruits have delicate frost crystals on their skins, suggesting cold winter weather. A traditional ceramic bowl and simple wooden utensils sit nearby. The contrast between hard, astringent unripe fruit and soft, sweet, jam-like ripe fruit is immediately visible. Cool winter daylight from a nearby window, intimate close-up composition, slightly elevated three-quarter camera angle, realistic botanical details and historically appropriate traditional rural setting.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_003.jpg/1920px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_003.jpg/500px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3000,
+          "height": 2000,
+          "title": "Hongsi (Ripening persimmon of korea) 20201104 003.jpg",
+          "author": "Mobius6",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hongsi_(Ripening_persimmon_of_korea)_20201104_003.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_001.jpg/1920px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_001.jpg/500px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3000,
+          "height": 2000,
+          "title": "Hongsi (Ripening persimmon of korea) 20201104 001.jpg",
+          "author": "Mobius6",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hongsi_(Ripening_persimmon_of_korea)_20201104_001.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_005.jpg/1920px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_005.jpg/500px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3000,
+          "height": 2000,
+          "title": "Hongsi (Ripening persimmon of korea) 20201104 005.jpg",
+          "author": "Mobius6",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hongsi_(Ripening_persimmon_of_korea)_20201104_005.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_004.jpg/1920px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Hongsi_%28Ripening_persimmon_of_korea%29_20201104_004.jpg/500px-Hongsi_%28Ripening_persimmon_of_korea%29_20201104_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2591,
+          "height": 2000,
+          "title": "Hongsi (Ripening persimmon of korea) 20201104 004.jpg",
+          "author": "Mobius6",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hongsi_(Ripening_persimmon_of_korea)_20201104_004.jpg",
+          "source": "wikimedia",
+          "fit": 0.933,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://live.staticflickr.com/8172/8055283036_55517dec01_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/4e6243f1-a6a5-403d-8ff4-dbe07c002ed9/thumb/",
+          "width": 1024,
+          "height": 745,
+          "title": "Persimmons Ripening",
+          "author": "HorsePunchKid",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/17373191@N00/8055283036",
+          "source": "openverse",
+          "fit": 0.552,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://live.staticflickr.com/7835/46402167762_189eff3e6b_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/39f4f1b5-5957-42ad-8dcb-845153fb0c14/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Rooftop persimmon ripening rack - Minoh, Osaka, Japan",
+          "author": "Geoff Whalan",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/101736587@N04/46402167762",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://live.staticflickr.com/5591/15135106990_9eb7907321_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/8cbfa563-8ff7-479e-a95a-7e4dec57ace0/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "persimmons ripening",
+          "author": "Magalie L'Abbé",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/97551727@N00/15135106990",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "persimmon ripening"
+        },
+        {
+          "url": "https://live.staticflickr.com/2757/4086402720_cbc8d2a51b_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/acb4b299-30ce-4c0d-bf53-99abb9cd5858/thumb/",
+          "width": 1024,
+          "height": 678,
+          "title": "persimmons ripening in late fall",
+          "author": "johnpaulgoguen",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/38023744@N00/4086402720",
+          "source": "openverse",
+          "fit": 0.534,
+          "q": "persimmon ripening"
+        }
+      ],
+      "slot": "p01_s02_2",
+      "t0": 22.75,
+      "t1": 37.69
+    }
+  ]
+}

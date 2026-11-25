@@ -1,0 +1,251 @@
+{
+  "sid": "p02_s03",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:00",
+  "segments": [
+    {
+      "text": "From China, the tree travelled east into the Korean peninsula and across the sea to Japan during the seventh and eighth centuries.",
+      "title": "Hành trình sang Triều Tiên và Nhật Bản",
+      "desc": "Thương nhân và người dân Đông Á thế kỷ thứ bảy đến thứ tám đưa giống cây hồng từ Trung Quốc sang bán đảo Triều Tiên và Nhật Bản, nơi những cây hồng bắt đầu bén rễ trong các khu vườn truyền thống.",
+      "queries": [
+        "ancient sea voyage",
+        "Japanese persimmon tree",
+        "Korean traditional orchard"
+      ],
+      "query": "ancient Asia persimmon cultivation",
+      "short": "Persimmon, Ancient Asia",
+      "prompt": "A historically grounded scene depicting the spread of cultivated Asian persimmon trees from China to the Korean peninsula and Japan during the seventh and eighth centuries. A wooden East Asian merchant sailing vessel crosses the sea between the mainland and Japanese islands, while the landscape reveals traditional Korean and Japanese settlements with early persimmon orchards. Local farmers in historically appropriate seventh-to-eighth-century East Asian clothing tend young persimmon trees bearing small orange fruits. Traditional wooden architecture, coastal mountains and agricultural terraces establish the historical setting. Warm natural morning light, elevated wide-angle cinematic view showing the maritime connection and the spread of the fruit across East Asia.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Elena-lukina-prague-exhibition-my-world-2014-crystal-wave-2012_%283%29.jpg/1920px-Elena-lukina-prague-exhibition-my-world-2014-crystal-wave-2012_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Elena-lukina-prague-exhibition-my-world-2014-crystal-wave-2012_%283%29.jpg/500px-Elena-lukina-prague-exhibition-my-world-2014-crystal-wave-2012_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1968,
+          "height": 3000,
+          "title": "Elena-lukina-prague-exhibition-my-world-2014-crystal-wave-2012 (3).jpg",
+          "author": "ElenaLukinaArt",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Elena-lukina-prague-exhibition-my-world-2014-crystal-wave-2012_(3).jpg",
+          "source": "wikimedia",
+          "fit": 0.793,
+          "q": "ancient sea voyage"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Elena-lukina-parisian-woman-art-week-in-france-2017_%2810%29.jpg/1920px-Elena-lukina-parisian-woman-art-week-in-france-2017_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Elena-lukina-parisian-woman-art-week-in-france-2017_%2810%29.jpg/500px-Elena-lukina-parisian-woman-art-week-in-france-2017_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1991,
+          "height": 3000,
+          "title": "Elena-lukina-parisian-woman-art-week-in-france-2017 (10).jpg",
+          "author": "ElenaLukinaArt",
+          "license": "CC BY 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Elena-lukina-parisian-woman-art-week-in-france-2017_(10).jpg",
+          "source": "wikimedia",
+          "fit": 0.795,
+          "q": "ancient sea voyage"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Elena-lukina-prague-exhibition-my-world-2014-the-heritage-tide-2013_%286%29.jpg/1920px-Elena-lukina-prague-exhibition-my-world-2014-the-heritage-tide-2013_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Elena-lukina-prague-exhibition-my-world-2014-the-heritage-tide-2013_%286%29.jpg/500px-Elena-lukina-prague-exhibition-my-world-2014-the-heritage-tide-2013_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1968,
+          "height": 3000,
+          "title": "Elena-lukina-prague-exhibition-my-world-2014-the-heritage-tide-2013 (6).jpg",
+          "author": "ElenaLukinaArt",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Elena-lukina-prague-exhibition-my-world-2014-the-heritage-tide-2013_(6).jpg",
+          "source": "wikimedia",
+          "fit": 0.793,
+          "q": "ancient sea voyage"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Elena-lukina-prague-exhibition-my-world-2014-vast-sea-2013_%284%29.jpg/1920px-Elena-lukina-prague-exhibition-my-world-2014-vast-sea-2013_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Elena-lukina-prague-exhibition-my-world-2014-vast-sea-2013_%284%29.jpg/500px-Elena-lukina-prague-exhibition-my-world-2014-vast-sea-2013_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1968,
+          "height": 3000,
+          "title": "Elena-lukina-prague-exhibition-my-world-2014-vast-sea-2013 (4).jpg",
+          "author": "ElenaLukinaArt",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Elena-lukina-prague-exhibition-my-world-2014-vast-sea-2013_(4).jpg",
+          "source": "wikimedia",
+          "fit": 0.793,
+          "q": "ancient sea voyage"
+        },
+        {
+          "url": "https://live.staticflickr.com/7563/28080664440_2bfd7ce3b2_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/da987606-01e7-46a8-b5c2-afb011fb0716/thumb/",
+          "width": 1024,
+          "height": 663,
+          "title": "Windswept at Kish",
+          "author": "ShaneTaremi",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/131518729@N05/28080664440",
+          "source": "openverse",
+          "fit": 0.53,
+          "q": "ancient sea voyage"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/50016314531_cf270e8d2c_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/77a3f0ea-49b9-4e0d-b3b8-281f71c53ba3/thumb/",
+          "width": 1024,
+          "height": 576,
+          "title": "Proposed NASA Mission Would Visit Neptune's Curious Moon Triton",
+          "author": "NASA's Marshall Space Flight Center",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/28634332@N05/50016314531",
+          "source": "openverse",
+          "fit": 0.506,
+          "q": "ancient sea voyage"
+        },
+        {
+          "url": "https://live.staticflickr.com/4533/27270610909_c35b2bdb73_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/d15c85ce-5289-4ae5-b8bb-3a746e4cad81/thumb/",
+          "width": 1024,
+          "height": 703,
+          "title": "Urgench UZ - Kyzylkum Desert",
+          "author": "Daniel Mennerich",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/29858421@N04/27270610909",
+          "source": "openverse",
+          "fit": 0.54,
+          "q": "ancient sea voyage"
+        },
+        {
+          "url": "https://live.staticflickr.com/3488/3740262332_fb81b458bf_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/abf0c402-c53e-463c-89d3-ceaf51429c44/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "late afternoon tea",
+          "author": "lanier67",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/48165069@N00/3740262332",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "ancient sea voyage"
+        }
+      ],
+      "slot": "p02_s03",
+      "t0": 36.77,
+      "t1": 44.71
+    },
+    {
+      "text": "Meanwhile, thousands of miles away in North America, an entirely separate species was growing wild in the forests, waiting to be discovered by Indigenous peoples.",
+      "title": "Loài hồng hoang dã ở Bắc Mỹ",
+      "desc": "Những cây hồng Mỹ mọc tự nhiên giữa các khu rừng Bắc Mỹ, nơi người bản địa khám phá và thu hái những quả chín trong môi trường rừng nguyên sinh.",
+      "queries": [
+        "Indigenous forest gathering",
+        "American persimmon tree",
+        "Eastern woodland forest"
+      ],
+      "query": "Native American wild persimmon forest",
+      "short": "American Persimmon, Indigenous",
+      "prompt": "A historically grounded depiction of wild American persimmon (Diospyros virginiana) growing independently in the forests of eastern North America, centuries before European colonization. Indigenous people from the Eastern Woodlands, wearing historically appropriate precolonial clothing made from natural materials, discover and gather ripe orange persimmons beneath mature native trees. Show recognizable American persimmon characteristics: oval orange fruits, leathery green leaves, rough dark bark and a natural woodland understory. Dense temperate forest with native vegetation, fallen autumn leaves and scattered sunlight filtering through the canopy. Late autumn atmosphere, soft golden afternoon lighting, eye-level cinematic composition focused on the relationship between the Indigenous gatherers and the wild fruit.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Annual_report_of_the_Board_of_Regents_of_the_Smithsonian_Institution_%281888%29_%2814760482871%29.jpg/1920px-Annual_report_of_the_Board_of_Regents_of_the_Smithsonian_Institution_%281888%29_%2814760482871%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Annual_report_of_the_Board_of_Regents_of_the_Smithsonian_Institution_%281888%29_%2814760482871%29.jpg/500px-Annual_report_of_the_Board_of_Regents_of_the_Smithsonian_Institution_%281888%29_%2814760482871%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2448,
+          "height": 1488,
+          "title": "Annual report of the Board of Regents of the Smithsonian Institution (1888) (14760482871).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Annual_report_of_the_Board_of_Regents_of_the_Smithsonian_Institution_(1888)_(14760482871).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Indigenous forest gathering"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4413_%2832499126977%29.jpg/1920px-Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4413_%2832499126977%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4413_%2832499126977%29.jpg/500px-Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4413_%2832499126977%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3456,
+          "height": 2304,
+          "title": "Climate Angels at Extinction Rebellion Declaration Day Melbourne - IMG 4413 (32499126977).jpg",
+          "author": "Takver from Australia",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4413_(32499126977).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Indigenous forest gathering"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Outside_Victorian_State_Government_offices_-_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4418_%2847388076162%29.jpg/1920px-Outside_Victorian_State_Government_offices_-_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4418_%2847388076162%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Outside_Victorian_State_Government_offices_-_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4418_%2847388076162%29.jpg/500px-Outside_Victorian_State_Government_offices_-_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4418_%2847388076162%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3456,
+          "height": 2304,
+          "title": "Outside Victorian State Government offices - Extinction Rebellion Declaration Day Melbourne - IMG 4418 (47388076162).jpg",
+          "author": "Takver from Australia",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Outside_Victorian_State_Government_offices_-_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4418_(47388076162).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Indigenous forest gathering"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4383_%2847388006852%29.jpg/1920px-Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4383_%2847388006852%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4383_%2847388006852%29.jpg/500px-Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4383_%2847388006852%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3456,
+          "height": 2304,
+          "title": "Climate Angels at Extinction Rebellion Declaration Day Melbourne - IMG 4383 (47388006852).jpg",
+          "author": "Takver from Australia",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Climate_Angels_at_Extinction_Rebellion_Declaration_Day_Melbourne_-_IMG_4383_(47388006852).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Indigenous forest gathering"
+        },
+        {
+          "url": "https://live.staticflickr.com/2484/3572815999_033a81b978_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/513ccacf-9cb6-4abd-a3db-113d9226dda9/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "Bush Dog",
+          "author": "Smithsonian's National Zoo",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/26357527@N05/3572815999",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "Indigenous forest gathering"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/49420586657_4e1bca313b_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/c86fedc9-ad4b-4e18-92a2-a052556859b3/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Darién National Park_2019 12 27_2058",
+          "author": "HBarrison",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/10299779@N03/49420586657",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "Indigenous forest gathering"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/49420364771_79c2d904b3_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/1c235441-0d9c-4a0f-b3b2-45e11d80ffff/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Darién National Park_2019 12 27_2093",
+          "author": "HBarrison",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/10299779@N03/49420364771",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "Indigenous forest gathering"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/49420504057_86eab51565_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/0aaf05b1-a5e5-4fa0-a3ff-c86dc014472d/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Darién National Park_2019 12 27_2536",
+          "author": "HBarrison",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/10299779@N03/49420504057",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "Indigenous forest gathering"
+        }
+      ],
+      "slot": "p02_s03_2",
+      "t0": 44.71,
+      "t1": 55.4
+    }
+  ]
+}

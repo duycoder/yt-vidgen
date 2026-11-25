@@ -1,0 +1,251 @@
+{
+  "sid": "p03_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:03",
+  "segments": [
+    {
+      "text": "The common English word persimmon, however, has far earthier roots. It comes from the Algonquian language of the Powhatan people in Virginia, where the word putchamin meant a dried fruit.",
+      "title": "Nguồn gốc từ người Powhatan",
+      "desc": "Một người phụ nữ Powhatan đang thu hoạch và phơi khô quả hồng tại một ngôi làng bản địa ở Virginia thời kỳ đầu thuộc địa.",
+      "queries": [
+        "Native American harvesting",
+        "Powhatan people",
+        "dried persimmons"
+      ],
+      "query": "Powhatan Virginia Algonquian persimmon",
+      "short": "Powhatan persimmon",
+      "prompt": "A historically grounded scene in coastal Virginia around the early 1600s, showing members of the Powhatan people harvesting native American persimmons and preparing the fruit for drying. Indigenous Powhatan men and women wear historically appropriate deerskin garments, woven plant-fiber clothing, and traditional accessories. A woman carefully handles small orange-brown persimmons beside a simple wooden drying rack near a traditional Powhatan longhouse. Native woodland vegetation, autumn foliage, and a natural village environment surround them. Soft late-afternoon sunlight, realistic fruit details, documentary-style composition, eye-level medium-wide camera angle.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/1890s_Native_American_hop_pickers_camp.jpg/1920px-1890s_Native_American_hop_pickers_camp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/1890s_Native_American_hop_pickers_camp.jpg/500px-1890s_Native_American_hop_pickers_camp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3301,
+          "height": 2085,
+          "title": "1890s Native American hop pickers camp.jpg",
+          "author": "Unknown authorUnknown author",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:1890s_Native_American_hop_pickers_camp.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Native American harvesting"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Native_American_women_with_basket_of_huckleberries_%283230032308%29.jpg/1920px-Native_American_women_with_basket_of_huckleberries_%283230032308%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Native_American_women_with_basket_of_huckleberries_%283230032308%29.jpg/500px-Native_American_women_with_basket_of_huckleberries_%283230032308%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3808,
+          "height": 2880,
+          "title": "Native American women with basket of huckleberries (3230032308).jpg",
+          "author": "OSU Special Collections & Archives : Commons",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Native_American_women_with_basket_of_huckleberries_(3230032308).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Native American harvesting"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Rice_harvesting_253.jpg/1920px-Rice_harvesting_253.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Rice_harvesting_253.jpg/500px-Rice_harvesting_253.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4613,
+          "height": 3067,
+          "title": "Rice harvesting 253.jpg",
+          "author": "Chris Light",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Rice_harvesting_253.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Native American harvesting"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Green_Corn_Ceremony_-_Minatarrees.jpg/1920px-Green_Corn_Ceremony_-_Minatarrees.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Green_Corn_Ceremony_-_Minatarrees.jpg/500px-Green_Corn_Ceremony_-_Minatarrees.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2949,
+          "height": 2050,
+          "title": "Green Corn Ceremony - Minatarrees.jpg",
+          "author": "George Catlin",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Green_Corn_Ceremony_-_Minatarrees.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Native American harvesting"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Birding_at_powhatan_%2824180484575%29.jpg/1920px-Birding_at_powhatan_%2824180484575%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Birding_at_powhatan_%2824180484575%29.jpg/500px-Birding_at_powhatan_%2824180484575%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3074,
+          "height": 1896,
+          "title": "Birding at powhatan (24180484575).jpg",
+          "author": "vastateparksstaff",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Birding_at_powhatan_(24180484575).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Powhatan people"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Powhatan_Powhatan_Trailhead_Parking_Lot_%2813884746013%29.jpg/1920px-Powhatan_Powhatan_Trailhead_Parking_Lot_%2813884746013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Powhatan_Powhatan_Trailhead_Parking_Lot_%2813884746013%29.jpg/500px-Powhatan_Powhatan_Trailhead_Parking_Lot_%2813884746013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4272,
+          "height": 2848,
+          "title": "Powhatan Powhatan Trailhead Parking Lot (13884746013).jpg",
+          "author": "Virginia State Parks",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Powhatan_Powhatan_Trailhead_Parking_Lot_(13884746013).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Powhatan people"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Ralph_Hamor_and_Thomas_Savage_ask_for_the_hand_of_Powhatan_daughter_Pocahontas.jpg/1920px-Ralph_Hamor_and_Thomas_Savage_ask_for_the_hand_of_Powhatan_daughter_Pocahontas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Ralph_Hamor_and_Thomas_Savage_ask_for_the_hand_of_Powhatan_daughter_Pocahontas.jpg/500px-Ralph_Hamor_and_Thomas_Savage_ask_for_the_hand_of_Powhatan_daughter_Pocahontas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5803,
+          "height": 4479,
+          "title": "Ralph Hamor and Thomas Savage ask for the hand of Powhatan daughter Pocahontas.jpg",
+          "author": "Matthäus Merian",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Ralph_Hamor_and_Thomas_Savage_ask_for_the_hand_of_Powhatan_daughter_Pocahontas.jpg",
+          "source": "wikimedia",
+          "fit": 0.933,
+          "q": "Powhatan people"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Paramount_Chief_of_the_Powhatan_people_statue_at_Jamestown_Settlement_R0010455.jpg/1920px-Paramount_Chief_of_the_Powhatan_people_statue_at_Jamestown_Settlement_R0010455.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Paramount_Chief_of_the_Powhatan_people_statue_at_Jamestown_Settlement_R0010455.jpg/500px-Paramount_Chief_of_the_Powhatan_people_statue_at_Jamestown_Settlement_R0010455.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3888,
+          "height": 5184,
+          "title": "Paramount Chief of the Powhatan people statue at Jamestown Settlement R0010455.jpg",
+          "author": "Steveprutz",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Paramount_Chief_of_the_Powhatan_people_statue_at_Jamestown_Settlement_R0010455.jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "Powhatan people"
+        }
+      ],
+      "slot": "p03_s02",
+      "t0": 23.39,
+      "t1": 34.73
+    },
+    {
+      "text": "In East Asian folklore, the persimmon is steeped in symbolism. Tradition holds that hanging dried persimmons outside a home brings good fortune and wards off winter illness.",
+      "title": "Quả hồng mang lại may mắn",
+      "desc": "Những chùm hồng khô được treo dưới mái hiên một ngôi nhà truyền thống Đông Á giữa khung cảnh mùa đông.",
+      "queries": [
+        "hanging dried fruit",
+        "Japanese persimmon",
+        "traditional farmhouse"
+      ],
+      "query": "hanging dried persimmons East Asia winter",
+      "short": "Dried persimmons",
+      "prompt": "A traditional East Asian countryside home during winter, circa late 19th century, with several beautiful clusters of dried orange persimmons hanging from wooden beams beneath the farmhouse eaves. A local East Asian farmer wearing historically appropriate traditional winter clothing carefully checks the hanging fruit, while the wooden house stands amid a quiet winter landscape. The persimmons are carefully tied together with natural string, their wrinkled surfaces and rich amber-orange color clearly visible. The scene conveys an old folk belief that hanging dried persimmons brings good fortune and protects the household from winter illness. Gentle cold morning light, subtle warm sunlight illuminating the fruit, eye-level upward three-quarter camera angle.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Stall_of_dried_fruits%2C_nuts%2C_olive_oils_and_cold_cuts_at_the_Mercado_Municipal_de_S%C3%A3o_Paulo.jpg/1920px-Stall_of_dried_fruits%2C_nuts%2C_olive_oils_and_cold_cuts_at_the_Mercado_Municipal_de_S%C3%A3o_Paulo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Stall_of_dried_fruits%2C_nuts%2C_olive_oils_and_cold_cuts_at_the_Mercado_Municipal_de_S%C3%A3o_Paulo.jpg/500px-Stall_of_dried_fruits%2C_nuts%2C_olive_oils_and_cold_cuts_at_the_Mercado_Municipal_de_S%C3%A3o_Paulo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4089,
+          "height": 2805,
+          "title": "Stall of dried fruits, nuts, olive oils and cold cuts at the Mercado Municipal de São Paulo.jpg",
+          "author": "Wilfredor",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Stall_of_dried_fruits,_nuts,_olive_oils_and_cold_cuts_at_the_Mercado_Municipal_de_S%C3%A3o_Paulo.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "hanging dried fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Positano_-_7280.jpg/1920px-Positano_-_7280.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Positano_-_7280.jpg/500px-Positano_-_7280.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3888,
+          "height": 2816,
+          "title": "Positano - 7280.jpg",
+          "author": "Jorge Royan",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Positano_-_7280.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "hanging dried fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Hanging_Chili_Peppers_Ristra.jpg/1920px-Hanging_Chili_Peppers_Ristra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Hanging_Chili_Peppers_Ristra.jpg/500px-Hanging_Chili_Peppers_Ristra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2848,
+          "height": 4288,
+          "title": "Hanging Chili Peppers Ristra.jpg",
+          "author": "kissmykumbaya",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hanging_Chili_Peppers_Ristra.jpg",
+          "source": "wikimedia",
+          "fit": 0.795,
+          "q": "hanging dried fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Chili_Peppers_hangdrying.jpg/1920px-Chili_Peppers_hangdrying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Chili_Peppers_hangdrying.jpg/500px-Chili_Peppers_hangdrying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2448,
+          "height": 3264,
+          "title": "Chili Peppers hangdrying.jpg",
+          "author": "SteveStrummer",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Chili_Peppers_hangdrying.jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "hanging dried fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kaki_FR_2013.jpg/1920px-Kaki_FR_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kaki_FR_2013.jpg/500px-Kaki_FR_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4928,
+          "height": 3264,
+          "title": "Kaki FR 2013.jpg",
+          "author": "JLPC",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Kaki_FR_2013.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese persimmon"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Diospyros_kaki_seedlings_04.jpg/1920px-Diospyros_kaki_seedlings_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Diospyros_kaki_seedlings_04.jpg/500px-Diospyros_kaki_seedlings_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2592,
+          "height": 1456,
+          "title": "Diospyros kaki seedlings 04.jpg",
+          "author": "Eiku",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Diospyros_kaki_seedlings_04.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese persimmon"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Diospyros_kaki_seedling_with_four_cotyledons_02.jpg/1920px-Diospyros_kaki_seedling_with_four_cotyledons_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Diospyros_kaki_seedling_with_four_cotyledons_02.jpg/500px-Diospyros_kaki_seedling_with_four_cotyledons_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2592,
+          "height": 1456,
+          "title": "Diospyros kaki seedling with four cotyledons 02.jpg",
+          "author": "Eiku",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Diospyros_kaki_seedling_with_four_cotyledons_02.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese persimmon"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Fuyu_Persimmon_%28Diospyros_Kaki%29.jpg/1920px-Fuyu_Persimmon_%28Diospyros_Kaki%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Fuyu_Persimmon_%28Diospyros_Kaki%29.jpg/500px-Fuyu_Persimmon_%28Diospyros_Kaki%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2611,
+          "height": 1289,
+          "title": "Fuyu Persimmon (Diospyros Kaki).jpg",
+          "author": "Joe Ravi",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Fuyu_Persimmon_(Diospyros_Kaki).jpg",
+          "source": "wikimedia",
+          "fit": 0.907,
+          "q": "Japanese persimmon"
+        }
+      ],
+      "slot": "p03_s02_2",
+      "t0": 34.73,
+      "t1": 45.8
+    }
+  ]
+}

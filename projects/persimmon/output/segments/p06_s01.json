@@ -1,0 +1,251 @@
+{
+  "sid": "p06_s01",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:14",
+  "segments": [
+    {
+      "text": "Why does an unripe persimmon feel like sandpaper in your mouth? The answer lies in tiny cellular sacs packed with soluble tannins. When you bite into an unripe astringent persimmon, these sacs rupture, releasing tannins that immediately bind to the proteins in your saliva.",
+      "title": "Bí mật hóa học của vị chát",
+      "desc": "Hình ảnh minh họa khoa học phóng đại cấu trúc tế bào bên trong quả hồng xanh, cho thấy các túi chứa tannin bị phá vỡ và giải phóng hợp chất kết dính với protein trong nước bọt.",
+      "queries": [
+        "persimmon microscope",
+        "plant cell microscope",
+        "unripe persimmon"
+      ],
+      "query": "persimmon cells tannin molecules",
+      "short": "Tannin cells",
+      "prompt": "A scientifically accurate close-up visualization of the internal flesh of an unripe astringent Japanese persimmon, Diospyros kaki, showing microscopic plant cells containing tiny specialized tannin-filled sacs. Some cellular sacs have just ruptured after a bite, releasing soluble tannin compounds into the surrounding moist environment. Illustrate the tannin molecules interacting and binding with salivary proteins, with subtle translucent molecular structures visible among the fruit cells. The fruit is pale yellow-orange and visibly firm, with an unripe texture. Scientific documentary setting, based on modern botanical microscopy and biochemistry research, extremely detailed cellular structures, controlled laboratory lighting, macro camera perspective, realistic scientific visualization.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/%D0%9A%D0%BE%D0%B6%D1%83%D1%80%D0%B0_%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85_%D0%BF%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%D0%BE%D0%BC.jpg/1920px-%D0%9A%D0%BE%D0%B6%D1%83%D1%80%D0%B0_%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85_%D0%BF%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%D0%BE%D0%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/%D0%9A%D0%BE%D0%B6%D1%83%D1%80%D0%B0_%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85_%D0%BF%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%D0%BE%D0%BC.jpg/500px-%D0%9A%D0%BE%D0%B6%D1%83%D1%80%D0%B0_%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85_%D0%BF%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%D0%BE%D0%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5120,
+          "height": 5120,
+          "title": "Кожура разных плодов под микроскопом.jpg",
+          "author": "Andrei Savitsky",
+          "license": "CC BY 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%B6%D1%83%D1%80%D0%B0_%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85_%D0%BF%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%D0%BE%D0%BC.jpg",
+          "source": "wikimedia",
+          "fit": 0.869,
+          "q": "persimmon microscope"
+        },
+        {
+          "url": "https://live.staticflickr.com/4103/5110413705_0bf41e3fae_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/638a5594-f8e6-48b6-a915-6e966c345cec/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "2010-0-30 038 01",
+          "author": "石川 Shihchuan",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/40891106@N08/5110413705",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "persimmon microscope"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/54341780046_bbeaa8957c_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/e587bcd6-44cc-4e51-889a-25ff68148419/thumb/",
+          "width": 1024,
+          "height": 640,
+          "title": "Persimmon skin cells. Oblique transmitted polarized light, HDR. 52:1",
+          "author": "oldTor",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/157232351@N07/54341780046",
+          "source": "openverse",
+          "fit": 0.523,
+          "q": "persimmon microscope"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Bryum_capillare_leaf_cells.jpg/1920px-Bryum_capillare_leaf_cells.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Bryum_capillare_leaf_cells.jpg/500px-Bryum_capillare_leaf_cells.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5075,
+          "height": 3383,
+          "title": "Bryum capillare leaf cells.jpg",
+          "author": "Des_Callaghan",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Bryum_capillare_leaf_cells.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "plant cell microscope"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Wilson1900Fig2.jpg/1920px-Wilson1900Fig2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Wilson1900Fig2.jpg/500px-Wilson1900Fig2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2211,
+          "height": 1545,
+          "title": "Wilson1900Fig2.jpg",
+          "author": "Edmund Beecher Wilson",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Wilson1900Fig2.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "plant cell microscope"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Plant_cell_under_microscope.jpg/1920px-Plant_cell_under_microscope.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Plant_cell_under_microscope.jpg/500px-Plant_cell_under_microscope.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2445,
+          "height": 1989,
+          "title": "Plant cell under microscope.jpg",
+          "author": "Schminnte",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Plant_cell_under_microscope.jpg",
+          "source": "wikimedia",
+          "fit": 0.919,
+          "q": "plant cell microscope"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Red_onion_cells_%28microscope_observation%29.jpg/1920px-Red_onion_cells_%28microscope_observation%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Red_onion_cells_%28microscope_observation%29.jpg/500px-Red_onion_cells_%28microscope_observation%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3120,
+          "height": 4160,
+          "title": "Red onion cells (microscope observation).jpg",
+          "author": "Edoardo Simon",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Red_onion_cells_(microscope_observation).jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "plant cell microscope"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Unripe_Persimmon.JPG/1920px-Unripe_Persimmon.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Unripe_Persimmon.JPG/500px-Unripe_Persimmon.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2592,
+          "height": 1944,
+          "title": "Unripe Persimmon.JPG",
+          "author": "Shizhao",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Unripe_Persimmon.JPG",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "unripe persimmon"
+        }
+      ],
+      "slot": "p06_s01",
+      "t0": 0.0,
+      "t1": 16.7
+    },
+    {
+      "text": "This causes your mouth to pucker violently, a clever evolutionary trick that stops animals from eating the fruit before its seeds are ready.",
+      "title": "Chiến lược tự vệ của quả hồng",
+      "desc": "Một con thú hoang vừa cắn quả hồng xanh liền nhăn mặt khó chịu và nhả quả xuống, minh họa cơ chế tự vệ giúp hạt có thời gian trưởng thành.",
+      "queries": [
+        "animal eating fruit",
+        "unripe persimmon",
+        "wildlife persimmon tree"
+      ],
+      "query": "animal unripe persimmon seeds",
+      "short": "Animal persimmon",
+      "prompt": "A wild Japanese macaque in a traditional rural Japanese orchard during autumn, cautiously biting into a hard, unripe greenish-yellow persimmon hanging from a Diospyros kaki tree. The monkey reacts with an uncomfortable puckered expression, pulling its mouth away from the intensely astringent fruit, illustrating the natural chemical defense that discourages animals from eating fruit before its seeds mature. Several firm unripe persimmons remain attached to the branches, with their immature seeds subtly visible in a naturally opened fruit nearby. Rural Japan, traditional agricultural landscape, late autumn, historically grounded natural environment, soft overcast daylight filtering through orchard branches, medium close-up at animal eye level, realistic wildlife documentary photography.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Artibeus_jamaicensis_177067828.jpg/1920px-Artibeus_jamaicensis_177067828.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Artibeus_jamaicensis_177067828.jpg/500px-Artibeus_jamaicensis_177067828.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2048,
+          "height": 1536,
+          "title": "Artibeus jamaicensis 177067828.jpg",
+          "author": "Kai Squires",
+          "license": "CC BY 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Artibeus_jamaicensis_177067828.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "animal eating fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Artibeus_jamaicensis_255695247.jpg/1920px-Artibeus_jamaicensis_255695247.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Artibeus_jamaicensis_255695247.jpg/500px-Artibeus_jamaicensis_255695247.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2048,
+          "height": 1365,
+          "title": "Artibeus jamaicensis 255695247.jpg",
+          "author": "Juan Cruzado Cortés",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Artibeus_jamaicensis_255695247.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "animal eating fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Artibeus_jamaicensis_430135617.jpg/1920px-Artibeus_jamaicensis_430135617.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Artibeus_jamaicensis_430135617.jpg/500px-Artibeus_jamaicensis_430135617.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2048,
+          "height": 1536,
+          "title": "Artibeus jamaicensis 430135617.jpg",
+          "author": "Sebastián de Jesús Herrera Buenfil",
+          "license": "CC BY 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Artibeus_jamaicensis_430135617.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "animal eating fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Artibeus_jamaicensis_los_tuxtlas_2008.jpg/1920px-Artibeus_jamaicensis_los_tuxtlas_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Artibeus_jamaicensis_los_tuxtlas_2008.jpg/500px-Artibeus_jamaicensis_los_tuxtlas_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2820,
+          "height": 1416,
+          "title": "Artibeus jamaicensis los tuxtlas 2008.jpg",
+          "author": "Tobusaru",
+          "license": "CC BY 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Artibeus_jamaicensis_los_tuxtlas_2008.jpg",
+          "source": "wikimedia",
+          "fit": 0.914,
+          "q": "animal eating fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Unripe_Persimmon.JPG/1920px-Unripe_Persimmon.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Unripe_Persimmon.JPG/500px-Unripe_Persimmon.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2592,
+          "height": 1944,
+          "title": "Unripe Persimmon.JPG",
+          "author": "Shizhao",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Unripe_Persimmon.JPG",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "unripe persimmon"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/2025-09-18_Persimmon_at_Nutsubidze_Plateau.jpg/1920px-2025-09-18_Persimmon_at_Nutsubidze_Plateau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/2025-09-18_Persimmon_at_Nutsubidze_Plateau.jpg/500px-2025-09-18_Persimmon_at_Nutsubidze_Plateau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2672,
+          "height": 2040,
+          "title": "2025-09-18 Persimmon at Nutsubidze Plateau.jpg",
+          "author": "Yuri Samoylov",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:2025-09-18_Persimmon_at_Nutsubidze_Plateau.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "unripe persimmon"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Persimmon_American2_Asit.jpg/1920px-Persimmon_American2_Asit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Persimmon_American2_Asit.jpg/500px-Persimmon_American2_Asit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2560,
+          "height": 1920,
+          "title": "Persimmon American2 Asit.jpg",
+          "author": "Asit K. Ghosh  Thaumaturgist",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmon_American2_Asit.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "unripe persimmon"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/American_Persimmons.png/1920px-American_Persimmons.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/American_Persimmons.png/500px-American_Persimmons.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2475,
+          "height": 3300,
+          "title": "American Persimmons.png",
+          "author": "KnightWolf8",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:American_Persimmons.png",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "unripe persimmon"
+        }
+      ],
+      "slot": "p06_s01_2",
+      "t0": 16.7,
+      "t1": 24.77
+    }
+  ]
+}

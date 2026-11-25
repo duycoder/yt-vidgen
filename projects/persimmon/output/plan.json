@@ -1,0 +1,265 @@
+{
+  "script": "script.md",
+  "parts": [
+    {
+      "num": 1,
+      "title": "The Fruit That Bites Back",
+      "voice": "part 1.m4a",
+      "duration": 50.4,
+      "scenes": [
+        {
+          "id": "p01_s01",
+          "start": 0.0,
+          "end": 13.386,
+          "text": "Imagine biting into a glossy, bright orange fruit that looks like a ripe tomato. You expect a burst of honeyed sweetness. Instead, your mouth instantly dries out, as if you have just chewed on a piece of raw chalk."
+        },
+        {
+          "id": "p01_s02",
+          "start": 13.386,
+          "end": 37.688,
+          "text": "This is the strange paradox of the persimmon. For centuries, this autumnal fruit has puzzled travellers, delighted emperors, and baffled botanists. In its unripe state, it is nearly inedible, armed with a chemical defence that makes the human tongue revolt. Yet given a little time, or a touch of winter frost, that same harsh fruit transforms into something resembling spiced apricot jam."
+        },
+        {
+          "id": "p01_s03",
+          "start": 37.688,
+          "end": 50.4,
+          "text": "Ancient Greeks called it the fruit of the gods. East Asian poets wrote verses in its honour. So how did a botanical contradiction become one of the world’s most treasured winter delicacies?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Roots in the Ancient East",
+      "voice": "part 2.m4a",
+      "duration": 55.4,
+      "scenes": [
+        {
+          "id": "p02_s01",
+          "start": 0.0,
+          "end": 17.229,
+          "text": "To find the true home of the persimmon, we must travel back more than two thousand years to the river valleys of ancient China. Archaeological remains show that early farmers were cultivating the oriental persimmon along the Yangtze River long before the rise of the great imperial dynasties."
+        },
+        {
+          "id": "p02_s02",
+          "start": 17.229,
+          "end": 36.768,
+          "text": "By the time of the Han Dynasty, around two hundred B C, orchards of persimmon trees were already a familiar sight across northern and central China. Chinese scholars recorded dozens of distinct varieties, praising the fruit not only for its sweetness, but for its remarkable ability to thrive in poor, rocky soil."
+        },
+        {
+          "id": "p02_s03",
+          "start": 36.768,
+          "end": 55.4,
+          "text": "From China, the tree travelled east into the Korean peninsula and across the sea to Japan during the seventh and eighth centuries. Meanwhile, thousands of miles away in North America, an entirely separate species was growing wild in the forests, waiting to be discovered by Indigenous peoples."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Names and Legends",
+      "voice": "part 3.m4a",
+      "duration": 54.3,
+      "scenes": [
+        {
+          "id": "p03_s01",
+          "start": 0.0,
+          "end": 23.393,
+          "text": "The persimmon carries two very different names, each revealing a distinct chapter of its past. Its scientific genus name, Diospyros, comes from ancient Greek, translating roughly to divine fruit, or wheat of Zeus. Some classical scholars even speculated that the persimmon was the mysterious lotus fruit described in Homer’s Odyssey, though historians remain divided on the matter."
+        },
+        {
+          "id": "p03_s02",
+          "start": 23.393,
+          "end": 45.805,
+          "text": "The common English word persimmon, however, has far earthier roots. It comes from the Algonquian language of the Powhatan people in Virginia, where the word putchamin meant a dried fruit. In East Asian folklore, the persimmon is steeped in symbolism. Tradition holds that hanging dried persimmons outside a home brings good fortune and wards off winter illness."
+        },
+        {
+          "id": "p03_s03",
+          "start": 45.805,
+          "end": 54.3,
+          "text": "In Japan, old tales tell of monkeys and crabs fighting over a single persimmon seed, a story still told to children today."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "More Than Just a Meal",
+      "voice": "part 4.m4a",
+      "duration": 50.5,
+      "scenes": [
+        {
+          "id": "p04_s01",
+          "start": 0.0,
+          "end": 21.815,
+          "text": "Throughout history, people found ingenious ways to use almost every part of the persimmon tree. In Japan, the juice of unripe green persimmons was fermented to create kakishibu, a dark, pungent liquid rich in natural tannins. Artisans brushed this liquid onto paper umbrellas, fishing nets, and wooden buildings to make them waterproof and resistant to rot."
+        },
+        {
+          "id": "p04_s02",
+          "start": 21.815,
+          "end": 33.925,
+          "text": "Traditional herbalists across China and Korea brewed dried persimmon leaves into a soothing tea, believed to support circulation and calm the stomach. Even the tree itself proved valuable."
+        },
+        {
+          "id": "p04_s03",
+          "start": 33.925,
+          "end": 50.5,
+          "text": "The persimmon belongs to the ebony family, and its dense, dark heartwood was prized by craftsmen. In nineteenth-century America and Europe, this heavy timber was shaped into weaving shuttles, billiard cues, and the heads of wooden golf clubs, known simply as persimmon woods."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "The Patience of the Orchard",
+      "voice": "part 5.m4a",
+      "duration": 51.6,
+      "scenes": [
+        {
+          "id": "p05_s01",
+          "start": 0.0,
+          "end": 15.923,
+          "text": "Growing persimmons is an exercise in patience. The deciduous trees start slowly, often taking up to seven years before bearing a substantial harvest. In spring, they produce small, cream-coloured bell-shaped flowers hidden beneath glossy dark green leaves."
+        },
+        {
+          "id": "p05_s02",
+          "start": 15.923,
+          "end": 38.3,
+          "text": "As summer fades into autumn, the fruit swells and turns from green to yellow, and finally to a deep, glowing orange. Then comes one of the most striking sights in the agricultural world. By late November, the leaves wither and fall away completely, leaving the bright orange fruits hanging like glowing lanterns on bare, twisted branches against the grey winter sky."
+        },
+        {
+          "id": "p05_s03",
+          "start": 38.3,
+          "end": 51.6,
+          "text": "Farmers often leave the very highest fruits untouched on the tree. In rural Japan, these are called ki-mamori, or tree guardians, left behind as a thank-you to the birds and a wish for a generous harvest next year."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "The Chemistry of Astringency",
+      "voice": "part 6.m4a",
+      "duration": 56.1,
+      "scenes": [
+        {
+          "id": "p06_s01",
+          "start": 0.0,
+          "end": 24.766,
+          "text": "Why does an unripe persimmon feel like sandpaper in your mouth? The answer lies in tiny cellular sacs packed with soluble tannins. When you bite into an unripe astringent persimmon, these sacs rupture, releasing tannins that immediately bind to the proteins in your saliva. This causes your mouth to pucker violently, a clever evolutionary trick that stops animals from eating the fruit before its seeds are ready."
+        },
+        {
+          "id": "p06_s02",
+          "start": 24.766,
+          "end": 37.136,
+          "text": "Once the fruit fully ripens, however, a natural chemical shift occurs. The tree produces acetaldehyde, which causes those soluble tannins to link together into large, insoluble chains."
+        },
+        {
+          "id": "p06_s03",
+          "start": 37.136,
+          "end": 56.1,
+          "text": "Because these new chains can no longer bind to your saliva, the bitterness vanishes overnight, leaving behind pure, jelly-like sweetness. Interestingly, modern growers also cultivate non-astringent varieties, such as the Fuyu, which lose their tannins early and can be eaten crisp like an apple."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "title": "Crossing Oceans and Continents",
+      "voice": "part 7.m4a",
+      "duration": 54.4,
+      "scenes": [
+        {
+          "id": "p07_s01",
+          "start": 0.0,
+          "end": 24.498,
+          "text": "For centuries, the Asian persimmon remained largely unknown in the West, save for scattered reports from Portuguese and Jesuit missionaries in the sixteenth century. Everything changed in eighteen fifty-five, when Commodore Matthew Perry returned to the United States from his famous naval expedition to Japan. Alongside diplomatic treaties, Perry brought back persimmon seeds, planting them near Washington, D C."
+        },
+        {
+          "id": "p07_s02",
+          "start": 24.498,
+          "end": 47.526,
+          "text": "Though those first trees struggled in the harsh East Coast winters, agriculturalists soon realized the fruit would thrive in the warmer climates of California and the American South. By the eighteen seventies, grafted Japanese persimmon trees were arriving in San Francisco by the thousands. Around the same time, botanists introduced the fruit to southern France, Italy, and Spain."
+        },
+        {
+          "id": "p07_s03",
+          "start": 47.526,
+          "end": 54.4,
+          "text": "Within a few decades, the ancient Asian crop had taken root across the Mediterranean and the Americas."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "title": "Drying in the Winter Wind",
+      "voice": "part 8.m4a",
+      "duration": 53.5,
+      "scenes": [
+        {
+          "id": "p08_s01",
+          "start": 0.0,
+          "end": 18.593,
+          "text": "Long before refrigeration, farmers in East Asia perfected an art form to preserve their autumn harvest through the bitter winter months. In China, it is called shibing; in Japan, hoshigaki. The process begins by hand-peeling firm, astringent persimmons while leaving their T-shaped stems intact."
+        },
+        {
+          "id": "p08_s02",
+          "start": 18.593,
+          "end": 34.647,
+          "text": "Workers tie the stems to long strings and hang hundreds of fruits beneath the eaves of wooden farmhouses, exposed to the crisp, dry mountain winds. Over four to six weeks, the wind slowly draws out the moisture, concentrating the sugars and neutralising the tannins."
+        },
+        {
+          "id": "p08_s03",
+          "start": 34.647,
+          "end": 53.5,
+          "text": "Every few days, artisans gently massage each hanging fruit by hand to break down the tough inner pulp and ensure even drying. Eventually, natural fruit sugars migrate to the surface, coating the shrivelled persimmon in a delicate white frost that tastes remarkably like dried dates and honey."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "title": "The Persimmon in the Modern World",
+      "voice": "part 9.m4a",
+      "duration": 54.3,
+      "scenes": [
+        {
+          "id": "p09_s01",
+          "start": 0.0,
+          "end": 17.919,
+          "text": "Today, the persimmon is a global agricultural powerhouse, though many Western shoppers still walk past it in the supermarket aisle, unsure of what to do with it. China remains by far the largest producer, growing more than three million tonnes every year, followed by South Korea, Japan, and Spain."
+        },
+        {
+          "id": "p09_s02",
+          "start": 17.919,
+          "end": 30.34,
+          "text": "In Spain’s Ribera del Xúquer valley, growers developed a popular brand known as Rojo Brillante, treated with carbon dioxide after harvest to remove astringency while keeping the flesh firm."
+        },
+        {
+          "id": "p09_s03",
+          "start": 30.34,
+          "end": 54.3,
+          "text": "Meanwhile, chefs around the world have rediscovered the fruit’s versatility. Crisp varieties are sliced into autumn salads with bitter greens and blue cheese, while soft, custard-like varieties are baked into steamed puddings, breads, and spiced tarts. From bustling street markets in Seoul to boutique grocers in London, this once-obscure fruit is quietly enjoying a culinary renaissance."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "title": "A Quiet Autumn Legacy",
+      "voice": "part 10.m4a",
+      "duration": 50.2,
+      "scenes": [
+        {
+          "id": "p10_s01",
+          "start": 0.0,
+          "end": 21.145,
+          "text": "Few fruits demand as much understanding as the persimmon. In a modern food system built around instant gratification and year-round uniformity, the persimmon refuses to be rushed. It arrives only when the days grow short, asking us to pay attention, to wait until its skin yields gently to the touch, and to trust that patience will be rewarded."
+        },
+        {
+          "id": "p10_s02",
+          "start": 21.145,
+          "end": 38.702,
+          "text": "For over two millennia, this humble tree has offered shade, timber, medicine, and sustenance across continents and cultures. Whether hanging like lanterns against a snowy Japanese hillside or resting in a wooden bowl on a kitchen table, it carries the quiet endurance of the changing seasons."
+        },
+        {
+          "id": "p10_s03",
+          "start": 38.702,
+          "end": 50.2,
+          "text": "It truly earns its ancient Greek title as a gift from the gods. Thanks for watching. In our next episode, we'll uncover the story of another fruit with a surprising past."
+        }
+      ]
+    }
+  ]
+}

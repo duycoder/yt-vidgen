@@ -1,0 +1,389 @@
+{
+  "style": "cinematic documentary illustration, painterly digital art, soft natural light, rich detail, muted earthy colours, 16:9, no text, no watermark",
+  "scenes": {
+    "p01_s01": "A historically grounded documentary scene in an autumnal East Asian village market, late 19th century. A middle-aged East Asian traveller wearing traditional period clothing holds a glossy, vivid orange Fuyu persimmon that resembles a ripe tomato. In a close-up three-quarter camera angle, he takes a bite expecting sweetness, then immediately grimaces as the intense astringency dries his mouth. His lips tighten, cheeks tense, and eyes show surprise and discomfort. The freshly bitten persimmon reveals firm orange flesh. Several ripe-looking persimmons rest in a rustic wooden basket nearby. Natural golden autumn sunlight illuminates the fruit, contrasting with the traveller's uncomfortable expression. Authentic historical market surroundings, realistic human anatomy, detailed fruit texture, cinematic natural lighting.",
+    "p01_s02": "A historically accurate 19th-century European botanist carefully examining freshly harvested bright orange persimmons in a botanical garden in autumn. The botanist wears a dark wool waistcoat, white linen shirt, and formal trousers, holding a ripe persimmon while studying its unusual shape. Persimmon trees with orange fruits and golden autumn leaves fill the background. A wooden botanical specimen table holds several carefully arranged fruits and handwritten scientific notebooks. Soft natural afternoon sunlight, gentle autumn atmosphere, medium-wide composition, eye-level camera angle, historically accurate European botanical research setting.",
+    "p01_s03": "A historically grounded cinematic historical tableau exploring the cultural reverence for the persimmon across ancient civilizations. In the foreground, several ripe, brilliant orange persimmons with glossy skins and green leafy crowns rest on a weathered wooden table. In the background, on the left, an ancient Greek symposium from approximately the 4th century BCE, with Greek philosophers and poets wearing authentic white linen chitons and himations, gathered around a low table beneath classical stone columns. On the right, an East Asian scholar from ancient China during the Han dynasty, wearing traditional flowing robes and a simple scholar's headpiece, quietly composing poetry with a brush and ink on a scroll beneath an autumn persimmon tree. Golden autumn leaves drift through the courtyard. The composition connects these cultural traditions through the central fruit without suggesting that the historical figures occupied the same period or location. Warm late-afternoon sunlight illuminates the persimmons, contrasting with the softly shadowed architectural backgrounds. Eye-level medium-wide camera angle, realistic historical architecture, authentic clothing, natural human proportions, carefully detailed fruit.",
+    "p02_s01": "A historically grounded reconstruction of the Yangtze River valley in ancient China more than 2,000 years ago, during the early historical period before the great imperial dynasties. A sweeping elevated landscape view of a broad winding river flowing through fertile green valleys, distant mist-covered mountains, agricultural settlements with simple timber and thatched-roof houses, narrow dirt paths and cultivated fields. Small groups of early Chinese farmers wearing historically plausible hemp or linen garments work near the riverbanks. Lush vegetation and a few wild persimmon trees blend naturally into the landscape. Soft morning mist, gentle golden sunlight, wide establishing camera angle emphasizing the vast ancient landscape and the geographical origins of the persimmon.",
+    "p02_s02": "A historically grounded reconstruction of a flourishing persimmon orchard in northern-central China around 200 BC during the early Han Dynasty. Rows of mature oriental persimmon trees (Diospyros kaki) stand across gently rolling agricultural land, their branches filled with abundant round orange fruits and broad green leaves. Several Han-era Chinese farmers wearing simple hemp robes, cloth trousers and traditional tied hairstyles walk between the trees, inspecting the harvest and tending the orchard. In the background are modest earthen farmhouses, cultivated fields and distant rocky hills. Natural autumn daylight, warm afternoon sunlight filtering through the foliage, wide eye-level establishing shot capturing the scale of ancient Chinese fruit cultivation.",
+    "p02_s03": "A historically grounded scene depicting the spread of cultivated Asian persimmon trees from China to the Korean peninsula and Japan during the seventh and eighth centuries. A wooden East Asian merchant sailing vessel crosses the sea between the mainland and Japanese islands, while the landscape reveals traditional Korean and Japanese settlements with early persimmon orchards. Local farmers in historically appropriate seventh-to-eighth-century East Asian clothing tend young persimmon trees bearing small orange fruits. Traditional wooden architecture, coastal mountains and agricultural terraces establish the historical setting. Warm natural morning light, elevated wide-angle cinematic view showing the maritime connection and the spread of the fruit across East Asia.",
+    "p03_s01": "A historically grounded scene in ancient Greece around the 4th century BCE. A Greek natural philosopher wearing a traditional light linen chiton and himation sits at a wooden writing desk in a quiet Mediterranean courtyard, carefully recording botanical observations on a papyrus scroll. A small collection of unusual golden-orange and dark reddish fruits rests beside him, representing the ancient botanical world and the origins of the genus name Diospyros. Stone columns, olive trees, pottery vessels and distant Mediterranean hills establish the setting. Warm late-afternoon sunlight illuminates the scholar and his writing materials. Medium-wide composition at eye level, with the scholar, papyrus and fruit clearly visible.",
+    "p03_s02": "A historically grounded scene in coastal Virginia around the early 1600s, showing members of the Powhatan people harvesting native American persimmons and preparing the fruit for drying. Indigenous Powhatan men and women wear historically appropriate deerskin garments, woven plant-fiber clothing, and traditional accessories. A woman carefully handles small orange-brown persimmons beside a simple wooden drying rack near a traditional Powhatan longhouse. Native woodland vegetation, autumn foliage, and a natural village environment surround them. Soft late-afternoon sunlight, realistic fruit details, documentary-style composition, eye-level medium-wide camera angle.",
+    "p03_s03": "A historically grounded scene inspired by the traditional Japanese folktale Saru Kani Gassen (The Monkey and the Crab), set in rural Japan during the Edo period, around the 18th century. A Japanese macaque monkey and a small Japanese crab face each other on the ground, struggling over a single persimmon seed between them. The monkey appears cunning and possessive while the crab stands its ground defensively. A few ripe orange persimmons lie nearby, with a traditional thatched farmhouse, wooden fences, and autumn persimmon trees in the background. The setting evokes an old Japanese village where the story was passed down orally to children. Soft autumn afternoon sunlight, natural earthy colors, medium-wide eye-level composition.",
+    "p04_s01": "A historically accurate traditional Japanese village during the late Edo period (18th–19th century), showing skilled Japanese artisans applying dark reddish-brown kakishibu persimmon tannin liquid to everyday objects. In the foreground, a craftsman wearing a traditional indigo cotton kimono carefully brushes the liquid onto the surface of a handmade washi paper umbrella stretched open on a wooden frame. Behind him, another worker treats fishing nets laid out to dry, while a third applies the protective coating to the exterior wooden walls of a traditional Japanese building. Authentic wooden brushes, handmade paper, natural fiber fishing nets, timber architecture and traditional work clothing. Soft daylight in a rural workshop courtyard, realistic natural colors, eye-level medium-wide camera angle capturing the practical waterproofing process.",
+    "p04_s02": "A historically grounded scene in a traditional herbal medicine workshop in East Asia, combining Chinese and Korean herbal practices from the late Joseon period and Qing dynasty, approximately 18th to 19th century. An experienced herbalist wearing traditional period clothing carefully places dried persimmon leaves into a small ceramic teapot and pours hot water over them. Bundles of dried persimmon leaves, medicinal herbs, wooden shelves, ceramic jars and traditional preparation tools fill the room. Gentle steam rises from the freshly brewed herbal tea, suggesting a calming medicinal drink traditionally believed to support circulation and soothe the stomach. Another herbalist examines dried leaves on a wooden table. Warm natural daylight enters through a wooden lattice window, creating a peaceful atmosphere. Medium-wide camera angle at eye level, with the dried leaves and steaming teapot clearly visible in the foreground.",
+    "p04_s03": "A historically accurate nineteenth-century woodworking workshop in Europe, circa 1880. Skilled male craftsmen wearing period-appropriate linen shirts, waistcoats, suspenders and work aprons carefully shaping dense, dark reddish-brown persimmon heartwood. On the wooden workbench are unfinished weaving shuttles, polished billiard cues and wooden golf club heads made from persimmon timber. One craftsman uses traditional hand tools to carve a rounded golf club head while another examines a finished billiard cue. Show the distinctive dark, fine-grained hardwood clearly. A traditional workshop filled with wooden tools, shavings and handcrafted objects, illuminated by soft natural daylight entering through tall factory windows. Three-quarter medium-wide camera angle, with the craftsmen and their wooden creations as the central focus.",
+    "p05_s01": "A historically authentic persimmon orchard in rural Japan during spring, circa 19th century. Several deciduous persimmon trees at different stages of maturity stand in carefully cultivated rows, illustrating the slow growth and patience required before a substantial harvest. In the foreground, a mature tree displays glossy dark green leaves with delicate, small cream-coloured bell-shaped persimmon flowers growing discreetly beneath the foliage. A traditional Japanese farmer wearing simple indigo cotton work clothes and a straw hat quietly inspects the flowering branches. Natural soft morning sunlight filters through the fresh spring canopy, illuminating the delicate blossoms. Medium-wide composition with a slightly low camera angle, emphasizing the tree canopy and intricate flowers while revealing the orchard extending into the background.",
+    "p05_s02": "A historically accurate Japanese persimmon orchard in late autumn, around the early 20th century. Close-up view of clusters of Diospyros kaki persimmons growing naturally among glossy green and yellowing leaves. The fruits show different stages of ripening, transitioning from firm green through golden yellow to deep glowing orange. Mature branches bend gently under the weight of the fruit. Soft late-afternoon autumn sunlight illuminates the translucent orange skins, with a traditional Japanese rural landscape subtly visible in the background. Natural botanical details, realistic fruit proportions, cinematic close-up photography at eye level.",
+    "p05_s03": "A historically authentic rural Japanese persimmon orchard in late November, traditional countryside of Japan around the late Edo period (1800s). A mature persimmon tree stands nearly bare after autumn, its twisted upper branches holding just two or three brilliant deep-orange persimmons deliberately left untouched after the harvest. A small Japanese farmer wearing traditional indigo cotton work clothes, a simple headscarf and straw sandals stands beneath the tree, looking up peacefully at the remaining fruit. A small wild Japanese bird perches on a nearby branch, approaching one of the persimmons. Quiet agricultural landscape with traditional wooden farmhouses in the distance, muted grey winter sky, soft natural late-afternoon light illuminating the orange fruit. Cinematic documentary composition, slightly low camera angle emphasizing the highest branches and the solitary remaining fruits.",
+    "p06_s01": "A scientifically accurate close-up visualization of the internal flesh of an unripe astringent Japanese persimmon, Diospyros kaki, showing microscopic plant cells containing tiny specialized tannin-filled sacs. Some cellular sacs have just ruptured after a bite, releasing soluble tannin compounds into the surrounding moist environment. Illustrate the tannin molecules interacting and binding with salivary proteins, with subtle translucent molecular structures visible among the fruit cells. The fruit is pale yellow-orange and visibly firm, with an unripe texture. Scientific documentary setting, based on modern botanical microscopy and biochemistry research, extremely detailed cellular structures, controlled laboratory lighting, macro camera perspective, realistic scientific visualization.",
+    "p06_s02": "A scientifically accurate botanical cutaway visualization of a fully ripened Japanese persimmon (Diospyros kaki) in a traditional Japanese orchard during late autumn, approximately the present day. Show the glowing deep-orange fruit sliced open, revealing its soft translucent flesh and tiny cellular structures. Within the flesh, illustrate the chemical transformation occurring during ripening: acetaldehyde molecules facilitating the bonding of numerous small soluble tannin molecules into much larger interconnected insoluble molecular chains. Clearly distinguish the smaller individual tannin molecules from the newly formed larger chains, showing the chemical process inside the fruit's cells. The fruit remains the central subject, with a softly blurred background of autumn persimmon trees bearing ripe orange fruits. Warm natural late-afternoon sunlight, realistic botanical details, scientific documentary photography, extreme macro perspective with a subtle cross-sectional view, precise natural fruit anatomy and believable molecular visualization.",
+    "p06_s03": "A fully ripened Hachiya persimmon from a traditional Japanese orchard, photographed in close-up with one fruit cut open to reveal its deep orange, translucent, custard-like jelly flesh. The fruit is extremely soft and naturally sweet, its interior visibly glossy and delicate. Several whole ripe persimmons rest beside it on a simple rustic wooden table, with autumn orchard branches softly visible in the background. Contemporary agricultural setting, natural autumn daylight, warm sunlight illuminating the gelatinous flesh, intimate macro photography from a slightly elevated three-quarter angle. Scientifically grounded botanical details showing the transformation of an astringent persimmon into an edible, intensely sweet ripe fruit.",
+    "p07_s01": "A historically accurate sixteenth-century scene in Japan, showing Portuguese Catholic Jesuit missionaries exploring a traditional Japanese village and carefully documenting unfamiliar local plants and fruits in handwritten journals. The missionaries wear authentic dark European clerical robes with simple period-appropriate clothing, while local Japanese villagers wear traditional kimono. A persimmon tree bearing bright orange fruit stands in the background among traditional wooden buildings. Natural daylight, peaceful rural atmosphere, realistic historical details, medium-wide cinematic composition viewed at eye level.",
+    "p07_s02": "A historically accurate agricultural scene in the United States during the 1860s, showing early Japanese persimmon saplings struggling through a harsh winter in the eastern United States. Bare branches, frost-covered soil, and a few delicate persimmon trees stand in a modest experimental orchard. In the foreground, two nineteenth-century American agriculturalists wearing wool coats, waistcoats, and brimmed hats examine the struggling trees and discuss their prospects. In the distant background, a subtle contrast suggests the warmer, sunnier agricultural landscapes of California and the American South. Cold overcast winter daylight, realistic American rural surroundings, eye-level wide camera angle.",
+    "p07_s03": "A historically accurate panoramic agricultural landscape in the late nineteenth century, around the 1880s, illustrating the successful spread of Japanese persimmon cultivation beyond East Asia. In the foreground, a thriving orchard of mature persimmon trees heavy with bright orange fruit, with European farmers wearing traditional rural clothing harvesting the crop. In the middle distance, terraced Mediterranean farmland with stone farmhouses and cypress trees evokes southern France, Italy, and Spain. The distant landscape subtly transitions into a California agricultural valley with wooden farm buildings and additional persimmon orchards, representing the Americas. The scene communicates the remarkable international expansion of this ancient Asian fruit within just a few decades. Warm autumn afternoon sunlight, natural golden tones, wide elevated camera angle capturing the extensive orchards and surrounding countryside.",
+    "p08_s01": "A historically accurate scene in rural East Asia during the late 19th century, before modern refrigeration. Traditional Chinese and Japanese farmers gather their abundant autumn persimmon harvest outside an old wooden farmhouse, carefully arranging baskets overflowing with bright orange persimmons in preparation for the bitter winter. Farmers wear historically appropriate simple cotton work clothes, loose jackets and cloth trousers. The surrounding countryside shows late autumn foliage, distant mountains and the first signs of approaching winter. Cool crisp morning atmosphere, soft natural sunlight, documentary photography perspective, wide establishing shot emphasizing the traditional agricultural harvest and seasonal food preservation.",
+    "p08_s02": "A historically accurate documentary scene in rural Japan during the late 19th to early 20th century, showing traditional hoshigaki persimmon preservation. Japanese farm workers wearing simple indigo cotton work clothes and traditional rural clothing carefully tie the intact T-shaped stems of freshly peeled orange persimmons onto long natural-fiber strings. Hundreds of pale orange fruits hang in orderly rows beneath the deep wooden eaves of a traditional Japanese farmhouse with weathered timber walls and a traditional tiled or thatched roof. Crisp, dry winter mountain winds pass through the open farmhouse surroundings, gently moving the hanging fruits. The distant Japanese mountain landscape shows late autumn transitioning into winter, with bare trees and cool muted earth tones. Soft natural winter daylight illuminates the translucent orange fruits. A wide documentary camera angle captures both the workers and the impressive rows of hanging persimmons, conveying the traditional four-to-six-week drying process.",
+    "p08_s03": "A historically accurate traditional Japanese persimmon-drying farmhouse in rural Japan during the late 19th to early 20th century, around the Meiji or Taisho period. Close documentary view of an elderly Japanese farmer wearing simple traditional work clothes and an indigo cotton apron, carefully massaging a hanging orange persimmon with both hands to soften its inner pulp. Rows of partially dried persimmons hang from strings beneath the wooden farmhouse eaves in the background. Natural overcast autumn daylight, authentic rustic wooden architecture, realistic hand movements, intimate eye-level camera angle.",
+    "p09_s01": "A realistic contemporary supermarket in a Western city in 2026, featuring a neatly arranged fresh produce aisle with bright orange persimmons displayed among apples, pears and other seasonal fruits. A casually dressed Western shopper in modern everyday clothing pauses briefly in front of the unfamiliar persimmons, looking uncertain about how to select or prepare them, while other shoppers walk past in the background. Bright natural-looking supermarket lighting, authentic grocery shelving and produce displays, eye-level medium-wide documentary photography capturing the contrast between this globally important fruit and its relative unfamiliarity among Western consumers.",
+    "p09_s02": "A historically accurate documentary photograph of modern persimmon agriculture in the Ribera del Xúquer valley, Valencia, Spain, circa 2020s. Spanish agricultural workers wearing practical modern farm clothing carefully handle freshly harvested bright orange Rojo Brillante persimmons inside a contemporary fruit packing facility. Show large industrial storage chambers used for post-harvest carbon dioxide treatment, with crates of firm, glossy persimmons being prepared to remove natural astringency while preserving their crisp flesh. Include subtle visual details of professional fruit processing equipment, ventilated storage rooms and agricultural crates. Naturalistic industrial lighting, realistic Mediterranean agricultural environment, eye-level documentary camera angle, authentic contemporary Spanish farming practices.",
+    "p09_s03": "A contemporary professional chef in a refined restaurant kitchen in the 2020s, carefully preparing two contrasting persimmon dishes. In the foreground, freshly sliced firm orange persimmons are arranged in an autumn salad with bitter leafy greens and crumbled blue cheese on a ceramic plate. Nearby, a golden-brown steamed persimmon pudding and freshly baked persimmon bread sit on a wooden counter alongside a spiced fruit tart. The chef wears a clean white chef jacket and dark apron. Natural warm kitchen lighting, appetizing food photography, close three-quarter camera angle emphasizing the contrasting textures and versatility of the fruit.",
+    "p10_s01": "Few fruits demand as much understanding as the persimmon. In a modern food system built around instant gratification and year-round uniformity, the persimmon refuses to be rushed.",
+    "p10_s02": "Create a historically grounded documentary photograph illustrating the enduring cultural legacy of the persimmon tree across more than two thousand years. The main setting is a traditional rural Japanese hillside village during late winter, with an old persimmon tree standing beside a wooden farmhouse, its bare branches carrying several vivid orange persimmons like lanterns against freshly fallen snow. In the foreground, a rustic wooden kitchen table inside a traditional Japanese farmhouse holds a simple wooden bowl filled with ripe orange persimmons, connecting the outdoor landscape with everyday domestic life. Include subtle details of traditional wooden architecture, weathered timber, and the surrounding Japanese countryside. No modern objects or contemporary clothing. Soft natural winter daylight, gentle shadows, muted earthy colors contrasted with brilliant orange fruit, intimate cinematic documentary composition, eye-level camera perspective with the persimmon tree and bowl both clearly visible. The atmosphere should communicate patience, seasonal change, cultural continuity, and the quiet endurance of a fruit treasured across generations.",
+    "p10_s03": "A cinematic closing scene for a historical documentary about the persimmon, set in a warmly lit contemporary historical exhibition room with subtle references to ancient Greece. Several perfectly ripe, deep orange persimmons with their distinctive green leafy calyxes rest in a rustic wooden bowl on an aged wooden table, accompanied by a beautifully crafted ancient Greek terracotta vase decorated with traditional Greek motifs. The composition symbolizes the ancient Greek-derived name Diospyros, meaning fruit of the gods. In the background, a second unusual and partially shadowed exotic fruit sits on a separate pedestal, hinting at the mysterious fruit explored in the next documentary episode. No identifiable modern people. Warm golden autumn sunlight enters through a nearby window, creating soft shadows and highlighting the fruit's natural glossy skin. Eye-level medium-wide camera angle, carefully arranged still life, historically authentic Greek pottery details combined with a timeless documentary closing atmosphere.",
+    "p01_s02_2": "A detailed botanical food study showing the dramatic transformation of persimmons from unripe to fully ripe. On a rustic wooden table in a traditional East Asian farmhouse during late autumn transitioning into winter, several firm pale-orange unripe persimmons with green calyxes sit beside deeply orange, extremely soft, translucent ripe persimmons, one naturally split open to reveal its glossy jam-like flesh. A few fruits have delicate frost crystals on their skins, suggesting cold winter weather. A traditional ceramic bowl and simple wooden utensils sit nearby. The contrast between hard, astringent unripe fruit and soft, sweet, jam-like ripe fruit is immediately visible. Cool winter daylight from a nearby window, intimate close-up composition, slightly elevated three-quarter camera angle, realistic botanical details and historically appropriate traditional rural setting.",
+    "p02_s01_2": "A historically accurate reconstruction of early agricultural life along the Yangtze River in ancient China, more than 2,000 years ago, before the rise of the major imperial dynasties. Several early Chinese farmers in simple hemp and linen tunics, loose trousers and cloth head coverings carefully tend young oriental persimmon trees in a modest orchard near the river. One farmer examines bright orange persimmons growing among broad green leaves while another works the soil with simple wooden agricultural tools. The orchard is surrounded by fertile riverbank farmland, traditional wooden dwellings and distant green hills. Include realistic Diospyros kaki trees with recognizable glossy orange fruit and broad oval leaves. Natural late-autumn daylight, earthy agricultural atmosphere, medium-wide documentary camera angle showing both the farmers and their cultivated persimmon trees.",
+    "p02_s02_2": "A historically accurate scene in Han Dynasty China around 200 BC, showing a Chinese scholar documenting different varieties of oriental persimmons. The scholar wears a traditional early Han-era dark hemp robe with wide sleeves and a simple cloth head covering, seated at a low wooden writing table in a rural orchard. Several distinctly shaped persimmons, ranging from small round fruits to larger flattened orange varieties, are carefully arranged beside bamboo writing slips and a brush. Behind him, persimmon trees grow vigorously among exposed stones, gravel and thin, poor agricultural soil on a rugged hillside, illustrating the tree's remarkable adaptability. A farmer nearby examines a fruit-bearing branch. Soft natural daylight, earthy surroundings, authentic ancient Chinese agricultural setting, medium-wide composition viewed slightly from the side.",
+    "p02_s03_2": "A historically grounded depiction of wild American persimmon (Diospyros virginiana) growing independently in the forests of eastern North America, centuries before European colonization. Indigenous people from the Eastern Woodlands, wearing historically appropriate precolonial clothing made from natural materials, discover and gather ripe orange persimmons beneath mature native trees. Show recognizable American persimmon characteristics: oval orange fruits, leathery green leaves, rough dark bark and a natural woodland understory. Dense temperate forest with native vegetation, fallen autumn leaves and scattered sunlight filtering through the canopy. Late autumn atmosphere, soft golden afternoon lighting, eye-level cinematic composition focused on the relationship between the Indigenous gatherers and the wild fruit.",
+    "p06_s03_2": "A modern Japanese persimmon orchard during the autumn harvest season, featuring mature Fuyu persimmon trees laden with round, squat, bright orange fruits. A Japanese orchard worker wearing practical contemporary farming clothes carefully picks firm Fuyu persimmons from the branches and places them into a harvest basket. In the foreground, several freshly harvested Fuyu persimmons are displayed, including one cleanly sliced fruit revealing firm, crisp, deep-orange flesh with an apple-like texture. The fruit is visibly ripe but still solid, demonstrating the non-astringent variety that can be eaten while crisp rather than becoming jelly-soft. Authentic agricultural surroundings, green leaves mixed with autumn foliage, soft natural daylight, realistic orchard details, medium-wide camera angle with a detailed foreground composition.",
+    "p08_s03_2": "An authentic close-up of traditionally dried Japanese hoshigaki persimmons in rural Japan during the late 19th to early 20th century. Several fully dried persimmons with deeply wrinkled orange-brown skins rest on a rustic wooden drying tray, their surfaces naturally coated in a delicate powdery white layer of crystallized fruit sugars. One persimmon is gently split open, revealing its dense, glossy, deep amber interior with a texture reminiscent of dates and honey. Soft winter daylight entering a traditional wooden farmhouse, highly detailed natural fruit textures, macro documentary photography, three-quarter close-up camera angle.",
+    "p09_s01_2": "A vast commercial persimmon orchard in rural China in the present day, around 2026, during the autumn harvest season. Thousands of mature persimmon trees stretch across rolling agricultural hills, their branches heavily laden with brilliant orange ripe fruit. Several Chinese agricultural workers wearing practical modern farm clothing and sun hats carefully harvest persimmons using baskets and harvesting tools. In the distant background, additional orchard terraces and rural agricultural landscapes emphasize the enormous scale of Chinese persimmon production, exceeding three million tonnes annually. Warm autumn daylight, expansive elevated camera angle, realistic documentary photography, authentic contemporary Chinese agricultural environment.",
+    "p04_s03_3": "A historically accurate nineteenth-century woodworking workshop in Europe, circa 1880. Skilled male craftsmen wearing period-appropriate linen shirts, waistcoats, suspenders and work aprons carefully shaping dense, dark reddish-brown persimmon heartwood. On the wooden workbench are unfinished weaving shuttles, polished billiard cues and wooden golf club heads made from persimmon timber. One craftsman uses traditional hand tools to carve a rounded golf club head while another examines a finished billiard cue. Show the distinctive dark, fine-grained hardwood clearly. A traditional workshop filled with wooden tools, shavings and handcrafted objects, illuminated by soft natural daylight entering through tall factory windows. Three-quarter medium-wide camera angle, with the craftsmen and their wooden creations as the central focus. Different composition and camera angle from the previous shot.",
+    "p05_s01_2": "A historically authentic persimmon orchard in rural Japan during spring, circa 19th century. Several deciduous persimmon trees at different stages of maturity stand in carefully cultivated rows, illustrating the slow growth and patience required before a substantial harvest. In the foreground, a mature tree displays glossy dark green leaves with delicate, small cream-coloured bell-shaped persimmon flowers growing discreetly beneath the foliage. A traditional Japanese farmer wearing simple indigo cotton work clothes and a straw hat quietly inspects the flowering branches. Natural soft morning sunlight filters through the fresh spring canopy, illuminating the delicate blossoms. Medium-wide composition with a slightly low camera angle, emphasizing the tree canopy and intricate flowers while revealing the orchard extending into the background.",
+    "p06_s01_2": "A scientifically accurate close-up visualization of the internal flesh of an unripe astringent Japanese persimmon, Diospyros kaki, showing microscopic plant cells containing tiny specialized tannin-filled sacs. Some cellular sacs have just ruptured after a bite, releasing soluble tannin compounds into the surrounding moist environment. Illustrate the tannin molecules interacting and binding with salivary proteins, with subtle translucent molecular structures visible among the fruit cells. The fruit is pale yellow-orange and visibly firm, with an unripe texture. Scientific documentary setting, based on modern botanical microscopy and biochemistry research, extremely detailed cellular structures, controlled laboratory lighting, macro camera perspective, realistic scientific visualization.",
+    "p06_s01_3": "A wild Japanese macaque in a traditional rural Japanese orchard during autumn, cautiously biting into a hard, unripe greenish-yellow persimmon hanging from a Diospyros kaki tree. The monkey reacts with an uncomfortable puckered expression, pulling its mouth away from the intensely astringent fruit, illustrating the natural chemical defense that discourages animals from eating fruit before its seeds mature. Several firm unripe persimmons remain attached to the branches, with their immature seeds subtly visible in a naturally opened fruit nearby. Rural Japan, traditional agricultural landscape, late autumn, historically grounded natural environment, soft overcast daylight filtering through orchard branches, medium close-up at animal eye level, realistic wildlife documentary photography.",
+    "p07_s01_2": "Washington D.C., 1855, shortly after Commodore Matthew C. Perry's historic return from his naval expedition to Japan. Commodore Perry, portrayed as a distinguished American naval officer in an authentic mid-nineteenth-century dark blue U.S. Navy uniform with gold buttons and epaulettes, supervises the handling of small Japanese persimmon seeds and young exotic plants brought across the Pacific. A period horticultural gardener carefully prepares the seeds for planting in cultivated ground near the United States Capitol and government botanical greenhouses. Wooden seed boxes, gardening tools, and early American government buildings establish the historical setting. Soft late-afternoon sunlight, historically accurate architecture and clothing, documentary realism, medium-wide composition from a slightly elevated camera angle.",
+    "p07_s02_2": "A historically grounded scene depicting the international spread of Japanese persimmon cultivation during the 1870s. At San Francisco harbor, wooden cargo crates containing carefully packed grafted Japanese persimmon saplings are being unloaded from a nineteenth-century merchant sailing vessel. Dockworkers in authentic 1870s American work clothes handle the shipment while a horticulturalist inspects the young trees. In the background, sailing ships, wooden warehouses, and the developing San Francisco waterfront establish the period. The composition also suggests the fruit's simultaneous arrival in southern France, Italy, and Spain through a European botanist examining and planting a young persimmon tree in a Mediterranean orchard. Warm late-afternoon sunlight, historically accurate nineteenth-century clothing, botanical details, natural harbor atmosphere, wide documentary camera angle.",
+    "p08_s01_2": "A historically accurate close-up of traditional persimmon preparation in a rural Japanese farmhouse in the late 19th century. A skilled farmer wearing simple traditional cotton work clothing carefully hand-peels firm, unripe orange astringent persimmons using a small sharp kitchen knife. The thin orange skins curl away as the fruit is exposed, while every fruit retains its distinctive intact T-shaped woody stem. Several unpeeled persimmons and freshly peeled fruits rest on a rustic wooden worktable. The scene represents the traditional hoshigaki preparation technique, also practiced in China as shibing. Soft daylight enters through the wooden farmhouse window, natural warm tones, intimate close-up camera angle focused on the farmer's hands, knife, fruit and preserved stems.",
+    "p08_s02_2": "A historically accurate documentary scene in rural Japan during the late 19th to early 20th century, showing traditional hoshigaki persimmon preservation. Japanese farm workers wearing simple indigo cotton work clothes and traditional rural clothing carefully tie the intact T-shaped stems of freshly peeled orange persimmons onto long natural-fiber strings. Hundreds of pale orange fruits hang in orderly rows beneath the deep wooden eaves of a traditional Japanese farmhouse with weathered timber walls and a traditional tiled or thatched roof. Crisp, dry winter mountain winds pass through the open farmhouse surroundings, gently moving the hanging fruits. The distant Japanese mountain landscape shows late autumn transitioning into winter, with bare trees and cool muted earth tones. Soft natural winter daylight illuminates the translucent orange fruits. A wide documentary camera angle captures both the workers and the impressive rows of hanging persimmons, conveying the traditional four-to-six-week drying process.",
+    "p09_s03_3": "A documentary-style contemporary scene illustrating the growing popularity of persimmons across the world in the 2020s, visually connecting two distinct locations. Show a bustling traditional street market in Seoul, South Korea, with Korean vendors in modern everyday clothing arranging abundant bright orange persimmons in wooden crates while shoppers browse the colorful produce stalls. Include a subtle visual transition toward an elegant boutique grocery in London, England, where neatly arranged persimmons are displayed among premium seasonal fruits under warm shop lighting. Authentic contemporary architecture, realistic market activity, natural autumn daylight in Seoul contrasted with inviting interior lighting in London, eye-level documentary photography capturing the fruit's growing international popularity.",
+    "p10_s01_2": "Few fruits demand as much understanding as the persimmon. In a modern food system built around instant gratification and year-round uniformity, the persimmon refuses to be rushed.",
+    "p10_s02_2": "Create a historically grounded documentary photograph illustrating the enduring cultural legacy of the persimmon tree across more than two thousand years. The main setting is a traditional rural Japanese hillside village during late winter, with an old persimmon tree standing beside a wooden farmhouse, its bare branches carrying several vivid orange persimmons like lanterns against freshly fallen snow. In the foreground, a rustic wooden kitchen table inside a traditional Japanese farmhouse holds a simple wooden bowl filled with ripe orange persimmons, connecting the outdoor landscape with everyday domestic life. Include subtle details of traditional wooden architecture, weathered timber, and the surrounding Japanese countryside. No modern objects or contemporary clothing. Soft natural winter daylight, gentle shadows, muted earthy colors contrasted with brilliant orange fruit, intimate cinematic documentary composition, eye-level camera perspective with the persimmon tree and bowl both clearly visible. The atmosphere should communicate patience, seasonal change, cultural continuity, and the quiet endurance of a fruit treasured across generations."
+  },
+  "queries": {
+    "p01_s01": "persimmon, biting, reaction",
+    "p01_s02": "botanist persimmon",
+    "p01_s03": "Persimmon poetry",
+    "p02_s01": "Ancient China, Yangtze River",
+    "p02_s02": "Han Dynasty, persimmon orchard",
+    "p02_s03": "Persimmon, Ancient Asia",
+    "p03_s01": "Greek scholar, Diospyros",
+    "p03_s02": "Powhatan persimmon",
+    "p03_s03": "Monkey crab",
+    "p04_s01": "Persimmon fermentation",
+    "p04_s02": "Persimmon leaves tea",
+    "p04_s03": "woodworking persimmon timber",
+    "p05_s01": "persimmon orchard, spring flowers",
+    "p05_s02": "ripening persimmons",
+    "p05_s03": "Persimmon tree",
+    "p06_s01": "Tannin cells",
+    "p06_s02": "Ripe persimmon, tannins",
+    "p06_s03": "ripe persimmon",
+    "p07_s01": "Jesuit missionaries",
+    "p07_s02": "Winter orchard",
+    "p07_s03": "persimmon orchards",
+    "p08_s01": "Persimmon harvest",
+    "p08_s02": "persimmon drying",
+    "p08_s03": "Artisans, persimmons",
+    "p09_s01": "supermarket persimmons",
+    "p09_s02": "Rojo Brillante persimmon",
+    "p09_s03": "persimmon salad",
+    "p10_s02": "Persimmon tree, winter",
+    "p10_s03": "ripe persimmons Greek pottery"
+  },
+  "shots": {
+    "p01_s01": 1,
+    "p01_s02": 3,
+    "p01_s03": 2,
+    "p02_s01": 2,
+    "p02_s02": 2,
+    "p02_s03": 2,
+    "p03_s01": 3,
+    "p03_s02": 3,
+    "p03_s03": 1,
+    "p04_s01": 3,
+    "p04_s02": 1,
+    "p04_s03": 3,
+    "p05_s01": 3,
+    "p05_s02": 4,
+    "p05_s03": 2,
+    "p06_s01": 3,
+    "p06_s02": 1,
+    "p06_s03": 2,
+    "p07_s01": 3,
+    "p07_s02": 3,
+    "p07_s03": 1,
+    "p08_s01": 3,
+    "p08_s02": 2,
+    "p08_s03": 2,
+    "p09_s01": 2,
+    "p09_s02": 2,
+    "p09_s03": 3,
+    "p10_s02": 2,
+    "p10_s03": 2,
+    "p10_s01": 2
+  },
+  "shot_times": {
+    "p01_s01": [
+      0.0
+    ],
+    "p02_s01": [
+      0.0,
+      0.494
+    ],
+    "p02_s02": [
+      0.0,
+      0.4661
+    ],
+    "p02_s03": [
+      0.0,
+      0.4261
+    ],
+    "p03_s01": [
+      0.0,
+      0.3333,
+      0.5477
+    ],
+    "p03_s02": [
+      0.0,
+      0.1961,
+      0.5059
+    ],
+    "p03_s03": [
+      0.0
+    ],
+    "p04_s01": [
+      0.0,
+      0.2589,
+      0.6295
+    ],
+    "p04_s02": [
+      0.0
+    ],
+    "p04_s03": [
+      0.0,
+      0.3691,
+      0.6763
+    ],
+    "p05_s01": [
+      0.0,
+      0.2124,
+      0.6
+    ],
+    "p05_s02": [
+      0.0,
+      0.3313,
+      0.5137,
+      0.6906
+    ],
+    "p05_s03": [
+      0.0,
+      0.3048
+    ],
+    "p06_s01": [
+      0.0,
+      0.3281,
+      0.6745
+    ],
+    "p06_s02": [
+      0.0
+    ],
+    "p06_s03": [
+      0.0,
+      0.4612
+    ],
+    "p07_s01": [
+      0.0,
+      0.3862,
+      0.7261
+    ],
+    "p07_s02": [
+      0.0,
+      0.4545,
+      0.7526
+    ],
+    "p07_s03": [
+      0.0
+    ],
+    "p08_s01": [
+      0.0,
+      0.4239,
+      0.6818
+    ],
+    "p08_s02": [
+      0.0,
+      0.5553
+    ],
+    "p08_s03": [
+      0.0,
+      0.4532
+    ],
+    "p09_s01": [
+      0.0,
+      0.518
+    ],
+    "p09_s03": [
+      0.0,
+      0.1943,
+      0.6204
+    ],
+    "p10_s02": [
+      0.0,
+      0.4202
+    ],
+    "p10_s03": [
+      0.0,
+      0.3895
+    ],
+    "p10_s01": [
+      0.0,
+      0.4655
+    ]
+  },
+  "shot_text": {
+    "p01_s01": "Imagine biting into a glossy, bright orange fruit that looks like a ripe tomato. You expect a burst of honeyed sweetness. Instead, your mouth instantly dries out, as if you have just chewed on a piece of raw chalk.",
+    "p01_s02": "This is the strange paradox of the persimmon. For centuries, this autumnal fruit has puzzled travellers, delighted emperors, and baffled botanists.",
+    "p01_s02_2": "In its unripe state, it is nearly inedible, armed with a chemical defence that makes the human tongue revolt. Yet given a little time, or a touch of winter frost, that same harsh fruit transforms into something resembling spiced apricot jam.",
+    "p01_s03": "Ancient Greeks called it the fruit of the gods. East Asian poets wrote verses in its honour. So how did a botanical contradiction become one of the world’s most treasured winter delicacies?",
+    "p02_s01": "To find the true home of the persimmon, we must travel back more than two thousand years to the river valleys of ancient China.",
+    "p02_s01_2": "Archaeological remains show that early farmers were cultivating the oriental persimmon along the Yangtze River long before the rise of the great imperial dynasties.",
+    "p02_s02": "By the time of the Han Dynasty, around two hundred B C, orchards of persimmon trees were already a familiar sight across northern and central China.",
+    "p02_s02_2": "Chinese scholars recorded dozens of distinct varieties, praising the fruit not only for its sweetness, but for its remarkable ability to thrive in poor, rocky soil.",
+    "p02_s03": "From China, the tree travelled east into the Korean peninsula and across the sea to Japan during the seventh and eighth centuries.",
+    "p02_s03_2": "Meanwhile, thousands of miles away in North America, an entirely separate species was growing wild in the forests, waiting to be discovered by Indigenous peoples.",
+    "p03_s03": "In Japan, old tales tell of monkeys and crabs fighting over a single persimmon seed, a story still told to children today.",
+    "p06_s02": "Once the fruit fully ripens, however, a natural chemical shift occurs. The tree produces acetaldehyde, which causes those soluble tannins to link together into large, insoluble chains.",
+    "p06_s03": "Because these new chains can no longer bind to your saliva, the bitterness vanishes overnight, leaving behind pure, jelly-like sweetness.",
+    "p06_s03_2": "Interestingly, modern growers also cultivate non-astringent varieties, such as the Fuyu, which lose their tannins early and can be eaten crisp like an apple.",
+    "p07_s03": "Within a few decades, the ancient Asian crop had taken root across the Mediterranean and the Americas.",
+    "p08_s03": "Every few days, artisans gently massage each hanging fruit by hand to break down the tough inner pulp and ensure even drying.",
+    "p08_s03_2": "Eventually, natural fruit sugars migrate to the surface, coating the shrivelled persimmon in a delicate white frost that tastes remarkably like dried dates and honey.",
+    "p09_s01": "Today, the persimmon is a global agricultural powerhouse, though many Western shoppers still walk past it in the supermarket aisle, unsure of what to do with it.",
+    "p09_s01_2": "China remains by far the largest producer, growing more than three million tonnes every year, followed by South Korea, Japan, and Spain.",
+    "p09_s02": "In Spain’s Ribera del Xúquer valley, growers developed a popular brand known as Rojo Brillante, treated with carbon dioxide after harvest to remove astringency while keeping the flesh firm.",
+    "p03_s01": "The persimmon carries two very different names, each revealing a distinct chapter of its past. Its scientific genus name,",
+    "p03_s01_2": "Diospyros, comes from ancient Greek, translating roughly to divine fruit, or wheat of Zeus.",
+    "p03_s01_3": "Some classical scholars even speculated that the persimmon was the mysterious lotus fruit described in Homer’s Odyssey, though historians remain divided on the matter.",
+    "p03_s02": "The common English word persimmon, however, has far earthier roots.",
+    "p03_s02_2": "It comes from the Algonquian language of the Powhatan people in Virginia, where the word putchamin meant a dried fruit.",
+    "p03_s02_3": "In East Asian folklore, the persimmon is steeped in symbolism. Tradition holds that hanging dried persimmons outside a home brings good fortune and wards off winter illness.",
+    "p04_s01": "Throughout history, people found ingenious ways to use almost every part of the persimmon tree.",
+    "p04_s01_2": "In Japan, the juice of unripe green persimmons was fermented to create kakishibu, a dark, pungent liquid rich in natural tannins.",
+    "p04_s01_3": "Artisans brushed this liquid onto paper umbrellas, fishing nets, and wooden buildings to make them waterproof and resistant to rot.",
+    "p04_s02": "Traditional herbalists across China and Korea brewed dried persimmon leaves into a soothing tea, believed to support circulation and calm the stomach. Even the tree itself proved valuable.",
+    "p04_s03": "The persimmon belongs to the ebony family, and its dense, dark heartwood was prized by craftsmen.",
+    "p04_s03_2": "In nineteenth-century America and Europe, this heavy timber was shaped into weaving shuttles, billiard cues,",
+    "p04_s03_3": "and the heads of wooden golf clubs, known simply as persimmon woods.",
+    "p05_s01": "Growing persimmons is an exercise in patience.",
+    "p05_s01_2": "The deciduous trees start slowly, often taking up to seven years before bearing a substantial harvest.",
+    "p05_s01_3": "In spring, they produce small, cream-coloured bell-shaped flowers hidden beneath glossy dark green leaves.",
+    "p05_s02": "As summer fades into autumn, the fruit swells and turns from green to yellow, and finally to a deep, glowing orange.",
+    "p05_s02_2": "Then comes one of the most striking sights in the agricultural world.",
+    "p05_s02_3": "By late November, the leaves wither and fall away completely,",
+    "p05_s02_4": "leaving the bright orange fruits hanging like glowing lanterns on bare, twisted branches against the grey winter sky.",
+    "p05_s03": "Farmers often leave the very highest fruits untouched on the tree.",
+    "p05_s03_2": "In rural Japan, these are called ki-mamori, or tree guardians, left behind as a thank-you to the birds and a wish for a generous harvest next year.",
+    "p06_s01": "Why does an unripe persimmon feel like sandpaper in your mouth? The answer lies in tiny cellular sacs packed with soluble tannins.",
+    "p06_s01_2": "When you bite into an unripe astringent persimmon, these sacs rupture, releasing tannins that immediately bind to the proteins in your saliva.",
+    "p06_s01_3": "This causes your mouth to pucker violently, a clever evolutionary trick that stops animals from eating the fruit before its seeds are ready.",
+    "p07_s01": "For centuries, the Asian persimmon remained largely unknown in the West, save for scattered reports from Portuguese and Jesuit missionaries in the sixteenth century.",
+    "p07_s01_2": "Everything changed in eighteen fifty-five, when Commodore Matthew Perry returned to the United States from his famous naval expedition to Japan.",
+    "p07_s01_3": "Alongside diplomatic treaties, Perry brought back persimmon seeds, planting them near Washington, D C.",
+    "p07_s02": "Though those first trees struggled in the harsh East Coast winters, agriculturalists soon realized the fruit would thrive in the warmer climates of California and the American South.",
+    "p07_s02_2": "By the eighteen seventies, grafted Japanese persimmon trees were arriving in San Francisco by the thousands.",
+    "p07_s02_3": "Around the same time, botanists introduced the fruit to southern France, Italy, and Spain.",
+    "p08_s01": "Long before refrigeration, farmers in East Asia perfected an art form to preserve their autumn harvest through the bitter winter months.",
+    "p08_s01_2": "In China, it is called shibing; in Japan, hoshigaki.",
+    "p08_s01_3": "The process begins by hand-peeling firm, astringent persimmons while leaving their T-shaped stems intact.",
+    "p08_s02": "Workers tie the stems to long strings and hang hundreds of fruits beneath the eaves of wooden farmhouses, exposed to the crisp, dry mountain winds.",
+    "p08_s02_2": "Over four to six weeks, the wind slowly draws out the moisture, concentrating the sugars and neutralising the tannins.",
+    "p09_s03": "Meanwhile, chefs around the world have rediscovered the fruit’s versatility.",
+    "p09_s03_2": "Crisp varieties are sliced into autumn salads with bitter greens and blue cheese, while soft, custard-like varieties are baked into steamed puddings, breads, and spiced tarts.",
+    "p09_s03_3": "From bustling street markets in Seoul to boutique grocers in London, this once-obscure fruit is quietly enjoying a culinary renaissance.",
+    "p10_s01": "Few fruits demand as much understanding as the persimmon. In a modern food system built around instant gratification and year-round uniformity, the persimmon refuses to be rushed.",
+    "p10_s01_2": "It arrives only when the days grow short, asking us to pay attention, to wait until its skin yields gently to the touch, and to trust that patience will be rewarded.",
+    "p10_s02": "For over two millennia, this humble tree has offered shade, timber, medicine, and sustenance across continents and cultures.",
+    "p10_s02_2": "Whether hanging like lanterns against a snowy Japanese hillside or resting in a wooden bowl on a kitchen table, it carries the quiet endurance of the changing seasons.",
+    "p10_s03": "It truly earns its ancient Greek title as a gift from the gods.",
+    "p10_s03_2": "Thanks for watching. In our next episode, we'll uncover the story of another fruit with a surprising past."
+  },
+  "shot_query": {
+    "p01_s01": "person biting fruit",
+    "p01_s02": "botanist examining",
+    "p01_s02_2": "persimmon ripening",
+    "p01_s03": "ancient Greek symposium",
+    "p02_s01": "ancient Chinese village",
+    "p02_s01_2": "ancient farming China",
+    "p02_s02": "ancient Chinese orchard",
+    "p02_s02_2": "ancient Chinese scholar",
+    "p02_s03": "ancient sea voyage",
+    "p02_s03_2": "Indigenous forest gathering",
+    "p03_s03": "monkey crab folklore",
+    "p06_s02": "persimmon ripening",
+    "p06_s03": "ripe persimmon",
+    "p06_s03_2": "persimmon harvesting",
+    "p07_s03": "persimmon orchard",
+    "p08_s03": "persimmon massaging",
+    "p08_s03_2": "dried persimmon sugar",
+    "p09_s01": "supermarket shopping",
+    "p09_s01_2": "persimmon harvesting",
+    "p09_s02": "persimmon processing",
+    "p03_s01": "Greek scholar writing",
+    "p03_s01_2": "Greek scholar writing",
+    "p03_s01_3": "Greek lotus eaters",
+    "p03_s02": "Native American harvesting",
+    "p03_s02_2": "Native American harvesting",
+    "p03_s02_3": "Native American harvesting",
+    "p04_s01": "umbrella coating",
+    "p04_s01_2": "umbrella coating",
+    "p04_s01_3": "umbrella coating",
+    "p04_s02": "herbal tea brewing",
+    "p04_s03": "woodworker workshop",
+    "p04_s03_2": "woodworker workshop",
+    "p04_s03_3": "woodworker workshop",
+    "p05_s01": "persimmon orchard",
+    "p05_s01_2": "persimmon orchard",
+    "p05_s01_3": "persimmon orchard",
+    "p05_s02": "persimmon ripening",
+    "p05_s02_2": "bare persimmon tree",
+    "p05_s02_3": "bare persimmon tree",
+    "p05_s02_4": "bare persimmon tree",
+    "p05_s03": "Japanese persimmon harvest",
+    "p05_s03_2": "Japanese persimmon harvest",
+    "p06_s01": "persimmon microscope",
+    "p06_s01_2": "persimmon microscope",
+    "p06_s01_3": "animal eating fruit",
+    "p07_s01": "Jesuit missionaries",
+    "p07_s01_2": "Matthew Perry expedition",
+    "p07_s01_3": "Matthew Perry expedition",
+    "p07_s02": "winter orchard",
+    "p07_s02_2": "historic cargo port",
+    "p07_s02_3": "historic cargo port",
+    "p08_s01": "Asian persimmon harvest",
+    "p08_s01_2": "Peeling persimmons",
+    "p08_s01_3": "Peeling persimmons",
+    "p08_s02": "persimmon drying",
+    "p08_s02_2": "persimmon drying",
+    "p09_s03": "chef preparing salad",
+    "p09_s03_2": "chef preparing salad",
+    "p09_s03_3": "Seoul street market",
+    "p10_s02": "Japanese snowy village",
+    "p10_s02_2": "Japanese snowy village",
+    "p10_s03": "persimmon still life",
+    "p10_s03_2": "persimmon still life"
+  },
+  "framing": {
+    "p05_s03_2": {
+      "fit": "contain"
+    },
+    "p05_s03": {
+      "fit": "cover",
+      "fx": 0.5,
+      "fy": 0.5
+    },
+    "p06_s01_2": {
+      "fit": "cover",
+      "fx": 0.5,
+      "fy": 0.5
+    },
+    "p01_s03_2": {
+      "fit": "contain"
+    },
+    "p01_s02": {
+      "fit": "contain"
+    },
+    "p01_s03": {
+      "fit": "contain"
+    }
+  }
+}

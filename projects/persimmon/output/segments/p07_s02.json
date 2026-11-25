@@ -1,0 +1,251 @@
+{
+  "sid": "p07_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:19",
+  "segments": [
+    {
+      "text": "Though those first trees struggled in the harsh East Coast winters, agriculturalists soon realized the fruit would thrive in the warmer climates of California and the American South.",
+      "title": "Tìm vùng đất mới",
+      "desc": "Khung cảnh những cây hồng Nhật Bản non chịu đựng mùa đông khắc nghiệt ở miền Đông nước Mỹ, trong khi các nhà nông học khảo sát những vùng khí hậu ấm áp hơn tại California và miền Nam.",
+      "queries": [
+        "winter orchard",
+        "American persimmon tree",
+        "California agriculture"
+      ],
+      "query": "winter orchard persimmon agriculture",
+      "short": "Winter orchard",
+      "prompt": "A historically accurate agricultural scene in the United States during the 1860s, showing early Japanese persimmon saplings struggling through a harsh winter in the eastern United States. Bare branches, frost-covered soil, and a few delicate persimmon trees stand in a modest experimental orchard. In the foreground, two nineteenth-century American agriculturalists wearing wool coats, waistcoats, and brimmed hats examine the struggling trees and discuss their prospects. In the distant background, a subtle contrast suggests the warmer, sunnier agricultural landscapes of California and the American South. Cold overcast winter daylight, realistic American rural surroundings, eye-level wide camera angle.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/J%C3%B3zef_Czajkowski_-_Orchard_in_Winter_-_MNK_II-b-766_-_National_Museum_Krak%C3%B3w.jpg/1920px-J%C3%B3zef_Czajkowski_-_Orchard_in_Winter_-_MNK_II-b-766_-_National_Museum_Krak%C3%B3w.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/J%C3%B3zef_Czajkowski_-_Orchard_in_Winter_-_MNK_II-b-766_-_National_Museum_Krak%C3%B3w.jpg/500px-J%C3%B3zef_Czajkowski_-_Orchard_in_Winter_-_MNK_II-b-766_-_National_Museum_Krak%C3%B3w.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4000,
+          "height": 2911,
+          "title": "Józef Czajkowski - Orchard in Winter - MNK II-b-766 - National Museum Kraków.jpg",
+          "author": "Józef Czajkowski",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Czajkowski_-_Orchard_in_Winter_-_MNK_II-b-766_-_National_Museum_Krak%C3%B3w.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "winter orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Orchard_in_winter_at_The_Summit%2C_Queensland.jpg/1920px-Orchard_in_winter_at_The_Summit%2C_Queensland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Orchard_in_winter_at_The_Summit%2C_Queensland.jpg/500px-Orchard_in_winter_at_The_Summit%2C_Queensland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4032,
+          "height": 3024,
+          "title": "Orchard in winter at The Summit, Queensland.jpg",
+          "author": "Kgbo",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Orchard_in_winter_at_The_Summit,_Queensland.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "winter orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/An_orchard_in_winter_%28I0013549%29.tif/lossy-page1-1920px-An_orchard_in_winter_%28I0013549%29.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/An_orchard_in_winter_%28I0013549%29.tif/lossy-page1-1920px-An_orchard_in_winter_%28I0013549%29.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5027,
+          "height": 3612,
+          "title": "An orchard in winter (I0013549).tif",
+          "author": "",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:An_orchard_in_winter_(I0013549).tif",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "winter orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Valerius_De_Saedeleer_-_Boomgaard_in_de_winter_-_3020_-_Royal_Museum_of_Fine_Arts_Antwerp.tiff/lossy-page1-1920px-Valerius_De_Saedeleer_-_Boomgaard_in_de_winter_-_3020_-_Royal_Museum_of_Fine_Arts_Antwerp.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Valerius_De_Saedeleer_-_Boomgaard_in_de_winter_-_3020_-_Royal_Museum_of_Fine_Arts_Antwerp.tiff/lossy-page1-1920px-Valerius_De_Saedeleer_-_Boomgaard_in_de_winter_-_3020_-_Royal_Museum_of_Fine_Arts_Antwerp.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6784,
+          "height": 2870,
+          "title": "Valerius De Saedeleer - Boomgaard in de winter - 3020 - Royal Museum of Fine Arts Antwerp.tiff",
+          "author": "Valerius de Saedeleer",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Valerius_De_Saedeleer_-_Boomgaard_in_de_winter_-_3020_-_Royal_Museum_of_Fine_Arts_Antwerp.tiff",
+          "source": "wikimedia",
+          "fit": 0.833,
+          "q": "winter orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Sugar_Plum_Candy.jpg/1920px-Sugar_Plum_Candy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Sugar_Plum_Candy.jpg/500px-Sugar_Plum_Candy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5472,
+          "height": 3648,
+          "title": "Sugar Plum Candy.jpg",
+          "author": "Carol VanHook",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Sugar_Plum_Candy.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "American persimmon tree"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Heuchera_%27Sugar_Plum%27_kz01.jpg/1920px-Heuchera_%27Sugar_Plum%27_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Heuchera_%27Sugar_Plum%27_kz01.jpg/500px-Heuchera_%27Sugar_Plum%27_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4151,
+          "height": 2966,
+          "title": "Heuchera 'Sugar Plum' kz01.jpg",
+          "author": "Krzysztof Ziarnek, Kenraiz",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Heuchera_%27Sugar_Plum%27_kz01.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "American persimmon tree"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/American_persimmon_diospyros_virginiana_fruit_on_tree_native_plant_company.jpg/1920px-American_persimmon_diospyros_virginiana_fruit_on_tree_native_plant_company.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/American_persimmon_diospyros_virginiana_fruit_on_tree_native_plant_company.jpg/500px-American_persimmon_diospyros_virginiana_fruit_on_tree_native_plant_company.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2222,
+          "height": 2492,
+          "title": "American persimmon diospyros virginiana fruit on tree native plant company.jpg",
+          "author": "Ryan Native Plant",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:American_persimmon_diospyros_virginiana_fruit_on_tree_native_plant_company.jpg",
+          "source": "wikimedia",
+          "fit": 0.845,
+          "q": "American persimmon tree"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Sugar_Plum.jpg/1920px-Sugar_Plum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Sugar_Plum.jpg/500px-Sugar_Plum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4284,
+          "height": 5712,
+          "title": "Sugar Plum.jpg",
+          "author": "OneTrueKingLives",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Sugar_Plum.jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "American persimmon tree"
+        }
+      ],
+      "slot": "p07_s02",
+      "t0": 24.5,
+      "t1": 34.96
+    },
+    {
+      "text": "By the eighteen seventies, grafted Japanese persimmon trees were arriving in San Francisco by the thousands. Around the same time, botanists introduced the fruit to southern France, Italy, and Spain.",
+      "title": "Hồng Nhật Bản vượt đại dương",
+      "desc": "Những cây hồng Nhật Bản ghép được vận chuyển bằng tàu biển đến cảng San Francisco, trong khi các nhà thực vật học châu Âu bắt đầu trồng và phổ biến giống cây này tại Địa Trung Hải.",
+      "queries": [
+        "historic cargo port",
+        "San Francisco 1870s",
+        "Mediterranean orchard"
+      ],
+      "query": "Japanese persimmon grafted trees San Francisco",
+      "short": "Japanese persimmon",
+      "prompt": "A historically grounded scene depicting the international spread of Japanese persimmon cultivation during the 1870s. At San Francisco harbor, wooden cargo crates containing carefully packed grafted Japanese persimmon saplings are being unloaded from a nineteenth-century merchant sailing vessel. Dockworkers in authentic 1870s American work clothes handle the shipment while a horticulturalist inspects the young trees. In the background, sailing ships, wooden warehouses, and the developing San Francisco waterfront establish the period. The composition also suggests the fruit's simultaneous arrival in southern France, Italy, and Spain through a European botanist examining and planting a young persimmon tree in a Mediterranean orchard. Warm late-afternoon sunlight, historically accurate nineteenth-century clothing, botanical details, natural harbor atmosphere, wide documentary camera angle.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Historic_Port_Operation_in_Narvik%2C_Norway_%288360358%29.jpg/1920px-Historic_Port_Operation_in_Narvik%2C_Norway_%288360358%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Historic_Port_Operation_in_Narvik%2C_Norway_%288360358%29.jpg/500px-Historic_Port_Operation_in_Narvik%2C_Norway_%288360358%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4915,
+          "height": 3277,
+          "title": "Historic Port Operation in Narvik, Norway (8360358).jpg",
+          "author": "U.S. Army photo by Spc. Samuel Signor",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Historic_Port_Operation_in_Narvik,_Norway_(8360358).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "historic cargo port"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_%285829991%29.jpg/1920px-2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_%285829991%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_%285829991%29.jpg/500px-2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_%285829991%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5928,
+          "height": 3748,
+          "title": "2ABCT makes historic landing in the Port of Vlissingen (5829991).jpg",
+          "author": "U.S. Army photo by Sgt. Kyle Larsen",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_(5829991).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "historic cargo port"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_%285829998%29.jpg/1920px-2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_%285829998%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_%285829998%29.jpg/500px-2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_%285829998%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6720,
+          "height": 4480,
+          "title": "2ABCT makes historic landing in the Port of Vlissingen (5829998).jpg",
+          "author": "U.S. Army photo by Sgt. Kyle Larsen",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:2ABCT_makes_historic_landing_in_the_Port_of_Vlissingen_(5829998).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "historic cargo port"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Port_side_cargo_port_at_frame_number_40._-_Ship_BALCLUTHA%2C_2905_Hyde_Street_Pier%2C_San_Francisco%2C_San_Francisco_County%2C_CA_HAER_CAL%2C38-SANFRA%2C200-80.tif/lossy-page1-1920px-Port_side_cargo_port_at_frame_number_40._-_Ship_BALCLUTHA%2C_2905_Hyde_Street_Pier%2C_San_Francisco%2C_San_Francisco_County%2C_CA_HAER_CAL%2C38-SANFRA%2C200-80.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Port_side_cargo_port_at_frame_number_40._-_Ship_BALCLUTHA%2C_2905_Hyde_Street_Pier%2C_San_Francisco%2C_San_Francisco_County%2C_CA_HAER_CAL%2C38-SANFRA%2C200-80.tif/lossy-page1-1920px-Port_side_cargo_port_at_frame_number_40._-_Ship_BALCLUTHA%2C_2905_Hyde_Street_Pier%2C_San_Francisco%2C_San_Francisco_County%2C_CA_HAER_CAL%2C38-SANFRA%2C200-80.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5000,
+          "height": 3600,
+          "title": "Port side cargo port at frame number 40. - Ship BALCLUTHA, 2905 Hyde Street Pier, San Francisco, San Francisco County, CA HAER CAL,38-SANFRA,200-80.tif",
+          "author": "",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Port_side_cargo_port_at_frame_number_40._-_Ship_BALCLUTHA,_2905_Hyde_Street_Pier,_San_Francisco,_San_Francisco_County,_CA_HAER_CAL,38-SANFRA,200-80.tif",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "historic cargo port"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Bancroft%27s_tourist%27s_guide._Yosemite._San_Francisco_and_around_the_bay%2C_%28south.%29_%281871%29_%2814741289676%29.jpg/1920px-Bancroft%27s_tourist%27s_guide._Yosemite._San_Francisco_and_around_the_bay%2C_%28south.%29_%281871%29_%2814741289676%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Bancroft%27s_tourist%27s_guide._Yosemite._San_Francisco_and_around_the_bay%2C_%28south.%29_%281871%29_%2814741289676%29.jpg/500px-Bancroft%27s_tourist%27s_guide._Yosemite._San_Francisco_and_around_the_bay%2C_%28south.%29_%281871%29_%2814741289676%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2416,
+          "height": 1648,
+          "title": "Bancroft's tourist's guide. Yosemite. San Francisco and around the bay, (south.) (1871) (14741289676).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Bancroft%27s_tourist%27s_guide._Yosemite._San_Francisco_and_around_the_bay,_(south.)_(1871)_(14741289676).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "San Francisco 1870s"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Cemeteries_in_1876_map_of_San_Francisco.png/1920px-Cemeteries_in_1876_map_of_San_Francisco.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Cemeteries_in_1876_map_of_San_Francisco.png/500px-Cemeteries_in_1876_map_of_San_Francisco.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2358,
+          "height": 1306,
+          "title": "Cemeteries in 1876 map of San Francisco.png",
+          "author": "William P. Humphreys & Co., David Rumsey Historical Map Collection, printed by Worley & Bracher and F. (Frederick) Bourquin",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Cemeteries_in_1876_map_of_San_Francisco.png",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "San Francisco 1870s"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Residence_of_Charles_Bernard._312_Oak_Street%2C_San_Francisco%2C_California_MET_DP152176.jpg/1920px-Residence_of_Charles_Bernard._312_Oak_Street%2C_San_Francisco%2C_California_MET_DP152176.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Residence_of_Charles_Bernard._312_Oak_Street%2C_San_Francisco%2C_California_MET_DP152176.jpg/500px-Residence_of_Charles_Bernard._312_Oak_Street%2C_San_Francisco%2C_California_MET_DP152176.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3601,
+          "height": 2701,
+          "title": "Residence of Charles Bernard. 312 Oak Street, San Francisco, California MET DP152176.jpg",
+          "author": "Carleton Watkins",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Residence_of_Charles_Bernard._312_Oak_Street,_San_Francisco,_California_MET_DP152176.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "San Francisco 1870s"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/The_San_Francisco_City_Stock%2C_1850s-1870s_-_Oakland_Museum_of_California_-_DSC05129.JPG/1920px-The_San_Francisco_City_Stock%2C_1850s-1870s_-_Oakland_Museum_of_California_-_DSC05129.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/The_San_Francisco_City_Stock%2C_1850s-1870s_-_Oakland_Museum_of_California_-_DSC05129.JPG/500px-The_San_Francisco_City_Stock%2C_1850s-1870s_-_Oakland_Museum_of_California_-_DSC05129.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3552,
+          "height": 4549,
+          "title": "The San Francisco City Stock, 1850s-1870s - Oakland Museum of California - DSC05129.JPG",
+          "author": "Daderot",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:The_San_Francisco_City_Stock,_1850s-1870s_-_Oakland_Museum_of_California_-_DSC05129.JPG",
+          "source": "wikimedia",
+          "fit": 0.821,
+          "q": "San Francisco 1870s"
+        }
+      ],
+      "slot": "p07_s02_2",
+      "t0": 34.96,
+      "t1": 47.53
+    }
+  ]
+}

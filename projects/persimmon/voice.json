@@ -1,0 +1,14 @@
+{
+  "voice": "bf_emma",
+  "voice2": "",
+  "mix": 0.3,
+  "lang": "auto",
+  "speed": 1.0,
+  "sentence_pause": 0.25,
+  "clause_pause": 0.1,
+  "pause_scale": 1.0,
+  "pad_start": 0.3,
+  "pad_end": 0.6,
+  "loudness": -16.0,
+  "lexicon": ""
+}

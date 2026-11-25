@@ -1,0 +1,129 @@
+{
+  "sid": "p05_s01",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:09",
+  "segments": [
+    {
+      "text": "Growing persimmons is an exercise in patience. The deciduous trees start slowly, often taking up to seven years before bearing a substantial harvest. In spring, they produce small, cream-coloured bell-shaped flowers hidden beneath glossy dark green leaves.",
+      "title": "Bảy Năm Chờ Đợi",
+      "desc": "Một vườn hồng châu Á vào mùa xuân với những cây hồng trưởng thành, cành lá xanh bóng và những bông hoa nhỏ màu kem hình chuông ẩn mình dưới tán lá.",
+      "queries": [
+        "persimmon orchard",
+        "persimmon flowers",
+        "spring fruit trees"
+      ],
+      "query": "persimmon orchard spring flowers glossy leaves",
+      "short": "persimmon orchard, spring flowers",
+      "prompt": "A historically authentic persimmon orchard in rural Japan during spring, circa 19th century. Several deciduous persimmon trees at different stages of maturity stand in carefully cultivated rows, illustrating the slow growth and patience required before a substantial harvest. In the foreground, a mature tree displays glossy dark green leaves with delicate, small cream-coloured bell-shaped persimmon flowers growing discreetly beneath the foliage. A traditional Japanese farmer wearing simple indigo cotton work clothes and a straw hat quietly inspects the flowering branches. Natural soft morning sunlight filters through the fresh spring canopy, illuminating the delicate blossoms. Medium-wide composition with a slightly low camera angle, emphasizing the tree canopy and intricate flowers while revealing the orchard extending into the background.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Persimmon_orchard_and_Mt._Ishimaki_ac.jpg/1920px-Persimmon_orchard_and_Mt._Ishimaki_ac.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Persimmon_orchard_and_Mt._Ishimaki_ac.jpg/500px-Persimmon_orchard_and_Mt._Ishimaki_ac.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4062,
+          "height": 2708,
+          "title": "Persimmon orchard and Mt. Ishimaki ac.jpg",
+          "author": "Asturio Cantabrio",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmon_orchard_and_Mt._Ishimaki_ac.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg/1920px-%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg/500px-%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3264,
+          "height": 2448,
+          "title": "柿畑 Grove of persimmon trees 2011.7.29 - panoramio.jpg",
+          "author": "Nankou Oronain (as36…",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Nightgown_%28AM_2001.42.29-5%29.jpg/1920px-Nightgown_%28AM_2001.42.29-5%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Nightgown_%28AM_2001.42.29-5%29.jpg/500px-Nightgown_%28AM_2001.42.29-5%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5184,
+          "height": 3456,
+          "title": "Nightgown (AM 2001.42.29-5).jpg",
+          "author": "Farmer's Trading Company",
+          "license": "CC BY 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Nightgown_(AM_2001.42.29-5).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Oriental_persimmon_8133.jpg/1920px-Oriental_persimmon_8133.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Oriental_persimmon_8133.jpg/500px-Oriental_persimmon_8133.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2852,
+          "height": 4262,
+          "title": "Oriental persimmon 8133.jpg",
+          "author": "יעקב",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Oriental_persimmon_8133.jpg",
+          "source": "wikimedia",
+          "fit": 0.796,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://live.staticflickr.com/33/52759594_6b3575177d_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/7c81e822-1341-4851-b339-0768271e2a41/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "Fuyu persimmon",
+          "author": "In Praise of Sardines",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/83096974@N00/52759594",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Persimmon_Garden.jpg",
+          "thumb": "https://api.openverse.org/v1/images/3f0a88de-d221-4c85-b7e2-4caf3a8a22af/thumb/",
+          "width": 1133,
+          "height": 850,
+          "title": "Persimmon Garden",
+          "author": "No machine-readable author provided. Vineyard assumed (based on copyright claims).",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/w/index.php?curid=451718",
+          "source": "openverse",
+          "fit": 0.605,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/48509061287_d4148b2ca2_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/726caea1-de56-4d5c-bf1d-097a3b785e06/thumb/",
+          "width": 1024,
+          "height": 618,
+          "title": "Organic Fuyu Persimmons #2",
+          "author": "FotoGrazio",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/94075184@N00/48509061287",
+          "source": "openverse",
+          "fit": 0.517,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://live.staticflickr.com/4826/30997288837_3344bb74a0_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/bb8b40eb-f3bb-4e34-b11f-fd8a2d7e69e0/thumb/",
+          "width": 1024,
+          "height": 571,
+          "title": "Organic Fuyu Persimmons",
+          "author": "FotoGrazio",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/94075184@N00/30997288837",
+          "source": "openverse",
+          "fit": 0.505,
+          "q": "persimmon orchard"
+        }
+      ],
+      "slot": "p05_s01",
+      "t0": 0.0,
+      "t1": 15.92
+    }
+  ]
+}

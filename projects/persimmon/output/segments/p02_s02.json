@@ -1,0 +1,251 @@
+{
+  "sid": "p02_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 14:58",
+  "segments": [
+    {
+      "text": "By the time of the Han Dynasty, around two hundred B C, orchards of persimmon trees were already a familiar sight across northern and central China.",
+      "title": "Vườn hồng thời nhà Hán",
+      "desc": "Những vườn cây hồng sai trĩu quả màu cam trải rộng giữa vùng nông thôn miền Bắc và miền Trung Trung Quốc thời nhà Hán khoảng năm 200 TCN.",
+      "queries": [
+        "ancient Chinese orchard",
+        "persimmon orchard",
+        "Han Dynasty China"
+      ],
+      "query": "Han Dynasty persimmon orchards ancient China",
+      "short": "Han Dynasty, persimmon orchard",
+      "prompt": "A historically grounded reconstruction of a flourishing persimmon orchard in northern-central China around 200 BC during the early Han Dynasty. Rows of mature oriental persimmon trees (Diospyros kaki) stand across gently rolling agricultural land, their branches filled with abundant round orange fruits and broad green leaves. Several Han-era Chinese farmers wearing simple hemp robes, cloth trousers and traditional tied hairstyles walk between the trees, inspecting the harvest and tending the orchard. In the background are modest earthen farmhouses, cultivated fields and distant rocky hills. Natural autumn daylight, warm afternoon sunlight filtering through the foliage, wide eye-level establishing shot capturing the scale of ancient Chinese fruit cultivation.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/China%2C_in_a_series_of_views_-_displaying_the_scenery%2C_architecture%2C_and_social_habits_of_that_ancient_empire_%281843%29_%2814576805448%29.jpg/1920px-China%2C_in_a_series_of_views_-_displaying_the_scenery%2C_architecture%2C_and_social_habits_of_that_ancient_empire_%281843%29_%2814576805448%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/China%2C_in_a_series_of_views_-_displaying_the_scenery%2C_architecture%2C_and_social_habits_of_that_ancient_empire_%281843%29_%2814576805448%29.jpg/500px-China%2C_in_a_series_of_views_-_displaying_the_scenery%2C_architecture%2C_and_social_habits_of_that_ancient_empire_%281843%29_%2814576805448%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2976,
+          "height": 2130,
+          "title": "China, in a series of views - displaying the scenery, architecture, and social habits of that ancient empire (1843) (14576805448).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:China,_in_a_series_of_views_-_displaying_the_scenery,_architecture,_and_social_habits_of_that_ancient_empire_(1843)_(14576805448).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Chinese orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814596447120%29.jpg/1920px-Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814596447120%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814596447120%29.jpg/500px-Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814596447120%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2276,
+          "height": 1724,
+          "title": "Ruins of desert Cathay - personal narrative of explorations in Central Asia and westernmost China (1912) (14596447120).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_(1912)_(14596447120).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Chinese orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814802986173%29.jpg/1920px-Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814802986173%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814802986173%29.jpg/500px-Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814802986173%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2252,
+          "height": 1700,
+          "title": "Ruins of desert Cathay - personal narrative of explorations in Central Asia and westernmost China (1912) (14802986173).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_(1912)_(14802986173).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Chinese orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814780793564%29.jpg/1920px-Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814780793564%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814780793564%29.jpg/500px-Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_%281912%29_%2814780793564%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2256,
+          "height": 1716,
+          "title": "Ruins of desert Cathay - personal narrative of explorations in Central Asia and westernmost China (1912) (14780793564).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_desert_Cathay_-_personal_narrative_of_explorations_in_Central_Asia_and_westernmost_China_(1912)_(14780793564).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Chinese orchard"
+        },
+        {
+          "url": "https://live.staticflickr.com/5480/14251254155_f4727ee054_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/19db658b-c69e-42ac-9d13-7806494a2058/thumb/",
+          "width": 1024,
+          "height": 680,
+          "title": "Photograph of an unearthed mass grave at Choeung Ek",
+          "author": "shankar s.",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/77742560@N06/14251254155",
+          "source": "openverse",
+          "fit": 0.534,
+          "q": "ancient Chinese orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Persimmon_orchard_and_Mt._Ishimaki_ac.jpg/1920px-Persimmon_orchard_and_Mt._Ishimaki_ac.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Persimmon_orchard_and_Mt._Ishimaki_ac.jpg/500px-Persimmon_orchard_and_Mt._Ishimaki_ac.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4062,
+          "height": 2708,
+          "title": "Persimmon orchard and Mt. Ishimaki ac.jpg",
+          "author": "Asturio Cantabrio",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmon_orchard_and_Mt._Ishimaki_ac.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg/1920px-%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg/500px-%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3264,
+          "height": 2448,
+          "title": "柿畑 Grove of persimmon trees 2011.7.29 - panoramio.jpg",
+          "author": "Nankou Oronain (as36…",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:%E6%9F%BF%E7%95%91_Grove_of_persimmon_trees_2011.7.29_-_panoramio.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon orchard"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Nightgown_%28AM_2001.42.29-5%29.jpg/1920px-Nightgown_%28AM_2001.42.29-5%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Nightgown_%28AM_2001.42.29-5%29.jpg/500px-Nightgown_%28AM_2001.42.29-5%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5184,
+          "height": 3456,
+          "title": "Nightgown (AM 2001.42.29-5).jpg",
+          "author": "Farmer's Trading Company",
+          "license": "CC BY 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Nightgown_(AM_2001.42.29-5).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon orchard"
+        }
+      ],
+      "slot": "p02_s02",
+      "t0": 17.23,
+      "t1": 26.34
+    },
+    {
+      "text": "Chinese scholars recorded dozens of distinct varieties, praising the fruit not only for its sweetness, but for its remarkable ability to thrive in poor, rocky soil.",
+      "title": "Tri thức về những giống hồng",
+      "desc": "Một học giả Trung Hoa thời nhà Hán ghi chép các giống hồng khác nhau bên cạnh những cây hồng vẫn sinh trưởng trên nền đất đá khô cằn.",
+      "queries": [
+        "ancient Chinese scholar",
+        "persimmon varieties",
+        "rocky orchard"
+      ],
+      "query": "Han scholar persimmon varieties rocky soil",
+      "short": "Chinese scholar, persimmon varieties",
+      "prompt": "A historically accurate scene in Han Dynasty China around 200 BC, showing a Chinese scholar documenting different varieties of oriental persimmons. The scholar wears a traditional early Han-era dark hemp robe with wide sleeves and a simple cloth head covering, seated at a low wooden writing table in a rural orchard. Several distinctly shaped persimmons, ranging from small round fruits to larger flattened orange varieties, are carefully arranged beside bamboo writing slips and a brush. Behind him, persimmon trees grow vigorously among exposed stones, gravel and thin, poor agricultural soil on a rugged hillside, illustrating the tree's remarkable adaptability. A farmer nearby examines a fruit-bearing branch. Soft natural daylight, earthy surroundings, authentic ancient Chinese agricultural setting, medium-wide composition viewed slightly from the side.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Ancient_Chinese_Scholar_Tree_courtyard_of_Daixian_Confucian_Temple_%2820250713100519%29.jpg/1920px-Ancient_Chinese_Scholar_Tree_courtyard_of_Daixian_Confucian_Temple_%2820250713100519%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Ancient_Chinese_Scholar_Tree_courtyard_of_Daixian_Confucian_Temple_%2820250713100519%29.jpg/500px-Ancient_Chinese_Scholar_Tree_courtyard_of_Daixian_Confucian_Temple_%2820250713100519%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 7157,
+          "height": 4771,
+          "title": "Ancient Chinese Scholar Tree courtyard of Daixian Confucian Temple (20250713100519).jpg",
+          "author": "N509FZ",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Ancient_Chinese_Scholar_Tree_courtyard_of_Daixian_Confucian_Temple_(20250713100519).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Chinese scholar"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Ancient_Egypt_Bronze_Statue_of_Scholar_%2828230513122%29.jpg/1920px-Ancient_Egypt_Bronze_Statue_of_Scholar_%2828230513122%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Ancient_Egypt_Bronze_Statue_of_Scholar_%2828230513122%29.jpg/500px-Ancient_Egypt_Bronze_Statue_of_Scholar_%2828230513122%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5184,
+          "height": 3456,
+          "title": "Ancient Egypt Bronze Statue of Scholar (28230513122).jpg",
+          "author": "Gary Todd from Xinzheng, China",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Ancient_Egypt_Bronze_Statue_of_Scholar_(28230513122).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Chinese scholar"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Ancient_Chinese_Scholar_Tree_courtyard_of_Daixian_Confucian_Temple_%2820250713100519%29.jpg",
+          "thumb": "https://api.openverse.org/v1/images/78de5681-99b3-4861-b59d-1de399b5bba4/thumb/",
+          "width": 7157,
+          "height": 4771,
+          "title": "Ancient Chinese Scholar Tree courtyard of Daixian Confucian Temple (20250713100519)",
+          "author": "N509FZ",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/w/index.php?curid=169916703",
+          "source": "openverse",
+          "fit": 1.0,
+          "q": "ancient Chinese scholar"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_with_Staff_and_Brush_-_1979.27.2.19_-_Cleveland_Museum_of_Art.tif/lossy-page1-1920px-Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_with_Staff_and_Brush_-_1979.27.2.19_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_with_Staff_and_Brush_-_1979.27.2.19_-_Cleveland_Museum_of_Art.tif/lossy-page1-1920px-Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_with_Staff_and_Brush_-_1979.27.2.19_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6011,
+          "height": 6048,
+          "title": "Chen Hongshou - Paintings after Ancient Masters- Scholar with Staff and Brush - 1979.27.2.19 - Cleveland Museum of Art.tif",
+          "author": "Chen Hongshou",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_with_Staff_and_Brush_-_1979.27.2.19_-_Cleveland_Museum_of_Art.tif",
+          "source": "wikimedia",
+          "fit": 0.867,
+          "q": "ancient Chinese scholar"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_Reading_in_a_Thatched_Hut_by_a_Wat_-_1979.27.2.18_-_Cleveland_Museum_of_Art.tif/lossy-page1-1920px-Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_Reading_in_a_Thatched_Hut_by_a_Wat_-_1979.27.2.18_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_Reading_in_a_Thatched_Hut_by_a_Wat_-_1979.27.2.18_-_Cleveland_Museum_of_Art.tif/lossy-page1-1920px-Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_Reading_in_a_Thatched_Hut_by_a_Wat_-_1979.27.2.18_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5987,
+          "height": 6048,
+          "title": "Chen Hongshou - Paintings after Ancient Masters- Scholar Reading in a Thatched Hut by a Wat - 1979.27.2.18 - Cleveland Museum of Art.tif",
+          "author": "Chen Hongshou",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Chen_Hongshou_-_Paintings_after_Ancient_Masters-_Scholar_Reading_in_a_Thatched_Hut_by_a_Wat_-_1979.27.2.18_-_Cleveland_Museum_of_Art.tif",
+          "source": "wikimedia",
+          "fit": 0.867,
+          "q": "ancient Chinese scholar"
+        },
+        {
+          "url": "https://live.staticflickr.com/8387/8494225953_1e1ca94dff_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/0a130fba-756f-4ec2-a113-6d07b27c03f2/thumb/",
+          "width": 1024,
+          "height": 734,
+          "title": "Islamic Science and Technology",
+          "author": "Nikos Niotis",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/49225855@N07/8494225953",
+          "source": "openverse",
+          "fit": 0.549,
+          "q": "ancient Chinese scholar"
+        },
+        {
+          "url": "https://live.staticflickr.com/7714/16670599483_5ac204092d_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/3c221ef4-69c2-451d-b51e-e4d127db926f/thumb/",
+          "width": 1024,
+          "height": 684,
+          "title": "2014 - Richmond - Buddhist Temple",
+          "author": "Ted's photos - For Me For You",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/90955804@N04/16670599483",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "ancient Chinese scholar"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/51894900203_5c97e2ed82_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/d5e8759a-5d4a-4cb9-845d-15d36fed769c/thumb/",
+          "width": 1024,
+          "height": 667,
+          "title": "Hanoi VN - Văn Miếu - Quốc Tử Giám Temple of Literature Turtle Steles",
+          "author": "Daniel Mennerich",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/29858421@N04/51894900203",
+          "source": "openverse",
+          "fit": 0.531,
+          "q": "ancient Chinese scholar"
+        }
+      ],
+      "slot": "p02_s02_2",
+      "t0": 26.34,
+      "t1": 36.77
+    }
+  ]
+}

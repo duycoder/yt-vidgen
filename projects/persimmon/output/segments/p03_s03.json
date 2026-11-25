@@ -1,0 +1,129 @@
+{
+  "sid": "p03_s03",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:04",
+  "segments": [
+    {
+      "text": "In Japan, old tales tell of monkeys and crabs fighting over a single persimmon seed, a story still told to children today.",
+      "title": "Truyền thuyết Khỉ và Cua",
+      "desc": "Một con khỉ và một con cua đối đầu nhau vì hạt hồng trong khung cảnh làng quê Nhật Bản cổ, gợi lại câu chuyện dân gian được truyền qua nhiều thế hệ.",
+      "queries": [
+        "monkey crab folklore",
+        "Japanese macaque monkey",
+        "Japanese folk illustration"
+      ],
+      "query": "Japanese folklore monkey crab persimmon",
+      "short": "Monkey crab",
+      "prompt": "A historically grounded scene inspired by the traditional Japanese folktale Saru Kani Gassen (The Monkey and the Crab), set in rural Japan during the Edo period, around the 18th century. A Japanese macaque monkey and a small Japanese crab face each other on the ground, struggling over a single persimmon seed between them. The monkey appears cunning and possessive while the crab stands its ground defensively. A few ripe orange persimmons lie nearby, with a traditional thatched farmhouse, wooden fences, and autumn persimmon trees in the background. The setting evokes an old Japanese village where the story was passed down orally to children. Soft autumn afternoon sunlight, natural earthy colors, medium-wide eye-level composition.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Brazil%2C_the_Amazons_and_the_coast_%281879%29_%2814782968552%29.jpg/1920px-Brazil%2C_the_Amazons_and_the_coast_%281879%29_%2814782968552%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Brazil%2C_the_Amazons_and_the_coast_%281879%29_%2814782968552%29.jpg/500px-Brazil%2C_the_Amazons_and_the_coast_%281879%29_%2814782968552%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1982,
+          "height": 1438,
+          "title": "Brazil, the Amazons and the coast (1879) (14782968552).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Brazil,_the_Amazons_and_the_coast_(1879)_(14782968552).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "monkey crab folklore"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Wildlife_primate_monkey-of-japan_macaca-fuscata_closeup_31-05-2010.jpg/1920px-Wildlife_primate_monkey-of-japan_macaca-fuscata_closeup_31-05-2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Wildlife_primate_monkey-of-japan_macaca-fuscata_closeup_31-05-2010.jpg/500px-Wildlife_primate_monkey-of-japan_macaca-fuscata_closeup_31-05-2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4752,
+          "height": 3168,
+          "title": "Wildlife primate monkey-of-japan macaca-fuscata closeup 31-05-2010.jpg",
+          "author": "Alfonsopazphoto",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Wildlife_primate_monkey-of-japan_macaca-fuscata_closeup_31-05-2010.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese macaque monkey"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Macaca_fuscata_meditation.jpg/1920px-Macaca_fuscata_meditation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Macaca_fuscata_meditation.jpg/500px-Macaca_fuscata_meditation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5184,
+          "height": 3456,
+          "title": "Macaca fuscata meditation.jpg",
+          "author": "Daisuke tashiro from Japan",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Macaca_fuscata_meditation.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese macaque monkey"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Kopfstudie_eines_Japanmakaken_%28Macaca_fuscata%29_im_Jigokudani_Yaen_K%C5%8Den%2C_Japan.jpg/1920px-Kopfstudie_eines_Japanmakaken_%28Macaca_fuscata%29_im_Jigokudani_Yaen_K%C5%8Den%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Kopfstudie_eines_Japanmakaken_%28Macaca_fuscata%29_im_Jigokudani_Yaen_K%C5%8Den%2C_Japan.jpg/500px-Kopfstudie_eines_Japanmakaken_%28Macaca_fuscata%29_im_Jigokudani_Yaen_K%C5%8Den%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4480,
+          "height": 4480,
+          "title": "Kopfstudie eines Japanmakaken (Macaca fuscata) im Jigokudani Yaen Kōen, Japan.jpg",
+          "author": "Frank Schulenburg",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Kopfstudie_eines_Japanmakaken_(Macaca_fuscata)_im_Jigokudani_Yaen_K%C5%8Den,_Japan.jpg",
+          "source": "wikimedia",
+          "fit": 0.869,
+          "q": "Japanese macaque monkey"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Juveniler_Japanmakak_%28Macaca_fuscata%29_im_Jigokudani_Yaen_K%C5%8Den.jpg/1920px-Juveniler_Japanmakak_%28Macaca_fuscata%29_im_Jigokudani_Yaen_K%C5%8Den.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Juveniler_Japanmakak_%28Macaca_fuscata%29_im_Jigokudani_Yaen_K%C5%8Den.jpg/500px-Juveniler_Japanmakak_%28Macaca_fuscata%29_im_Jigokudani_Yaen_K%C5%8Den.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3114,
+          "height": 3893,
+          "title": "Juveniler Japanmakak (Macaca fuscata) im Jigokudani Yaen Kōen.jpg",
+          "author": "Frank Schulenburg",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Juveniler_Japanmakak_(Macaca_fuscata)_im_Jigokudani_Yaen_K%C5%8Den.jpg",
+          "source": "wikimedia",
+          "fit": 0.825,
+          "q": "Japanese macaque monkey"
+        },
+        {
+          "url": "https://live.staticflickr.com/7374/9876228144_c7cfca9dbe_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/d1900c6d-ee10-405d-b4a2-53d171bc9ee8/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "Japanese Macaque @ Monkey Park @ Mount Takao",
+          "author": "*_*",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/22539273@N00/9876228144",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "Japanese macaque monkey"
+        },
+        {
+          "url": "https://live.staticflickr.com/7107/13551748733_3f8140acdc_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/bac80bcc-9326-42d4-918f-138973195f3e/thumb/",
+          "width": 1024,
+          "height": 576,
+          "title": "Japanese macaque, Monkey Park (Jigokudani Yaen-Koen), Nagano Prefecture, Japan",
+          "author": "David McKelvey",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/94735786@N00/13551748733",
+          "source": "openverse",
+          "fit": 0.506,
+          "q": "Japanese macaque monkey"
+        },
+        {
+          "url": "https://live.staticflickr.com/5519/12202211425_ae1f305ca0_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/cac758b2-bb13-44e0-aa12-a5f0a323eb49/thumb/",
+          "width": 1024,
+          "height": 813,
+          "title": "Japanese macaque monkey and infant",
+          "author": "teralaser",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/34177237@N08/12202211425",
+          "source": "openverse",
+          "fit": 0.496,
+          "q": "Japanese macaque monkey"
+        }
+      ],
+      "slot": "p03_s03",
+      "t0": 45.8,
+      "t1": 54.3
+    }
+  ]
+}

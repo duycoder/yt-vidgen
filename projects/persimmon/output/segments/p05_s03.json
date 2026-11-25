@@ -1,0 +1,129 @@
+{
+  "sid": "p05_s03",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:12",
+  "segments": [
+    {
+      "text": "Farmers often leave the very highest fruits untouched on the tree. In rural Japan, these are called ki-mamori, or tree guardians, left behind as a thank-you to the birds and a wish for a generous harvest next year.",
+      "title": "Quả Hồng Hộ Mệnh",
+      "desc": "Một vài quả hồng cam được người nông dân Nhật Bản cố ý giữ lại trên những cành cây cao nhất để làm thức ăn cho chim và cầu mong mùa màng năm sau bội thu.",
+      "queries": [
+        "Japanese persimmon harvest",
+        "persimmon tree winter",
+        "bird eating persimmon"
+      ],
+      "query": "Japanese persimmon tree ki-mamori winter birds",
+      "short": "Persimmon tree",
+      "prompt": "A historically authentic rural Japanese persimmon orchard in late November, traditional countryside of Japan around the late Edo period (1800s). A mature persimmon tree stands nearly bare after autumn, its twisted upper branches holding just two or three brilliant deep-orange persimmons deliberately left untouched after the harvest. A small Japanese farmer wearing traditional indigo cotton work clothes, a simple headscarf and straw sandals stands beneath the tree, looking up peacefully at the remaining fruit. A small wild Japanese bird perches on a nearby branch, approaching one of the persimmons. Quiet agricultural landscape with traditional wooden farmhouses in the distance, muted grey winter sky, soft natural late-afternoon light illuminating the orange fruit. Cinematic documentary composition, slightly low camera angle emphasizing the highest branches and the solitary remaining fruits.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Japanese_Persimmons_drying.JPG/1920px-Japanese_Persimmons_drying.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Japanese_Persimmons_drying.JPG/500px-Japanese_Persimmons_drying.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3648,
+          "height": 2736,
+          "title": "Japanese Persimmons drying.JPG",
+          "author": "Cla68",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Japanese_Persimmons_drying.JPG",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese persimmon harvest"
+        },
+        {
+          "url": "https://live.staticflickr.com/4356/37248233552_2f18d33d55_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/c9b8ba60-c5ab-4a12-9b8f-04f3ea8b07f5/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "air-dried rice tastes different to blower-dried grains",
+          "author": "anthroview",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/44853622@N06/37248233552",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "Japanese persimmon harvest"
+        },
+        {
+          "url": "https://live.staticflickr.com/3240/3128606422_c034b35f59_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/2f0736e6-6705-4f08-924b-849081051bd5/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Japanese Persimmons",
+          "author": "Big Grey Mare",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/57565555@N00/3128606422",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "Japanese persimmon harvest"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/53612808689_cd76d06fb1_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/a56410c9-86b2-4bbb-921c-1263beffe188/thumb/",
+          "width": 1024,
+          "height": 682,
+          "title": "Taschkent UZ - Diospyros kaki 02",
+          "author": "Daniel Mennerich",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/29858421@N04/53612808689",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "Japanese persimmon harvest"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Maejima_Morichika_-_Pipe_with_Trained_Monkeys_Harvesting_Persimmons_-_Walters_571281.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/33/Maejima_Morichika_-_Pipe_with_Trained_Monkeys_Harvesting_Persimmons_-_Walters_571281.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "width": 1800,
+          "height": 395,
+          "title": "Maejima Morichika - Pipe with Trained Monkeys Harvesting Persimmons - Walters 571281.jpg",
+          "author": "Maejima Morichika",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Maejima_Morichika_-_Pipe_with_Trained_Monkeys_Harvesting_Persimmons_-_Walters_571281.jpg",
+          "source": "wikimedia",
+          "fit": 0.188,
+          "q": "Japanese persimmon harvest"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/53881274909_33f4df9162_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/e01338eb-72cd-4d1d-8d62-8f4933ff9433/thumb/",
+          "width": 1024,
+          "height": 225,
+          "title": "Pipe with Trained Monkeys Harvesting Persimmons mid-late 19th century (Meiji)",
+          "author": "museado",
+          "license": "CC CC0 1.0",
+          "page": "https://www.flickr.com/photos/200781279@N05/53881274909",
+          "source": "openverse",
+          "fit": 0.061,
+          "q": "Japanese persimmon harvest"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Persimmon_tree_in_winter_%28Nagano_prefecture%2C_Japan%29.jpg/1920px-Persimmon_tree_in_winter_%28Nagano_prefecture%2C_Japan%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Persimmon_tree_in_winter_%28Nagano_prefecture%2C_Japan%29.jpg/500px-Persimmon_tree_in_winter_%28Nagano_prefecture%2C_Japan%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2040,
+          "height": 2571,
+          "title": "Persimmon tree in winter (Nagano prefecture, Japan).jpg",
+          "author": "James Heilman, MD",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmon_tree_in_winter_(Nagano_prefecture,_Japan).jpg",
+          "source": "wikimedia",
+          "fit": 0.824,
+          "q": "persimmon tree winter"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_%281920%29_%2814596404819%29.jpg/1920px-The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_%281920%29_%2814596404819%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_%281920%29_%2814596404819%29.jpg/500px-The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_%281920%29_%2814596404819%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2824,
+          "height": 3840,
+          "title": "The tree book - A popular guide to a knowledge of the trees of North America and to their uses and cultivation (1920) (14596404819).jpg",
+          "author": "Rogers, Julia Ellen, b. 1866",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:The_tree_book_-_A_popular_guide_to_a_knowledge_of_the_trees_of_North_America_and_to_their_uses_and_cultivation_(1920)_(14596404819).jpg",
+          "source": "wikimedia",
+          "fit": 0.811,
+          "q": "persimmon tree winter"
+        }
+      ],
+      "slot": "p05_s03",
+      "t0": 38.3,
+      "t1": 51.6
+    }
+  ]
+}

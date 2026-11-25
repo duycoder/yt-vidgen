@@ -1,0 +1,129 @@
+{
+  "sid": "p04_s03",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:09",
+  "segments": [
+    {
+      "text": "The persimmon belongs to the ebony family, and its dense, dark heartwood was prized by craftsmen. In nineteenth-century America and Europe, this heavy timber was shaped into weaving shuttles, billiard cues, and the heads of wooden golf clubs, known simply as persimmon woods.",
+      "title": "Gỗ quý từ cây hồng",
+      "desc": "Một xưởng thủ công thế kỷ XIX tại châu Âu, nơi những người thợ mộc đang chế tác gỗ hồng thành gậy bi-a, thoi dệt và đầu gậy golf bằng gỗ sẫm màu.",
+      "queries": [
+        "woodworker workshop",
+        "antique billiard cues",
+        "persimmon golf clubs"
+      ],
+      "query": "19th century woodworking persimmon heartwood billiard cues golf clubs weaving shuttles",
+      "short": "woodworking persimmon timber",
+      "prompt": "A historically accurate nineteenth-century woodworking workshop in Europe, circa 1880. Skilled male craftsmen wearing period-appropriate linen shirts, waistcoats, suspenders and work aprons carefully shaping dense, dark reddish-brown persimmon heartwood. On the wooden workbench are unfinished weaving shuttles, polished billiard cues and wooden golf club heads made from persimmon timber. One craftsman uses traditional hand tools to carve a rounded golf club head while another examines a finished billiard cue. Show the distinctive dark, fine-grained hardwood clearly. A traditional workshop filled with wooden tools, shavings and handcrafted objects, illuminated by soft natural daylight entering through tall factory windows. Three-quarter medium-wide camera angle, with the craftsmen and their wooden creations as the central focus.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Woodworker_in_a_workshop_%28Unsplash%29.jpg/1920px-Woodworker_in_a_workshop_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Woodworker_in_a_workshop_%28Unsplash%29.jpg/500px-Woodworker_in_a_workshop_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6016,
+          "height": 4016,
+          "title": "Woodworker in a workshop (Unsplash).jpg",
+          "author": "Ian Schneider goian",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Woodworker_in_a_workshop_(Unsplash).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "woodworker workshop"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Woodworker_using_a_saw_to_shape_branches_in_a_workshop_during_daylight.jpg/1920px-Woodworker_using_a_saw_to_shape_branches_in_a_workshop_during_daylight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Woodworker_using_a_saw_to_shape_branches_in_a_workshop_during_daylight.jpg/500px-Woodworker_using_a_saw_to_shape_branches_in_a_workshop_during_daylight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6016,
+          "height": 4016,
+          "title": "Woodworker using a saw to shape branches in a workshop during daylight.jpg",
+          "author": "Shixart1985",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Woodworker_using_a_saw_to_shape_branches_in_a_workshop_during_daylight.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "woodworker workshop"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Woodworker_uses_a_planer_on_a_long_piece_of_wood_in_a_workshop_during_daylight_hours.jpg/1920px-Woodworker_uses_a_planer_on_a_long_piece_of_wood_in_a_workshop_during_daylight_hours.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Woodworker_uses_a_planer_on_a_long_piece_of_wood_in_a_workshop_during_daylight_hours.jpg/500px-Woodworker_uses_a_planer_on_a_long_piece_of_wood_in_a_workshop_during_daylight_hours.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4016,
+          "height": 6016,
+          "title": "Woodworker uses a planer on a long piece of wood in a workshop during daylight hours.jpg",
+          "author": "Shixart1985",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Woodworker_uses_a_planer_on_a_long_piece_of_wood_in_a_workshop_during_daylight_hours.jpg",
+          "source": "wikimedia",
+          "fit": 0.796,
+          "q": "woodworker workshop"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Hand_inspecting_wood_shavings_in_workshop_during_afternoon_woodworking_session_for_quality_and_consistency_undefined.jpg/1920px-Hand_inspecting_wood_shavings_in_workshop_during_afternoon_woodworking_session_for_quality_and_consistency_undefined.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Hand_inspecting_wood_shavings_in_workshop_during_afternoon_woodworking_session_for_quality_and_consistency_undefined.jpg/500px-Hand_inspecting_wood_shavings_in_workshop_during_afternoon_woodworking_session_for_quality_and_consistency_undefined.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4016,
+          "height": 6016,
+          "title": "Hand inspecting wood shavings in workshop during afternoon woodworking session for quality and consistency undefined.jpg",
+          "author": "Shixart1985",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hand_inspecting_wood_shavings_in_workshop_during_afternoon_woodworking_session_for_quality_and_consistency_undefined.jpg",
+          "source": "wikimedia",
+          "fit": 0.796,
+          "q": "woodworker workshop"
+        },
+        {
+          "url": "https://live.staticflickr.com/73/204690293_e53dccdf70_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/84da4787-edb2-47c8-a54a-db993da67b0a/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "The meaning of follow",
+          "author": "dhammza",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/56597995@N00/204690293",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "antique billiard cues"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Croquet_and_its_rules_%281910%29_%2814598451610%29.jpg/1920px-Croquet_and_its_rules_%281910%29_%2814598451610%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Croquet_and_its_rules_%281910%29_%2814598451610%29.jpg/500px-Croquet_and_its_rules_%281910%29_%2814598451610%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2212,
+          "height": 3179,
+          "title": "Croquet and its rules (1910) (14598451610).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Croquet_and_its_rules_(1910)_(14598451610).jpg",
+          "source": "wikimedia",
+          "fit": 0.802,
+          "q": "persimmon golf clubs"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._11_%281901%29_%2820315037348%29.jpg/1920px-Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._11_%281901%29_%2820315037348%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._11_%281901%29_%2820315037348%29.jpg/500px-Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._11_%281901%29_%2820315037348%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2088,
+          "height": 3032,
+          "title": "Bulletin (Pennsylvania Department of Forestry), no. 11 (1901) (20315037348).jpg",
+          "author": "Pennsylvania. Dept. of Forestry",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Bulletin_(Pennsylvania_Department_of_Forestry),_no._11_(1901)_(20315037348).jpg",
+          "source": "wikimedia",
+          "fit": 0.801,
+          "q": "persimmon golf clubs"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._11_%281901%29_%2820509413331%29.jpg/1920px-Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._11_%281901%29_%2820509413331%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._11_%281901%29_%2820509413331%29.jpg/500px-Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._11_%281901%29_%2820509413331%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2088,
+          "height": 3030,
+          "title": "Bulletin (Pennsylvania Department of Forestry), no. 11 (1901) (20509413331).jpg",
+          "author": "Pennsylvania. Dept. of Forestry",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Bulletin_(Pennsylvania_Department_of_Forestry),_no._11_(1901)_(20509413331).jpg",
+          "source": "wikimedia",
+          "fit": 0.801,
+          "q": "persimmon golf clubs"
+        }
+      ],
+      "slot": "p04_s03",
+      "t0": 33.92,
+      "t1": 50.5
+    }
+  ]
+}

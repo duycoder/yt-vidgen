@@ -1,0 +1,251 @@
+{
+  "sid": "p07_s01",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:18",
+  "segments": [
+    {
+      "text": "For centuries, the Asian persimmon remained largely unknown in the West, save for scattered reports from Portuguese and Jesuit missionaries in the sixteenth century.",
+      "title": "Dấu chân truyền giáo phương Tây",
+      "desc": "Các nhà truyền giáo Bồ Đào Nha và Dòng Tên thế kỷ XVI ghi chép về những loại trái cây phương Đông kỳ lạ tại Nhật Bản.",
+      "queries": [
+        "Jesuit missionaries",
+        "Portuguese missionaries",
+        "sixteenth century Japan"
+      ],
+      "query": "Jesuit missionaries Japan historical",
+      "short": "Jesuit missionaries",
+      "prompt": "A historically accurate sixteenth-century scene in Japan, showing Portuguese Catholic Jesuit missionaries exploring a traditional Japanese village and carefully documenting unfamiliar local plants and fruits in handwritten journals. The missionaries wear authentic dark European clerical robes with simple period-appropriate clothing, while local Japanese villagers wear traditional kimono. A persimmon tree bearing bright orange fruit stands in the background among traditional wooden buildings. Natural daylight, peaceful rural atmosphere, realistic historical details, medium-wide cinematic composition viewed at eye level.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/The_Jesuit_relations_and_allied_documents_-_travels_and_explorations_of_the_Jesuit_missionaries_in_New_France%2C_1610-1791%3B_the_original_French%2C_Latin%2C_and_Italian_texts%2C_with_English_translations_and_%2814592094590%29.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/The_Jesuit_relations_and_allied_documents_-_travels_and_explorations_of_the_Jesuit_missionaries_in_New_France%2C_1610-1791%3B_the_original_French%2C_Latin%2C_and_Italian_texts%2C_with_English_translations_and_%2814592094590%29.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3660,
+          "height": 2204,
+          "title": "The Jesuit relations and allied documents - travels and explorations of the Jesuit missionaries in New France, 1610-1791; the original French, Latin, and Italian texts, with English translations and (14592094590).jpg",
+          "author": "Jesuits. Letters from missions (North America);\n\nThwaites, Reuben Gold, 1853-1913",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:The_Jesuit_relations_and_allied_documents_-_travels_and_explorations_of_the_Jesuit_missionaries_in_New_France,_1610-1791;_the_original_French,_Latin,_and_Italian_texts,_with_English_translations_and_(14592094590).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Jesuit missionaries"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/The_Jesuit_relations_and_allied_documents_-_travels_and_explorations_of_the_Jesuit_missionaries_in_New_France%2C_1610-1791%3B_the_original_French%2C_Latin%2C_and_Italian_texts%2C_with_English_translations_and_%2814592322537%29.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/The_Jesuit_relations_and_allied_documents_-_travels_and_explorations_of_the_Jesuit_missionaries_in_New_France%2C_1610-1791%3B_the_original_French%2C_Latin%2C_and_Italian_texts%2C_with_English_translations_and_%2814592322537%29.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2748,
+          "height": 1684,
+          "title": "The Jesuit relations and allied documents - travels and explorations of the Jesuit missionaries in New France, 1610-1791; the original French, Latin, and Italian texts, with English translations and (14592322537).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:The_Jesuit_relations_and_allied_documents_-_travels_and_explorations_of_the_Jesuit_missionaries_in_New_France,_1610-1791;_the_original_French,_Latin,_and_Italian_texts,_with_English_translations_and_(14592322537).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Jesuit missionaries"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/SJ_Rc_6_Vassijaure.jpg/1920px-SJ_Rc_6_Vassijaure.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/SJ_Rc_6_Vassijaure.jpg/500px-SJ_Rc_6_Vassijaure.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6520,
+          "height": 4025,
+          "title": "SJ Rc 6 Vassijaure.jpg",
+          "author": "Kabelleger / David Gubler",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:SJ_Rc_6_Vassijaure.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Jesuit missionaries"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Si-o-se-Pol.jpg/1920px-Si-o-se-Pol.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Si-o-se-Pol.jpg/500px-Si-o-se-Pol.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3560,
+          "height": 2592,
+          "title": "Si-o-se-Pol.jpg",
+          "author": "Reza Haji-pour رضا حاجی‌پور",
+          "license": "CC BY 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Si-o-se-Pol.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Jesuit missionaries"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Assento_de_%C3%B3bito%2C_Diogo_de_Carvalho_e_Sampayo_%281807-12-29%29.png/1920px-Assento_de_%C3%B3bito%2C_Diogo_de_Carvalho_e_Sampayo_%281807-12-29%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Assento_de_%C3%B3bito%2C_Diogo_de_Carvalho_e_Sampayo_%281807-12-29%29.png/500px-Assento_de_%C3%B3bito%2C_Diogo_de_Carvalho_e_Sampayo_%281807-12-29%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2664,
+          "height": 1380,
+          "title": "Assento de óbito, Diogo de Carvalho e Sampayo (1807-12-29).png",
+          "author": "Unknown authorUnknown author",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Assento_de_%C3%B3bito,_Diogo_de_Carvalho_e_Sampayo_(1807-12-29).png",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Portuguese missionaries"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Escola_Portuguesa_-_Morte_do_Padre_Filipe_Bourel.jpg/1920px-Escola_Portuguesa_-_Morte_do_Padre_Filipe_Bourel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Escola_Portuguesa_-_Morte_do_Padre_Filipe_Bourel.jpg/500px-Escola_Portuguesa_-_Morte_do_Padre_Filipe_Bourel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3992,
+          "height": 3218,
+          "title": "Escola Portuguesa - Morte do Padre Filipe Bourel.jpg",
+          "author": "Unknown painter (Portuguese School)",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Escola_Portuguesa_-_Morte_do_Padre_Filipe_Bourel.jpg",
+          "source": "wikimedia",
+          "fit": 0.921,
+          "q": "Portuguese missionaries"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg/1920px-Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg/500px-Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2992,
+          "height": 2992,
+          "title": "Repouso na fuga para o Egito de Simão Rodrigues - MNC.jpg",
+          "author": "Threeohsix",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg",
+          "source": "wikimedia",
+          "fit": 0.869,
+          "q": "Portuguese missionaries"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Descri%C3%A7%C3%A3o_de_Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg/1920px-Descri%C3%A7%C3%A3o_de_Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Descri%C3%A7%C3%A3o_de_Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg/500px-Descri%C3%A7%C3%A3o_de_Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2992,
+          "height": 2992,
+          "title": "Descrição de Repouso na fuga para o Egito de Simão Rodrigues - MNC.jpg",
+          "author": "Threeohsix",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Descri%C3%A7%C3%A3o_de_Repouso_na_fuga_para_o_Egito_de_Sim%C3%A3o_Rodrigues_-_MNC.jpg",
+          "source": "wikimedia",
+          "fit": 0.869,
+          "q": "Portuguese missionaries"
+        }
+      ],
+      "slot": "p07_s01",
+      "t0": 0.0,
+      "t1": 9.46
+    },
+    {
+      "text": "Everything changed in eighteen fifty-five, when Commodore Matthew Perry returned to the United States from his famous naval expedition to Japan. Alongside diplomatic treaties, Perry brought back persimmon seeds, planting them near Washington, D C.",
+      "title": "Hạt giống vượt đại dương",
+      "desc": "Commodore Matthew Perry trở về Mỹ năm 1855 cùng những hạt giống Nhật Bản và đưa chúng đến trồng tại khu vực Washington D.C.",
+      "queries": [
+        "Matthew Perry expedition",
+        "1850s naval officer",
+        "persimmon seeds"
+      ],
+      "query": "Matthew Perry persimmon seeds Washington",
+      "short": "Matthew Perry seeds",
+      "prompt": "Washington D.C., 1855, shortly after Commodore Matthew C. Perry's historic return from his naval expedition to Japan. Commodore Perry, portrayed as a distinguished American naval officer in an authentic mid-nineteenth-century dark blue U.S. Navy uniform with gold buttons and epaulettes, supervises the handling of small Japanese persimmon seeds and young exotic plants brought across the Pacific. A period horticultural gardener carefully prepares the seeds for planting in cultivated ground near the United States Capitol and government botanical greenhouses. Wooden seed boxes, gardening tools, and early American government buildings establish the historical setting. Soft late-afternoon sunlight, historically accurate architecture and clothing, documentary realism, medium-wide composition from a slightly elevated camera angle.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597956299%29.jpg/1920px-Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597956299%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597956299%29.jpg/500px-Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597956299%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3088,
+          "height": 2216,
+          "title": "Narrative of the expedition of an American squadron to the China seas and Japan (1857) (14597956299).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_(1857)_(14597956299).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Matthew Perry expedition"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597911210%29.jpg/1920px-Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597911210%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597911210%29.jpg/500px-Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597911210%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2976,
+          "height": 2244,
+          "title": "Narrative of the expedition of an American squadron to the China seas and Japan (1857) (14597911210).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_(1857)_(14597911210).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Matthew Perry expedition"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814782291344%29.jpg/1920px-Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814782291344%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814782291344%29.jpg/500px-Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814782291344%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2896,
+          "height": 2028,
+          "title": "Narrative of the expedition of an American squadron to the China seas and Japan (1857) (14782291344).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_(1857)_(14782291344).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Matthew Perry expedition"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597920280%29.jpg/1920px-Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597920280%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597920280%29.jpg/500px-Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_%281857%29_%2814597920280%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3584,
+          "height": 2244,
+          "title": "Narrative of the expedition of an American squadron to the China seas and Japan (1857) (14597920280).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Narrative_of_the_expedition_of_an_American_squadron_to_the_China_seas_and_Japan_(1857)_(14597920280).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Matthew Perry expedition"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/1850s_%28circa%29_Great_Lew_Chew_and_its_dependencies%2C_by_Matthew_Perry%2C_from_the_Digital_Commonwealth_-_commonwealth_0z7097557.jpg/1920px-1850s_%28circa%29_Great_Lew_Chew_and_its_dependencies%2C_by_Matthew_Perry%2C_from_the_Digital_Commonwealth_-_commonwealth_0z7097557.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/1850s_%28circa%29_Great_Lew_Chew_and_its_dependencies%2C_by_Matthew_Perry%2C_from_the_Digital_Commonwealth_-_commonwealth_0z7097557.jpg/500px-1850s_%28circa%29_Great_Lew_Chew_and_its_dependencies%2C_by_Matthew_Perry%2C_from_the_Digital_Commonwealth_-_commonwealth_0z7097557.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2552,
+          "height": 1909,
+          "title": "1850s (circa) Great Lew Chew and its dependencies, by Matthew Perry, from the Digital Commonwealth - commonwealth 0z7097557.jpg",
+          "author": "Matthew Perry",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:1850s_(circa)_Great_Lew_Chew_and_its_dependencies,_by_Matthew_Perry,_from_the_Digital_Commonwealth_-_commonwealth_0z7097557.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "1850s naval officer"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/John_Rodgers_naval_officer%2C_Civil_War_-_Brady-Handy.jpg/1920px-John_Rodgers_naval_officer%2C_Civil_War_-_Brady-Handy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/John_Rodgers_naval_officer%2C_Civil_War_-_Brady-Handy.jpg/500px-John_Rodgers_naval_officer%2C_Civil_War_-_Brady-Handy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1952,
+          "height": 2876,
+          "title": "John Rodgers naval officer, Civil War - Brady-Handy.jpg",
+          "author": "Mathew Benjamin Brady / Levin Corbin Handy",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:John_Rodgers_naval_officer,_Civil_War_-_Brady-Handy.jpg",
+          "source": "wikimedia",
+          "fit": 0.798,
+          "q": "1850s naval officer"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Commodore_Matthew_C._Perry.jpg/1920px-Commodore_Matthew_C._Perry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Commodore_Matthew_C._Perry.jpg/500px-Commodore_Matthew_C._Perry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2073,
+          "height": 3170,
+          "title": "Commodore Matthew C. Perry.jpg",
+          "author": "Mathew Benjamin Brady",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Commodore_Matthew_C._Perry.jpg",
+          "source": "wikimedia",
+          "fit": 0.793,
+          "q": "1850s naval officer"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/John_Denis_Macdonald_HMS_%E2%80%98Herald.jpg/1920px-John_Denis_Macdonald_HMS_%E2%80%98Herald.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/John_Denis_Macdonald_HMS_%E2%80%98Herald.jpg/500px-John_Denis_Macdonald_HMS_%E2%80%98Herald.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3120,
+          "height": 3440,
+          "title": "John Denis Macdonald HMS ‘Herald.jpg",
+          "author": "Unknown authorUnknown author",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:John_Denis_Macdonald_HMS_%E2%80%98Herald.jpg",
+          "source": "wikimedia",
+          "fit": 0.848,
+          "q": "1850s naval officer"
+        }
+      ],
+      "slot": "p07_s01_2",
+      "t0": 9.46,
+      "t1": 24.5
+    }
+  ]
+}

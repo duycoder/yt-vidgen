@@ -1,0 +1,251 @@
+{
+  "sid": "p08_s01",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:23",
+  "segments": [
+    {
+      "text": "Long before refrigeration, farmers in East Asia perfected an art form to preserve their autumn harvest through the bitter winter months.",
+      "title": "Nghệ thuật bảo quản mùa đông",
+      "desc": "Những người nông dân Đông Á thời xưa thu hoạch và bảo quản quả hồng mùa thu để dự trữ thực phẩm qua mùa đông lạnh giá.",
+      "queries": [
+        "Asian persimmon harvest",
+        "traditional Japanese farmhouse",
+        "winter fruit preservation"
+      ],
+      "query": "East Asian farmers persimmon harvest winter preservation",
+      "short": "Persimmon harvest",
+      "prompt": "A historically accurate scene in rural East Asia during the late 19th century, before modern refrigeration. Traditional Chinese and Japanese farmers gather their abundant autumn persimmon harvest outside an old wooden farmhouse, carefully arranging baskets overflowing with bright orange persimmons in preparation for the bitter winter. Farmers wear historically appropriate simple cotton work clothes, loose jackets and cloth trousers. The surrounding countryside shows late autumn foliage, distant mountains and the first signs of approaching winter. Cool crisp morning atmosphere, soft natural sunlight, documentary photography perspective, wide establishing shot emphasizing the traditional agricultural harvest and seasonal food preservation.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Japanese_traditional_farmhouse_-_4640942541.jpg/1920px-Japanese_traditional_farmhouse_-_4640942541.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Japanese_traditional_farmhouse_-_4640942541.jpg/500px-Japanese_traditional_farmhouse_-_4640942541.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5616,
+          "height": 3744,
+          "title": "Japanese traditional farmhouse - 4640942541.jpg",
+          "author": "TANAKA Juuyoh (田中十洋)",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Japanese_traditional_farmhouse_-_4640942541.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "traditional Japanese farmhouse"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Itabashi_Historical_Museum_traditional_Japanese_house_2025-04-29.jpg/1920px-Itabashi_Historical_Museum_traditional_Japanese_house_2025-04-29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Itabashi_Historical_Museum_traditional_Japanese_house_2025-04-29.jpg/500px-Itabashi_Historical_Museum_traditional_Japanese_house_2025-04-29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4032,
+          "height": 3024,
+          "title": "Itabashi Historical Museum traditional Japanese house 2025-04-29.jpg",
+          "author": "Asanagi",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Itabashi_Historical_Museum_traditional_Japanese_house_2025-04-29.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "traditional Japanese farmhouse"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Traditional_Japanese_Farmhouse.jpg/1920px-Traditional_Japanese_Farmhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Traditional_Japanese_Farmhouse.jpg/500px-Traditional_Japanese_Farmhouse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4160,
+          "height": 3120,
+          "title": "Traditional Japanese Farmhouse.jpg",
+          "author": "Bernie Ongewe",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Traditional_Japanese_Farmhouse.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "traditional Japanese farmhouse"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Japanese_traditional_farmhouse_-_wooden_floor_and_fireplace.jpg/1920px-Japanese_traditional_farmhouse_-_wooden_floor_and_fireplace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Japanese_traditional_farmhouse_-_wooden_floor_and_fireplace.jpg/500px-Japanese_traditional_farmhouse_-_wooden_floor_and_fireplace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5616,
+          "height": 3744,
+          "title": "Japanese traditional farmhouse - wooden floor and fireplace.jpg",
+          "author": "TANAKA Juuyoh (田中十洋)",
+          "license": "CC BY 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Japanese_traditional_farmhouse_-_wooden_floor_and_fireplace.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "traditional Japanese farmhouse"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Descriptive_catalog_of_vegetables_for_canning_and_quick_freezing_%281940%29_%2820863076122%29.jpg/1920px-Descriptive_catalog_of_vegetables_for_canning_and_quick_freezing_%281940%29_%2820863076122%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Descriptive_catalog_of_vegetables_for_canning_and_quick_freezing_%281940%29_%2820863076122%29.jpg/500px-Descriptive_catalog_of_vegetables_for_canning_and_quick_freezing_%281940%29_%2820863076122%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2636,
+          "height": 1504,
+          "title": "Descriptive catalog of vegetables for canning and quick freezing (1940) (20863076122).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Descriptive_catalog_of_vegetables_for_canning_and_quick_freezing_(1940)_(20863076122).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "winter fruit preservation"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/American_homes_and_gardens_%281909%29_%2818153315282%29.jpg/1920px-American_homes_and_gardens_%281909%29_%2818153315282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/American_homes_and_gardens_%281909%29_%2818153315282%29.jpg/500px-American_homes_and_gardens_%281909%29_%2818153315282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2864,
+          "height": 1970,
+          "title": "American homes and gardens (1909) (18153315282).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:American_homes_and_gardens_(1909)_(18153315282).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "winter fruit preservation"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Still_Life_with_Fruit_and_Sweetmeats_%28SM_2046%29.png/1920px-Still_Life_with_Fruit_and_Sweetmeats_%28SM_2046%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Still_Life_with_Fruit_and_Sweetmeats_%28SM_2046%29.png/500px-Still_Life_with_Fruit_and_Sweetmeats_%28SM_2046%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 7199,
+          "height": 5942,
+          "title": "Still Life with Fruit and Sweetmeats (SM 2046).png",
+          "author": "Georg Flegel",
+          "license": "PDM-owner",
+          "page": "https://commons.wikimedia.org/wiki/File:Still_Life_with_Fruit_and_Sweetmeats_(SM_2046).png",
+          "source": "wikimedia",
+          "fit": 0.915,
+          "q": "winter fruit preservation"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Autumn_Elements_in_the_Life_Cycle_of_the_American_Sycamore_%28Platanus_occidentalis%29_%284%29.jpg/1920px-Autumn_Elements_in_the_Life_Cycle_of_the_American_Sycamore_%28Platanus_occidentalis%29_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Autumn_Elements_in_the_Life_Cycle_of_the_American_Sycamore_%28Platanus_occidentalis%29_%284%29.jpg/500px-Autumn_Elements_in_the_Life_Cycle_of_the_American_Sycamore_%28Platanus_occidentalis%29_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3060,
+          "height": 4080,
+          "title": "Autumn Elements in the Life Cycle of the American Sycamore (Platanus occidentalis) (4).jpg",
+          "author": "EphemeralFocus",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Autumn_Elements_in_the_Life_Cycle_of_the_American_Sycamore_(Platanus_occidentalis)_(4).jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "winter fruit preservation"
+        }
+      ],
+      "slot": "p08_s01",
+      "t0": 0.0,
+      "t1": 7.88
+    },
+    {
+      "text": "In China, it is called shibing; in Japan, hoshigaki. The process begins by hand-peeling firm, astringent persimmons while leaving their T-shaped stems intact.",
+      "title": "Gọt vỏ quả hồng",
+      "desc": "Đôi bàn tay người nông dân cẩn thận gọt lớp vỏ quả hồng còn cứng, giữ nguyên phần cuống hình chữ T để chuẩn bị phơi khô.",
+      "queries": [
+        "Peeling persimmons",
+        "Japanese hoshigaki",
+        "Chinese dried persimmon"
+      ],
+      "query": "Traditional hand peeling firm persimmons T shaped stems",
+      "short": "Peeling persimmons",
+      "prompt": "A historically accurate close-up of traditional persimmon preparation in a rural Japanese farmhouse in the late 19th century. A skilled farmer wearing simple traditional cotton work clothing carefully hand-peels firm, unripe orange astringent persimmons using a small sharp kitchen knife. The thin orange skins curl away as the fruit is exposed, while every fruit retains its distinctive intact T-shaped woody stem. Several unpeeled persimmons and freshly peeled fruits rest on a rustic wooden worktable. The scene represents the traditional hoshigaki preparation technique, also practiced in China as shibing. Soft daylight enters through the wooden farmhouse window, natural warm tones, intimate close-up camera angle focused on the farmer's hands, knife, fruit and preserved stems.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Persimmons_drying_in_rural_Fukui_prefecture%2C_Japan.jpg/1920px-Persimmons_drying_in_rural_Fukui_prefecture%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Persimmons_drying_in_rural_Fukui_prefecture%2C_Japan.jpg/500px-Persimmons_drying_in_rural_Fukui_prefecture%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2816,
+          "height": 2112,
+          "title": "Persimmons drying in rural Fukui prefecture, Japan.jpg",
+          "author": "Gpwitteveen",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmons_drying_in_rural_Fukui_prefecture,_Japan.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Peeling persimmons"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/DFC_0306_Crisp_curled_slices_of_dried_citrus_peel_piled_in_a_small_clear_bowl_showcasing_their_warm_orange_and_brown_hues.jpg/1920px-DFC_0306_Crisp_curled_slices_of_dried_citrus_peel_piled_in_a_small_clear_bowl_showcasing_their_warm_orange_and_brown_hues.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/DFC_0306_Crisp_curled_slices_of_dried_citrus_peel_piled_in_a_small_clear_bowl_showcasing_their_warm_orange_and_brown_hues.jpg/500px-DFC_0306_Crisp_curled_slices_of_dried_citrus_peel_piled_in_a_small_clear_bowl_showcasing_their_warm_orange_and_brown_hues.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5568,
+          "height": 3712,
+          "title": "DFC 0306 Crisp curled slices of dried citrus peel piled in a small clear bowl showcasing their warm orange and brown hues.jpg",
+          "author": "PattayaPatrol",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:DFC_0306_Crisp_curled_slices_of_dried_citrus_peel_piled_in_a_small_clear_bowl_showcasing_their_warm_orange_and_brown_hues.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Peeling persimmons"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Persimmons_airdried.jpg/1920px-Persimmons_airdried.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Persimmons_airdried.jpg/500px-Persimmons_airdried.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3024,
+          "height": 4032,
+          "title": "Persimmons airdried.jpg",
+          "author": "Zhangtianzivera",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Persimmons_airdried.jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "Peeling persimmons"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Liat_Portal_for_Foodie_Disorder_-_Cucumber%2C_Grape_Cherry_Tomato%2C_and_Persimmon_Plate.jpg/1920px-Liat_Portal_for_Foodie_Disorder_-_Cucumber%2C_Grape_Cherry_Tomato%2C_and_Persimmon_Plate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Liat_Portal_for_Foodie_Disorder_-_Cucumber%2C_Grape_Cherry_Tomato%2C_and_Persimmon_Plate.jpg/500px-Liat_Portal_for_Foodie_Disorder_-_Cucumber%2C_Grape_Cherry_Tomato%2C_and_Persimmon_Plate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3024,
+          "height": 4032,
+          "title": "Liat Portal for Foodie Disorder - Cucumber, Grape Cherry Tomato, and Persimmon Plate.jpg",
+          "author": "HaJunkiyada",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Cucumber,_Grape_Cherry_Tomato,_and_Persimmon_Plate.jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "Peeling persimmons"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Hanging_Hachiya_Persimmons_to_become_Hoshigaki.jpg/1920px-Hanging_Hachiya_Persimmons_to_become_Hoshigaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Hanging_Hachiya_Persimmons_to_become_Hoshigaki.jpg/500px-Hanging_Hachiya_Persimmons_to_become_Hoshigaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3445,
+          "height": 2587,
+          "title": "Hanging Hachiya Persimmons to become Hoshigaki.jpg",
+          "author": "Tachikoma805",
+          "license": "CC BY 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Hanging_Hachiya_Persimmons_to_become_Hoshigaki.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "Japanese hoshigaki"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828192694982%29.jpg/1920px-Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828192694982%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828192694982%29.jpg/500px-Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828192694982%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3376,
+          "height": 6000,
+          "title": "Cosplay of Kisame Hoshigaki at Japan Expo 2016 (28192694982).jpg",
+          "author": "Miguel Discart",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_(28192694982).jpg",
+          "source": "wikimedia",
+          "fit": 0.773,
+          "q": "Japanese hoshigaki"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828218149831%29.jpg/1920px-Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828218149831%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828218149831%29.jpg/500px-Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828218149831%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3376,
+          "height": 6000,
+          "title": "Cosplay of Kisame Hoshigaki at Japan Expo 2016 (28218149831).jpg",
+          "author": "Miguel Discart",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_(28218149831).jpg",
+          "source": "wikimedia",
+          "fit": 0.773,
+          "q": "Japanese hoshigaki"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828194676262%29.jpg/1920px-Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828194676262%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828194676262%29.jpg/500px-Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_%2828194676262%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3376,
+          "height": 6000,
+          "title": "Cosplay of Kisame Hoshigaki at Japan Expo 2016 (28194676262).jpg",
+          "author": "Miguel Discart",
+          "license": "CC BY-SA 2.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Cosplay_of_Kisame_Hoshigaki_at_Japan_Expo_2016_(28194676262).jpg",
+          "source": "wikimedia",
+          "fit": 0.773,
+          "q": "Japanese hoshigaki"
+        }
+      ],
+      "slot": "p08_s01_2",
+      "t0": 7.88,
+      "t1": 18.59
+    }
+  ]
+}

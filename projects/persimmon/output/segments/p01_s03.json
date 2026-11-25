@@ -1,0 +1,129 @@
+{
+  "sid": "p01_s03",
+  "site": "chatgpt",
+  "at": "2026-11-25 14:56",
+  "segments": [
+    {
+      "text": "Ancient Greeks called it the fruit of the gods. East Asian poets wrote verses in its honour. So how did a botanical contradiction become one of the world’s most treasured winter delicacies?",
+      "title": "Trái cây của thần linh",
+      "desc": "Một quả hồng chín đỏ rực được đặt ở trung tâm, gợi lên sự tôn kính dành cho loại quả này trong văn hóa Hy Lạp cổ đại và thi ca Đông Á.",
+      "queries": [
+        "ancient Greek symposium",
+        "Chinese scholar poetry",
+        "ripe persimmon fruit"
+      ],
+      "query": "Ancient Greece East Asian poetry persimmon",
+      "short": "Persimmon poetry",
+      "prompt": "A historically grounded cinematic historical tableau exploring the cultural reverence for the persimmon across ancient civilizations. In the foreground, several ripe, brilliant orange persimmons with glossy skins and green leafy crowns rest on a weathered wooden table. In the background, on the left, an ancient Greek symposium from approximately the 4th century BCE, with Greek philosophers and poets wearing authentic white linen chitons and himations, gathered around a low table beneath classical stone columns. On the right, an East Asian scholar from ancient China during the Han dynasty, wearing traditional flowing robes and a simple scholar's headpiece, quietly composing poetry with a brush and ink on a scroll beneath an autumn persimmon tree. Golden autumn leaves drift through the courtyard. The composition connects these cultural traditions through the central fruit without suggesting that the historical figures occupied the same period or location. Warm late-afternoon sunlight illuminates the persimmons, contrasting with the softly shadowed architectural backgrounds. Eye-level medium-wide camera angle, realistic historical architecture, authentic clothing, natural human proportions, carefully detailed fruit.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Ancient_Greek_Symposium%2C_Archaeological_Museum_of_Nicopolis.jpg/1920px-Ancient_Greek_Symposium%2C_Archaeological_Museum_of_Nicopolis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Ancient_Greek_Symposium%2C_Archaeological_Museum_of_Nicopolis.jpg/500px-Ancient_Greek_Symposium%2C_Archaeological_Museum_of_Nicopolis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3056,
+          "height": 2292,
+          "title": "Ancient Greek Symposium, Archaeological Museum of Nicopolis.jpg",
+          "author": "Χαράλαμπος Γκούβας (Harry Gouvas)",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Ancient_Greek_Symposium,_Archaeological_Museum_of_Nicopolis.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Greek symposium"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Ancient_Greek_symposium_vases%2C_900_B.C.%2C_Archaeological_Museum_of_Thessaloniki.jpg/1920px-Ancient_Greek_symposium_vases%2C_900_B.C.%2C_Archaeological_Museum_of_Thessaloniki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Ancient_Greek_symposium_vases%2C_900_B.C.%2C_Archaeological_Museum_of_Thessaloniki.jpg/500px-Ancient_Greek_symposium_vases%2C_900_B.C.%2C_Archaeological_Museum_of_Thessaloniki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3264,
+          "height": 2448,
+          "title": "Ancient Greek symposium vases, 900 B.C., Archaeological Museum of Thessaloniki.jpg",
+          "author": "Gts-tg",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Ancient_Greek_symposium_vases,_900_B.C.,_Archaeological_Museum_of_Thessaloniki.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Greek symposium"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Thessaloniki_Archaeological_Museum_Votive_relief_depicting_a_symposium.jpg/1920px-Thessaloniki_Archaeological_Museum_Votive_relief_depicting_a_symposium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Thessaloniki_Archaeological_Museum_Votive_relief_depicting_a_symposium.jpg/500px-Thessaloniki_Archaeological_Museum_Votive_relief_depicting_a_symposium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6008,
+          "height": 4008,
+          "title": "Thessaloniki Archaeological Museum Votive relief depicting a symposium.jpg",
+          "author": "Ymblanter",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Thessaloniki_Archaeological_Museum_Votive_relief_depicting_a_symposium.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "ancient Greek symposium"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Ancient_Greek_symposium_vase%2C_900_B.C.%2C_Archaeological_Museum_of_Thessaloniki.jpg",
+          "thumb": "https://api.openverse.org/v1/images/c5e6dec4-5f2f-4955-a296-cf69e7554526/thumb/",
+          "width": 3264,
+          "height": 2448,
+          "title": "Ancient Greek symposium vase, 900 B.C., Archaeological Museum of Thessaloniki",
+          "author": "Gts-tg",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/w/index.php?curid=48930434",
+          "source": "openverse",
+          "fit": 1.0,
+          "q": "ancient Greek symposium"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Ancient_Greek_symposium_vases%2C_900_B.C.%2C_Archaeological_Museum_of_Thessaloniki.jpg",
+          "thumb": "https://api.openverse.org/v1/images/c1c792bb-0789-4dca-b425-49bceb2ff515/thumb/",
+          "width": 3264,
+          "height": 2448,
+          "title": "Ancient Greek symposium vases, 900 B.C., Archaeological Museum of Thessaloniki",
+          "author": "Gts-tg",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/w/index.php?curid=48930436",
+          "source": "openverse",
+          "fit": 1.0,
+          "q": "ancient Greek symposium"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Pythokles_painter%2C_Symposium%2C_Ancient_Greek_pottery_in_the_Museo_Gregoriano_Etrusco_02.jpg/1920px-Pythokles_painter%2C_Symposium%2C_Ancient_Greek_pottery_in_the_Museo_Gregoriano_Etrusco_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Pythokles_painter%2C_Symposium%2C_Ancient_Greek_pottery_in_the_Museo_Gregoriano_Etrusco_02.jpg/500px-Pythokles_painter%2C_Symposium%2C_Ancient_Greek_pottery_in_the_Museo_Gregoriano_Etrusco_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3456,
+          "height": 3456,
+          "title": "Pythokles painter, Symposium, Ancient Greek pottery in the Museo Gregoriano Etrusco 02.jpg",
+          "author": "Carlo Dell'Orto",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Pythokles_painter,_Symposium,_Ancient_Greek_pottery_in_the_Museo_Gregoriano_Etrusco_02.jpg",
+          "source": "wikimedia",
+          "fit": 0.869,
+          "q": "ancient Greek symposium"
+        },
+        {
+          "url": "https://live.staticflickr.com/46/135116101_b242553435_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/dbacc2f9-6c87-4a49-903e-d46e35f0ee78/thumb/",
+          "width": 1024,
+          "height": 684,
+          "title": "Athens - Acropolis: Theatre of Dionysis",
+          "author": "wallyg",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/70323761@N00/135116101",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "ancient Greek symposium"
+        },
+        {
+          "url": "https://live.staticflickr.com/51/135115983_249ec11610_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/88976e0c-37ef-4866-98a3-cee3faf2e371/thumb/",
+          "width": 1024,
+          "height": 682,
+          "title": "Athens - Acropolis: Theatre of Dionysis",
+          "author": "wallyg",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/70323761@N00/135115983",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "ancient Greek symposium"
+        }
+      ],
+      "slot": "p01_s03",
+      "t0": 37.69,
+      "t1": 50.4
+    }
+  ]
+}

@@ -11,4 +11,9 @@ data/
 *.m4a
 models/
 browser-profile-*/
-music/
+
+# project data snapshots in projects/<fruit>: keep script, voices, pics, plan; not renders
+!projects/*/voices/*.m4a
+projects/*/output/parts/
+projects/*/output/_music_test.mp3
+projects/*/pics/_removed/

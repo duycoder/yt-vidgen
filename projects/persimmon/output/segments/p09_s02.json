@@ -1,0 +1,129 @@
+{
+  "sid": "p09_s02",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:28",
+  "segments": [
+    {
+      "text": "In Spain’s Ribera del Xúquer valley, growers developed a popular brand known as Rojo Brillante, treated with carbon dioxide after harvest to remove astringency while keeping the flesh firm.",
+      "title": "Bí quyết hồng giòn Tây Ban Nha",
+      "desc": "Những người trồng hồng tại thung lũng Ribera del Xúquer, Tây Ban Nha, thu hoạch giống Rojo Brillante và đưa quả vào quy trình xử lý khí carbon dioxide trong các cơ sở đóng gói hiện đại để loại bỏ vị chát mà vẫn giữ phần thịt quả săn chắc.",
+      "queries": [
+        "persimmon processing",
+        "Spanish persimmons",
+        "persimmon orchard"
+      ],
+      "query": "Rojo Brillante persimmon Spain carbon dioxide processing",
+      "short": "Rojo Brillante persimmon",
+      "prompt": "A historically accurate documentary photograph of modern persimmon agriculture in the Ribera del Xúquer valley, Valencia, Spain, circa 2020s. Spanish agricultural workers wearing practical modern farm clothing carefully handle freshly harvested bright orange Rojo Brillante persimmons inside a contemporary fruit packing facility. Show large industrial storage chambers used for post-harvest carbon dioxide treatment, with crates of firm, glossy persimmons being prepared to remove natural astringency while preserving their crisp flesh. Include subtle visual details of professional fruit processing equipment, ventilated storage rooms and agricultural crates. Naturalistic industrial lighting, realistic Mediterranean agricultural environment, eye-level documentary camera angle, authentic contemporary Spanish farming practices.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Brookton_Hwy_160520_gnangarra-100.jpg/1920px-Brookton_Hwy_160520_gnangarra-100.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Brookton_Hwy_160520_gnangarra-100.jpg/500px-Brookton_Hwy_160520_gnangarra-100.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 7360,
+          "height": 4912,
+          "title": "Brookton Hwy 160520 gnangarra-100.jpg",
+          "author": "Gnangarra",
+          "license": "CC BY 2.5 au",
+          "page": "https://commons.wikimedia.org/wiki/File:Brookton_Hwy_160520_gnangarra-100.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon processing"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._8-9_%281901%29_%2820507301161%29.jpg/1920px-Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._8-9_%281901%29_%2820507301161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._8-9_%281901%29_%2820507301161%29.jpg/500px-Bulletin_%28Pennsylvania_Department_of_Forestry%29%2C_no._8-9_%281901%29_%2820507301161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3218,
+          "height": 2328,
+          "title": "Bulletin (Pennsylvania Department of Forestry), no. 8-9 (1901) (20507301161).jpg",
+          "author": "Pennsylvania. Dept. of Forestry",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:Bulletin_(Pennsylvania_Department_of_Forestry),_no._8-9_(1901)_(20507301161).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "persimmon processing"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/PSF-P680001.png/1920px-PSF-P680001.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/PSF-P680001.png/500px-PSF-P680001.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5072,
+          "height": 7006,
+          "title": "PSF-P680001.png",
+          "author": "Pearson Scott Foresman",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:PSF-P680001.png",
+          "source": "wikimedia",
+          "fit": 0.808,
+          "q": "persimmon processing"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/The_California_horticulturist_and_floral_magazine_%281870%29_%2814781815114%29.jpg/1920px-The_California_horticulturist_and_floral_magazine_%281870%29_%2814781815114%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/The_California_horticulturist_and_floral_magazine_%281870%29_%2814781815114%29.jpg/500px-The_California_horticulturist_and_floral_magazine_%281870%29_%2814781815114%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2265,
+          "height": 3685,
+          "title": "The California horticulturist and floral magazine (1870) (14781815114).jpg",
+          "author": "Internet Archive Book Images",
+          "license": "No restrictions",
+          "page": "https://commons.wikimedia.org/wiki/File:The_California_horticulturist_and_floral_magazine_(1870)_(14781815114).jpg",
+          "source": "wikimedia",
+          "fit": 0.784,
+          "q": "persimmon processing"
+        },
+        {
+          "url": "https://live.staticflickr.com/4011/4501388693_67a3d58e6f_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/e62b5693-31d6-4b38-a75b-e530e6f51220/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "Hoshigaki",
+          "author": "Vegan Feast Catering",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/25128194@N02/4501388693",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "persimmon processing"
+        },
+        {
+          "url": "https://live.staticflickr.com/4556/38122721876_968cb675a0_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/01691ef1-c563-449a-a881-c794d8e9b749/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Week Gallery Theme - Still Life",
+          "author": "Daniel Arrhakis",
+          "license": "CC BY-NC 2.0",
+          "page": "https://www.flickr.com/photos/95314425@N07/38122721876",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "persimmon processing"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/53896620219_0a931f4b61_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/5744311d-ae5a-40c3-92f3-9d899bccf020/thumb/",
+          "width": 1024,
+          "height": 682,
+          "title": "Echoes of Old Japan",
+          "author": "PeterThoeny",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/98786299@N00/53896620219",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "persimmon processing"
+        },
+        {
+          "url": "https://live.staticflickr.com/3065/3030394289_04ecca5f59.jpg",
+          "thumb": "https://api.openverse.org/v1/images/41f877e6-653e-40af-889f-5ed9465a1259/thumb/",
+          "width": 500,
+          "height": 346,
+          "title": "Fruit Sucking Moth (Eudocima materna)",
+          "author": "Umang Dutt",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/7513474@N08/3030394289",
+          "source": "openverse",
+          "fit": 0.396,
+          "q": "persimmon processing"
+        }
+      ],
+      "slot": "p09_s02",
+      "t0": 17.92,
+      "t1": 30.34
+    }
+  ]
+}

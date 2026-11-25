@@ -1,0 +1,129 @@
+{
+  "sid": "p01_s01",
+  "site": "chatgpt",
+  "at": "2026-11-25 14:53",
+  "segments": [
+    {
+      "text": "Imagine biting into a glossy, bright orange fruit that looks like a ripe tomato. You expect a burst of honeyed sweetness. Instead, your mouth instantly dries out, as if you have just chewed on a piece of raw chalk.",
+      "title": "Vị Ngọt Hóa Đắng",
+      "desc": "Một người thưởng thức quả hồng cam bóng mọng nhưng bất ngờ nhăn mặt vì vị chát khô khốc khiến miệng gần như mất hết nước bọt.",
+      "queries": [
+        "person biting fruit",
+        "orange persimmon fruit",
+        "astringent persimmon"
+      ],
+      "query": "persimmon biting reaction",
+      "short": "persimmon, biting, reaction",
+      "prompt": "A historically grounded documentary scene in an autumnal East Asian village market, late 19th century. A middle-aged East Asian traveller wearing traditional period clothing holds a glossy, vivid orange Fuyu persimmon that resembles a ripe tomato. In a close-up three-quarter camera angle, he takes a bite expecting sweetness, then immediately grimaces as the intense astringency dries his mouth. His lips tighten, cheeks tense, and eyes show surprise and discomfort. The freshly bitten persimmon reveals firm orange flesh. Several ripe-looking persimmons rest in a rustic wooden basket nearby. Natural golden autumn sunlight illuminates the fruit, contrasting with the traveller's uncomfortable expression. Authentic historical market surroundings, realistic human anatomy, detailed fruit texture, cinematic natural lighting.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Seikima-II_20100704_Japan_Expo_32.jpg/1920px-Seikima-II_20100704_Japan_Expo_32.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Seikima-II_20100704_Japan_Expo_32.jpg/500px-Seikima-II_20100704_Japan_Expo_32.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5184,
+          "height": 3456,
+          "title": "Seikima-II 20100704 Japan Expo 32.jpg",
+          "author": "Georges Seguin (Okki)",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Seikima-II_20100704_Japan_Expo_32.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "person biting fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/U_S_Department_of_Agriculture_%28USDA%29_Secretary_Brooke_Rollins_host_a_standing_press_conference_from_the_newly_opened_Knipling-Bushland_U_S_Livestock_Insects_Research_Laboratory%2C_in_Kerrville%2C_Texas_to_provide_updates_o_%2855325774186%29.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/U_S_Department_of_Agriculture_%28USDA%29_Secretary_Brooke_Rollins_host_a_standing_press_conference_from_the_newly_opened_Knipling-Bushland_U_S_Livestock_Insects_Research_Laboratory%2C_in_Kerrville%2C_Texas_to_provide_updates_o_%2855325774186%29.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5616,
+          "height": 3744,
+          "title": "U S Department of Agriculture (USDA) Secretary Brooke Rollins host a standing press conference from the newly opened Knipling-Bushland U S Livestock Insects Research Laboratory, in Kerrville, Texas to provide updates o (55325774186).jpg",
+          "author": "USDAgov",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:U_S_Department_of_Agriculture_(USDA)_Secretary_Brooke_Rollins_host_a_standing_press_conference_from_the_newly_opened_Knipling-Bushland_U_S_Livestock_Insects_Research_Laboratory,_in_Kerrville,_Texas_to_provide_updates_o_(55325774186).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "person biting fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Secretary_Rollins_New_World_Screwworm_Press_Conf_%2C_and_Knipling-Bushland_U_S_Livestock_Insects_Research_Laboratory%2C_Tour_%2855326002584%29.jpg/1920px-Secretary_Rollins_New_World_Screwworm_Press_Conf_%2C_and_Knipling-Bushland_U_S_Livestock_Insects_Research_Laboratory%2C_Tour_%2855326002584%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Secretary_Rollins_New_World_Screwworm_Press_Conf_%2C_and_Knipling-Bushland_U_S_Livestock_Insects_Research_Laboratory%2C_Tour_%2855326002584%29.jpg/500px-Secretary_Rollins_New_World_Screwworm_Press_Conf_%2C_and_Knipling-Bushland_U_S_Livestock_Insects_Research_Laboratory%2C_Tour_%2855326002584%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 8640,
+          "height": 5760,
+          "title": "Secretary Rollins New World Screwworm Press Conf , and Knipling-Bushland U S Livestock Insects Research Laboratory, Tour (55326002584).jpg",
+          "author": "USDAgov",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Secretary_Rollins_New_World_Screwworm_Press_Conf_,_and_Knipling-Bushland_U_S_Livestock_Insects_Research_Laboratory,_Tour_(55326002584).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "person biting fruit"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Saint_John_the_Baptist_Biting_a_Piece_of_Fruit_MET_DP817332.jpg/1920px-Saint_John_the_Baptist_Biting_a_Piece_of_Fruit_MET_DP817332.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Saint_John_the_Baptist_Biting_a_Piece_of_Fruit_MET_DP817332.jpg/500px-Saint_John_the_Baptist_Biting_a_Piece_of_Fruit_MET_DP817332.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2822,
+          "height": 3717,
+          "title": "Saint John the Baptist Biting a Piece of Fruit MET DP817332.jpg",
+          "author": "Stefano della Bella",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Saint_John_the_Baptist_Biting_a_Piece_of_Fruit_MET_DP817332.jpg",
+          "source": "wikimedia",
+          "fit": 0.816,
+          "q": "person biting fruit"
+        },
+        {
+          "url": "https://live.staticflickr.com/4753/28162501109_802d51a12f_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/a642dc5c-96ae-420e-8c4f-7e9ec5893e85/thumb/",
+          "width": 1024,
+          "height": 610,
+          "title": "Centaur Crossing",
+          "author": "Halfwraith",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/59594078@N06/28162501109",
+          "source": "openverse",
+          "fit": 0.515,
+          "q": "person biting fruit"
+        },
+        {
+          "url": "https://live.staticflickr.com/4391/37223794531_e8637ea101_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/7167b22b-d743-453a-8aa6-43b1341c9e09/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Food Sessions",
+          "author": "NYCDOT",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/10812336@N02/37223794531",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "person biting fruit"
+        },
+        {
+          "url": "https://live.staticflickr.com/3204/2722377695_da04b61466_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/65f62a66-6c5e-40a1-ba92-88ade9ad7eff/thumb/",
+          "width": 1024,
+          "height": 921,
+          "title": "20080629 - Britt's birthday dinner - onion volcano - (by Dad)",
+          "author": "Claire CJS",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/31355686@N00/2722377695",
+          "source": "openverse",
+          "fit": 0.493,
+          "q": "person biting fruit"
+        },
+        {
+          "url": "https://live.staticflickr.com/4437/37223793521_2e354c2727_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/221e1005-e970-4b51-aa08-01e759ff0f2c/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Food Sessions",
+          "author": "NYCDOT",
+          "license": "CC BY-NC-ND 2.0",
+          "page": "https://www.flickr.com/photos/10812336@N02/37223793521",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "person biting fruit"
+        }
+      ],
+      "slot": "p01_s01",
+      "t0": 0.0,
+      "t1": 13.39
+    }
+  ]
+}

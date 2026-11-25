@@ -1,0 +1,251 @@
+{
+  "sid": "p04_s01",
+  "site": "chatgpt",
+  "at": "2026-11-25 15:05",
+  "segments": [
+    {
+      "text": "Throughout history, people found ingenious ways to use almost every part of the persimmon tree. In Japan, the juice of unripe green persimmons was fermented to create kakishibu, a dark, pungent liquid rich in natural tannins.",
+      "title": "Bí quyết tạo Kakishibu",
+      "desc": "Những người thợ Nhật Bản thời Edo nghiền ép quả hồng xanh chưa chín, thu lấy nước và ủ trong những thùng gỗ lớn để tạo ra dung dịch kakishibu màu nâu sẫm.",
+      "queries": [
+        "traditional fermentation",
+        "green persimmons",
+        "Japanese wooden barrels"
+      ],
+      "query": "Japanese artisans persimmon fermentation wooden barrels",
+      "short": "Persimmon fermentation",
+      "prompt": "A historically accurate scene in rural Japan during the late Edo period (18th–19th century), showing Japanese farmers and traditional artisans producing kakishibu from unripe green persimmons. Workers wearing simple indigo cotton kimono, traditional headcloths and straw sandals carefully crush fresh green persimmons and collect their juice in large wooden tubs. Nearby, dark brown liquid ferments inside traditional wooden barrels, representing the production of natural tannin-rich persimmon extract. Green persimmon branches and baskets of freshly harvested fruit fill the rustic courtyard. Warm natural afternoon sunlight, earthy wooden architecture, authentic Japanese agricultural tools, medium-wide camera angle with emphasis on the fermentation process.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Koh_Dach_%26_Mekong_Isles_-_MekongIsles1209.jpg/1920px-Koh_Dach_%26_Mekong_Isles_-_MekongIsles1209.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Koh_Dach_%26_Mekong_Isles_-_MekongIsles1209.jpg/500px-Koh_Dach_%26_Mekong_Isles_-_MekongIsles1209.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5163,
+          "height": 3442,
+          "title": "Koh Dach & Mekong Isles - MekongIsles1209.jpg",
+          "author": "lumoplank",
+          "license": "CC0",
+          "page": "https://commons.wikimedia.org/wiki/File:Koh_Dach_%26_Mekong_Isles_-_MekongIsles1209.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "traditional fermentation"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Wuzhen_Xizha_2009-02.jpg/1920px-Wuzhen_Xizha_2009-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Wuzhen_Xizha_2009-02.jpg/500px-Wuzhen_Xizha_2009-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2816,
+          "height": 2112,
+          "title": "Wuzhen Xizha 2009-02.jpg",
+          "author": "Gerbil",
+          "license": "CC BY-SA 3.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Wuzhen_Xizha_2009-02.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "traditional fermentation"
+        },
+        {
+          "url": "https://pd.w.org/2026/04/90569d23e6a3b7cf9.87191563-2048x1536.jpg",
+          "thumb": "https://api.openverse.org/v1/images/8072c806-53bf-4c59-ab99-1d6f83b6ef49/thumb/",
+          "width": 2048,
+          "height": 1536,
+          "title": "Hand holding dark textured millet pellets, used for traditional fermented drinks or porridge.",
+          "author": "Mohammed Kateregga",
+          "license": "CC CC0 1.0",
+          "page": "https://wordpress.org/photos/photo/90569d23e6/",
+          "source": "openverse",
+          "fit": 1.0,
+          "q": "traditional fermentation"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Lait_caill%C3%A9_02.jpg/1920px-Lait_caill%C3%A9_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Lait_caill%C3%A9_02.jpg/500px-Lait_caill%C3%A9_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3024,
+          "height": 4032,
+          "title": "Lait caillé 02.jpg",
+          "author": "Cheikh cherif",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Lait_caill%C3%A9_02.jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "traditional fermentation"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Lait_caill%C3%A9_01.jpg/1920px-Lait_caill%C3%A9_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Lait_caill%C3%A9_01.jpg/500px-Lait_caill%C3%A9_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3024,
+          "height": 4032,
+          "title": "Lait caillé 01.jpg",
+          "author": "Cheikh cherif",
+          "license": "CC BY-SA 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Lait_caill%C3%A9_01.jpg",
+          "source": "wikimedia",
+          "fit": 0.814,
+          "q": "traditional fermentation"
+        },
+        {
+          "url": "https://live.staticflickr.com/2060/1623037257_820367233a_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/bcbd536c-4485-4926-869e-dfbee0cf99db/thumb/",
+          "width": 1024,
+          "height": 767,
+          "title": "Garlic Mushroom with chorizo and peppers",
+          "author": "rovingI",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/70522326@N00/1623037257",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "traditional fermentation"
+        },
+        {
+          "url": "https://live.staticflickr.com/6207/6060329564_97f164ecbd_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/47e8c237-1967-43a6-9630-6148086de04b/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "Kazan/ cauldron/sljive/plums/rakija",
+          "author": "brankomaster",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/15966463@N02/6060329564",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "traditional fermentation"
+        },
+        {
+          "url": "https://live.staticflickr.com/3217/2647878654_7fdc884523_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/0b8a0d9c-2baa-4d1c-9077-b36f64e94ed3/thumb/",
+          "width": 1024,
+          "height": 768,
+          "title": "DSC20498, Rutherford Hill Vineyards, Napa Valley, California",
+          "author": "jimg944",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/21203533@N00/2647878654",
+          "source": "openverse",
+          "fit": 0.558,
+          "q": "traditional fermentation"
+        }
+      ],
+      "slot": "p04_s01",
+      "t0": 0.0,
+      "t1": 13.73
+    },
+    {
+      "text": "Artisans brushed this liquid onto paper umbrellas, fishing nets, and wooden buildings to make them waterproof and resistant to rot.",
+      "title": "Lớp áo bảo vệ tự nhiên",
+      "desc": "Những nghệ nhân Nhật Bản dùng chổi quét dung dịch kakishibu lên ô giấy truyền thống, lưới đánh cá và các bề mặt gỗ để chống thấm nước và mục nát.",
+      "queries": [
+        "umbrella coating",
+        "Japanese paper umbrella",
+        "traditional fishing nets"
+      ],
+      "query": "Japanese artisans kakishibu waterproofing crafts",
+      "short": "Kakishibu coating",
+      "prompt": "A historically accurate traditional Japanese village during the late Edo period (18th–19th century), showing skilled Japanese artisans applying dark reddish-brown kakishibu persimmon tannin liquid to everyday objects. In the foreground, a craftsman wearing a traditional indigo cotton kimono carefully brushes the liquid onto the surface of a handmade washi paper umbrella stretched open on a wooden frame. Behind him, another worker treats fishing nets laid out to dry, while a third applies the protective coating to the exterior wooden walls of a traditional Japanese building. Authentic wooden brushes, handmade paper, natural fiber fishing nets, timber architecture and traditional work clothing. Soft daylight in a rural workshop courtyard, realistic natural colors, eye-level medium-wide camera angle capturing the practical waterproofing process.",
+      "cands": [
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Stand%2C_umbrella_%28AM_824-3%29.jpg/1920px-Stand%2C_umbrella_%28AM_824-3%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Stand%2C_umbrella_%28AM_824-3%29.jpg/500px-Stand%2C_umbrella_%28AM_824-3%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2272,
+          "height": 1704,
+          "title": "Stand, umbrella (AM 824-3).jpg",
+          "author": "P Hutson & Co. Ltd",
+          "license": "CC BY 4.0",
+          "page": "https://commons.wikimedia.org/wiki/File:Stand,_umbrella_(AM_824-3).jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "umbrella coating"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Thomas_E._Robertson%2C_Com._of_Patents_with_old_models%2C_6-19-25_LCCN2016850478.jpg/1920px-Thomas_E._Robertson%2C_Com._of_Patents_with_old_models%2C_6-19-25_LCCN2016850478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Thomas_E._Robertson%2C_Com._of_Patents_with_old_models%2C_6-19-25_LCCN2016850478.jpg/500px-Thomas_E._Robertson%2C_Com._of_Patents_with_old_models%2C_6-19-25_LCCN2016850478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5949,
+          "height": 4255,
+          "title": "Thomas E. Robertson, Com. of Patents with old models, 6-19-25 LCCN2016850478.jpg",
+          "author": "National Photo Company Collection",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Thomas_E._Robertson,_Com._of_Patents_with_old_models,_6-19-25_LCCN2016850478.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "umbrella coating"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/National_Guard_camp%3F_LCCN2016823023.jpg/1920px-National_Guard_camp%3F_LCCN2016823023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/National_Guard_camp%3F_LCCN2016823023.jpg/500px-National_Guard_camp%3F_LCCN2016823023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6037,
+          "height": 4359,
+          "title": "National Guard camp? LCCN2016823023.jpg",
+          "author": "National Photo Company Collection",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:National_Guard_camp%3F_LCCN2016823023.jpg",
+          "source": "wikimedia",
+          "fit": 1.0,
+          "q": "umbrella coating"
+        },
+        {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Ernest_Ackerman_with_umbrella_%28cropped%29.jpg/1920px-Ernest_Ackerman_with_umbrella_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Ernest_Ackerman_with_umbrella_%28cropped%29.jpg/500px-Ernest_Ackerman_with_umbrella_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2612,
+          "height": 3997,
+          "title": "Ernest Ackerman with umbrella (cropped).jpg",
+          "author": "National Photo Company Collection",
+          "license": "Public domain",
+          "page": "https://commons.wikimedia.org/wiki/File:Ernest_Ackerman_with_umbrella_(cropped).jpg",
+          "source": "wikimedia",
+          "fit": 0.793,
+          "q": "umbrella coating"
+        },
+        {
+          "url": "https://live.staticflickr.com/2764/4208743680_8789b73f05_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/3c880027-1076-4057-b1e6-31bac28f64a8/thumb/",
+          "width": 1024,
+          "height": 923,
+          "title": "Jonathan, I think you're old enough to have an umbrella of your own now...",
+          "author": "Ed Yourdon",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/72098626@N00/4208743680",
+          "source": "openverse",
+          "fit": 0.493,
+          "q": "umbrella coating"
+        },
+        {
+          "url": "https://live.staticflickr.com/4761/28327980529_fd6ce4206f_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/944bedd7-36ca-43b4-a224-a8e063b6b1f0/thumb/",
+          "width": 1024,
+          "height": 683,
+          "title": "Wandering in Tokyo",
+          "author": "Trey Ratcliff",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/95572727@N00/28327980529",
+          "source": "openverse",
+          "fit": 0.535,
+          "q": "umbrella coating"
+        },
+        {
+          "url": "https://live.staticflickr.com/2621/4208746260_539da7e6f5_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/8abb4798-326b-47f6-a938-43e1e0753a21/thumb/",
+          "width": 1024,
+          "height": 694,
+          "title": "Hey! You with the camera! I'm sticking my tongue out at you!",
+          "author": "Ed Yourdon",
+          "license": "CC BY-NC-SA 2.0",
+          "page": "https://www.flickr.com/photos/72098626@N00/4208746260",
+          "source": "openverse",
+          "fit": 0.538,
+          "q": "umbrella coating"
+        },
+        {
+          "url": "https://live.staticflickr.com/1026/5180651937_4f81640fc7_b.jpg",
+          "thumb": "https://api.openverse.org/v1/images/50373cfb-f0ca-4c7d-843f-3ec2f7733ec5/thumb/",
+          "width": 1024,
+          "height": 832,
+          "title": "Its a rainy day..",
+          "author": "VinothChandar",
+          "license": "CC BY 2.0",
+          "page": "https://www.flickr.com/photos/44345361@N06/5180651937",
+          "source": "openverse",
+          "fit": 0.495,
+          "q": "umbrella coating"
+        }
+      ],
+      "slot": "p04_s01_2",
+      "t0": 13.73,
+      "t1": 21.82
+    }
+  ]
+}
