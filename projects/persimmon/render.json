@@ -1,0 +1,16 @@
+{
+  "o_res": "1920x1080",
+  "o_transition": "random_soft",
+  "o_effects": "random",
+  "o_seed": "1",
+  "o_xfade": "0.8",
+  "o_zoom": "1.15",
+  "o_gap": "0.5",
+  "o_preset": "medium",
+  "o_titles": "0",
+  "o_parts": "",
+  "o_music": "",
+  "o_music_db": "-16",
+  "o_music_list": "[\"Classical/Bach - Cello Suite No 1 Prelude.mp3\",\"Classical/Satie - Gnossienne No 1.mp3\",\"Classical/Chopin - Nocturne in C-sharp minor.mp3\"]",
+  "o_music_mode": "playlist"
+}

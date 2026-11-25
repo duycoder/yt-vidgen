@@ -1222,12 +1222,28 @@ async function copyText(t) {
     document.execCommand('copy'); ta.remove(); toast('Đã copy'); }
 }
 const RO_IDS = ['o_res', 'o_transition', 'o_effects', 'o_seed', 'o_xfade', 'o_zoom', 'o_gap', 'o_preset', 'o_titles', 'o_parts', 'o_music', 'o_music_db', 'o_music_list', 'o_music_mode'];
-function savedRO() { try { return JSON.parse(localStorage.getItem('vg_ropts') || '{}'); } catch { return {}; } }
+// render settings: this browser's last choices, overridden by what the PROJECT saved (render.json, goes to git)
+function savedRO() {
+  let local = {}; try { local = JSON.parse(localStorage.getItem('vg_ropts') || '{}'); } catch {}
+  return {...local, ...(S.state?.render_opts || {})};
+}
+let roTimer = null;
+function saveProjectRO(id, val) {
+  if (!S.state || !S.project) return;
+  S.state.render_opts = {...(S.state.render_opts || {}), [id]: val};
+  clearTimeout(roTimer);
+  roTimer = setTimeout(() => api(`${P()}/render_opts`, {method: 'PUT', json: S.state.render_opts}).catch(e => toast(e.message)), 400);
+}
 function bindRO() {  // remember render options between visits (also used by scene previews)
   const sv = savedRO();
   RO_IDS.forEach(id => { const el = $('#' + id); if (!el) return;
     if (sv[id] != null) el.value = sv[id];
-    el.addEventListener('change', () => { const o = savedRO(); o[id] = el.value; try { localStorage.setItem('vg_ropts', JSON.stringify(o)); } catch {} }); });
+    el.addEventListener('change', () => {
+      let o = {}; try { o = JSON.parse(localStorage.getItem('vg_ropts') || '{}'); } catch {}
+      o[id] = el.value; try { localStorage.setItem('vg_ropts', JSON.stringify(o)); } catch {}
+      saveProjectRO(id, el.value); }); });
+  if (S.state && !Object.keys(S.state.render_opts || {}).length)  // first visit: store current settings in the project
+    RO_IDS.forEach(id => { const el = $('#' + id); if (el) saveProjectRO(id, el.value); });
 }
 function renderOpts() {
   const v = id => { const el = $('#' + id); return el ? el.value : savedRO()[id]; };

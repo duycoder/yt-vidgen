@@ -27,7 +27,13 @@ import vidgen
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent  # projects folder
+ROOT = HERE.parent  # older projects live next to vidgen/ (local only)
+PROJECTS = HERE / "projects"  # projects inside the repo: committed to git, editable on any computer
+ROOTS = [PROJECTS, ROOT]  # search order; new projects are created in PROJECTS
+
+
+def done_all():
+    return sorted({t for r in ROOTS if r.exists() for t in studio.done_topics(r)})
 SETTINGS = HERE / "settings.json"
 app = FastAPI(title="vidgen")
 
@@ -45,10 +51,12 @@ def keys():
 
 
 def proj_dir(name: str) -> Path:
-    p = (ROOT / name).resolve()
-    if p.parent != ROOT or not re.fullmatch(r"[\w .\-()]+", name):
+    if not re.fullmatch(r"[\w .\-()]+", name or "") or name.strip(" .") != name or name in ("vidgen", "projects"):
         raise HTTPException(400, "bad project name")
-    return p
+    for r in ROOTS:
+        if (r / name).is_dir():
+            return (r / name).resolve()
+    return (PROJECTS / name).resolve()  # not found anywhere -> a new project goes into the repo
 
 
 def read_json(path: Path, default):
@@ -221,8 +229,10 @@ def put_settings(data: dict = Body(...)):
 # ----------------------------------------------------------------- projects
 @app.get("/api/projects")
 def list_projects():
-    return [d.name for d in sorted(ROOT.iterdir())
-            if d.is_dir() and ((d / "texts").exists() or (d / "voices").exists())]
+    PROJECTS.mkdir(exist_ok=True)
+    names = {d.name for r in ROOTS for d in r.iterdir()
+             if d.is_dir() and d.name not in ("vidgen", "projects") and ((d / "texts").exists() or (d / "voices").exists())}
+    return sorted(names, key=str.lower)
 
 
 @app.post("/api/projects")
@@ -279,7 +289,19 @@ def project_state(name: str):
     video = p / "output" / "video.mp4"
     return dict(name=name, texts=[t.name for t in texts], voices=[v.name for v in voices], parts=parts,
                 parse_error=parse_error, plan=plan, style=pr["style"], aspect=pr.get("aspect", "16:9"),
-                video=f"/files/{name}/output/video.mp4?v={int(video.stat().st_mtime)}" if video.exists() else None)
+                video=f"/files/{name}/output/video.mp4?v={int(video.stat().st_mtime)}" if video.exists() else None,
+                render_opts=read_json(p / "render.json", {}))
+
+
+@app.put("/api/projects/{name}/render_opts")
+def save_render_opts(name: str, body: dict = Body(...)):
+    """Render tab settings (music, volume, playlist, Ken Burns…) saved WITH the project (render.json),
+    so they travel with the project folder instead of living only in one browser."""
+    p = proj_dir(name)
+    cur = read_json(p / "render.json", {})
+    cur.update({k: str(v) for k, v in body.items() if k.startswith("o_") and len(k) < 40 and len(str(v)) < 4000})
+    write_json(p / "render.json", cur)
+    return cur
 
 
 @app.post("/api/projects/{name}/upload")
@@ -1159,7 +1181,7 @@ AI_SITES = ("chatgpt", "gemini", "grok", "api_gemini", "api_openai")
 def get_ideas():
     k = keys()
     return {"ideas": read_json(studio.IDEAS_FILE, {}).get("ideas", []), "voices": studio.VOICES,
-            "youtube_key": bool(k.get("YOUTUBE_API_KEY")), "done": studio.done_topics(ROOT),
+            "youtube_key": bool(k.get("YOUTUBE_API_KEY")), "done": done_all(),
             "api_keys": {s: bool(k.get(n)) for s, n in studio.API_SITES.items()}}
 
 
@@ -1168,7 +1190,7 @@ def suggest_ideas(site: str = Body("gemini", embed=True), n: int = Body(12, embe
     if site not in AI_SITES:
         raise HTTPException(400, "site must be " + "/".join(AI_SITES))
     def work(job, emit):
-        prompt = studio.IDEAS_PROMPT.format(n=n, done=", ".join(studio.done_topics(ROOT)) or "none")
+        prompt = studio.IDEAS_PROMPT.format(n=n, done=", ".join(done_all()) or "none")
         text = studio.ask(site, prompt, keys(), log=emit)
         ideas = studio.parse_json_block(text)
         write_json(studio.IDEAS_FILE, {"ideas": ideas, "site": site, "at": time.strftime("%Y-%m-%d %H:%M")})
@@ -1637,7 +1659,14 @@ def index():
     return FileResponse(HERE / "static" / "index.html")
 
 
-app.mount("/files", StaticFiles(directory=ROOT), name="files")
+@app.get("/files/{name}/{path:path}")
+def project_file(name: str, path: str):
+    """Serve a file of a project, wherever the project lives (repo projects/ or the folder next to vidgen)."""
+    p = proj_dir(name)
+    f = (p / path).resolve()
+    if p not in f.parents or not f.is_file():
+        raise HTTPException(404, "not found")
+    return FileResponse(f)
 
 class _QuietAccess:
     """Hide the browser's once-a-second job polling and image/video loads from the console log."""
