@@ -532,8 +532,13 @@ function sceneCard(p, s) {
       <div class="row muted" style="font-size:12px">${fmt(s.start)} → ${fmt(s.end)} (${(s.end - s.start).toFixed(1)}s${n > 1 ? ` · ${n} ảnh` : ''})
         <button style="padding:2px 8px" onclick="playSeg('${esc(p.voice)}',${s.start},${s.end})">▶ nghe</button>
         <button style="padding:2px 8px" title="Xem ngay cảnh này với ảnh + hiệu ứng + giọng, không cần render" onclick="livePreview({scene:'${s.id}'})">⚡ Xem thử</button></div>
-      <div class="narr">${n > 1 && sh.text ? markWords(s.text, sh.text) : esc(s.text)}</div>
-      ${n > 1 && sh.text ? `<div class="muted" style="font-size:12px">Ảnh ${j} (${fmt(sh.t0)}–${fmt(sh.t1)}) minh hoạ phần <mark>tô sáng</mark></div>` : ''}
+      <div class="narr" title="Bôi đen 1 đoạn lời để làm ảnh riêng cho đúng đoạn đó" onmouseup="narrSelect(event,'${s.id}',this)">${n > 1 && sh.text ? markWords(s.text, sh.text) : esc(s.text)}</div>
+      ${n > 1 && sh.text ? `<div class="muted row" style="font-size:12px;gap:6px">${(() => {
+          const same = s.shots.map((x, k) => [x, k + 1]).filter(([x]) => x.text === sh.text);
+          return same.length > 1 ? `Ảnh ${same.map(([, k]) => k).join(' + ')} (${fmt(same[0][0].t0)}–${fmt(same[same.length - 1][0].t1)}) cùng minh hoạ phần <mark>tô sáng</mark> · ảnh ${j}: ${fmt(sh.t0)}–${fmt(sh.t1)}`
+            : `Ảnh ${j} (${fmt(sh.t0)}–${fmt(sh.t1)}) minh hoạ phần <mark>tô sáng</mark>`; })()}
+        ${n < 8 ? `<button style="padding:2px 8px" title="Thêm 1 ảnh nữa cho đúng đoạn tô sáng này: chia đôi thời gian của ảnh ${j}, các ảnh khác giữ nguyên thời điểm" onclick="splitShot('${s.id}',${j})">＋ Thêm ảnh cho đoạn này</button>` : ''}</div>`
+        : n < 8 ? `<div><button style="padding:2px 8px;font-size:12px" title="Chia đôi thời gian của ảnh ${j} thành 2 ảnh" onclick="splitShot('${s.id}',${j})">＋ Thêm ảnh cho đoạn này</button></div>` : ''}
       <label>Từ khoá tìm ảnh (kho ảnh thật)</label>
       <input value="${esc(s.query)}" onchange="saveScene('${s.id}',{query:this.value})" id="q_${s.id}">
       <label>Prompt mô tả (cho AI)${n > 1 ? ` — ảnh ${j}` : ''}</label>
@@ -627,6 +632,41 @@ function rerenderCard(id) { const [p, s] = findScene(id); if (s) $('#sc_' + id).
 function selShot(id, j) { S.sel[id] = j; rerenderCard(id); }
 async function addShot(id, n) {
   await api(`${P()}/scene/${id}/shots`, {method: 'PUT', json: {n: n + 1}}); S.sel[id] = n + 1; refreshScene(id);
+}
+/* highlight words in the narration -> own image slot for exactly that passage */
+const nWords = t => (t.match(/\S+/g) || []).length;
+function narrSelect(ev, id, box) {
+  document.querySelectorAll('.selPop').forEach(x => x.remove());
+  const sel = window.getSelection();
+  if (!sel.rangeCount || sel.isCollapsed) return;
+  const r = sel.getRangeAt(0);
+  if (!box.contains(r.startContainer) || !box.contains(r.endContainer)) return;
+  const pre = document.createRange(); pre.setStart(box, 0); pre.setEnd(r.startContainer, r.startOffset);
+  const upto = document.createRange(); upto.setStart(box, 0); upto.setEnd(r.endContainer, r.endOffset);
+  const a = pre.toString(), b = upto.toString();
+  const w0 = nWords(a) - (a && /\S$/.test(a) ? 1 : 0), w1 = nWords(b);  // a half-selected word counts as selected
+  if (w1 <= w0) return;
+  const words = box.textContent.match(/\S+/g) || [];
+  const pop = document.createElement('div'); pop.className = 'selPop';
+  const rc = r.getBoundingClientRect();
+  pop.style.cssText = `position:fixed;left:${Math.min(rc.left, innerWidth - 300)}px;top:${rc.bottom + 6}px;z-index:50;background:#1b1f27;border:1px solid #e0a85a;border-radius:8px;padding:6px 8px;box-shadow:0 4px 16px #0008;font-size:12px;max-width:290px`;
+  pop.innerHTML = `<div class="muted" style="margin-bottom:4px">“${esc(words.slice(w0, w1).join(' ').slice(0, 90))}${w1 - w0 > 15 ? '…' : ''}” · ${w1 - w0} từ</div>
+    <button class="primary" style="padding:3px 10px">🖼 Ảnh riêng cho đoạn này</button>`;
+  pop.querySelector('button').onclick = () => { pop.remove(); selectWords(id, w0, w1); };
+  pop.onmousedown = e => e.stopPropagation();
+  document.body.appendChild(pop);
+  setTimeout(() => document.addEventListener('mousedown', () => pop.remove(), {once: true}), 0);
+}
+async function selectWords(id, w0, w1) {
+  try {
+    const r = await api(`${P()}/scene/${id}/select`, {method: 'POST', json: {w0, w1}});
+    S.sel[id] = r.k; await refreshScene(id);
+    toast(`Ảnh ${r.k} dành cho đoạn đã chọn — tìm / tạo ảnh cho nó` + (r.removed.length ? ` · đã bỏ ${r.removed.length} ảnh nằm trong đoạn (lưu ở pics/_removed)` : ''));
+  } catch (e) { toast(e.message); }
+}
+async function splitShot(id, j) {
+  try { await api(`${P()}/scene/${id}/shot/${j}/split`, {method: 'POST'}); S.sel[id] = j + 1; refreshScene(id); toast(`Thêm ảnh ${j + 1} cho cùng đoạn — chọn ảnh cho nó`); }
+  catch (e) { toast(e.message); }
 }
 async function removeShot(id, j) {
   try { await api(`${P()}/scene/${id}/shot/${j}`, {method: 'DELETE'}); S.sel[id] = Math.max(1, j - 1); refreshScene(id); }
@@ -1037,7 +1077,25 @@ async function renderRender() {
       <label>Chất lượng<select id="o_preset"><option value="medium">Cao (chậm)</option><option value="veryfast">Nháp (nhanh)</option></select></label>
       <label>Tiêu đề part<select id="o_titles"><option value="0">Không</option><option value="1">Hiện 4s đầu</option></select></label>
       <label>Chỉ render part (trống = tất cả)<input id="o_parts" placeholder="vd: 1 3"></label>
+      <label>🎵 Nhạc nền<span class="row" style="gap:4px;flex-wrap:nowrap"><select id="o_music" style="flex:1;min-width:0"><option value="">Không có nhạc</option></select>
+        <button type="button" id="mPlay" title="Nghe bản nhạc" onclick="playMusic()">▶</button>
+        <button type="button" title="Thêm bài đang chọn vào danh sách phát (nhiều bài trong 1 video)" onclick="addToPlaylist()">＋</button>
+        <button type="button" title="Thêm file nhạc (mp3, wav, m4a…)" onclick="uploadMusic()">⬆</button></span></label>
+      <label>Âm lượng nhạc: <b id="o_music_dbv"></b><span class="row" style="gap:6px;flex-wrap:nowrap">
+        <span class="muted" style="font-size:11px">nhỏ</span>
+        <input id="o_music_db" type="range" min="-32" max="-6" step="1" value="-18" style="flex:1;min-width:0" oninput="musicDbLabel()">
+        <span class="muted" style="font-size:11px">to</span>
+        <button type="button" title="Nghe 30 giây lời đọc thật + nhạc ở mức này (trộn y như video thật)" id="mTest" onclick="testMusic()">🎧 Nghe thử</button></span></label>
     </div>
+    <div style="margin-top:8px"><div class="row" style="gap:8px;align-items:center">
+        <b style="font-size:13px">🎶 Danh sách phát</b>
+        <select id="o_music_mode" title="Cách dùng nhiều bài">
+          <option value="playlist">Nối tiếp nhau (chuyển mềm 3s)</option>
+          <option value="parts">Mỗi part đổi 1 bài</option></select>
+        <input id="o_music_list" type="hidden" value="[]"></div>
+      <div id="musicList" class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap"></div></div>
+    <p class="muted" style="font-size:12px;margin:6px 0 0">🎵 Âm lượng tính theo giọng đọc (bản nhạc nào cũng được cân bằng như nhau). Nhạc lặp hết video, tự hạ nhỏ thêm khi có lời đọc, mở dần đầu video và tắt dần cuối video.
+      Nhạc chỉ trộn ở bước ghép cuối — không phải render lại các part. Bản ⚡ Xem thử chưa có nhạc.</p>
     <div class="row" style="margin-top:14px"><button class="primary" onclick="doRender()">🎬 Render video</button>
       <span class="muted" style="margin-left:12px">Xem trước:</span>
       <select id="pv_part">${st.plan.parts.map(p => `<option value="${p.num}">Part ${p.num} — ${esc(p.title)}</option>`).join('')}</select>
@@ -1051,6 +1109,9 @@ async function renderRender() {
   <div class="card" id="thCard"></div>
   <div class="card"><h2>Credits ảnh (dán vào mô tả YouTube)</h2><textarea rows="8" readonly>${esc(cr.text)}</textarea></div>`;
   bindRO();
+  musicDbLabel();
+  loadMusic().then(() => { musicBtns(); renderPlaylist(); });
+  ['#o_music', '#o_music_mode'].forEach(s => $(s)?.addEventListener('change', renderPlaylist));
   renderYT();
   renderThumbs();
 }
@@ -1160,7 +1221,7 @@ async function copyText(t) {
   catch { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
     document.execCommand('copy'); ta.remove(); toast('Đã copy'); }
 }
-const RO_IDS = ['o_res', 'o_transition', 'o_effects', 'o_seed', 'o_xfade', 'o_zoom', 'o_gap', 'o_preset', 'o_titles', 'o_parts'];
+const RO_IDS = ['o_res', 'o_transition', 'o_effects', 'o_seed', 'o_xfade', 'o_zoom', 'o_gap', 'o_preset', 'o_titles', 'o_parts', 'o_music', 'o_music_db', 'o_music_list', 'o_music_mode'];
 function savedRO() { try { return JSON.parse(localStorage.getItem('vg_ropts') || '{}'); } catch { return {}; } }
 function bindRO() {  // remember render options between visits (also used by scene previews)
   const sv = savedRO();
@@ -1171,13 +1232,91 @@ function bindRO() {  // remember render options between visits (also used by sce
 function renderOpts() {
   const v = id => { const el = $('#' + id); return el ? el.value : savedRO()[id]; };
   const def = {o_res: '1920x1080', o_transition: 'random_soft', o_effects: 'random', o_seed: '1', o_xfade: '0.8', o_zoom: '1.15',
-               o_gap: '0.5', o_preset: 'medium', o_titles: '0', o_parts: ''};
+               o_gap: '0.5', o_preset: 'medium', o_titles: '0', o_parts: '', o_music: '', o_music_db: '-18', o_music_list: '[]', o_music_mode: 'playlist'};
   const g = id => v(id) ?? def[id];
   const [w, h] = g('o_res').split('x').map(Number);
   const parts = String(g('o_parts')).trim().split(/[\s,]+/).filter(Boolean).map(Number);
   return {width: w, height: h, transition: g('o_transition'), effects: g('o_effects'), seed: +g('o_seed'),
     xfade: +g('o_xfade'), zoom: +g('o_zoom'), gap: +g('o_gap'), preset: g('o_preset'), titles: g('o_titles') === '1',
-    parts: parts.length ? parts : null};
+    parts: parts.length ? parts : null, music: (() => { const l = plList(g('o_music_list')); return l.length ? l : (g('o_music') ? [g('o_music')] : []); })(),
+    music_db: +g('o_music_db'), music_mode: g('o_music_mode')};
+}
+async function loadMusic() {
+  const sel = $('#o_music'); if (!sel) return;
+  const d = await api('/api/music'), cur = savedRO().o_music || sel.value;
+  const ICON = {'Classical': '🎻 Cổ điển', 'Ambient': '🎹 Nhẹ nhàng / Ambient', 'My uploads': '📁 Nhạc của tôi', '': '🎵 Khác'};
+  const groups = [...new Set(d.tracks.map(t => t.group))];
+  const opt = t => `<option value="${esc(t.id)}">${esc(t.name)} (${fmt(t.secs)})</option>`;
+  sel.innerHTML = '<option value="">Không có nhạc</option>' + groups.map(g =>
+    `<optgroup label="${esc(ICON[g] || '📂 ' + g)}">${d.tracks.filter(t => t.group === g).map(opt).join('')}</optgroup>`).join('');
+  // older settings stored just the file name -> match it inside any group
+  const hit = d.tracks.find(t => t.id === cur) || d.tracks.find(t => t.id.split('/').pop() === String(cur).split('/').pop());
+  sel.value = hit ? hit.id : '';
+  sel.title = 'Thư mục nhạc: ' + d.dir;
+}
+/* playlist: several tracks in one video. Empty list -> the track picked in the dropdown is used alone. */
+function plList(v) { try { const a = JSON.parse(v ?? ($('#o_music_list')?.value || '[]')); return Array.isArray(a) ? a : []; } catch { return []; } }
+function plSave(a) { const el = $('#o_music_list'); el.value = JSON.stringify(a); el.dispatchEvent(new Event('change')); renderPlaylist(); }
+function addToPlaylist() {
+  const f = $('#o_music').value; if (!f) return toast('Chọn 1 bản nhạc trong danh sách thả xuống trước');
+  const a = plList(); if (a.length >= 20) return toast('Tối đa 20 bài');
+  a.push(f); plSave(a);
+}
+function plMove(i, d) { const a = plList(); const j = i + d; if (j < 0 || j >= a.length) return; [a[i], a[j]] = [a[j], a[i]]; plSave(a); }
+function plDel(i) { const a = plList(); a.splice(i, 1); plSave(a); }
+function renderPlaylist() {
+  const box = $('#musicList'); if (!box) return;
+  const a = plList(), sel = $('#o_music')?.value, name = id => id.split('/').pop().replace(/\.[^.]+$/, '');
+  const mode = $('#o_music_mode')?.value;
+  box.innerHTML = a.length ? a.map((id, i) => `<span class="row" style="gap:2px;background:#232833;border:1px solid #3a4150;border-radius:14px;padding:2px 4px 2px 10px;font-size:12px">
+      <b>${i + 1}.</b>&nbsp;${esc(name(id))}${mode === 'parts' && a.length > 1 ? ` <span class="muted">(part ${(st => st ? st.plan.parts.filter((_, k) => k % a.length === i).map(p => p.num).join(', ') : '')(S.state)})</span>` : ''}
+      <button style="padding:0 5px" title="Lên" onclick="plMove(${i},-1)">↑</button><button style="padding:0 5px" title="Xuống" onclick="plMove(${i},1)">↓</button><button style="padding:0 5px" title="Bỏ" onclick="plDel(${i})">✕</button></span>`).join('')
+    : `<span class="muted" style="font-size:12px">Trống → chỉ dùng bài đang chọn${sel ? ` (<b>${esc(name(sel))}</b>)` : ''}. Bấm <b>＋</b> cạnh ▶ để thêm nhiều bài.</span>`;
+}
+function musicDbLabel() {
+  const el = $('#o_music_db'), out = $('#o_music_dbv'); if (!el || !out) return;
+  const v = +el.value;
+  const w = v >= -10 ? 'to' : v >= -14 ? 'vừa' : v >= -21 ? 'nhẹ — nên dùng' : v >= -26 ? 'rất nhẹ' : 'thoang thoảng';
+  out.textContent = `${v} dB dưới giọng (${w})`;
+}
+/* ▶ / 🎧 are play-pause toggles: pressing again pauses, pressing once more resumes where it stopped.
+   A new track, volume or part starts fresh. */
+const MP = {mode: null, key: null};  // what the shared #player holds for the music buttons
+function musicBtns() {
+  const pl = $('#player'), on = m => MP.mode === m && !pl.paused && !pl.ended;
+  const a = $('#mPlay'), b = $('#mTest');
+  if (a) { a.textContent = on('track') ? '⏸' : '▶'; a.title = on('track') ? 'Tạm dừng' : 'Nghe bản nhạc'; }
+  if (b) b.textContent = on('test') ? '⏸ Tạm dừng' : (MP.mode === 'test' && pl.paused && !pl.ended && pl.currentTime > 0 ? '▶ Nghe tiếp' : '🎧 Nghe thử');
+}
+['play', 'pause', 'ended', 'emptied'].forEach(ev => $('#player').addEventListener(ev, musicBtns));
+async function musicToggle(mode, key, url, msg) {
+  const pl = $('#player');
+  if (MP.mode === mode && MP.key === key && pl.src) {
+    if (!pl.paused) return pl.pause();
+    if (!pl.ended) { try { await pl.play(); } catch (e) { toast(e.message); } return; }
+  }
+  MP.mode = mode; MP.key = key;
+  if (msg) toast(msg);
+  pl.src = url;
+  try { await pl.play(); } catch (e) { toast('Không phát được: ' + e.message); }
+  musicBtns();
+}
+function testMusic() {
+  const f = $('#o_music').value; if (!f) return toast('Chọn 1 bản nhạc trước');
+  const part = +($('#pv_part')?.value || 1), db = $('#o_music_db').value;
+  musicToggle('test', `${f}|${db}|${part}`,
+    `${P()}/music_test?music=${encodeURIComponent(f)}&db=${db}&part=${part}&t=${Date.now()}`, 'Đang trộn 30 giây thử…');
+}
+function playMusic() {
+  const f = $('#o_music').value; if (!f) return toast('Chọn 1 bản nhạc');
+  musicToggle('track', f, '/api/music/' + f.split('/').map(encodeURIComponent).join('/'));
+}
+function uploadMusic() {
+  const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'audio/*';
+  inp.onchange = async () => { const fd = new FormData(); fd.append('file', inp.files[0]);
+    try { const r = await api('/api/music', {method: 'POST', body: fd}); await loadMusic(); $('#o_music').value = r.id;
+          $('#o_music').dispatchEvent(new Event('change')); toast('Đã thêm nhạc'); } catch (e) { toast(e.message); } };
+  inp.click();
 }
 /* ---- instant preview: plays the voice and animates the same timeline the renderer uses (no rendering) ---- */
 const KB = {  // effect -> progress p -> [zoom, anchorX, anchorY]; same maths as vidgen.zoompan_expr

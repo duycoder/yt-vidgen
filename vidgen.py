@@ -568,6 +568,129 @@ def render_part(proj, part, pics, tmp: Path, args, effect_offset, scene=None, ou
     return out_file
 
 
+_MEAN_DB = {}
+
+
+def mean_db(path: Path, secs=None) -> float:
+    """Average loudness (dB) of an audio/video file's sound, cached per file version."""
+    st = Path(path).stat()
+    key = (str(path), st.st_mtime, st.st_size, secs)
+    if key not in _MEAN_DB:
+        cmd = ["ffmpeg", "-hide_banner", "-nostats"] + (["-t", str(secs)] if secs else []) + \
+              ["-i", str(path), "-vn", "-af", "volumedetect", "-f", "null", "-"]
+        m = re.search(r"mean_volume:\s*(-?[\d.]+) dB", run(cmd).stderr)
+        _MEAN_DB[key] = float(m.group(1)) if m else -20.0
+    return _MEAN_DB[key]
+
+
+def music_gain(voice: Path, music: Path, below=-18.0, voice_secs=None) -> float:
+    """Gain (dB) that puts the music `below` dB under the voice, whatever the track's own loudness."""
+    return max(-50.0, min(20.0, mean_db(voice, voice_secs) + float(below) - mean_db(music)))
+
+
+def music_chain(db, D):
+    """ffmpeg filter: input 0 = voice, input 1 = music (looped) -> [a]. Music at db, faded in 3s / out 5s,
+    ducked under the voice. Shared by the final render and the 🎧 volume test so they sound the same."""
+    fo = max(0.0, D - 5)
+    return (f"[1:a]aresample=48000,aformat=channel_layouts=stereo,volume={float(db)}dB,"
+            f"afade=t=in:st=0:d=3,afade=t=out:st={fo:.3f}:d=5[m];"
+            "[0:a]aresample=48000,aformat=channel_layouts=stereo,asplit=2[v][sc];"
+            "[m][sc]sidechaincompress=threshold=0.03:ratio=6:attack=80:release=900[md];"
+            "[v][md]amix=inputs=2:duration=first:normalize=0[a]")
+
+
+_SPAN = {}
+
+
+def track_span(path: Path, below_mean=15.0):
+    """(start, end) of the audible part of a track: skips silence at the beginning and the quiet tail at the
+    end, so crossfades between tracks (and repeats) have no dead air. Cached per file version."""
+    st = Path(path).stat()
+    key = (str(path), st.st_mtime, st.st_size)
+    if key not in _SPAN:
+        D = duration(path)
+        floor_db = min(-30.0, mean_db(path) - below_mean)  # "quiet" relative to this track's own loudness
+        err = run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af",
+                   f"silencedetect=noise={floor_db}dB:d=0.4", "-f", "null", "-"]).stderr
+        ss = [float(x) for x in re.findall(r"silence_start: (-?[\d.]+)", err)]
+        se = [float(x) for x in re.findall(r"silence_end: (-?[\d.]+)", err)]
+        start = se[0] if ss and ss[0] <= 0.05 and se else 0.0
+        end = ss[-1] if ss and (len(se) < len(ss) or se[-1] >= D - 0.3) else D
+        if end - start < 10:  # mostly quiet track: don't trust the detection
+            start, end = 0.0, D
+        _SPAN[key] = (round(start, 3), round(end, 3))
+    return _SPAN[key]
+
+
+def music_bed(tracks, gains, D, out_file: Path, starts=None, xf=3.0):
+    """One continuous music track, D seconds long, built from several tracks (each at its own gain, so they
+    all sound equally loud), silent heads/tails cut, every join an xf-second equal-power crossfade
+    (also when a track repeats).
+      starts=None : whole tracks one after another, the list repeats until the video ends.
+      starts=[0, t1, t2…] (part start times): part i gets track i % n (repeated if the part is longer).
+    The change to the next track happens over the first xf seconds of its stretch."""
+    n = len(tracks)
+    spans = [track_span(t) for t in tracks]
+    full = [max(xf + 2, e - b - xf) for b, e in spans]  # timeline one full play covers before the next crossfade
+    pieces = []  # (track index, seconds of the timeline it covers)
+    if starts:
+        bounds = list(starts) + [D]
+        for i in range(len(starts)):
+            P = bounds[i + 1] - bounds[i]
+            while P > 0.5 and len(pieces) < 90:
+                L = min(P, full[i % n])
+                pieces.append((i % n, L))
+                P -= L
+    else:
+        t, i = 0.0, 0
+        while t < D and len(pieces) < 90:
+            pieces.append((i % n, full[i % n]))
+            t += full[i % n]
+            i += 1
+    if not pieces:
+        pieces = [(0, D)]
+    inputs, chains = [], []
+    for k, (ti, L) in enumerate(pieces):
+        ln = L + xf if k < len(pieces) - 1 else max(L, xf + 1)  # the extra xf is eaten by the next crossfade
+        b0 = spans[ti][0]
+        inputs += ["-ss", f"{b0:.3f}", "-t", f"{ln + 0.3:.3f}", "-i", str(tracks[ti])]
+        chains.append(f"[{k}:a]aresample=48000,aformat=channel_layouts=stereo,volume={gains[ti]:.2f}dB,"
+                      f"atrim=0:{ln:.3f},asetpts=PTS-STARTPTS[s{k}]")
+    last = "s0"
+    for k in range(1, len(pieces)):
+        chains.append(f"[{last}][s{k}]acrossfade=d={xf}:c1=qsin:c2=qsin[x{k}]")
+        last = f"x{k}"
+    chains.append(f"[{last}]anull[bed]")
+    r = run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *inputs, "-filter_complex", ";".join(chains),
+             "-map", "[bed]", "-t", f"{D:.3f}", "-c:a", "flac", str(out_file)])
+    if r.returncode:
+        raise RuntimeError(f"ffmpeg (ghép nhạc nền) lỗi:\n{r.stderr[-2000:]}")
+    seen = []  # track order as heard (repeats of the same track inside one stretch counted once)
+    for ti, _ in pieces:
+        if not seen or seen[-1] != tracks[ti]:
+            seen.append(tracks[ti])
+    return seen
+
+
+def mix_music(video: Path, music, out_file: Path, db=-18.0, starts=None):
+    """Lay background music under the narration: one track or a list (see music_bed), fades in/out, and ducked
+    (pushed further down) whenever the narrator speaks. db = how far under the voice (loudness-matched).
+    Video stream is copied, only audio is re-encoded."""
+    tracks = [Path(m) for m in (music if isinstance(music, (list, tuple)) else [music])]
+    D = duration(video)
+    gains = [music_gain(video, t, db) for t in tracks]
+    bed = out_file.with_name("_music_bed.flac")
+    order = music_bed(tracks, gains, D, bed, starts)
+    chain = music_chain(0.0, D)
+    r = run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(video), "-i", str(bed),
+             "-filter_complex", chain, "-map", "0:v", "-map", "[a]", "-t", f"{D:.3f}", "-c:v", "copy",
+             "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out_file)])
+    bed.unlink(missing_ok=True)
+    if r.returncode:
+        raise RuntimeError(f"ffmpeg (nhạc nền) lỗi:\n{r.stderr[-2000:]}")
+    return order
+
+
 def cmd_render(proj: Path, args):
     plan = load_plan(proj)
     pics, out = proj / "pics", proj / "output"
@@ -598,10 +721,25 @@ def cmd_render(proj: Path, args):
     lst = tmp / "concat.txt"
     lst.write_text("".join(f"file '{f.name}'\n" for f in files), encoding="utf-8")
     final = out / args.output
+    m = getattr(args, "music", "") or []
+    music = [Path(x) for x in (m if isinstance(m, (list, tuple)) else [m]) if x and Path(x).is_file()]
+    joined = tmp / "_voice_only.mp4" if music else final
     r = run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0",
-             "-i", str(lst), "-c", "copy", "-movflags", "+faststart", str(final)])
+             "-i", str(lst), "-c", "copy", "-movflags", "+faststart", str(joined)])
     if r.returncode:
         raise RuntimeError(r.stderr)
+    if joined != final:
+        per_part = getattr(args, "music_mode", "playlist") == "parts" and len(music) > 1
+        starts = None
+        if per_part:  # where each part begins in the joined video
+            starts, t = [], 0.0
+            for f in files:
+                starts.append(t)
+                t += duration(f)
+        log(f"  nhạc nền: {', '.join(x.stem for x in music)} ({getattr(args, 'music_db', -18):+.0f} dB so với giọng, "
+            f"{'mỗi part 1 bài' if per_part else 'nối tiếp, chuyển mềm 3s'}, tự hạ khi có lời)")
+        order = mix_music(joined, music, final, float(getattr(args, "music_db", -18)), starts)
+        log("  thứ tự nhạc: " + " → ".join(x.stem for x in order[:12]) + (" …" if len(order) > 12 else ""))
     log(f"Video -> {final}  ({duration(final):.1f}s)")
 
 
@@ -632,6 +770,10 @@ def main():
     ap.add_argument("--preset", default="medium")
     ap.add_argument("--crf", type=int, default=20)
     ap.add_argument("--output", default="video.mp4")
+    ap.add_argument("--music", nargs="*", default=[], help="background music file(s), ducked under the voice")
+    ap.add_argument("--music-mode", choices=["playlist", "parts"], default="playlist",
+                    help="playlist: tracks one after another; parts: each part starts the next track")
+    ap.add_argument("--music-db", type=float, default=-18, help="music level in dB under the voice (before ducking)")
     args = ap.parse_args()
     proj = args.project.resolve()
     if args.command in ("plan", "all"):

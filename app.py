@@ -34,7 +34,8 @@ app = FastAPI(title="vidgen")
 RENDER_DEFAULTS = dict(width=1920, height=1080, fps=30, xfade=0.8, transition="fade", effects="cycle", seed=1,
                        zoom=1.15, gap=0.5,
                        titles=False, font="C:/Windows/Fonts/georgia.ttf", parts=None, preset="medium",
-                       crf=20, output="video.mp4", force=False)
+                       crf=20, output="video.mp4", force=False, music="", music_db=-18.0, music_mode="playlist")
+MUSIC_DIR = HERE / "music"  # shared background tracks for every project
 PLAN_DEFAULTS = dict(split_pause=1.0, max_scene=25.0, min_scene=12.0)
 
 
@@ -368,37 +369,226 @@ def set_framing(name: str, sid: str, fr: dict = Body(...)):
     return {"ok": True, "framing": clean or None}
 
 
+def _shot_times(d, sid, n):
+    """Start fractions (0..1) of the n image slots of a scene; equal split when none are stored."""
+    ft = d.get("shot_times", {}).get(sid)
+    return list(ft) if ft and len(ft) == n else [j / n for j in range(n)]
+
+
+def _move_slot(p, d, c, src, dst):
+    """Move everything of image slot src to dst (image file, credit, prompt, framing, idea text, query)."""
+    pics = p / "pics"
+    for ext in vidgen.IMG_EXT:
+        (pics / f"{dst}{ext}").unlink(missing_ok=True)
+    img = vidgen.find_image(pics, src)
+    if img:
+        img.rename(pics / f"{dst}{img.suffix}")
+    if src in c:
+        c[dst] = c.pop(src)
+    else:
+        c.pop(dst, None)
+    for key in ("scenes", "framing", "shot_text", "shot_query"):
+        m = d.setdefault(key, {})
+        if key == "scenes" and base_sid(src) == src:  # slot 1's prompt is the scene prompt: copy, keep
+            if src in m:
+                m[dst] = m[src]
+            continue
+        if src in m:
+            m[dst] = m.pop(src)
+        else:
+            m.pop(dst, None)
+
+
 @app.delete("/api/projects/{name}/scene/{sid}/shot/{k}")
 def remove_shot(name: str, sid: str, k: int):
-    """Remove image slot k and shift the following slots down (keeps images, credits and prompts aligned)."""
+    """Remove image slot k and shift the following slots down. Its time and narration go to the neighbour,
+    so the other images keep their timing (🧩 Chia ý)."""
     p = proj_dir(name)
     d, c = prompts_of(p), credits_of(p)
     n = max(1, int(d.get("shots", {}).get(sid, 1)))
     if n == 1:
         raise HTTPException(400, "cảnh phải có ít nhất 1 ảnh")
+    ft = _shot_times(d, sid, n)
+    texts = d.setdefault("shot_text", {})
+    gone_text = texts.get(vidgen.shot_id(sid, k), "")
+    nb = vidgen.shot_id(sid, k - 1 if k > 1 else 2)  # neighbour that takes over the time
+    if gone_text and texts.get(nb) and gone_text != texts[nb]:
+        texts[nb] = f"{texts[nb]} {gone_text}" if k > 1 else f"{gone_text} {texts[nb]}"
     pics = p / "pics"
     for ext in vidgen.IMG_EXT:
         (pics / f"{vidgen.shot_id(sid, k)}{ext}").unlink(missing_ok=True)
     c.pop(vidgen.shot_id(sid, k), None)
-    d.setdefault("framing", {}).pop(vidgen.shot_id(sid, k), None)
+    for key in ("framing", "shot_text", "shot_query"):
+        d.setdefault(key, {}).pop(vidgen.shot_id(sid, k), None)
+    if k > 1:
+        d["scenes"].pop(vidgen.shot_id(sid, k), None)
     for j in range(k + 1, n + 1):
-        src, dst = vidgen.shot_id(sid, j), vidgen.shot_id(sid, j - 1)
-        img = vidgen.find_image(pics, src)
-        if img:
-            img.rename(pics / f"{dst}{img.suffix}")
-        if src in c:
-            c[dst] = c.pop(src)
-        if src in d["scenes"] and j > 1:
-            d["scenes"][dst] = d["scenes"].pop(src)
-        fr = d.setdefault("framing", {})
-        fr.pop(dst, None)
-        if src in fr:
-            fr[dst] = fr.pop(src)
+        _move_slot(p, d, c, vidgen.shot_id(sid, j), vidgen.shot_id(sid, j - 1))
+    ft.pop(k - 1)
+    ft[0] = 0.0
     d["shots"][sid] = n - 1
-    d.setdefault("shot_times", {}).pop(sid, None)
+    d.setdefault("shot_times", {})[sid] = ft
     write_json(p / "prompts.json", d)
     write_json(pics / "credits.json", c)
     return {"ok": True}
+
+
+def _word_fracs(p, part, scene, idxs, total):
+    """Scene fractions (0..1) where word index i starts: by word position, snapped to a real pause in the voice."""
+    start, end = scene["start"], scene["end"]
+    dur = max(end - start, 0.1)
+    vp = p / "voices" / part["voice"]
+    sil = vidgen.silences(vp) if vp.exists() else []
+    mids = [(a + b) / 2 for a, b in sil if start < (a + b) / 2 < end]
+    out = []
+    for i in idxs:
+        if i <= 0:
+            out.append(0.0)
+            continue
+        if i >= total:
+            out.append(1.0)
+            continue
+        t = start + dur * i / total
+        near = min(mids, key=lambda m: abs(m - t), default=None)
+        if near is not None and abs(near - t) < 1.0:
+            t = near
+        out.append(round((t - start) / dur, 4))
+    return out
+
+
+@app.post("/api/projects/{name}/scene/{sid}/select")
+def select_words(name: str, sid: str, body: dict = Body(...)):
+    """The user highlighted words w0..w1 (end exclusive) of the scene's narration -> that passage gets its OWN image
+    slot, timed to when those words are read. Images around it are trimmed (an image that spans the whole passage
+    shows before and after it); images fully inside the passage are removed (kept in pics/_removed).
+    Every slot's highlighted text is rebuilt from the new cuts."""
+    p = proj_dir(name)
+    plan = read_json(p / "output" / "plan.json", None)
+    base = base_sid(sid)
+    try:
+        part, scene, _, _ = studio.scene_context(plan, base)
+    except (KeyError, TypeError):
+        raise HTTPException(404, "scene not found")
+    words = scene["text"].split()
+    total = len(words)
+    w0, w1 = max(0, int(body.get("w0", 0))), min(total, int(body.get("w1", 0)))
+    if w1 - w0 < 1:
+        raise HTTPException(400, "hãy bôi đen ít nhất 1 từ")
+    d, c = prompts_of(p), credits_of(p)
+    n = max(1, int(d.get("shots", {}).get(base, 1)))
+    slots = [vidgen.shot_id(base, j) for j in range(1, n + 1)]
+    ft = _shot_times(d, base, n)
+    # old slots as word ranges
+    counts = [len(d.get("shot_text", {}).get(sl, "").split()) for sl in slots]
+    if all(counts) and sum(counts) == total:  # exact word split from 🧩 Chia ý / earlier selections
+        wb = [0]
+        for k in counts:
+            wb.append(wb[-1] + k)
+    else:
+        wb = [0] + [min(total, max(0, round(f * total))) for f in ft[1:]] + [total]
+    old = [(wb[j], wb[j + 1], slots[j]) for j in range(n)]
+    new, removed, used = [], [], set()
+    for ws, we, sl in old:
+        if ws < w0 and we > ws:
+            new.append([ws, min(we, w0), sl, sl in used])
+            used.add(sl)
+        if we > w1:
+            new.append([max(ws, w1), we, sl, sl in used])
+            used.add(sl)
+        if ws >= w0 and we <= w1 and we > ws:
+            removed.append(sl)
+    new.append([w0, w1, None, False])
+    new = sorted((x for x in new if x[1] > x[0]), key=lambda x: x[0])
+    if len(new) > 8:
+        raise HTTPException(400, "tối đa 8 ảnh mỗi cảnh — bỏ bớt ảnh trước")
+    pics = p / "pics"
+    trash = pics / "_removed"
+    keys_ = ("scenes", "framing", "shot_query")
+    snap = {sl: {k: d.setdefault(k, {}).get(sl) for k in keys_} for sl in slots}
+    snap_c = {sl: c.get(sl) for sl in slots}
+    # 1) park every old image under a temp name (so renames never collide)
+    tmp = {}
+    for sl in slots:
+        img = vidgen.find_image(pics, sl)
+        if img:
+            t = pics / f"_tmp_{sl}{img.suffix}"
+            img.rename(t)
+            tmp[sl] = t
+    for sl in removed:
+        if sl in tmp and sl not in used:
+            trash.mkdir(exist_ok=True)
+            tmp[sl].rename(trash / f"{sl}_{time.strftime('%H%M%S')}{tmp[sl].suffix}")
+            tmp.pop(sl)
+    # 2) clear old entries
+    for sl in slots:
+        c.pop(sl, None)
+        for k in keys_ + ("shot_text",):
+            if not (k == "scenes" and sl == base):
+                d[k].pop(sl, None)
+    # 3) build the new slots
+    import shutil
+    new_slot = None
+    for j, (ws, we, src, is_copy) in enumerate(new, 1):
+        dst = vidgen.shot_id(base, j)
+        d["shot_text"][dst] = " ".join(words[ws:we])
+        if src is None:
+            new_slot = j
+            q = next((snap[sl]["shot_query"] for a, b, sl in old if a <= w0 < b and snap[sl]["shot_query"]), None)
+            if q:
+                d["shot_query"][dst] = q
+            if dst != base:
+                d["scenes"].pop(dst, None)
+            continue
+        for k in keys_:
+            v = snap[src][k]
+            if k == "scenes" and is_copy and v:
+                v += " Different composition and camera angle from the previous shot."
+            if v:
+                d[k][dst] = v
+        if snap_c[src]:
+            c[dst] = snap_c[src]
+        if src in tmp:
+            t = tmp[src]  # copy (not move): a picture that spans the passage is shown before AND after it
+            shutil.copyfile(t, pics / f"{dst}{t.suffix}")
+    for t in tmp.values():
+        t.unlink(missing_ok=True)
+    nb = len(new)
+    d["shots"][base] = nb
+    d.setdefault("shot_times", {})[base] = _word_fracs(p, part, scene, [x[0] for x in new], total)
+    d["shot_times"][base][0] = 0.0
+    write_json(p / "prompts.json", d)
+    write_json(pics / "credits.json", c)
+    return {"ok": True, "n": nb, "k": new_slot, "removed": [s for s in removed if s not in used]}
+
+
+@app.post("/api/projects/{name}/scene/{sid}/shot/{k}/split")
+def split_shot(name: str, sid: str, k: int):
+    """Add one more image for the SAME narration as slot k: its time is cut in half, the new slot k+1 shares
+    its highlighted text and search words; the other images keep their timing."""
+    p = proj_dir(name)
+    d, c = prompts_of(p), credits_of(p)
+    n = max(1, int(d.get("shots", {}).get(sid, 1)))
+    if not 1 <= k <= n:
+        raise HTTPException(404, "không có ô ảnh này")
+    if n >= 8:
+        raise HTTPException(400, "tối đa 8 ảnh mỗi cảnh")
+    ft = _shot_times(d, sid, n)
+    for j in range(n, k, -1):  # make room: k+1.. -> k+2..
+        _move_slot(p, d, c, vidgen.shot_id(sid, j), vidgen.shot_id(sid, j + 1))
+    src, new = vidgen.shot_id(sid, k), vidgen.shot_id(sid, k + 1)
+    for key in ("shot_text", "shot_query"):
+        m = d.setdefault(key, {})
+        if src in m:
+            m[new] = m[src]
+    if d["scenes"].get(src):
+        d["scenes"][new] = d["scenes"][src] + " Different composition and camera angle from the previous shot."
+    end = ft[k] if k < n else 1.0
+    ft.insert(k, round((ft[k - 1] + end) / 2, 4))
+    d["shots"][sid] = n + 1
+    d.setdefault("shot_times", {})[sid] = ft
+    write_json(p / "prompts.json", d)
+    write_json(p / "pics" / "credits.json", c)
+    return {"ok": True, "n": n + 1, "slot": new}
 
 
 @app.get("/api/search")
@@ -589,10 +779,88 @@ def timeline(name: str, opts: dict = Body(default={})):
                        "image": url(sh["image"])} for sh in shots]}
 
 
+MUSIC_UPLOADS = "My uploads"  # group (sub-folder) that ⬆ uploads go to
+
+
+def music_file(rel: str) -> Path:
+    """'Group/track.mp3' (or a bare 'track.mp3' from older settings) -> the file inside music/. 404 if missing."""
+    rel = (rel or "").replace("\\", "/").strip("/")
+    f = (MUSIC_DIR / rel).resolve()
+    if MUSIC_DIR.resolve() not in f.parents or not f.is_file():
+        hits = sorted(MUSIC_DIR.rglob(Path(rel).name)) if rel else []  # old bare name: find it in any group
+        if not hits:
+            raise HTTPException(404, f"không thấy file nhạc {rel} trong {MUSIC_DIR}")
+        f = hits[0]
+    return f
+
+
+@app.get("/api/music")
+def list_music():
+    """Tracks grouped by sub-folder of music/ (one level): music/Classical/x.mp3 -> group 'Classical'."""
+    MUSIC_DIR.mkdir(exist_ok=True)
+    fs = sorted((f for f in MUSIC_DIR.rglob("*") if f.is_file() and f.suffix.lower() in vidgen.AUDIO_EXT
+                 and len(f.relative_to(MUSIC_DIR).parts) <= 2),
+                key=lambda f: (len(f.relative_to(MUSIC_DIR).parts) == 1, str(f.relative_to(MUSIC_DIR)).lower()))
+    tracks = []
+    for f in fs:
+        rel = f.relative_to(MUSIC_DIR).as_posix()
+        tracks.append({"id": rel, "name": f.stem, "group": f.parent.name if f.parent != MUSIC_DIR else "",
+                       "secs": round(vidgen.duration(f)), "url": "/api/music/" + rel})
+    return {"dir": str(MUSIC_DIR), "tracks": tracks}
+
+
+@app.get("/api/music/{fname:path}")
+def get_music(fname: str):
+    return FileResponse(music_file(fname))
+
+
+@app.get("/api/projects/{name}/music_test")
+def music_test(name: str, music: str, db: float = -18.0, part: int = 1, secs: float = 30.0):
+    """30s of the real narration + the music at this volume, mixed exactly like the final render."""
+    p = proj_dir(name)
+    f = music_file(music)
+    plan = read_json(p / "output" / "plan.json", None)
+    parts = (plan or {}).get("parts") or []
+    pt = next((x for x in parts if x.get("num") == part), parts[0] if parts else None)
+    vp = p / "voices" / pt["voice"] if pt else None
+    out = p / "output" / "_music_test.mp3"
+    out.parent.mkdir(exist_ok=True)
+    db = max(-40.0, min(0.0, db))
+    if vp and vp.exists():
+        D = min(secs, vidgen.duration(vp))
+        gain = vidgen.music_gain(vp, f, db)
+        cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-t", f"{D:.2f}", "-i", str(vp),
+               "-stream_loop", "-1", "-i", str(f), "-filter_complex", vidgen.music_chain(gain, D),
+               "-map", "[a]", "-t", f"{D:.2f}", "-b:a", "160k", str(out)]
+    else:  # no voice yet: music alone at that level
+        cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-t", f"{secs:.0f}", "-i", str(f),
+               "-af", f"volume={-16 + db - vidgen.mean_db(f):.1f}dB", "-b:a", "160k", str(out)]
+    r = vidgen.run(cmd)
+    if r.returncode:
+        raise HTTPException(500, r.stderr[-800:])
+    return FileResponse(out, media_type="audio/mpeg", headers={"Cache-Control": "no-store"})
+
+
+@app.post("/api/music")
+async def upload_music(file: UploadFile = File(...)):
+    name = Path(file.filename or "").name
+    if Path(name).suffix.lower() not in vidgen.AUDIO_EXT:
+        raise HTTPException(400, "chỉ nhận " + ", ".join(sorted(vidgen.AUDIO_EXT)))
+    up = MUSIC_DIR / MUSIC_UPLOADS
+    up.mkdir(parents=True, exist_ok=True)
+    (up / name).write_bytes(await file.read())
+    return {**list_music(), "id": f"{MUSIC_UPLOADS}/{name}"}
+
+
 @app.post("/api/projects/{name}/render")
 def render(name: str, opts: dict = Body(default={})):
     p = proj_dir(name)
     args = SimpleNamespace(**{**RENDER_DEFAULTS, **{k: v for k, v in opts.items() if k in RENDER_DEFAULTS}})
+    ms = args.music if isinstance(args.music, list) else [args.music]
+    args.music = [str(music_file(m)) for m in ms if m][:20]
+    yt = read_json(p / "youtube.json", {})  # remember the tracks -> their credits go into the description
+    yt["music"] = [Path(m).name for m in args.music]
+    write_json(p / "youtube.json", yt)
     plan = read_json(p / "output" / "plan.json", None)
     if not plan:
         raise HTTPException(400, "run plan first")
@@ -654,6 +922,11 @@ def youtube_text(yt, chapters, credits):
         blocks.append("Chapters:\n" + "\n".join(f"{c['time']} {c['title']}" for c in chapters))
     if yt.get("include_credits", True) and credits.strip():
         blocks.append(credits.strip())
+    ym = yt.get("music") or []
+    cred = read_json(MUSIC_DIR / "credits.json", {})  # keyed by file name
+    mc = [cred[n] for n in dict.fromkeys(Path(x).name for x in (ym if isinstance(ym, list) else [ym])) if n in cred]
+    if mc:  # CC BY music must be credited (always, even when image credits go to a pinned comment)
+        blocks.append("Music:\n" + "\n\n".join(mc))
     if yt.get("hashtags", "").strip():
         blocks.append(yt["hashtags"].strip())
     return "\n\n".join(b for b in blocks if b)
